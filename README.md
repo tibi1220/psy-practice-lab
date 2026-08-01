@@ -52,9 +52,10 @@ finishes. For example: `/reaction-time/test` and `/reaction-time/result`.
 ## GitHub Pages
 
 Pushes to `main` automatically build and deploy the site to
-`https://tibi1220.github.io/PSY/`. In the repository's **Settings → Pages**,
+`https://tibi1220.github.io/psy-practice-lab/`. In the repository's
+**Settings → Pages**,
 set **Source** to **GitHub Actions** before the first deployment.
 
-The deployment build uses `/PSY/` as its Vite and React Router base. Local
-development continues to use `/`, and the workflow includes a `404.html` SPA
-fallback so direct links to test pages work on GitHub Pages.
+The deployment build uses `/psy-practice-lab/` as its Vite and React Router
+base. Local development continues to use `/`, and the workflow includes a
+`404.html` SPA fallback so direct links to test pages work on GitHub Pages.

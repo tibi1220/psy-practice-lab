@@ -30,7 +30,7 @@ test("React Router exposes every cognitive test", async () => {
   }
 });
 
-test("GitHub Pages deployment uses the PSY base path and SPA fallback", async () => {
+test("GitHub Pages deployment uses the repository base path and SPA fallback", async () => {
   const vite = await readProjectFile("vite.config.ts");
   const main = await readProjectFile("src/main.tsx");
   const html = await readProjectFile("index.html");
@@ -43,7 +43,7 @@ test("GitHub Pages deployment uses the PSY base path and SPA fallback", async ()
   assert.match(main, /<BrowserRouter basename=\{routerBase\}>/);
   assert.match(html, /%BASE_URL%favicon\.svg/);
   assert.match(workflow, /branches:\s*\n\s*- main/);
-  assert.match(workflow, /VITE_BASE_PATH: \/PSY\//);
+  assert.match(workflow, /VITE_BASE_PATH: \/psy-practice-lab\//);
   assert.match(workflow, /pnpm install --frozen-lockfile/);
   assert.match(workflow, /actions\/upload-pages-artifact@v4/);
   assert.match(workflow, /actions\/deploy-pages@v4/);

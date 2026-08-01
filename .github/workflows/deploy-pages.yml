@@ -42,7 +42,7 @@ jobs:
 
       - name: Build site
         env:
-          VITE_BASE_PATH: /PSY/
+          VITE_BASE_PATH: /psy-practice-lab/
         run: pnpm run build
 
       - name: Add SPA fallback
