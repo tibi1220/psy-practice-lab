@@ -26,6 +26,7 @@ test("React Router exposes every cognitive test", async () => {
     "/distributive-attention/\\*",
     "/perception/\\*",
     "/deductive-reasoning/\\*",
+    "/switch-reasoning/\\*",
   ]) {
     assert.match(app, new RegExp(`path="${route}"`));
   }
@@ -64,6 +65,7 @@ test("the test pages retain their core controls and explanations", async () => {
       "DistributiveAttentionPage.tsx",
       "PerceptionPage.tsx",
       "DeductiveReasoningPage.tsx",
+      "SwitchReasoningPage.tsx",
     ].map((page) => readProjectFile(`src/pages/${page}`)),
   );
   const source = pages.join("\n");
@@ -140,6 +142,7 @@ test("every setup separates settings from instructions", async () => {
       "DistributiveAttentionPage.tsx",
       "PerceptionPage.tsx",
       "DeductiveReasoningPage.tsx",
+      "SwitchReasoningPage.tsx",
     ].map((page) => readProjectFile(`src/pages/${page}`)),
   );
 
@@ -165,6 +168,7 @@ test("number settings validate only after editing is complete", async () => {
       "DistributiveAttentionPage.tsx",
       "PerceptionPage.tsx",
       "DeductiveReasoningPage.tsx",
+      "SwitchReasoningPage.tsx",
     ].map((page) => readProjectFile(`src/pages/${page}`)),
   );
 
@@ -191,6 +195,7 @@ test("every test navigates between setup, test, and result routes", async () => 
       "DistributiveAttentionPage.tsx",
       "PerceptionPage.tsx",
       "DeductiveReasoningPage.tsx",
+      "SwitchReasoningPage.tsx",
     ].map((page) => readProjectFile(`src/pages/${page}`)),
   );
 

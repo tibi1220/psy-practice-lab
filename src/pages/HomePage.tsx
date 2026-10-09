@@ -90,6 +90,16 @@ const tests = [
     glow: "bg-emerald-300/10",
     status: "Three modes",
   },
+  {
+    number: "10",
+    title: "Switch reasoning",
+    description:
+      "Trace shape sequences through one or two numerical codes to find the matching output.",
+    href: "/switch-reasoning",
+    accent: "text-cyan-300",
+    glow: "bg-cyan-300/10",
+    status: "Three modes",
+  },
 ];
 
 export default function Home() {

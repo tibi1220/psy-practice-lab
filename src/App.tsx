@@ -10,6 +10,7 @@ import PerceptionPage from "./pages/PerceptionPage";
 import ReactionTimePage from "./pages/ReactionTimePage";
 import ShortTermMemoryPage from "./pages/ShortTermMemoryPage";
 import TowerOfHanoiPage from "./pages/TowerOfHanoiPage";
+import SwitchReasoningPage from "./pages/SwitchReasoningPage";
 
 const pageTitles: Record<string, string> = {
   "/": "PSY Practice Lab",
@@ -22,6 +23,7 @@ const pageTitles: Record<string, string> = {
   "/distributive-attention": "Distributive Attention · PSY Practice Lab",
   "/perception": "Perception · PSY Practice Lab",
   "/deductive-reasoning": "Deductive Reasoning · PSY Practice Lab",
+  "/switch-reasoning": "Switch Reasoning · PSY Practice Lab",
 };
 
 export default function App() {
@@ -47,6 +49,7 @@ export default function App() {
       />
       <Route path="/perception/*" element={<PerceptionPage />} />
       <Route path="/deductive-reasoning/*" element={<DeductiveReasoningPage />} />
+      <Route path="/switch-reasoning/*" element={<SwitchReasoningPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
