@@ -8,11 +8,11 @@ import { createLocalId } from "../lib/create-local-id";
 import { createSwitchPuzzle, SWITCH_EXAMPLES, formatCode, isSwitchPuzzle } from "../lib/switch-reasoning";
 import type { SwitchPuzzle } from "../lib/switch-reasoning";
 
-type Mode = "examples" | "rounds" | "timed";
+type Mode = "rounds" | "timed";
 type Level = "easy" | "hard" | "adaptive";
 type Answer = { puzzle: SwitchPuzzle; selected: number; seconds: number };
 type Session = {
-  id: string; completedAt: string; mode: Mode; level: Level;
+  id: string; completedAt: string; mode: Mode | "examples"; level: Level;
   durationSeconds: number; answers: Answer[];
 };
 const STORAGE_KEY = "psy-switch-reasoning-sessions";
@@ -66,7 +66,7 @@ function SwitchDemo() {
 
 export default function SwitchReasoningPage() {
   const [view, setView] = useState<"setup" | "test" | "result">("setup");
-  const [mode, setMode] = useState<Mode>("examples");
+  const [mode, setMode] = useState<Mode>("timed");
   const [level, setLevel] = useState<Level>("adaptive");
   const [roundCount, setRoundCount] = useState(20);
   const [minutes, setMinutes] = useState(6);
@@ -116,8 +116,7 @@ export default function SwitchReasoningPage() {
     return () => window.clearInterval(timer);
   }, [view, mode, finish]);
 
-  const nextPuzzle = (index: number, completed: Answer[]) => {
-    if (mode === "examples") return SWITCH_EXAMPLES[index];
+  const nextPuzzle = (completed: Answer[]) => {
     // Adaptive practice advances after four correct answers in the last five.
     const recent = completed.slice(-5);
     const advanced = level === "hard" || (level === "adaptive" && recent.filter(answer => answer.selected === answer.puzzle.answer).length >= 4);
@@ -125,7 +124,7 @@ export default function SwitchReasoningPage() {
   };
 
   const start = () => {
-    const first = nextPuzzle(0, []);
+    const first = nextPuzzle([]);
     const now = performance.now();
     startedRef.current = now;
     questionStartedRef.current = now;
@@ -147,16 +146,16 @@ export default function SwitchReasoningPage() {
     const completed = [...answersRef.current, { puzzle, selected: value, seconds: (now - questionStartedRef.current) / 1000 }];
     answersRef.current = completed;
     setAnswers(completed);
-    const total = mode === "examples" ? SWITCH_EXAMPLES.length : roundCount;
+    const total = roundCount;
     if (mode !== "timed" && completed.length >= total) { finish(); return; }
-    setPuzzle(nextPuzzle(completed.length, completed));
+    setPuzzle(nextPuzzle(completed));
     questionStartedRef.current = performance.now();
   };
 
   if (view === "test") return <main className="min-h-dvh bg-slate-950 px-4 py-6 text-white">
     <div className="mx-auto max-w-2xl">
       <header className="mb-6 flex items-center justify-between gap-4">
-        <div><p className="font-mono text-sm text-cyan-300">Question {answers.length + 1}{mode === "timed" ? "" : ` of ${mode === "examples" ? 5 : roundCount}`}</p><h1 className="mt-1 text-xl font-bold">Find the matching code</h1></div>
+        <div><p className="font-mono text-sm text-cyan-300">Question {answers.length + 1}{mode === "timed" ? "" : ` of ${roundCount}`}</p><h1 className="mt-1 text-xl font-bold">Find the matching code</h1></div>
         {mode === "timed" && <p role="timer" aria-label="Time remaining" className="font-mono text-2xl">{Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}</p>}
       </header>
       <SwitchBoard puzzle={puzzle} onChoose={choose} />
@@ -171,8 +170,8 @@ export default function SwitchReasoningPage() {
       actions={<><button type="button" className={primary} onClick={start}>Start test</button><SwitchDemo /></>}>
       <div className="space-y-4">
         <TestPanel title="Test settings">
-          <label className="block text-sm font-semibold">Practice mode<select className={field} value={mode} onChange={event => setMode(event.target.value as Mode)}><option value="examples">Five PDF examples · untimed</option><option value="rounds">Randomized questions · untimed</option><option value="timed">Timed · unlimited questions</option></select></label>
-          {mode !== "examples" && <label className="mt-5 block text-sm font-semibold">Difficulty<select className={field} value={level} onChange={event => setLevel(event.target.value as Level)}><option value="easy">Easy · one stage</option><option value="hard">Hard · two stages</option><option value="adaptive">Adaptive · one to two stages</option></select></label>}
+          <label className="block text-sm font-semibold">Practice mode<select className={field} value={mode} onChange={event => setMode(event.target.value as Mode)}><option value="rounds">Randomized questions · untimed</option><option value="timed">Timed · unlimited questions</option></select></label>
+          <label className="mt-5 block text-sm font-semibold">Difficulty<select className={field} value={level} onChange={event => setLevel(event.target.value as Level)}><option value="easy">Easy · one stage</option><option value="hard">Hard · two stages</option><option value="adaptive">Adaptive · one to two stages</option></select></label>
           {mode === "rounds" && <label className="mt-5 block text-sm font-semibold">Number of questions<ValidatedNumberInput className={field} value={roundCount} min={1} max={100} normalize={Math.round} onValueChange={setRoundCount} /></label>}
           {mode === "timed" && <label className="mt-5 block text-sm font-semibold">Test length (minutes)<ValidatedNumberInput className={field} value={minutes} min={1} max={30} normalize={Math.round} onValueChange={setMinutes} /><span className="mt-2 block font-normal text-slate-500">Choose your practice duration. Answer as many questions as you can.</span></label>}
         </TestPanel>

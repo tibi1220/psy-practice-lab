@@ -1,5 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 
 export type DemoStep = {
@@ -67,18 +67,23 @@ const themes: Record<
 export function GuidedDemoModal({
   title,
   introduction,
-  steps,
+  steps: stepInput,
   theme,
+  triggerLabel = "View guided demo",
+  eyebrow = "Guided demo",
 }: {
   title: string;
   introduction: string;
-  steps: DemoStep[];
+  steps: DemoStep[] | (() => DemoStep[]);
   theme: DemoTheme;
+  triggerLabel?: string;
+  eyebrow?: string;
 }) {
   const [open, setOpen] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
+  const steps = useMemo(() => typeof stepInput === "function" ? open ? stepInput() : [] : stepInput, [stepInput, open]);
   const colors = themes[theme];
-  const step = steps[stepIndex];
+  const step = steps[stepIndex] ?? { title: "", description: "", visual: null };
 
   const updateOpen = (nextOpen: boolean) => {
     setOpen(nextOpen);
@@ -92,18 +97,18 @@ export function GuidedDemoModal({
           type="button"
           className={`min-h-14 rounded-full border border-white/15 bg-white/[0.04] px-7 font-bold text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 ${colors.ring}`}
         >
-          View guided demo
+          {triggerLabel}
         </button>
       </Dialog.Trigger>
 
       <Dialog.Portal>
         <Dialog.Overlay className="demo-modal-overlay fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm" />
         <div className="pointer-events-none fixed inset-0 z-50 grid place-items-center p-4">
-          <Dialog.Content className="demo-modal-content pointer-events-auto relative flex max-h-[min(92dvh,48rem)] w-full max-w-2xl flex-col overflow-hidden rounded-[2rem] border border-white/15 bg-slate-950 text-white shadow-2xl shadow-black/60 focus:outline-none">
+          <Dialog.Content className="demo-modal-content pointer-events-auto relative flex max-h-[min(92dvh,48rem)] w-full max-w-2xl flex-col overflow-hidden rounded-[2rem] border border-white/15 bg-slate-950 text-white shadow-2xl shadow-black/60 focus:outline-none lg:max-h-[92dvh] lg:min-h-[min(80dvh,64rem)]">
           <header className="flex shrink-0 items-start justify-between gap-5 border-b border-white/10 px-5 py-5 sm:px-7">
             <div>
               <p className={`font-mono text-xs font-bold uppercase tracking-[0.25em] ${colors.accent}`}>
-                Guided demo
+                {eyebrow}
               </p>
               <Dialog.Title className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">
                 {title}
@@ -115,7 +120,7 @@ export function GuidedDemoModal({
             <Dialog.Close asChild>
               <button
                 type="button"
-                aria-label="Close demo"
+                aria-label={`Close ${eyebrow.toLowerCase()}`}
                 className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-xl text-slate-400 transition hover:bg-white/10 hover:text-white focus-visible:outline-2 ${colors.ring}`}
               >
                 ×
@@ -137,7 +142,7 @@ export function GuidedDemoModal({
 
             <div
               key={step.title}
-              className={`demo-step-visual flex min-h-52 items-center justify-center overflow-hidden rounded-3xl border p-5 sm:min-h-60 sm:p-7 ${colors.soft}`}
+              className={`demo-step-visual flex min-h-52 items-center justify-center overflow-hidden rounded-3xl border p-5 sm:min-h-60 sm:p-7 lg:min-h-[min(45dvh,32rem)] ${colors.soft}`}
             >
               {step.visual}
             </div>

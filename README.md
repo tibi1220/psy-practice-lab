@@ -45,8 +45,26 @@ The production target is Safari 16, matching older iPadOS/WebKit versions.
 - `/tower-of-hanoi` — configurable planning puzzle with move-speed graph
 - `/distributive-attention` — one-handed, two-handed, and mixed row/column coordination test
 - `/perception` — simultaneous two-signal test with independent fixed left and right layouts
-- `/deductive-reasoning` — shape-grid reasoning with five PDF examples, randomized questions, timed practice, optional notes, and answer review
-- `/switch-reasoning` — shape-sequence code reasoning with five PDF examples, one- and two-stage randomized questions, timed practice, and answer review
+- `/deductive-reasoning` — shape-grid reasoning with randomized questions, timed adaptive practice by default, optional notes, and answer review
+- `/switch-reasoning` — shape-sequence code reasoning with one- and two-stage randomized questions, timed adaptive practice by default, and answer review
+- `/digit-challenge` — complete arithmetic equations with distinct digits from 1 to 9; accepts all valid solutions
+- `/odd-one-out` — identify the rule-breaking object among nine shapes (scales ix)
+- `/grid-classification` — infer a rule from two 3×3 examples and select two matching grids (scales clx)
+- `/green-grey-classification` — infer a rule from six labelled diamond grids and classify four candidates as green or grey
+
+These four reasoning exercises default to timed adaptive practice and also
+support untimed question counts, guided demos, and saved solution reviews.
+
+Green/Grey Classification varies 16 rules, including strict sum comparisons,
+number ranges, top/bottom relationships, matching corners, odd/even letter
+counts, and minimum occurrences of 7, Z, or any repeated letter.
+
+Deductive reasoning adds extra-hard 5×5 rounds with all-grey and all-black
+shapes alternating between rounds. Adaptive practice reaches this stage after
+four correct 5×5 answers in the last five. Clues, notes, answer choices, and
+saved solution reviews share the round's palette.
+Every deductive result also offers a tutorial-style solving popup that walks
+through a focused chain of row/column deductions to the target cell.
 
 Each test uses `/test` while a session is active and `/result` after it
 finishes. For example: `/reaction-time/test` and `/reaction-time/result`.

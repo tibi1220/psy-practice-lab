@@ -1,10 +1,13 @@
 export const SHAPE_NAMES = ["Circle", "Star", "Cross", "Triangle", "Square"];
+export type ShapePalette = "colored" | "gray" | "black";
+export type DeductiveLevel = "easy" | "hard" | "extra-hard" | "adaptive";
 export type Puzzle = {
   size: 4 | 5;
   cells: (number | null)[];
   target: number;
   answer: number;
   rationale?: string;
+  palette?: ShapePalette;
 };
 
 // Transcribed from the five practice grids in the supplied gapChallenge PDF.
@@ -110,4 +113,118 @@ export function createPuzzle(size: 4 | 5, difficulty: "easy" | "hard", random = 
     else cells[index] = previous;
   }
   return { size, cells, target, answer };
+}
+
+export function createPracticePuzzle(level: DeductiveLevel, completed: { puzzle: Puzzle; selected: number }[], random = Math.random): Puzzle {
+  const recent = completed.slice(-5);
+  const correct = recent.filter(answer => answer.selected === answer.puzzle.answer);
+  const advanced = level === "hard" || level === "extra-hard" || (level === "adaptive" && correct.length >= 4);
+  const monochrome = level === "extra-hard" || (level === "adaptive" && advanced && correct.filter(answer => answer.puzzle.size === 5).length >= 4);
+  const puzzle = createPuzzle(advanced ? 5 : 4, advanced ? "hard" : "easy", random);
+  if (monochrome) {
+    const monochromeRounds = completed.filter(answer => answer.puzzle.palette === "gray" || answer.puzzle.palette === "black").length;
+    puzzle.palette = monochromeRounds % 2 === 0 ? "gray" : "black";
+  }
+  return puzzle;
+}
+
+export type DeductionStep = { index: number; value: number; description: string; cells: (number | null)[] };
+export type SolvingGuide = { steps: DeductionStep[]; shortest: boolean };
+
+// Find the shortest chain of visible single-cell deductions, stopping at the
+// target. A bounded search keeps sparse 5×5 history entries responsive.
+export function deductionMoves(cells: (number | null)[], size: number): Omit<DeductionStep, "cells">[] {
+  const moves: Omit<DeductionStep, "cells">[] = [];
+  const possibilities = cells.map((value, index) => value === null ? candidates(cells, size, index) : []);
+  if (cells.some((value, index) => value === null && possibilities[index].length === 0)) return [];
+  const location = (index: number) => `row ${Math.floor(index / size) + 1}, column ${index % size + 1}`;
+  possibilities.forEach((values, index) => {
+    if (values.length !== 1) return;
+    const row = Math.floor(index / size), column = index % size;
+    const excluded = [...new Set(cells.filter((value, cell) => value !== null && (Math.floor(cell / size) === row || cell % size === column)))];
+    moves.push({ index, value: values[0], description: `Check ${location(index)}. Its row and column already contain ${excluded.map(value => SHAPE_NAMES[value!].toLowerCase()).join(", ")}. Only ${SHAPE_NAMES[values[0]].toLowerCase()} remains.` });
+  });
+  for (const axis of ["row", "column"] as const) {
+    for (let unit = 0; unit < size; unit++) {
+      const indices = Array.from({ length: size }, (_, offset) => axis === "row" ? unit * size + offset : offset * size + unit);
+      for (let value = 0; value < size; value++) {
+        if (indices.some(index => cells[index] === value)) continue;
+        const places = indices.filter(index => possibilities[index].includes(value));
+        if (places.length === 1 && !moves.some(move => move.index === places[0] && move.value === value)) moves.push({ index: places[0], value, description: `${axis === "row" ? "Row" : "Column"} ${unit + 1} still needs a ${SHAPE_NAMES[value].toLowerCase()}. Every other blank in that ${axis} is blocked by that shape in its crossing row or column. Place it at ${location(places[0])}.` });
+      }
+    }
+  }
+  return moves;
+}
+
+export function createSolvingGuide(puzzle: Puzzle): SolvingGuide {
+  const answers = targetAnswers(puzzle);
+  if (answers.length !== 1 || answers[0] !== puzzle.answer) return { steps: [], shortest: false };
+  type State = { cells: (number | null)[]; steps: DeductionStep[] };
+  const queue: State[] = [{ cells: [...puzzle.cells], steps: [] }];
+  const seen = new Set([JSON.stringify(puzzle.cells)]);
+  let best = queue[0];
+  let cursor = 0;
+  let truncated = false;
+  while (cursor < queue.length && cursor < 2500) {
+    const state = queue[cursor++];
+    if (state.steps.length > best.steps.length) best = state;
+    const moves = deductionMoves(state.cells, puzzle.size);
+    const target = moves.find(move => move.index === puzzle.target && move.value === puzzle.answer);
+    if (target) {
+      const cells = [...state.cells]; cells[target.index] = target.value;
+      return { steps: [...state.steps, { ...target, cells }], shortest: !truncated };
+    }
+    for (const move of moves) {
+      const cells = [...state.cells]; cells[move.index] = move.value;
+      const key = JSON.stringify(cells);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      if (queue.length < 5000) queue.push({ cells, steps: [...state.steps, { ...move, cells }] });
+      else truncated = true;
+    }
+  }
+  // Continue a useful chain if the shortest-path search hit its size limit.
+  while (true) {
+    const moves = deductionMoves(best.cells, puzzle.size);
+    const move = moves.find(item => item.index === puzzle.target) ?? moves[0];
+    if (!move) break;
+    const cells = [...best.cells]; cells[move.index] = move.value;
+    best = { cells, steps: [...best.steps, { ...move, cells }] };
+    if (move.index === puzzle.target) return { steps: best.steps, shortest: false };
+  }
+  // Some valid puzzles need more than singles. Test only the remaining target
+  // candidates against the row/column constraints, rather than filling all blanks.
+  const options = candidates(best.cells, puzzle.size, puzzle.target);
+  const rejected = options.filter(value => value !== puzzle.answer);
+  const rejection = (value: number) => {
+    const trial = [...best.cells]; trial[puzzle.target] = value;
+    let failures = 0;
+    let firstFailure = "";
+    const location = (index: number) => `R${Math.floor(index / puzzle.size) + 1}C${index % puzzle.size + 1}`;
+    const search = (cells: (number | null)[], path: string[]): void => {
+      let index = -1;
+      let choices: number[] = [];
+      for (let cell = 0; cell < cells.length; cell++) {
+        if (cells[cell] !== null) continue;
+        const possible = candidates(cells, puzzle.size, cell);
+        if (possible.length === 0) {
+          failures++;
+          if (!firstFailure) firstFailure = `${path.length ? `${path.join("; ")}; then ` : ""}${location(cell)} has no legal shape because its row and column exclude every shape`;
+          return;
+        }
+        if (index === -1 || possible.length < choices.length) { index = cell; choices = possible; }
+      }
+      if (index === -1) return;
+      for (const choice of choices) {
+        const next = [...cells]; next[index] = choice;
+        search(next, [...path, `${location(index)} = ${SHAPE_NAMES[choice].toLowerCase()}${choices.length === 1 ? " (forced)" : " (trial)"}`]);
+      }
+    };
+    search(trial, []);
+    return `Assume ${SHAPE_NAMES[value].toLowerCase()} at the target. ${failures === 1 ? "Following the forced placements" : `All ${failures} possible placement branches`} leads to a contradiction. ${failures === 1 ? "The contradiction" : "One example branch"}: ${firstFailure}.`;
+  };
+  const cells = [...best.cells]; cells[puzzle.target] = puzzle.answer;
+  const description = `The target still allows ${options.map(value => SHAPE_NAMES[value].toLowerCase()).join(" or ")}. ${rejected.map(rejection).join(" ")} Only ${SHAPE_NAMES[puzzle.answer].toLowerCase()} has a valid completion. You can leave the other blanks unresolved.`;
+  return { steps: [...best.steps, { index: puzzle.target, value: puzzle.answer, cells, description }], shortest: false };
 }
