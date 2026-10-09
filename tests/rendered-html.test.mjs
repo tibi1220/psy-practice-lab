@@ -31,6 +31,7 @@ test("React Router exposes every cognitive test", async () => {
     "/odd-one-out/\\*",
     "/grid-classification/\\*",
     "/green-grey-classification/\\*",
+    "/concentration/\\*",
     "/motion-planning/\\*",
     "/working-memory/\\*",
   ]) {

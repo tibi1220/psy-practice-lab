@@ -51,6 +51,7 @@ The production target is Safari 16, matching older iPadOS/WebKit versions.
 - `/odd-one-out` — identify the rule-breaking object among nine shapes (scales ix)
 - `/grid-classification` — infer a rule from two 3×3 examples and select two matching grids (scales clx)
 - `/green-grey-classification` — infer a rule from six labelled diamond grids and classify four candidates as green or grey
+- `/concentration` — classify upright E symbols with exactly three dots (scales e3+)
 - `/motion-planning` — rearrange movable blocks around fixed obstacles and guide the ball to its target (motionChallenge)
 - `/working-memory` — remember ordered dot positions while answering interleaved symmetry, rotation, and line-figure questions (gridChallenge)
 
@@ -88,6 +89,12 @@ obstacles. Dragging and keyboard/tap placement share collision-checked movement.
 Each placement of one piece counts as one move, including turns. Results state
 the optimal step count beside the user's move count and show a shortest-solution
 popup. Practice movement and scoring follow the app rules in the tutorial.
+
+Concentration defaults to two minutes and includes a 30-second tutorial practice
+trial. A/D keys and touch buttons advance immediately; key repeat is ignored.
+Later rounds introduce closer lookalikes, missing/extra strokes, and scattered
+dots while preserving the upright-E-plus-three-dots rule. Results include
+accuracy, answer times, and an explanation for every saved object.
 
 Each test uses `/test` while a session is active and `/result` after it
 finishes. For example: `/reaction-time/test` and `/reaction-time/result`.

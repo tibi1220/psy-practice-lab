@@ -130,6 +130,11 @@ const tests = [
     description: "Rearrange movable blocks around fixed obstacles and guide the red ball to its target in as few moves as possible.",
     href: "/motion-planning", accent: "text-emerald-300", glow: "bg-emerald-300/10", status: "6 minutes · adaptive",
   },
+  {
+    number: "17", title: "Ability to concentrate",
+    description: "Quickly classify E-like symbols by their shape and dot count, using A/D keys or touch controls.",
+    href: "/concentration", accent: "text-emerald-300", glow: "bg-emerald-300/10", status: "2 minutes · adaptive",
+  },
 ];
 
 export default function Home() {
