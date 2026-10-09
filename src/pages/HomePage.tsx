@@ -120,6 +120,11 @@ const tests = [
     description: "Infer the rule separating six labelled diamond grids, then classify four new grids as green or grey.",
     href: "/green-grey-classification", accent: "text-emerald-300", glow: "bg-emerald-300/10", status: "Timed adaptive",
   },
+  {
+    number: "15", title: "Working memory",
+    description: "Remember highlighted dots in order while solving symmetry, rotation, and line-figure questions.",
+    href: "/working-memory", accent: "text-emerald-300", glow: "bg-emerald-300/10", status: "9 minutes · 9 tasks",
+  },
 ];
 
 export default function Home() {

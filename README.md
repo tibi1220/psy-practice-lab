@@ -51,6 +51,7 @@ The production target is Safari 16, matching older iPadOS/WebKit versions.
 - `/odd-one-out` — identify the rule-breaking object among nine shapes (scales ix)
 - `/grid-classification` — infer a rule from two 3×3 examples and select two matching grids (scales clx)
 - `/green-grey-classification` — infer a rule from six labelled diamond grids and classify four candidates as green or grey
+- `/working-memory` — remember ordered dot positions while answering interleaved symmetry, rotation, and line-figure questions (gridChallenge)
 
 These four reasoning exercises default to timed adaptive practice and also
 support untimed question counts, guided demos, and saved solution reviews.
@@ -68,6 +69,15 @@ through a focused chain of row/column deductions to the target cell.
 Results also let users redo the same task in an untimed modal with notes and
 instant answer feedback. Retries start from the original clues and do not
 modify saved scores.
+
+Working memory defaults to nine tasks within nine minutes, with adaptive
+sequences of three to eight dots. Later rounds shorten exposure and question
+times, expand spatial patterns up to 8×8, and use close distractors with equal
+filled-square counts and denser line equations. Users can also practice untimed, adjust dot
+exposure and spatial-question time limits, and review recall and spatial scores
+separately. The session stops at the time or task limit; unfinished sequences
+are excluded. Practice timing and difficulty progression are configurable app
+behaviour inspired by the demonstration, not a reproduction of provider scoring.
 
 Each test uses `/test` while a session is active and `/result` after it
 finishes. For example: `/reaction-time/test` and `/reaction-time/result`.

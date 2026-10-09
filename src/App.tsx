@@ -15,6 +15,7 @@ const DeductiveReasoningPage = lazy(() => import("./pages/DeductiveReasoningPage
 const OddOneOutPage = lazy(() => import("./pages/OddOneOutPage"));
 const GridClassificationPage = lazy(() => import("./pages/GridClassificationPage"));
 const GreenGreyClassificationPage = lazy(() => import("./pages/GreenGreyClassificationPage"));
+const WorkingMemoryPage = lazy(() => import("./pages/WorkingMemoryPage"));
 
 const pageTitles: Record<string, string> = {
   "/": "PSY Practice Lab",
@@ -32,6 +33,7 @@ const pageTitles: Record<string, string> = {
   "/odd-one-out": "Odd One Out · PSY Practice Lab",
   "/grid-classification": "Grid Classification · PSY Practice Lab",
   "/green-grey-classification": "Green/Grey Classification · PSY Practice Lab",
+  "/working-memory": "Working Memory · PSY Practice Lab",
 };
 
 export default function App() {
@@ -63,6 +65,7 @@ export default function App() {
       <Route path="/odd-one-out/*" element={<OddOneOutPage />} />
       <Route path="/grid-classification/*" element={<GridClassificationPage />} />
       <Route path="/green-grey-classification/*" element={<GreenGreyClassificationPage />} />
+      <Route path="/working-memory/*" element={<WorkingMemoryPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
     </Suspense>
