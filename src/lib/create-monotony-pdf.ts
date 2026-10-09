@@ -1,3 +1,5 @@
+import i18n from '../i18n';
+
 const RASTER_SIZE = 512;
 
 type PdfPaper = {
@@ -7,6 +9,7 @@ type PdfPaper = {
 };
 
 type MonotonyPdfOptions = {
+  translateText?: (source: string, values?: Record<string, unknown>) => string;
   sequence: string[];
   goodTypeIds: string[];
   paper: PdfPaper;
@@ -61,37 +64,32 @@ function roundedTopMarkerPath(
   context.closePath();
 }
 
-function drawCornerMarker(
-  context: CanvasRenderingContext2D,
-  typeId: string,
-) {
+function drawCornerMarker(context: CanvasRenderingContext2D, typeId: string) {
   const markerWidth = RASTER_SIZE * 0.88;
   const markerHeight = RASTER_SIZE * 0.44;
-  const positions: Record<
-    string,
-    { x: number; y: number; rotation: number }
-  > = {
-    "corner-upper-left": {
-      x: -RASTER_SIZE * 0.3,
-      y: -RASTER_SIZE * 0.1,
-      rotation: 135,
-    },
-    "corner-upper-right": {
-      x: RASTER_SIZE * 0.42,
-      y: -RASTER_SIZE * 0.1,
-      rotation: 225,
-    },
-    "corner-bottom-right": {
-      x: RASTER_SIZE * 0.42,
-      y: RASTER_SIZE * 0.66,
-      rotation: 315,
-    },
-    "corner-bottom-left": {
-      x: -RASTER_SIZE * 0.3,
-      y: RASTER_SIZE * 0.66,
-      rotation: 45,
-    },
-  };
+  const positions: Record<string, { x: number; y: number; rotation: number }> =
+    {
+      'corner-upper-left': {
+        x: -RASTER_SIZE * 0.3,
+        y: -RASTER_SIZE * 0.1,
+        rotation: 135,
+      },
+      'corner-upper-right': {
+        x: RASTER_SIZE * 0.42,
+        y: -RASTER_SIZE * 0.1,
+        rotation: 225,
+      },
+      'corner-bottom-right': {
+        x: RASTER_SIZE * 0.42,
+        y: RASTER_SIZE * 0.66,
+        rotation: 315,
+      },
+      'corner-bottom-left': {
+        x: -RASTER_SIZE * 0.3,
+        y: RASTER_SIZE * 0.66,
+        rotation: 45,
+      },
+    };
   const marker = positions[typeId];
   if (!marker) return;
 
@@ -101,13 +99,7 @@ function drawCornerMarker(
   context.translate(centerX, centerY);
   context.rotate((marker.rotation * Math.PI) / 180);
   context.translate(-centerX, -centerY);
-  roundedTopMarkerPath(
-    context,
-    marker.x,
-    marker.y,
-    markerWidth,
-    markerHeight,
-  );
+  roundedTopMarkerPath(context, marker.x, marker.y, markerWidth, markerHeight);
   context.fill();
   context.restore();
 }
@@ -117,7 +109,7 @@ function drawSideMarker(context: CanvasRenderingContext2D, typeId: string) {
   const radius = thickness / 2;
   context.beginPath();
 
-  if (typeId === "side-top") {
+  if (typeId === 'side-top') {
     context.moveTo(0, 0);
     context.lineTo(RASTER_SIZE, 0);
     context.lineTo(RASTER_SIZE, thickness - radius);
@@ -129,7 +121,7 @@ function drawSideMarker(context: CanvasRenderingContext2D, typeId: string) {
     );
     context.lineTo(radius, thickness);
     context.quadraticCurveTo(0, thickness, 0, thickness - radius);
-  } else if (typeId === "side-right") {
+  } else if (typeId === 'side-right') {
     context.moveTo(RASTER_SIZE, 0);
     context.lineTo(RASTER_SIZE, RASTER_SIZE);
     context.lineTo(RASTER_SIZE - thickness + radius, RASTER_SIZE);
@@ -146,7 +138,7 @@ function drawSideMarker(context: CanvasRenderingContext2D, typeId: string) {
       RASTER_SIZE - thickness + radius,
       0,
     );
-  } else if (typeId === "side-bottom") {
+  } else if (typeId === 'side-bottom') {
     context.moveTo(0, RASTER_SIZE);
     context.lineTo(RASTER_SIZE, RASTER_SIZE);
     context.lineTo(RASTER_SIZE, RASTER_SIZE - thickness + radius);
@@ -163,7 +155,7 @@ function drawSideMarker(context: CanvasRenderingContext2D, typeId: string) {
       0,
       RASTER_SIZE - thickness + radius,
     );
-  } else if (typeId === "side-left") {
+  } else if (typeId === 'side-left') {
     context.moveTo(0, 0);
     context.lineTo(0, RASTER_SIZE);
     context.lineTo(thickness - radius, RASTER_SIZE);
@@ -189,11 +181,11 @@ function renderStimulusImage(
   borderWidthMm: number,
   cornerRadiusMm: number,
 ) {
-  const canvas = document.createElement("canvas");
+  const canvas = document.createElement('canvas');
   canvas.width = RASTER_SIZE;
   canvas.height = RASTER_SIZE;
-  const context = canvas.getContext("2d");
-  if (!context) throw new Error("Canvas rendering is unavailable.");
+  const context = canvas.getContext('2d');
+  if (!context) throw new Error('Canvas rendering is unavailable.');
 
   const borderPixels = Math.max(
     1,
@@ -210,7 +202,7 @@ function renderStimulusImage(
     RASTER_SIZE - borderPixels,
     radiusPixels,
   );
-  context.fillStyle = "#ffffff";
+  context.fillStyle = '#ffffff';
   context.fill();
 
   context.save();
@@ -223,8 +215,8 @@ function renderStimulusImage(
     radiusPixels,
   );
   context.clip();
-  context.fillStyle = "#000000";
-  if (typeId.startsWith("corner-")) drawCornerMarker(context, typeId);
+  context.fillStyle = '#000000';
+  if (typeId.startsWith('corner-')) drawCornerMarker(context, typeId);
   else drawSideMarker(context, typeId);
   context.restore();
 
@@ -236,11 +228,11 @@ function renderStimulusImage(
     RASTER_SIZE - borderPixels,
     radiusPixels,
   );
-  context.strokeStyle = "#000000";
+  context.strokeStyle = '#000000';
   context.lineWidth = borderPixels;
   context.stroke();
 
-  return canvas.toDataURL("image/png");
+  return canvas.toDataURL('image/png');
 }
 
 function safeFileDate() {
@@ -248,6 +240,8 @@ function safeFileDate() {
 }
 
 export async function downloadMonotonyPdf({
+  translateText = (source, values = {}) =>
+    i18n.getFixedT('en')(source, { ...values, defaultValue: source }),
   sequence,
   goodTypeIds,
   paper,
@@ -258,21 +252,61 @@ export async function downloadMonotonyPdf({
   rows,
   gapMm,
 }: MonotonyPdfOptions) {
-  const { jsPDF } = await import("jspdf");
+  const { jsPDF } = await import('jspdf');
   const itemsPerPage = columns * rows;
   const pageCount = Math.max(1, Math.ceil(sequence.length / itemsPerPage));
   const document = new jsPDF({
-    orientation: "portrait",
-    unit: "mm",
+    orientation: 'portrait',
+    unit: 'mm',
     format: [paper.widthMm, paper.heightMm],
     compress: true,
     putOnlyUsedFonts: true,
   });
   document.setProperties({
-    title: "Monotony paper test",
-    subject: `${sequence.length} randomized perception symbols`,
-    creator: "PSY Practice Lab",
+    title: translateText('monotony.paper.monotonyPaperTest'),
+    subject: translateText('monotony.paper.lengthRandomizedPerceptionSymbols', {
+      length: sequence.length,
+    }),
+    creator: 'PSY Practice Lab',
   });
+
+  // Built-in PDF fonts lack Hungarian ő/ű. Rasterize translated labels with
+  // the browser font so exported sheets retain every accent.
+  const text = (
+    source: string,
+    x: number,
+    y: number,
+    align: 'left' | 'right' = 'left',
+    values: Record<string, unknown> = {},
+  ) => {
+    const value = translateText(source, values);
+    if (value === source) {
+      document.text(value, x, y, { align });
+      return;
+    }
+    const scale = 4;
+    const size = document.getFontSize();
+    const canvas = globalThis.document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    if (!context) throw new Error('Canvas rendering is unavailable.');
+    const font = `${document.getFont().fontStyle === 'bold' ? 'bold ' : ''}${size * scale}px Arial, sans-serif`;
+    context.font = font;
+    canvas.width = Math.ceil(context.measureText(value).width) + 8;
+    canvas.height = Math.ceil(size * scale * 1.5);
+    context.font = font;
+    context.fillStyle = '#000000';
+    context.fillText(value, 0, size * scale);
+    const width = ((canvas.width / scale) * 25.4) / 72;
+    const height = ((canvas.height / scale) * 25.4) / 72;
+    document.addImage(
+      canvas.toDataURL('image/png'),
+      'PNG',
+      align === 'right' ? x - width : x,
+      y - (size * 25.4) / 72,
+      width,
+      height,
+    );
+  };
 
   const imageCache = new Map<string, string>();
   const imageFor = (typeId: string) => {
@@ -296,46 +330,42 @@ export async function downloadMonotonyPdf({
 
   for (let pageIndex = 0; pageIndex < pageCount; pageIndex += 1) {
     if (pageIndex > 0) {
-      document.addPage([paper.widthMm, paper.heightMm], "portrait");
+      document.addPage([paper.widthMm, paper.heightMm], 'portrait');
     }
 
     document.setDrawColor(0);
     document.setTextColor(0);
-    document.setFont("helvetica", "bold");
+    document.setFont('helvetica', 'bold');
     document.setFontSize(16);
-    document.text("Monotony pattern", 10, 15);
-    document.setFont("helvetica", "normal");
+    text('Monotony pattern', 10, 15);
+    document.setFont('helvetica', 'normal');
     document.setFontSize(9);
-    document.text(
-      "Circle every rectangle matching one of the target types.",
-      10,
-      20,
-    );
-    document.text("Name: ____________________", paper.widthMm - 72, 15);
-    document.text("Date: _____________________", paper.widthMm - 72, 20);
+    text('Circle every rectangle matching one of the target types.', 10, 20);
+    text('Name: ____________________', paper.widthMm - 72, 15);
+    text('Date: _____________________', paper.widthMm - 72, 20);
     document.setLineWidth(0.25);
     document.line(10, 24, paper.widthMm - 10, 24);
 
-    document.setFont("helvetica", "bold");
+    document.setFont('helvetica', 'bold');
     document.setFontSize(8);
-    document.text("CIRCLE THESE", 10, 32);
+    text('CIRCLE THESE', 10, 32);
     let legendX = 34;
     for (const typeId of goodTypeIds) {
       document.addImage(
         imageFor(typeId),
-        "PNG",
+        'PNG',
         legendX,
         26,
         legendSize,
         legendSize,
         `monotony-${typeId}`,
-        "FAST",
+        'FAST',
       );
       legendX += legendSize + 2;
     }
     if (goodTypeIds.length === 0) {
-      document.setFont("helvetica", "normal");
-      document.text("No target types selected", 34, 32);
+      document.setFont('helvetica', 'normal');
+      text('No target types selected', 34, 32);
     }
     document.line(10, 40, paper.widthMm - 10, 40);
 
@@ -346,19 +376,19 @@ export async function downloadMonotonyPdf({
       const column = index % columns;
       document.addImage(
         imageFor(typeId),
-        "PNG",
+        'PNG',
         gridStartX + column * (rectangleWidthMm + gapMm),
         gridStartY + row * (rectangleWidthMm + gapMm),
         rectangleWidthMm,
         rectangleWidthMm,
         `monotony-${typeId}`,
-        "FAST",
+        'FAST',
       );
     });
 
     const firstItem = pageStart + 1;
     const lastItem = pageStart + pageItems.length;
-    document.setFont("helvetica", "normal");
+    document.setFont('helvetica', 'normal');
     document.setFontSize(8);
     document.line(
       10,
@@ -366,16 +396,19 @@ export async function downloadMonotonyPdf({
       paper.widthMm - 10,
       paper.heightMm - 13,
     );
-    document.text(
-      `Items ${firstItem}-${lastItem}`,
+    text(
+      'monotony.paper.itemsFirstitemLastitem',
       10,
       paper.heightMm - 7,
+      'left',
+      { firstItem, lastItem },
     );
-    document.text(
-      `Page ${pageIndex + 1} of ${pageCount}`,
+    text(
+      'monotony.paper.pagePageindexOfPagecount',
       paper.widthMm - 10,
       paper.heightMm - 7,
-      { align: "right" },
+      'right',
+      { pageIndex: pageIndex + 1, pageCount },
     );
   }
 

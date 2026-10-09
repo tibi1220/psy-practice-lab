@@ -1,0 +1,54 @@
+{
+  "gridClassification": {
+    "instructions": {
+      "bothExampleGridsFollowTheSameRuleCheckWhere": "Both example grids follow the same rule. Check where shapes repeat, whether certain positions match, and how many times a shape appears.",
+      "discoverTheCommonRuleInTwoExamplesThenSelect": "Discover the common rule in two examples, then select two matching grids. Demo answers are not saved.",
+      "exactlySevenOfTheNineCellsContainTheSame": "Exactly seven of the nine cells contain the same shape. Positions and shape identity can vary.",
+      "findTheRuleSharedByTheTwoExampleGrids": "Find the rule shared by the two example grids. Shape identity may stay fixed or vary, depending on the rule.",
+      "hereTheSameShapeFillsTheSecondAndThird": "Here the same shape fills the second and third columns. Exactly two candidate grids share that pattern.",
+      "inferTheRuleFromTwo33ExampleGridsThen": "Infer the rule from two 3×3 example grids, then select the two matching grids. Practice inspired by scales clx inductive logical reasoning.",
+      "submitYourPairToContinueBothSelectionsMustBe": "Submit your pair to continue. Both selections must be correct. Review the rule after finishing.",
+      "tapAGridToSelectOrDeselectItSubmit": "Tap a grid to select or deselect it. Submit once exactly two are selected. A full answer is correct only if both choices match.",
+      "theFourCellsAtTheTopRightAndBottomRightContain": "The four cells at the top-right and bottom-right contain one repeated shape. Its identity may differ between grids.",
+      "theSameShapeOccupiesEveryCellInTheSecond": "The same shape occupies every cell in the second and third columns, just as in both examples.",
+      "thereAreAlwaysTwoMatchingGridsTapASelected": "There are always two matching grids. Tap a selected grid again to deselect it, or clear the whole selection."
+    },
+    "labels": {
+      "bothExamplesFollowTheSameRule": "Both examples follow the same rule",
+      "candidateGrids": "Candidate grids",
+      "compareTheCandidates": "Compare the candidates",
+      "compareTheExamples": "Compare the examples",
+      "discoverTheSharedRule": "Discover the shared rule.",
+      "easyRowsAndColumns": "Easy · rows and columns",
+      "example": "Example",
+      "lookAtTheSecondAndThirdColumns": "Look at the second and third columns.",
+      "oneRepeatedShapeFillsTheTopTwoRowsThe": "One repeated shape fills the top two rows. The repeated shape may differ between grids.",
+      "selectExactlyTwo": "Select exactly two",
+      "selectExactlyTwoGrids": "Select exactly two grids.",
+      "selectTwoGrids": "Select two grids",
+      "studyBothExamples": "Study both examples",
+      "theSameShapeAppearsInAllFourCornersMatching": "The same shape appears in all four corners, matching both examples.",
+      "tryAgainTheSameShapeMustFillAllSix": "Try again: the same shape must fill all six cells in columns 2 and 3.",
+      "twoGridsAreSelectedDeselectOneBeforeChoosingAnother": "Two grids are selected. Deselect one before choosing another.",
+      "whichTwoGridsFollowThatRule": "Which two grids follow that rule?",
+      "and": "and",
+      "corners": "corners",
+      "selected": "selected)"
+    },
+    "settings": {
+      "checkPositionsRepeatedShapesAndCountsAgainstTheExamples": "Check positions, repeated shapes, and counts against the examples.",
+      "hardCornersPositionsAndCounts": "Hard · corners, positions, and counts"
+    },
+    "results": {
+      "correctBothGridsMatchTheExamplesColumnPattern": "Correct! Both grids match the examples' column pattern."
+    },
+    "messages": {
+      "exampleIndex": "Example {{index}}",
+      "gridLetters": "Grid {{letters}}",
+      "rowIndexColumnIndex2Shape": "Row {{index}}, column {{index2}}: {{shape}}"
+    },
+    "tutorial": {
+      "gridClassificationWalkthrough": "Grid classification walkthrough"
+    }
+  }
+}

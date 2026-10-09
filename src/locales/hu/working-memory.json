@@ -1,0 +1,61 @@
+{
+  "workingMemory": {
+    "instructions": {
+      "aDotBrieflyLightsUpRememberItsLocationAnd": "Egy pont röviden felvillan. Jegyezd meg a helyét és a sorrendjét. A pontok helye a feladat során nem változik.",
+      "adaptivePracticeIncreasesDifficultyEveryTwoTasksFasterAfter": "Két feladatonként nő a nehézség, sikeres felidézésnél gyorsabban. Később nyolc pont, sűrűbb rácsok, azonos számú kitöltött cellával rendelkező minták és rövidebb idők következnek. A nehéz mód a 3. szinten indul.",
+      "afterEachDotAnswerAYesNoSpatialQuestionCheck": "Minden pont után válaszolj egy igen/nem térbeli kérdésre. Ellenőrizd a tükrözést, forgatást vagy az ábrák összeadását és kivonását. Közben tartsd észben a pontokat.",
+      "afterTheFinalSpatialQuestionSelectAllRememberedDots": "Az utolsó térbeli kérdés után az eredeti sorrendben válaszd ki a pontokat. A számok a kiválasztási sorrendet mutatják. Beküldés előtt visszavonhatsz vagy törölhetsz.",
+      "afterTheLastSpatialQuestionSelectAllRememberedDots": "Az utolsó térbeli kérdés után megjelenési sorrendben jelöld ki a pontokat. Beküldés előtt visszavonhatsz vagy törölhetsz.",
+      "answerYesOrNoToSymmetryRotationAndFigure": "Válaszolj igennel vagy nemmel a tükrözési, forgatási és ábraműveleti kérdésekre, miközben megjegyzi a pontsorozatot. Az időtúllépés megválaszolatlan kérdésnek számít, és a feladat folytatódik.",
+      "keepDotLocationsInMindWhileAnsweringSpatialQuestions": "Tartsd észben a pontok helyét a térbeli kérdések megválaszolása közben. A gyakorló válaszok nem kerülnek mentésre.",
+      "memoryAndSpatialAnswersAreScoredSeparatelyTheSession": "A memória- és térbeli válaszok külön értékelést kapnak. A munkamenet a feladat- vagy időkorlátnál véget ér; csak a beküldött sorozatok kerülnek az eredményekbe.",
+      "noNoQuarterTurnRotationMakesThePatternsIdenticalA": "Nem. Semelyik negyedfordulat nem teszi azonossá a mintákat. A tükrözés önmagában nem számít.",
+      "oneDotLightsUpBrieflyRememberItsPositionAnd": "Egy pont röviden felvillan. Jegyezd meg a helyét és a sorrendjét. Ugyanaz a pontmező jelenik meg a következő felvillanásnál és a felidézésnél.",
+      "rememberASequenceOfHighlightedDotsWhileAnsweringInterleaved": "Jegyezz meg kiemelt pontokból álló sorozatot a közbeiktatott térbeli kérdések megválaszolása közben, majd idézze fel a pontokat sorrendben.",
+      "startThePracticeTaskToTryAllPhasesEach": "Indítsa a gyakorló feladatot az összes fázis kipróbálásához. Ebben a bemutatóban minden térbeli kérdésre 15 másodperc jut. Az időtúllépés megválaszolatlan kérdésnek számít, és a következő fázisra lép."
+    },
+    "labels": {
+      "adaptive3To8Dots": "Adaptív · 3–8 pont",
+      "additionCombinesTheLinesFromBothFiguresAnOverlapping": "Az összeadás egyesíti a két ábra vonalait; az átfedő vonalak egyszer szerepelnek.",
+      "answerBetweenDots": "Válaszolj a pontok között",
+      "easy3Dots": "Könnyű · 3 pont",
+      "hard5To8Dots": "Nehéz · 5–8 pont",
+      "initialDotExposureSeconds": "Kezdeti pontmegjelenítés (másodperc)",
+      "initialTimePerSpatialQuestionSeconds": "Kezdeti idő térbeli kérdésenként (másodperc)",
+      "medium4Dots": "Közepes · 4 pont",
+      "noAtLeastOneSquareDiffersFromTheReflection": "Nem. Legalább egy négyzet eltér a függőleges választóvonalra vett tükörképétől.",
+      "numberOfTasks": "Feladatok száma",
+      "orderedDotRecall": "Pontok sorrendi felidézése:",
+      "processAnotherTask": "Újabb feladat feldolgozása",
+      "recallInOrder": "Idézze fel sorrendben",
+      "recallTheOrder": "Idézze fel a sorrendet",
+      "rememberAHighlightedDot": "Jegyezz meg egy kiemelt pontot",
+      "rememberWhileYouReason": "Emlékezz következtetés közben.",
+      "reviewBothSkills": "Mindkét készség áttekintése",
+      "sessionTimeRemaining": "Munkamenet hátralévő ideje",
+      "subtractionRemovesTheSecondFigureSLinesFromTheFirst": "A kivonás eltávolítja a második ábra vonalait az elsőből.",
+      "timedSession": "Időzített munkamenet",
+      "tryACompleteTask": "Teljes feladat kipróbálása",
+      "untimedSession": "Időkorlát nélküli munkamenet",
+      "watchEachDot": "Figyeld az egyes pontokat",
+      "workingMemoryGridchallenge": "Munkamemória · gridChallenge",
+      "yesAQuarterTurnRotation090180Or270": "Igen. Egy negyedfordulatos elforgatás (0°, 90°, 180° vagy 270°) azonossá teszi a mintákat.",
+      "yesTheRightPatternIsTheLeftPatternReflected": "Igen. A jobb minta a bal minta függőleges választóvonalra vett tükörképe.",
+      "sequencesRecalledPerfectly": "tökéletesen felidézett sorozat"
+    },
+    "tutorial": {
+      "beginPracticeTask": "Gyakorlófeladat indítása",
+      "tryDemoAgain": "Bemutató újrapróbálása",
+      "workingMemoryWalkthrough": "Munkamemória bemutatója"
+    },
+    "results": {
+      "theResultMatches": "Az eredmény egyezik.",
+      "theShownResultHasAMissingOrExtraLine": "A megjelenített eredményből hiányzik egy vonal, vagy van benne egy felesleges.",
+      "workingMemoryHistory": "Munkamemória előzményei",
+      "workingMemoryResults": "Munkamemória eredményei"
+    },
+    "messages": {
+      "answerOperationResult": "{{answer}}. {{operation}} {{result}}"
+    }
+  }
+}

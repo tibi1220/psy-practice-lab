@@ -1,0 +1,47 @@
+{
+  "reactionTime": {
+    "results": {
+      "averageReaction": "Average reaction",
+      "ignoreOneFastestAndOneSlowestResultInStatistics": "Ignore one fastest and one slowest result in statistics.",
+      "resultsAreSavedOnlyInThisBrowser": "Results are saved only in this browser.",
+      "sessionHistory": "Session history",
+      "yourResults": "Your results",
+      "resultsFastestAndSlowestExcluded": "results; fastest and slowest excluded."
+    },
+    "labels": {
+      "basedOn": "Based on",
+      "configureThisSessionBeforeStarting": "Configure this session before starting.",
+      "donTPressYet": "Don't press yet.",
+      "excludeExtremes": "Exclude extremes",
+      "excluded": "Excluded",
+      "greenAppearsAfterARandomDelay": "Green appears after a random delay.",
+      "howFastCanYouRespond": "How fast can you respond?",
+      "pressReady": "Press ready",
+      "react": "React",
+      "recorded": "Recorded",
+      "review": "Review",
+      "standardDeviation": "Standard deviation",
+      "tapOrPressAnyKeyboardKey": "Tap or press any keyboard key.",
+      "tapTheScreenOrPressAnyKey": "Tap the screen or press any key",
+      "theScreenTurnsRed": "The screen turns red.",
+      "tooSoon": "Too soon",
+      "trial": "Trial",
+      "wait": "Wait",
+      "yourCompletedSessionsWillAppearHere": "Your completed sessions will appear here.",
+      "rounds": "rounds",
+      "trials": "trials · σ",
+      "waiting": "waiting",
+      "extremesExcluded": "· extremes excluded"
+    },
+    "instructions": {
+      "chooseHowManyReactionTimeTrialsToCompleteWaitThrough": "Choose how many reaction-time trials to complete. Wait through the red screen, then tap or press any key the moment it turns green.",
+      "thisIsAPracticeToolNotAClinicalAssessment": "This is a practice tool, not a clinical assessment. Results can vary with your device, browser, attention, and input method."
+    },
+    "messages": {
+      "exploreAllTrialcountResultsAndYourHistory": "Explore all {{trialCount}} results and your history."
+    },
+    "settings": {
+      "thisAttemptWonTCount": "This attempt won't count."
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "common": {
+    "accessibility": {
+      "keyLabel": ", key {{label}}",
+      "widthByHeightCells": ", {{width}} by {{height}} cells",
+      "selectionPosition": ": selection {{position}}",
+      "cellIndex": "Cell {{index}}",
+      "circleActivecellIlluminatedLabel": "Circle {{activeCell}} illuminated {{label}}",
+      "closeTolowercase": "Close {{toLowerCase}}",
+      "codeFormatcode": "Code {{formatCode}}",
+      "diskDiskIstop": "Disk {{disk}}{{isTop}}",
+      "dotIndexActive": "Dot {{index}}{{active}}",
+      "fixedObstacleAtRowWallColumnWall2WidthBy": "Fixed obstacle at row {{wall}}, column {{wall2}}, {{width}} by {{height}} cells",
+      "generatedGeneratedat": "Generated {{generatedAt}}",
+      "gridRowRowColumnColumnLit": "Grid row {{row}}, column {{column}}{{lit}}",
+      "incorrectTheCorrectShapeIsTolowercase": "Incorrect. The correct shape is {{toLowerCase}}.",
+      "moveNameToRowToColumnTo2": "Move {{name}} to row {{to}}, column {{to2}}",
+      "placeANoteAtRowSelectedcellColumnSelectedcell2": "Place a note at row {{selectedCell}}, column {{selectedCell2}}.",
+      "positionIndexShape": "Position {{index}}: {{shape}}",
+      "pullSideLever": "Pull {{side}} lever",
+      "pushSidePedal": "Push {{side}} pedal",
+      "rememberDotStateOfLength": "Remember dot {{state}} of {{length}}",
+      "respondLabelKeyboardTouppercase": "Respond {{label}}, keyboard {{toUpperCase}}",
+      "rowIndexColumnIndex2TargetFilled": "Row {{index}}, column {{index2}}: {{target}}{{filled}}",
+      "towerOfHanoiBoardWithDiskcountDisks": "Tower of Hanoi board with {{diskCount}} disks",
+      "lineSegmentToSegment2": "line {{segment}} to {{segment2}}",
+      "ofRoundcount": "of {{roundCount}}",
+      "activesideDistractionLightIlluminated": "{{activeSide}} distraction light illuminated",
+      "activesidePedalWarning": "{{activeSide}} pedal warning",
+      "averagereactiontimeMs": "{{averageReactionTime}} ms",
+      "intermediateMovesFromPositionPositionToPositionIndex": "{{intermediate}} moves from position {{position}} to position {{index}}",
+      "labelHighlighted": "{{label}} highlighted",
+      "levelRandomizedPractice": "{{level}} randomized practice",
+      "modeDistributiveAttentionBoard": "{{mode}} distributive-attention board",
+      "nameSelectedHighlightedCellsMarkReachableTopLeftPositions": "{{name}} selected. Highlighted cells mark reachable top-left positions. Escape cancels selection.",
+      "nameRowPColumnP2Index": "{{name}}, row {{p}}, column {{p2}}{{index}}",
+      "peglabelsPegLengthDisksSelected": "{{pegLabels}} peg, {{length}} disks{{selected}}",
+      "sideSignalDisplay": "{{side}} signal display",
+      "sideMethodInputGrid": "{{side}} {{method}} input grid",
+      "sizeBySize2ShapeGrid": "{{size}} by {{size2}} shape grid"
+    }
+  }
+}

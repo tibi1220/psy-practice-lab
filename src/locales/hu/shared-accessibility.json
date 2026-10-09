@@ -1,0 +1,43 @@
+{
+  "common": {
+    "accessibility": {
+      "keyLabel": ", billentyű: {{label}}",
+      "widthByHeightCells": ", {{width}} × {{height}} cella",
+      "selectionPosition": ": kijelölés {{position}}",
+      "cellIndex": "{{index}}. cella",
+      "circleActivecellIlluminatedLabel": "{{activeCell}}. kör világít: {{label}}",
+      "closeTolowercase": "{{toLowerCase}} bezárása",
+      "codeFormatcode": "Kód: {{formatCode}}",
+      "diskDiskIstop": "Korong {{disk}}{{isTop}}",
+      "dotIndexActive": "Pont {{index}}{{active}}",
+      "fixedObstacleAtRowWallColumnWall2WidthBy": "Rögzített akadály a(z) {{wall}}. sor {{wall2}}. oszlopában, {{width}} × {{height}} cella",
+      "generatedGeneratedat": "Elkészítve: {{generatedAt}}",
+      "gridRowRowColumnColumnLit": "Rács: {{row}}. sor, {{column}}. oszlop{{lit}}",
+      "incorrectTheCorrectShapeIsTolowercase": "Hibás. A helyes alakzat: {{toLowerCase}}.",
+      "moveNameToRowToColumnTo2": "Mozgasd ezt: {{name}}, a(z) {{to}}. sor {{to2}}. oszlopába",
+      "placeANoteAtRowSelectedcellColumnSelectedcell2": "Jegyzet elhelyezése a(z) {{selectedCell}}. sor {{selectedCell2}}. oszlopában.",
+      "positionIndexShape": "{{index}}. hely: {{shape}}",
+      "pullSideLever": "{{side}} kar húzása",
+      "pushSidePedal": "{{side}} pedál nyomása",
+      "rememberDotStateOfLength": "Jegyezd meg a(z) {{state}}. pontot / {{length}}",
+      "respondLabelKeyboardTouppercase": "Válasz: {{label}}, billentyű: {{toUpperCase}}",
+      "rowIndexColumnIndex2TargetFilled": "{{index}}. sor, {{index2}}. oszlop: {{target}}{{filled}}",
+      "towerOfHanoiBoardWithDiskcountDisks": "Hanoi tornyai tábla {{diskCount}} koronggal",
+      "lineSegmentToSegment2": "{{segment}}–{{segment2}} vonal",
+      "ofRoundcount": "/ {{roundCount}}",
+      "activesideDistractionLightIlluminated": "{{activeSide}} zavaró fény világít",
+      "activesidePedalWarning": "{{activeSide}} pedálfigyelmeztetés",
+      "averagereactiontimeMs": "{{averageReactionTime}} ms",
+      "intermediateMovesFromPositionPositionToPositionIndex": "{{intermediate}} a(z) {{position}}. helyről a(z) {{index}}. helyre kerül",
+      "labelHighlighted": "{{label}} kiemelve",
+      "levelRandomizedPractice": "{{level}} véletlen gyakorlás",
+      "modeDistributiveAttentionBoard": "{{mode}} elosztottfigyelem-tábla",
+      "nameSelectedHighlightedCellsMarkReachableTopLeftPositions": "{{name}} kiválasztva. A kiemelt cellák az elérhető bal felső helyeket jelölik. Az Escape megszünteti a kijelölést.",
+      "nameRowPColumnP2Index": "{{name}}, {{p}}. sor, {{p2}}. oszlop{{index}}",
+      "peglabelsPegLengthDisksSelected": "{{pegLabels}} rúd, {{length}} korong{{selected}}",
+      "sideSignalDisplay": "{{side}} jelzéskijelző",
+      "sideMethodInputGrid": "{{side}} {{method}} bemeneti rács",
+      "sizeBySize2ShapeGrid": "{{size}} × {{size2}} alakzatrács"
+    }
+  }
+}

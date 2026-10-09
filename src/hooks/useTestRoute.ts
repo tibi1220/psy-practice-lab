@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useCallback, useEffect, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-export type TestRouteView = "setup" | "test" | "result";
+export type TestRouteView = 'setup' | 'test' | 'result';
 
 function normalizePath(pathname: string) {
-  return pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+  return pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
 }
 
 export function useTestRoute({
@@ -32,11 +32,11 @@ export function useTestRoute({
     const resultPath = `${basePath}/result`;
     const routeView: TestRouteView | null =
       pathname === setupPath
-        ? "setup"
+        ? 'setup'
         : pathname === testPath
-          ? "test"
+          ? 'test'
           : pathname === resultPath
-            ? "result"
+            ? 'result'
             : null;
 
     if (pendingViewRef.current !== null) {
@@ -46,19 +46,19 @@ export function useTestRoute({
       return;
     }
 
-    if (routeView === "setup") {
-      if (view !== "setup") returnCallbackRef.current();
+    if (routeView === 'setup') {
+      if (view !== 'setup') returnCallbackRef.current();
       return;
     }
 
-    if (routeView === "test") {
-      if (view === "setup") navigate(setupPath, { replace: true });
-      if (view === "result") navigate(resultPath, { replace: true });
+    if (routeView === 'test') {
+      if (view === 'setup') navigate(setupPath, { replace: true });
+      if (view === 'result') navigate(resultPath, { replace: true });
       return;
     }
 
-    if (routeView === "result") {
-      if (view !== "result") navigate(setupPath, { replace: true });
+    if (routeView === 'result') {
+      if (view !== 'result') navigate(setupPath, { replace: true });
       return;
     }
 
@@ -67,22 +67,19 @@ export function useTestRoute({
 
   const beginTestRoute = useCallback(
     (replace = false) => {
-      pendingViewRef.current = "test";
+      pendingViewRef.current = 'test';
       navigate(`${basePath}/test`, { replace });
     },
     [basePath, navigate],
   );
 
-  const completeTestRoute = useCallback(
-    () => {
-      pendingViewRef.current = "result";
-      navigate(`${basePath}/result`, { replace: true });
-    },
-    [basePath, navigate],
-  );
+  const completeTestRoute = useCallback(() => {
+    pendingViewRef.current = 'result';
+    navigate(`${basePath}/result`, { replace: true });
+  }, [basePath, navigate]);
 
   const returnToSetupRoute = useCallback(() => {
-    pendingViewRef.current = "setup";
+    pendingViewRef.current = 'setup';
     returnCallbackRef.current();
     navigate(basePath, { replace: true });
   }, [basePath, navigate]);

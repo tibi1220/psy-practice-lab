@@ -1,0 +1,14 @@
+{
+  "common": {
+    "instructions": {
+      "coordination": {
+        "continueUntilTimeExpiresTheResultCombinesCollisionsAvoided": "Continue until time expires. The result combines collisions, avoided cars, missed signals, wrong keys, and signal reaction time.",
+        "generatePaperPdfOpensAConfigurablePaperVersionChoose": "Generate paper PDF opens a configurable paper version. Choose the targets, an exact rectangle count or a number of full pages, then download and print the PDF to circle the good symbols by hand.",
+        "inOneHandedModeOneCircleAboveTheBoardAnd": "In one-handed mode, one circle above the board and one beside it illuminate. Together they identify a single intersection.",
+        "rowsUseQWERAS": "Rows use Q W E R / A S D F with the left hand. Columns use U I O P / J K L ; with the right. Hold the matching pair together.",
+        "tapTheMatchingColorOnTouchScreensOnA": "Tap the matching color on touch screens. On a keyboard, use E, F, Z, J, and O in color order. Pedals and levers are click-only.",
+        "theTwoRoundedLightsRunOnASeparateRandom": "The two rounded lights run on a separate random cycle and can overlap another signal. When either illuminates, do nothing."
+      }
+    }
+  }
+}

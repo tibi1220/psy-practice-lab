@@ -1,0 +1,76 @@
+{
+  "greenGreyClassification": {
+    "instructions": {
+      "allFourClassificationsMustBeCorrectToScoreThe": "All four classifications must be correct to score the question. After the test, review each grid and the rule explanation.",
+      "checkNumberRangesEvenAndOddCountsTopAnd": "Check number ranges, even and odd counts, top and bottom comparisons, matching corners, repeated letters or digits, sums, and letter positions. Unrelated cells may be distractors.",
+      "chooseGreenOrGreyForEachUnlabeledGridYou": "Choose Green or Gray for each unlabeled grid. You may change choices or clear all classifications before submitting.",
+      "chooseGreenOrGreyForEveryGridChangeYour": "Choose Green or Gray for every grid. Change your selections or clear them before submitting. A question is correct when all four classifications are correct.",
+      "compareSixDiamondGridsFromTheGreenAndGrey": "Compare six diamond grids from the green and gray groups, then classify four new grids using the hidden rule.",
+      "everyNumberInAGreenGridIsInThe": "Every number in a green grid is in the range 1–4. Every number in a gray grid is in the range 5–9.",
+      "greenGridsContainAnOddNumberOfLettersGrey": "Green grids contain an odd number of letters. Gray grids contain an even number of letters. Count letters, ignoring their identities and positions.",
+      "greenGridsContainAtLeastFiveCopiesOfOne": "Green grids contain at least five copies of one letter. Gray grids have no letter repeated five or more times. Ignore numbers and positions.",
+      "greenGridsContainAtLeastFourZsGreyGrids": "Green grids contain at least four Zs. Gray grids contain fewer than four Zs. Their positions do not matter.",
+      "greenGridsContainAtLeastThree7sGreyGrids": "Green grids contain at least three 7s. Gray grids contain fewer than three 7s. Their positions do not matter.",
+      "greenGridsContainOnlyNumbersLessThan514": "Green grids contain only numbers less than 5 (1–4). Gray grids contain only numbers greater than 5 (6–9). Neither group contains 5.",
+      "hereCompareTheSumsOfTheTopThreeAnd": "Here, compare the sums of the top three and bottom three cells. Ignore the three cells across the middle. Other rules use total sums, number ranges, matching corners, letter counts, or repeated characters such as 7 and Z.",
+      "inGreenGridsTheBottomThreeCellsHaveA": "In green grids, the bottom three cells have a larger sum than the top three cells. In gray grids, the top three have a larger sum. The three cells across the middle are distractors.",
+      "inGreenGridsTheRightmostThreeCellsHaveA": "In green grids, the rightmost three cells have a larger sum than the leftmost three cells. In gray grids, the leftmost three have a larger sum. The three cells down the middle are distractors.",
+      "inGreenGridsTheSumOfAllNumbersIs": "In green grids, the sum of all numbers is below 10. In gray grids, it is greater than 10. Ignore letters; no grid totals exactly 10.",
+      "inGreenGridsTheTopThreeNumbersAreIn": "In green grids, the top three numbers are in the range 1–5 and the bottom three are in the range 6–9. Gray grids reverse these ranges. The middle three cells are distractors.",
+      "inGreenGridsTheTopmostNumberIsSmallerThan": "In green grids, the topmost number is smaller than the bottommost number. In gray grids, the topmost number is larger. Other cells are distractors.",
+      "inGreyGridsAllFourCornerValuesTopRight": "In gray grids, all four corner values (top, right, bottom, and left) are equal. In green grids, the four corners are not all equal. Other cells are distractors.",
+      "inferARuleFromSixLabeledExamplesThenClassify": "Infer a rule from six labeled examples, then classify four new grids. Demo answers are not saved.",
+      "threeExamplesAreGreenAndThreeAreGreyIn": "Three examples are green and three are gray, in mixed order. The same hidden rule separates both groups. Characters remain upright inside the diamond grids.",
+      "threeGreenAndThreeGreyExamplesAppearInMixed": "Three green and three gray examples appear in mixed order. Find the rule that separates the groups."
+    },
+    "labels": {
+      "classifyAllFour": "Classify all four",
+      "classifyAllFourGrids": "Classify all four grids",
+      "classifyFourGrids": "Classify four grids",
+      "compareBothGroups": "Compare both groups",
+      "compareTheTopAndBottomThreeCells": "Compare the top and bottom three cells.",
+      "discoverTheRule": "Discover the rule",
+      "discoverTheRuleClassifyTheGrids": "Discover the rule. Classify the grids.",
+      "discoverWhatSeparatesTheGreenAndGreyGroups": "Discover what separates the green and gray groups",
+      "easyRangesComparisonsAndRepetitions": "Easy · ranges, comparisons, and repetitions",
+      "fourGridsToClassify": "Four grids to classify",
+      "greenGridsContainOnlyEvenNumbersGreyGridsContain": "Green grids contain only even numbers. Gray grids contain only odd numbers.",
+      "grey": "Gray",
+      "hardSumsCornersAndLetterPatterns": "Hard · sums, corners, and letter patterns",
+      "lookForRelationships": "Look for relationships",
+      "sixLabeledExamples": "Six labeled examples",
+      "studySixExamples": "Study six examples",
+      "tryAgainGreenHasTheLargerSumAtThe": "Try again: green has the larger sum at the bottom; gray has the larger sum at the top.",
+      "youChose": "You chose",
+      "bottom": "bottom",
+      "center": "center",
+      "lowerLeft": "lower-left",
+      "lowerRight": "lower-right",
+      "occurrences": "occurrences",
+      "of4ClassifiedYouCanChangeAnyChoiceBefore": "of 4 classified. You can change any choice before submitting.",
+      "rule": "rule",
+      "upperLeft": "upper-left",
+      "upperRight": "upper-right"
+    },
+    "messages": {
+      "classifyGridNames": "Classify grid {{names}}",
+      "diamondGridRowsBeforeRotationItemsItems2Items3": "Diamond grid, rows before rotation: {{items}}; {{items2}}; {{items3}}",
+      "exampleIndexGroup": "Example {{index}}: {{group}}",
+      "greenGridsContainExactlyThreeTargetSGreyGrids": "Green grids contain exactly three {{target}}s. Gray grids contain exactly one. Their positions do not matter.",
+      "greenGridsHaveLettersInTheItemsCellsAnd": "Green grids have letters in the {{items}} cells and numbers elsewhere. Gray grids have numbers in those cells and three letters elsewhere.",
+      "gridNames": "Grid {{names}}",
+      "gridNamesGroup": "Grid {{names}}: {{group}}",
+      "inGreenGridsThePositionnamesAndPositionnames2CellsMatch": "In green grids, the {{positionNames}} and {{positionNames2}} cells match. In gray grids they differ. Other cells are distractors."
+    },
+    "actions": {
+      "clearClassifications": "Clear classifications"
+    },
+    "results": {
+      "correctAllFourClassificationsMatchTheRule": "Correct! All four classifications match the rule.",
+      "correct": "Correct:"
+    },
+    "tutorial": {
+      "greenGreyClassificationWalkthrough": "Green/gray classification walkthrough"
+    }
+  }
+}

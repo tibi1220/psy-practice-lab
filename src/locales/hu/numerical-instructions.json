@@ -1,0 +1,22 @@
+{
+  "numericalReasoning": {
+    "instructions": {
+      "adaptiveStartsWithDirectComparisonsAddsPercentagesAndAverages": "Kezdetben közvetlen összehasonlítások, a 12. kérdés után százalékok és átlagok, a 24. után összesített arányok és növekedési összehasonlítások következnek. Hiányos adatokkal kapcsolatos állítások minden szinten előfordulnak. A nehéz mód százalékokkal indul.",
+      "annualReturnOnEquityForTheSampleCompanyAnd": "A mintavállalat és öt versenytárs éves saját-tőke-arányos hozama. A saját tőke összege és a versenytársak nyeresége nem ismert.",
+      "chooseAnAnswerToSeeTheCalculationInThe": "Válassz egy választ a számítás megtekintéséhez. Az éles tesztben csak az eredményeknél látod a helyességet. A válaszokat az Előző, Következő és kérdésáttekintő gombokkal újra megnyithatod.",
+      "chooseAnAnswerThenUsePreviousNextOrThe": "Válaszolj, majd az Előző, Következő vagy a számozott áttekintő segítségével navigálj. A válaszokat befejezésig vagy az idő lejártáig módosíthatod. A Válasz törlése eltávolítja a jelölést.",
+      "domesticMarketSharePercentagesCannotEstablishMarketSizesWithoutDomestic": "A belföldi piaci részesedés százalékaiból nem állapítható meg a piac mérete a belföldi termékbevétel nélkül. A globális termékbevétel nem add meg ezt a hiányzó bontást.",
+      "eachBusinessHasItsOwnProductLinesDepartmentsCosts": "Minden vállalat saját termékvonalakkal, részlegekkel, költségekkel, beruházási tervekkel és ágazati versenytársakkal rendelkezik. Minden indítás új, ötéves adatokat generál.",
+      "exploreAManufacturingSoftwareRetailOrEnergyBusinessThrough": "Fedezz fel egy gyártó-, szoftver-, kiskereskedelmi vagy energetikai vállalatot részletes táblázatokkal és interaktív grafikonokkal. Minden alkalommal új adatok és állítások, 47 újra megtekinthető kérdés és alapértelmezett 12 perc.",
+      "globalProductLineRevenueTotalsReconcileToRevenueOperatingProfit": "A globális termékvonalak bevételeinek összege megegyezik az árbevétellel. Üzemi eredmény = Árbevétel − Összes költség. Nettó eredmény = Üzemi eredmény − Kamat − Adó.",
+      "inspectSixDetailedDataCategoriesSearchByRowName": "Vizsgálj meg hat részletes adatkategóriát. Keressen sornév alapján, válts táblázat és grafikon között, és kapcsold az adatsorokat. A pénzösszegek ezer euróban értendők; a kilátások adatai jóváhagyott korábbi beruházási keretek. Számológép és jegyzetpapír használható.",
+      "peerProfitsAndEquityAmountsAreNotSuppliedReturn": "A versenytársak nyeresége és saját tőkéje nincs megadva. A sajáttőke-arányos megtérülés önmagában nem mutatja meg, melyik vállalat ért el nagyobb nyereséget.",
+      "resultsIncludeEveryStatementYourFinalAnswerTheExpected": "Az eredmények tartalmaznak minden állítást, az utolsó választ, a várt választ, a releváns adathivatkozásokat és a számítást. A megválaszolatlan kérdések külön jelennek meg.",
+      "shareOfEachDomesticProductMarketHeldByThis": "A vállalat részesedése az egyes belföldi termékpiacokon. A jövedelmi adatok globális bevételt mutatnak; belföldi termékbevételek és teljes piaci méretek nincsenek megadva. Ezek a különálló részesedések nem adhatók össze az összrészesedés kiszámításához.",
+      "switchBetweenIncomeCostsEmployeesMarketShareReturnOn": "Válts a Jövedelem, Költségek, Alkalmazottak, Piaci részesedés, Sajáttőke-arányos megtérülés és Kilátások között. Ellenőrizd a vállalatot, évet és mértékegységet. Keressen sorokat, válts grafikonra, és kapcsold az adatsorokat a trendek összehasonlításához.",
+      "trueIsSupportedByTheSuppliedDataFalseIs": "Az igaz állítást az adatok alátámasztják, a hamisat cáfolják. Ha hiányzik információ, válaszd a Nem állapítható meg választ. Ne feltételezz okokat, jövőbeli éveket vagy piacméreteket.",
+      "trueMeansTheDataEstablishTheStatementFalseMeans": "Az Igaz azt jelenti, hogy az adatok igazolják az állítást. A Hamis azt, hogy ellentmondanak neki. A Nem állapítható meg azt, hogy szükséges információ hiányzik; ne feltételezze a trend folytatódását, és ne tekintsen szándékot előrejelzésnek.",
+      "useOnlyTheInformationSuppliedYouCanMoveBetween": "Csak a megadott információt használd. A befejezés előtt mozoghatsz a kérdések között és módosíthatsz minden választ."
+    }
+  }
+}

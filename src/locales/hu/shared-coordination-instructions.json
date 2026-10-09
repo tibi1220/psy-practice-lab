@@ -1,0 +1,14 @@
+{
+  "common": {
+    "instructions": {
+      "coordination": {
+        "continueUntilTimeExpiresTheResultCombinesCollisionsAvoided": "Folytasd az idő lejártáig. Az eredményben az ütközések, elkerült autók, kihagyott jelzések, hibás billentyűk és reakcióidők szerepelnek.",
+        "generatePaperPdfOpensAConfigurablePaperVersionChoose": "A Papíralapú PDF készítése gomb egy testreszabható papíros változatot nyit meg. Válaszd ki a célokat, a téglalapok pontos számát vagy a teljes oldalak számát, majd töltsd le és nyomtasd ki a PDF-et, hogy kézzel bekarikázd a jó szimbólumokat.",
+        "inOneHandedModeOneCircleAboveTheBoardAnd": "Egykezes módban egy kör a tábla felett és egy mellette világít. Együtt egyetlen metszéspontot jelölnek.",
+        "rowsUseQWERAS": "A sorokhoz bal kézzel Q W E R / A S D F, az oszlopokhoz jobb kézzel U I O P / J K L ; tartozik. Tartsd együtt lenyomva a megfelelő párt.",
+        "tapTheMatchingColorOnTouchScreensOnA": "Érintőképernyőn érintsd meg a megfelelő színt. Billentyűzeten használd az E, F, Z, J és O gombokat a színek sorrendjében. A pedálok és karok csak kattinthatók.",
+        "theTwoRoundedLightsRunOnASeparateRandom": "A két lekerekített fény külön véletlen ciklusban működik, és más jelzéssel is átfedhet. Ha valamelyik világít, ne tegyél semmit."
+      }
+    }
+  }
+}

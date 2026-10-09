@@ -1,0 +1,42 @@
+{
+  "numericalReasoning": {
+    "statements": {
+      "actualSpendingOnLabelWasWithinItsApprovedBudget": "A(z) {{label}} tényleges kiadása a jóváhagyott kereten belül volt {{data}}-ben.",
+      "averageMetriclabelAcrossDataAndData2Was": "A(z) {{metricLabel}} átlaga {{data}} és {{data2}} évben",
+      "combinedApprovedInvestmentBudgetsForMetriclabelAndMetriclabel2In": "A(z) {{metricLabel}} és {{metricLabel2}} összesített jóváhagyott beruházási kerete {{data}}-ben",
+      "combinedMetriclabelAndMetriclabel2AsAShareOfTotal": "A(z) {{metricLabel}} és {{metricLabel2}} együttes aránya a teljes árbevételben {{data}}-ben",
+      "combinedMetriclabelAndMetriclabel2HeadcountInDataWas": "A(z) {{metricLabel}} és {{metricLabel2}} együttes létszáma {{data}}-ben",
+      "moreThanHalfOfDataRevenueWasEarnedIn": "A(z) {{data}} árbevételének több mint fele az első hat hónapban keletkezett.",
+      "operatingProfitInDataMinusOperatingProfitInData2": "A(z) {{data}}. év üzemi eredménye mínusz a(z) {{data2}}. év üzemi eredménye",
+      "questionIAnswers": "{{i}}. kérdés, {{answers}}",
+      "revenueInDataExceeded25MillionUsDollars": "A(z) {{data}}. év árbevétele meghaladta a 25 millió amerikai dollárt.",
+      "revenuePercentageGrowthMinusTotalHeadcountPercentageGrowthFrom": "Az árbevétel százalékos növekedése mínusz a teljes létszám százalékos növekedése {{data}} és {{data2}} között",
+      "revenueWillBeHigherInNextyearThanInData": "Az árbevétel {{nextYear}}-ben nagyobb lesz, mint {{data}}-ben.",
+      "savedLabelYouCanReviseThisAnswer": "Mentve: {{label}}. A választ módosíthatod.",
+      "theApprovedMetriclabelInvestmentBudgetInDataWas": "A jóváhagyott {{metricLabel}} beruházási keret {{data}}-ben",
+      "theChangeInPersonnelCostsBetweenDataAndData2": "A személyi költségek {{data}} és {{data2}} közötti változását béremelések okozták.",
+      "theChangeInMetriclabelMarketShareFromDataTo": "A(z) {{metricLabel}} piaci részesedésének változása {{data}} és {{data2}} között",
+      "thePercentageChangeInMetriclabelTabFromDataTo": "A(z) {{metricLabel}}{{tab}} százalékos változása {{data}} és {{data2}} között",
+      "theTotalDomesticMarketForLabelWasLargerThan": "A(z) {{label}} teljes belföldi piaca nagyobb volt a(z) {{label2}} belföldi piacánál {{data}}-ben.",
+      "theProfitProfitMarginProfitRevenueInData": "A(z) {{profit}} eredményhányad (eredmény ÷ árbevétel) {{data}}-ben",
+      "descriptionComparisonThanNumberUnit": "{{description}} {{comparison}} volt, mint {{number}}{{unit}}.",
+      "descriptionComparisonThanThresholdUnit": "{{description}} {{comparison}} volt, mint {{threshold}}{{unit}}.",
+      "descriptionThreshold": "{{description}} {{threshold}}.",
+      "itemsCalculationNumberIncludesCompareTheUnrounded": "{{items}}. {{calculation}} = {{number}}{{includes}}. A kerekítetlen eredmény összehasonlítva ezzel: {{number2}}: {{numericalAnswer}}.",
+      "labelEarnedMoreNetProfitThanLabel2In": "A(z) {{label}} nagyobb nettó eredményt ért el, mint {{label2}}, {{data}}-ben.",
+      "labelTrendChartUnitExactValuesAreAvailable": "{{label}} trendgrafikon, {{unit}}. A pontos értékek az Adattáblázat megjelenítése gombbal érhetők el.",
+      "labelLabel2DataNumberUnit": "{{label}} → {{label2}}, {{data}}: {{number}} {{unit}}",
+      "metriclabelAsAPercentageOfTotalCostsIn": "A(z) {{metricLabel}} aránya az összes költségben {{data}}-ben",
+      "metriclabelAsAShareOfTotalRevenueIn": "A(z) {{metricLabel}} aránya a teljes árbevételben {{data}}-ben",
+      "metriclabelCostsForDataAndData2CombinedAs": "A(z) {{metricLabel}} költség {{data}} és {{data2}} évben együtt, a két év összesített költségének arányában",
+      "metriclabelCostsInDataWere": "A(z) {{metricLabel}} költség {{data}}-ben",
+      "metriclabelHeadcountInDataWas": "A(z) {{metricLabel}} létszáma {{data}}-ben",
+      "metriclabelInDataWas": "A(z) {{metricLabel}} {{data}}-ben",
+      "metriclabelMarketShareInDataWas": "A(z) {{metricLabel}} piaci részesedése {{data}}-ben",
+      "metriclabelPerEmployeeInDataWas": "A(z) {{metricLabel}} egy alkalmazottra {{data}}-ben",
+      "metriclabelSReturnOnEquityReachedItsFirst": "A(z) {{metricLabel}} sajáttőke-arányos megtérülése először ebben az évben érte el a legmagasabb értékét:",
+      "missingTheStatementIsNeitherEstablishedNorContradicted": "{{missing}} A megadott adatok sem nem igazolják, sem nem cáfolják az állítást: Nem állapítható meg.",
+      "strategyTheTableReportsHistoricalApprovedInvestmentBudgets": "{{strategy}} A táblázat korábbi jóváhagyott beruházási kereteket mutat, nem tényleges kiadásokat. Nincs következő évi árbevétel-előrejelzés, negyedéves bontás, árfolyam vagy magyarázat a változásokra."
+    }
+  }
+}

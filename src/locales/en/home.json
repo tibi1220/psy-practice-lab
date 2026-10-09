@@ -1,0 +1,81 @@
+{
+  "home": {
+    "badges": {
+      "numericalReasoning": "12 minutes · 47 questions",
+      "concentration": "2 minutes · adaptive",
+      "capacityToAct": "40 default",
+      "monotony": "500 default",
+      "motionPlanning": "6 minutes · adaptive",
+      "workingMemory": "9 minutes · 9 tasks",
+      "configurable": "Configurable",
+      "timedAdaptive": "Timed adaptive",
+      "towerOfHanoi": "Height 7",
+      "perception": "Three layouts",
+      "distributiveAttention": "Three modes"
+    },
+    "cards": {
+      "capacityToAct": {
+        "description": "Coordinate color, pedal, and audio responses while ignoring visual distractions."
+      },
+      "gridClassification": {
+        "description": "Discover a rule in two example grids, then choose the two candidates that follow it."
+      },
+      "deductiveReasoning": {
+        "description": "Find the missing shape in 4×4 and 5×5 grids using row and column rules."
+      },
+      "oddOneOut": {
+        "description": "Infer the rule shared by nine objects and identify the one that breaks it."
+      },
+      "reactionTime": {
+        "description": "Measure how quickly you respond to a visual cue across a configurable series of trials."
+      },
+      "towerOfHanoi": {
+        "description": "Plan and execute a legal disk sequence while tracking moves and working speed."
+      },
+      "dividedAttention": {
+        "description": "Steer through configurable traffic while responding to left and right signal changes."
+      },
+      "switchReasoning": {
+        "description": "Trace shape sequences through one or two numerical codes to find the matching output."
+      },
+      "monotony": {
+        "description": "Classify a long sequence of similar symbols while tracking speed and mistakes."
+      },
+      "digitChallenge": {
+        "description": "Fill arithmetic equations with distinct digits from 1 to 9 to reach the given result."
+      },
+      "distributiveAttention": {
+        "description": "Coordinate rows and columns using intersection selection or simultaneous two-hand responses."
+      },
+      "numericalReasoning": {
+        "description": "Explore four sample businesses through detailed tables and interactive charts. Evaluate statements as True, False, or Cannot say, and revisit your answers."
+      },
+      "greenGreyClassification": {
+        "description": "Infer the rule separating six labeled diamond grids, then classify four new grids as green or gray."
+      },
+      "concentration": {
+        "description": "Quickly classify E-like symbols by their shape and dot count, using A/D keys or touch controls."
+      },
+      "motionPlanning": {
+        "description": "Rearrange movable blocks around fixed obstacles and guide the red ball to its target in as few moves as possible."
+      },
+      "workingMemory": {
+        "description": "Remember highlighted dots in order while solving symmetry, rotation, and line-figure questions."
+      },
+      "shortTermMemory": {
+        "description": "Remember which cells flashed in a configurable grid and round count."
+      },
+      "perception": {
+        "description": "Use independently chosen left and right layouts for one coordinated two-hand response."
+      }
+    },
+    "tests": {
+      "available": "available",
+      "title": "Choose a test",
+      "label": "TEST"
+    },
+    "description": "A collection of focused exercises for practicing common cognitive tasks. Your results stay in this browser and remain available for later review.",
+    "title": "Focus, react, remember, adapt.",
+    "disclaimer": "These exercises are for practice and self-observation, not clinical assessment."
+  }
+}

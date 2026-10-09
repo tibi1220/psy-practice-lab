@@ -1,0 +1,28 @@
+{
+  "common": {
+    "business": {
+      "average": "Average",
+      "blue": "Blue",
+      "difficulty": "Difficulty",
+      "to": "To",
+      "adaptive": "adaptive",
+      "cross": "cross",
+      "down": "down",
+      "easy": "easy",
+      "gap": "gap",
+      "hard": "hard",
+      "items": "items",
+      "now": "now",
+      "number": "number",
+      "object": "object",
+      "red": "red",
+      "round": "round",
+      "side": "side",
+      "star": "star",
+      "up": "up"
+    },
+    "answers": {
+      "no": "No"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "numericalReasoning": {
+    "results": {
+      "accuracyOnAnsweredQuestions": "% pontosság a megválaszolt kérdéseknél ·",
+      "correct": "Helyes.",
+      "numericalReasoningHistory": "Numerikus következtetés előzményei",
+      "numericalReasoningResults": "Numerikus következtetés eredményei",
+      "useTheCorrectTabAndUnit": "Használd a megfelelő lapot és mértékegységet"
+    },
+    "labels": {
+      "annualFigures": ", éves adatok",
+      "allSeriesAreHiddenSelectASeriesToDisplay": "Minden adatsor rejtett. Válassz egyet a megjelenítéshez.",
+      "cannotSayTheOutlookProvidesNoNumericalForecast": "Nem állapítható meg: nincs számszerű előrejelzés a Kilátások lapon.",
+      "companyData": "Vállalati adatok",
+      "companyScenario": "Mintavállalat",
+      "crossTabCalculations": "Táblázatok közötti számítások",
+      "dataCategories": "Adatkategóriák",
+      "directComparisons": "Közvetlen összehasonlítások",
+      "easyDirectComparisons": "Könnyű · közvetlen összehasonlítások",
+      "end": "Vége",
+      "fictionalCompany": "Fiktív vállalat ·",
+      "filledButtonsAreAnsweredAnOutlineMarksYourCurrent": "A kitöltött gombok megválaszoltak. A körvonal jelzi az aktuális kérdést.",
+      "financialYear": "Pénzügyi év",
+      "findARow": "Keressen egy sort",
+      "findTheRelevantData": "Keresd meg a releváns adatokat",
+      "hardPercentagesAndCrossTabCalculations": "Nehéz · százalékok és táblázatok közötti számítások",
+      "managementIntendsToExpandNextYearNoNumericalForecast": "A vezetőség jövőre bővítést tervez. Számszerű előrejelzés nem áll rendelkezésre.",
+      "moveFreelyAndRevise": "Szabad mozgatás és módosítás",
+      "noMatchingRowsClearTheSearchToSeeThe": "Nincs megfelelő sor. Töröld a keresést a teljes adathalmaz megjelenítéséhez.",
+      "notAnsweredYet": "Még nincs válasz.",
+      "percentagesAndTrends": "Százalékok és trendek",
+      "questionNavigation": "Kérdésnavigáció",
+      "questionOverview": "Kérdések áttekintése",
+      "questionOverviewDetail": "Kérdések áttekintése ·",
+      "randomCompanyAnyOfFourSectors": "Véletlen vállalat · a négy ágazat bármelyike",
+      "revenueWillRiseNextYear": "Az árbevétel jövőre növekedni fog.",
+      "reviewTheCalculations": "Számítások áttekintése",
+      "rowName": "Sor neve…",
+      "separateFalseFromUnknown": "Különítsd el a hamisat az ismeretlentől",
+      "timed": "Időzített",
+      "toggleSeriesToCompareTrendsUseTheTableFor": "Kapcsold az adatsorokat a trendek összehasonlításához. A pontos adatokhoz használd a táblázatot.",
+      "trueFalseOrCannotSay": "Igaz, Hamis vagy Nem állapítható meg",
+      "tryAStatement": "Állítás kipróbálása",
+      "tryAgain": "Próbáld újra.",
+      "unanswered": "Megválaszolatlan",
+      "untimed": "Időkorlát nélkül",
+      "answered": "megválaszolt",
+      "answeredDetail": "megválaszolt ·",
+      "questions": "kérdés",
+      "rows": "sor ·",
+      "step": "lépés",
+      "unansweredDetail": "megválaszolatlan",
+      "unansweredDetail2": "megválaszolatlan ·"
+    },
+    "actions": {
+      "clearAnswer": "Válasz törlése",
+      "next": "Következő",
+      "previous": "Előző",
+      "showAllRows": "Összes sor megjelenítése",
+      "showChart": "Grafikon megjelenítése",
+      "showDataTable": "Adattáblázat megjelenítése"
+    },
+    "setup": {
+      "title": "Keresd meg a számok mögötti tényeket."
+    },
+    "tutorial": {
+      "numericalReasoningWalkthrough": "Numerikus következtetés bemutatója"
+    }
+  },
+  "common": {
+    "answers": {
+      "false": "Hamis",
+      "true": "Igaz"
+    }
+  }
+}

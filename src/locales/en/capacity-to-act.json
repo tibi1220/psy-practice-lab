@@ -1,0 +1,44 @@
+{
+  "capacityToAct": {
+    "labels": {
+      "aRedOnTheLeftOrRightMeansClick": "A red ! on the left or right means click the pedal on that side.",
+      "clickTheLeftLeverForADeepToneAnd": "Click the left lever for a deep tone and the right lever for a high tone.",
+      "getReadyTheFirstSignalFollowsAfterThe": "Get ready — the first signal follows after the pause",
+      "ignoreDistractions": "Ignore distractions",
+      "keepPace": "Keep pace",
+      "matchColors": "Match colors",
+      "numberOfEvents": "Number of events",
+      "prepare": "Prepare",
+      "pullLevers": "Pull levers",
+      "pushPedals": "Push pedals",
+      "respondToTheActiveSignalIgnoreTheUpper": "Respond to the active signal — ignore the upper lights",
+      "seeHearDecideAct": "See, hear, decide, act.",
+      "useTheWButtonsOrEFZJ": "Use the W buttons or E, F, Z, J, O for colored circles.",
+      "yourCompletedCapacitySessionsWillAppearHere": "Your completed capacity sessions will appear here.",
+      "closed": "closed",
+      "events": "events ·",
+      "high": "high",
+      "warning": "warning"
+    },
+    "settings": {
+      "afterATwoSecondPauseColorsWarningsAndTonesFollow": "After a two-second pause, colors, warnings, and tones follow the configured main interval.",
+      "configureTheScoredEventsAndTheirMainCycleInterval": "Configure the scored events and their main-cycle interval.",
+      "mainEventInterval": "Main event interval",
+      "msInterval": "ms interval"
+    },
+    "results": {
+      "capacityHistory": "Capacity history",
+      "capacityResults": "Capacity results"
+    },
+    "messages": {
+      "eventCurrentindexOfLength": "Event {{currentIndex}} of {{length}}",
+      "startingInStartcountdown": "Starting in {{startCountdown}}",
+      "lengthAnswered": "{{length}} answered"
+    },
+    "instructions": {
+      "respondToColorsWarningSignsAndTonesWhileResisting": "Respond to colors, warning signs, and tones while resisting visual distractions running on their own independent rhythm.",
+      "thisIsAPracticeToolNotAClinicalAssessment": "This is a practice tool, not a clinical assessment. Display timing, audio hardware, and input layout can affect results.",
+      "upperLightsUseASeparateRandomCycleAndMay": "Upper lights use a separate random cycle and may overlap other signals. Do nothing for them."
+    }
+  }
+}

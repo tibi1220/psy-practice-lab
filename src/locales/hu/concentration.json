@@ -1,0 +1,65 @@
+{
+  "concentration": {
+    "instructions": {
+      "anEIsCorrectOnlyWhenExactlyThreeDots": "Csak a pontosan három ponttal körülvett E helyes. Számold a fölötte, alatta és mellette lévő pontokat; az elrendezésük nem számít.",
+      "chooseCorrectOnlyForAnUprightCompleteEWith": "Csak az álló, teljes E pontosan három ponttal helyes. Minden más kombináció hibás.",
+      "classifyTheSymbolQuicklyWhileCheckingBothConditionsThis": "Gyorsan sorold be a jelet mindkét feltétel ellenőrzésével. Ez a próba nem változtat a mentett eredményeken.",
+      "dotsCanAppearAboveBelowOrBesideTheSymbol": "A pontok a szimbólum felett, alatt vagy mellett is megjelenhetnek. A megfelelő E két, négy vagy öt ponttal hibás.",
+      "laterRoundsIntroduceCloserSymbolLookalikesAndScatteredDot": "A későbbi körökben, 15 és 30 válasz után, hasonlóbb szimbólumok és szétszórt pontok jelennek meg. A szabály változatlan. A nehéz mód hasonlóbb elterelőkkel indul; a könnyű mód egyértelmű különbségeket tart meg.",
+      "onlyAnUprightCompleteEMatchesA9F": "Csak az álló, teljes E megfelelő. A 9, F, tükrözött vagy elforgatott E, illetve a hiányos vagy extra vonalas szimbólum nem megfelelő.",
+      "pressAForIncorrectAndDForCorrectOr": "Hibás válaszhoz nyomj A-t, helyeshez D-t, vagy érintsd meg a gombokat. Minden válasz azonnal új objektumot jelenít meg. A billentyű nyomva tartása nem válaszol több objektumra.",
+      "quicklyDecideWhetherEachObjectIsAnUprightE": "Döntsd el gyorsan, hogy az objektum álló E-e pontosan három ponttal. Kétperces koncentrációs gyakorlat a scales e3+ alapján.",
+      "theTutorialIncludesA30SecondPracticeTrialWithFeedback": "A bemutató 30 másodperces gyakorlást tartalmaz visszajelzéssel. A teszt alapértelmezése két perc; csak a beküldött válaszok kapnak értékelést és kerülnek mentésre.",
+      "useAForIncorrectAndDForCorrectOr": "Hibás válaszhoz használj A-t, helyeshez D-t, vagy érintsd meg a gombokat. A nyomva tartott gomb egyszer küld be. Gyakorláskor visszajelzés látható; az éles teszt azonnal továbblép, és a végén menti az áttekintést."
+    },
+    "labels": {
+      "checkBothConditions": "Ellenőrizd mindkét feltételt",
+      "checkBothTheSymbolAndAllTheDotsAnswering": "Ellenőrizd az alakzatot és az összes pontot. A válasz után azonnal továbblépünk.",
+      "checkTheShape": "Ellenőrizd az alakzatot",
+      "eLikeSymbolWithABrokenVerticalStroke": "E-szerű szimbólum megszakított függőleges vonallal",
+      "eLikeSymbolWithAClosedUpperSection": "E-szerű szimbólum zárt felső résszel",
+      "easyClearSymbolDifferences": "Könnyű · egyértelmű szimbólumkülönbségek",
+      "goodAnswer": "Jó válasz.",
+      "hardCloseLookalikesAndScatteredDots": "Nehéz · hasonló szimbólumok és szétszórt pontok",
+      "input": "Bemenet",
+      "isThisAnUprightEWithExactlyThreeDots": "Ez egy álló E pontosan három ponttal?",
+      "respondQuicklyAndAccurately": "Válaszolj gyorsan és pontosan",
+      "select": "Kiválasztás",
+      "subtleDifferences": "Apró különbségek",
+      "thatAnswerWasWrong": "A válasz hibás volt.",
+      "try30Seconds": "30 másodperc kipróbálása",
+      "angular9": "szögletes 9",
+      "backwardsE": "tükrözött E",
+      "s": "mp ·",
+      "square": "négyzet",
+      "theSymbolIsAnUprightE": "a szimbólum álló E",
+      "theSymbolIsNotAnUprightCompleteE": "a szimbólum nem álló, teljes E"
+    },
+    "settings": {
+      "checkTheShapeCountTheDots": "Ellenőrizd az alakzatot. Számold meg a pontokat.",
+      "countAllSurroundingDots": "Számold meg az összes környező pontot",
+      "countEveryDot": "Számolj meg minden pontot"
+    },
+    "actions": {
+      "clearDifferences": "Jól látható különbségek",
+      "closeLookalikes": "Hasonló alakzatok"
+    },
+    "tutorial": {
+      "concentrationWalkthrough": "Koncentráció bemutató",
+      "practiceComplete": "Gyakorlás kész:",
+      "practiceTimeRemaining": "Gyakorlás hátralévő ideje",
+      "practiceThenTest": "Gyakorolj, majd tesztelj",
+      "repeat30SecondPractice": "30 másodperces gyakorlás ismétlése",
+      "start30SecondPractice": "30 másodperces gyakorlás indítása"
+    },
+    "results": {
+      "correctAnUprightEAndThreeDots": "Helyes: álló E és három pont.",
+      "incorrectThreeDotsButTheSymbolIsA9": "Hibás: három pont, de a szimbólum egy 9-es.",
+      "correctNothingHasBeenSaved": "helyes. Semmi nem került mentésre."
+    },
+    "messages": {
+      "concentrationanswerSymbolAndItHasCountDotsBoth": "{{concentrationAnswer}}: {{symbol}}, és {{count}} pontja van. Mindkét feltételnek teljesülnie kell: álló E és pontosan három pont. A pontok a szimbólum felett, alatt vagy mellett is lehetnek.",
+      "namesRotatedRotationDegreesWithLengthDots": "{{names}}, {{rotation}} fokkal elforgatva, {{length}} ponttal"
+    }
+  }
+}

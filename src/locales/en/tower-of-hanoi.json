@@ -1,0 +1,45 @@
+{
+  "towerOfHanoi": {
+    "results": {
+      "averageSpeed": "Average speed",
+      "hanoiHistory": "Hanoi history",
+      "hanoiResults": "Hanoi results",
+      "movesSpeedAndSettingsAreSavedOnlyInThis": "Moves, speed, and settings are saved only in this browser.",
+      "optimal": "Optimal"
+    },
+    "labels": {
+      "chooseADisk": "Choose a disk",
+      "chooseHowManyDisksTheTowerContains": "Choose how many disks the tower contains.",
+      "chooseItsDestination": "Choose its destination",
+      "completeTheTower": "Complete the tower",
+      "cumulativeMovesPerMinuteHoverOrTouchTheGraph": "Cumulative moves per minute. Hover or touch the graph for individual move details.",
+      "dragATopDiskOrTapOneToSelect": "Drag a top disk, or tap one to select it",
+      "dragTheTopDiskOfAPegOrTap": "Drag the top disk of a peg, or tap it to select it.",
+      "dropTheDiskOrTapThePegWhereIt": "Drop the disk or tap the peg where it should move.",
+      "efficiency": "Efficiency",
+      "extraMoves": "Extra moves",
+      "moveEveryDiskToTheRightPegInAs": "Move every disk to the right peg in as few moves as possible.",
+      "moveSpeed": "Move speed",
+      "moveTheEntireTowerToTheRightPegA": "Move the entire tower to the right peg. A larger disk may never rest on a smaller disk.",
+      "neverPlaceALargerDiskOnTopOfA": "Never place a larger disk on top of a smaller one.",
+      "performanceOverTime": "Performance over time",
+      "planAheadMoveWithPurpose": "Plan ahead. Move with purpose.",
+      "steps": "Steps",
+      "towerComplete": "Tower complete",
+      "yourCompletedHanoiSessionsWillAppearHere": "Your completed Hanoi sessions will appear here."
+    },
+    "settings": {
+      "duration": "Duration",
+      "followTheSizeRule": "Follow the size rule",
+      "towerHeight": "Tower height"
+    },
+    "messages": {
+      "sourceSelectedSelectedpegPegChooseADestination": "Source selected: {{selectedPeg}} peg — choose a destination",
+      "averagespeedMovesMin": "{{averageSpeed}} moves/min"
+    },
+    "instructions": {
+      "thisIsAPracticeToolNotAClinicalAssessment": "This is a practice tool, not a clinical assessment. Input method and familiarity with the puzzle can affect results.",
+      "transferTheFullTowerFromTheLeftPegTo": "Transfer the full tower from the left peg to the right while obeying the size rule. The test records every move and your pace."
+    }
+  }
+}

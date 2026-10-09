@@ -1,0 +1,42 @@
+{
+  "numericalReasoning": {
+    "statements": {
+      "actualSpendingOnLabelWasWithinItsApprovedBudget": "Actual spending on {{label}} was within its approved budget in {{data}}.",
+      "averageMetriclabelAcrossDataAndData2Was": "Average {{metricLabel}} across {{data}} and {{data2}} was",
+      "combinedApprovedInvestmentBudgetsForMetriclabelAndMetriclabel2In": "Combined approved investment budgets for {{metricLabel}} and {{metricLabel2}} in {{data}} were",
+      "combinedMetriclabelAndMetriclabel2AsAShareOfTotal": "Combined {{metricLabel}} and {{metricLabel2}} as a share of total revenue in {{data}} were",
+      "combinedMetriclabelAndMetriclabel2HeadcountInDataWas": "Combined {{metricLabel}} and {{metricLabel2}} headcount in {{data}} was",
+      "moreThanHalfOfDataRevenueWasEarnedIn": "More than half of {{data}} revenue was earned in the first six months.",
+      "operatingProfitInDataMinusOperatingProfitInData2": "Operating profit in {{data}} minus operating profit in {{data2}} was",
+      "questionIAnswers": "Question {{i}}, {{answers}}",
+      "revenueInDataExceeded25MillionUsDollars": "Revenue in {{data}} exceeded 25 million US dollars.",
+      "revenuePercentageGrowthMinusTotalHeadcountPercentageGrowthFrom": "Revenue percentage growth minus total headcount percentage growth from {{data}} to {{data2}} was",
+      "revenueWillBeHigherInNextyearThanInData": "Revenue will be higher in {{nextYear}} than in {{data}}.",
+      "savedLabelYouCanReviseThisAnswer": "Saved: {{label}}. You can revise this answer.",
+      "theApprovedMetriclabelInvestmentBudgetInDataWas": "The approved {{metricLabel}} investment budget in {{data}} was",
+      "theChangeInPersonnelCostsBetweenDataAndData2": "The change in personnel costs between {{data}} and {{data2}} was caused by pay rises.",
+      "theChangeInMetriclabelMarketShareFromDataTo": "The change in {{metricLabel}} market share from {{data}} to {{data2}} was",
+      "thePercentageChangeInMetriclabelTabFromDataTo": "The percentage change in {{metricLabel}}{{tab}} from {{data}} to {{data2}} was",
+      "theTotalDomesticMarketForLabelWasLargerThan": "The total domestic market for {{label}} was larger than the domestic market for {{label2}} in {{data}}.",
+      "theProfitProfitMarginProfitRevenueInData": "The {{profit}} profit margin (profit ÷ revenue) in {{data}} was",
+      "descriptionComparisonThanNumberUnit": "{{description}} {{comparison}} than {{number}}{{unit}}.",
+      "descriptionComparisonThanThresholdUnit": "{{description}} {{comparison}} than {{threshold}}{{unit}}.",
+      "descriptionThreshold": "{{description}} {{threshold}}.",
+      "itemsCalculationNumberIncludesCompareTheUnrounded": "{{items}}. {{calculation}} = {{number}}{{includes}}. Compare the unrounded result with {{number2}}: {{numericalAnswer}}.",
+      "labelEarnedMoreNetProfitThanLabel2In": "{{label}} earned more net profit than {{label2}} in {{data}}.",
+      "labelTrendChartUnitExactValuesAreAvailable": "{{label}} trend chart, {{unit}}. Exact values are available with Show data table.",
+      "labelLabel2DataNumberUnit": "{{label}} → {{label2}}, {{data}}: {{number}} {{unit}}",
+      "metriclabelAsAPercentageOfTotalCostsIn": "{{metricLabel}} as a percentage of total costs in {{data}} was",
+      "metriclabelAsAShareOfTotalRevenueIn": "{{metricLabel}} as a share of total revenue in {{data}} was",
+      "metriclabelCostsForDataAndData2CombinedAs": "{{metricLabel}} costs for {{data}} and {{data2}} combined, as a share of those two years' combined total costs, were",
+      "metriclabelCostsInDataWere": "{{metricLabel}} costs in {{data}} were",
+      "metriclabelHeadcountInDataWas": "{{metricLabel}} headcount in {{data}} was",
+      "metriclabelInDataWas": "{{metricLabel}} in {{data}} was",
+      "metriclabelMarketShareInDataWas": "{{metricLabel}} market share in {{data}} was",
+      "metriclabelPerEmployeeInDataWas": "{{metricLabel}} per employee in {{data}} was",
+      "metriclabelSReturnOnEquityReachedItsFirst": "{{metricLabel}}'s return on equity reached its first highest value in",
+      "missingTheStatementIsNeitherEstablishedNorContradicted": "{{missing}} The statement is neither established nor contradicted by the supplied data: Cannot say.",
+      "strategyTheTableReportsHistoricalApprovedInvestmentBudgets": "{{strategy}} The table reports historical approved investment budgets, not actual spending. No next-year revenue forecast, quarterly breakdown, exchange rate, or explanation of changes is provided."
+    }
+  }
+}

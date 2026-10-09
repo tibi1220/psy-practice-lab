@@ -1,0 +1,83 @@
+{
+  "tests": {
+    "concentration": {
+      "pageTitle": "Koncentráció · PSY Practice Lab",
+      "name": "Koncentráció"
+    },
+    "capacityToAct": {
+      "pageTitle": "Cselekvési kapacitás · PSY Practice Lab",
+      "name": "Cselekvési kapacitás",
+      "tutorialTitle": "Cselekvési kapacitás bemutató"
+    },
+    "motionPlanning": {
+      "pageTitle": "Összetett tervezés · PSY Practice Lab",
+      "name": "Összetett tervezés"
+    },
+    "deductiveReasoning": {
+      "pageTitle": "Deduktív következtetés · PSY Practice Lab",
+      "name": "Deduktív következtetés"
+    },
+    "digitChallenge": {
+      "pageTitle": "Számjegyfeladat · PSY Practice Lab",
+      "name": "Számjegyfeladat"
+    },
+    "distributiveAttention": {
+      "pageTitle": "Elosztott figyelem · PSY Practice Lab",
+      "name": "Elosztott figyelem",
+      "tutorialTitle": "Elosztott figyelem bemutatója"
+    },
+    "dividedAttention": {
+      "pageTitle": "Megosztott figyelem · PSY Practice Lab",
+      "name": "Megosztott figyelem",
+      "tutorialTitle": "Megosztott figyelem bemutatója"
+    },
+    "gridClassification": {
+      "pageTitle": "Rácsbesorolás · PSY Practice Lab",
+      "name": "Rácsbesorolás"
+    },
+    "shortTermMemory": {
+      "tutorialTitle": "Memóriateszt bemutatója",
+      "pageTitle": "Rövid távú memória · PSY Practice Lab",
+      "name": "Rövid távú memória"
+    },
+    "monotony": {
+      "tutorialTitle": "Monotóniateszt bemutatója",
+      "pageTitle": "Teljesítmény monotonitás alatt · PSY Practice Lab",
+      "name": "Teljesítmény monotonitás alatt"
+    },
+    "numericalReasoning": {
+      "pageTitle": "Numerikus következtetés · PSY Practice Lab",
+      "name": "Numerikus következtetés"
+    },
+    "oddOneOut": {
+      "pageTitle": "Kakukktojás · PSY Practice Lab",
+      "name": "Kakukktojás"
+    },
+    "perception": {
+      "name": "Észlelés",
+      "tutorialTitle": "Észlelés bemutatója",
+      "pageTitle": "Észlelés · PSY Practice Lab"
+    },
+    "reactionTime": {
+      "pageTitle": "Reakcióidő · PSY Practice Lab",
+      "name": "Reakcióidő",
+      "tutorialTitle": "Reakcióidő bemutatója"
+    },
+    "solution": {
+      "tutorialTitle": "Megoldás bemutatója"
+    },
+    "switchReasoning": {
+      "pageTitle": "Kódkövetés · PSY Practice Lab",
+      "name": "Kódkövetés"
+    },
+    "towerOfHanoi": {
+      "name": "Hanoi tornyai",
+      "tutorialTitle": "Hanoi tornyai bemutatója",
+      "pageTitle": "Hanoi tornyai · PSY Practice Lab"
+    },
+    "workingMemory": {
+      "pageTitle": "Munkamemória · PSY Practice Lab",
+      "name": "Munkamemória"
+    }
+  }
+}

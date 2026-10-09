@@ -11,13 +11,17 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "test": "pnpm run build && node --test tests/*.test.mjs",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.1.15",
+    "i18next": "^26.4.2",
     "jspdf": "4.2.1",
     "react": "19.2.6",
     "react-dom": "19.2.6",
+    "react-i18next": "^17.0.16",
     "react-router-dom": "7.18.2"
   },
   "devDependencies": {
@@ -30,6 +34,7 @@
     "eslint": "9.39.4",
     "eslint-plugin-react-hooks": "7.1.1",
     "globals": "16.4.0",
+    "prettier": "3.9.9",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
     "typescript-eslint": "8.65.0",

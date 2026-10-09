@@ -31,30 +31,54 @@ incoming connections if macOS asks.
 - `pnpm preview` — preview the production build on the local network
 - `pnpm lint` — run ESLint
 - `pnpm test` — build and run the project checks
+- `pnpm format` — format project files using `.prettierrc`
+- `pnpm format:check` — check formatting without changing files
 
 The production target is Safari 16, matching older iPadOS/WebKit versions.
 
 ## Routes
 
 - `/` — test hub
-- `/reaction-time` — configurable reaction-time test with optional extreme-value exclusion
+- `/reaction-time` — configurable reaction-time test with optional extreme-value
+  exclusion
 - `/short-term-memory` — configurable grid-memory test with adjustable rounds
 - `/divided-attention` — configurable driving and traffic-signal test
 - `/monotony` — sustained classification test
 - `/capacity-to-act` — mixed color, pedal, audio, and distraction response test
 - `/tower-of-hanoi` — configurable planning puzzle with move-speed graph
-- `/distributive-attention` — one-handed, two-handed, and mixed row/column coordination test
-- `/perception` — simultaneous two-signal test with independent fixed left and right layouts
-- `/deductive-reasoning` — shape-grid reasoning with randomized questions, timed adaptive practice by default, optional notes, and answer review
-- `/switch-reasoning` — shape-sequence code reasoning with one- and two-stage randomized questions, timed adaptive practice by default, and answer review
-- `/digit-challenge` — complete arithmetic equations with distinct digits from 1 to 9; accepts all valid solutions
-- `/odd-one-out` — identify the rule-breaking object among nine shapes, including moving stroke gaps, circle/square count relationships, straight versus curved edges, and paired rotations; five-minute default with progressively harder patterns and two interactive tutorial examples (scales ix)
-- `/grid-classification` — infer a rule from two 3×3 examples and select two matching grids (scales clx)
-- `/green-grey-classification` — infer a rule from six labelled diamond grids and classify four candidates as green or grey
-- `/concentration` — classify upright E symbols with exactly three dots (scales e3+)
-- `/numerical-reasoning` — evaluate financial statements as True, False, or Cannot say for four fictional companies in manufacturing, software, retail, and renewable energy. Each fresh session has 45 metrics over five years, including sector-specific revenue, costs, staffing, domestic market shares, peers, and historical investment budgets. Search table rows, switch any tab to a chart, and toggle series. Defaults to 47 revisitable questions in 12 minutes, with later combined ratios and growth comparisons, worked results, and compatible saved history (scales numerical).
-- `/motion-planning` — rearrange movable blocks around fixed obstacles and guide the ball to its target (motionChallenge)
-- `/working-memory` — remember ordered dot positions while answering interleaved symmetry, rotation, and line-figure questions (gridChallenge)
+- `/distributive-attention` — one-handed, two-handed, and mixed row/column
+  coordination test
+- `/perception` — simultaneous two-signal test with independent fixed left and
+  right layouts
+- `/deductive-reasoning` — shape-grid reasoning with randomized questions, timed
+  adaptive practice by default, optional notes, and answer review
+- `/switch-reasoning` — shape-sequence code reasoning with one- and two-stage
+  randomized questions, timed adaptive practice by default, and answer review
+- `/digit-challenge` — complete arithmetic equations with distinct digits from 1
+  to 9; accepts all valid solutions
+- `/odd-one-out` — identify the rule-breaking object among nine shapes,
+  including moving stroke gaps, circle/square count relationships, straight
+  versus curved edges, and paired rotations; five-minute default with
+  progressively harder patterns and two interactive tutorial examples (scales
+  ix)
+- `/grid-classification` — infer a rule from two 3×3 examples and select two
+  matching grids (scales clx)
+- `/green-grey-classification` — infer a rule from six labelled diamond grids
+  and classify four candidates as green or grey
+- `/concentration` — classify upright E symbols with exactly three dots (scales
+  e3+)
+- `/numerical-reasoning` — evaluate financial statements as True, False, or
+  Cannot say for four fictional companies in manufacturing, software, retail,
+  and renewable energy. Each fresh session has 45 metrics over five years,
+  including sector-specific revenue, costs, staffing, domestic market shares,
+  peers, and historical investment budgets. Search table rows, switch any tab to
+  a chart, and toggle series. Defaults to 47 revisitable questions in 12
+  minutes, with later combined ratios and growth comparisons, worked results,
+  and compatible saved history (scales numerical).
+- `/motion-planning` — rearrange movable blocks around fixed obstacles and guide
+  the ball to its target (motionChallenge)
+- `/working-memory` — remember ordered dot positions while answering interleaved
+  symmetry, rotation, and line-figure questions (gridChallenge)
 
 These four reasoning exercises default to timed adaptive practice and also
 support untimed question counts, guided demos, and saved solution reviews.
@@ -66,30 +90,31 @@ counts, and minimum occurrences of 7, Z, or any repeated letter.
 Deductive reasoning adds extra-hard 5×5 rounds with all-grey and all-black
 shapes alternating between rounds. Adaptive practice reaches this stage after
 four correct 5×5 answers in the last five. Clues, notes, answer choices, and
-saved solution reviews share the round's palette.
-Every deductive result also offers a tutorial-style solving popup that walks
-through a focused chain of row/column deductions to the target cell.
-Results also let users redo the same task in an untimed modal with notes and
-instant answer feedback. Retries start from the original clues and do not
-modify saved scores.
+saved solution reviews share the round's palette. Every deductive result also
+offers a tutorial-style solving popup that walks through a focused chain of
+row/column deductions to the target cell. Results also let users redo the same
+task in an untimed modal with notes and instant answer feedback. Retries start
+from the original clues and do not modify saved scores.
 
 Working memory defaults to nine tasks within nine minutes, with adaptive
 sequences of three to eight dots. Later rounds shorten exposure and question
 times, expand spatial patterns up to 8×8, and use close distractors with equal
-filled-square counts and denser line equations. Users can also practice untimed, adjust dot
-exposure and spatial-question time limits, and review recall and spatial scores
-separately. The session stops at the time or task limit; unfinished sequences
-are excluded. Practice timing and difficulty progression are configurable app
-behaviour inspired by the demonstration, not a reproduction of provider scoring.
+filled-square counts and denser line equations. Users can also practice untimed,
+adjust dot exposure and spatial-question time limits, and review recall and
+spatial scores separately. The session stops at the time or task limit;
+unfinished sequences are excluded. Practice timing and difficulty progression
+are configurable app behaviour inspired by the demonstration, not a reproduction
+of provider scoring.
 
 Complex planning defaults to six-minute adaptive practice, with untimed puzzle
 counts also available. Fifteen solvable base layouts vary through reflections
-and rotations. Rounds 3, 5, and 8 introduce intermediate, hard, and expert tasks;
-expert layouts require 9–11 optimal moves with tightly packed blocks and fixed
-obstacles. Dragging and keyboard/tap placement share collision-checked movement.
-Each placement of one piece counts as one move, including turns. Results state
-the optimal step count beside the user's move count and show a shortest-solution
-popup. Practice movement and scoring follow the app rules in the tutorial.
+and rotations. Rounds 3, 5, and 8 introduce intermediate, hard, and expert
+tasks; expert layouts require 9–11 optimal moves with tightly packed blocks and
+fixed obstacles. Dragging and keyboard/tap placement share collision-checked
+movement. Each placement of one piece counts as one move, including turns.
+Results state the optimal step count beside the user's move count and show a
+shortest-solution popup. Practice movement and scoring follow the app rules in
+the tutorial.
 
 Concentration defaults to two minutes and includes a 30-second tutorial practice
 trial. A/D keys and touch buttons advance immediately; key repeat is ignored.
@@ -100,12 +125,28 @@ accuracy, answer times, and an explanation for every saved object.
 Each test uses `/test` while a session is active and `/result` after it
 finishes. For example: `/reaction-time/test` and `/reaction-time/result`.
 
+## Languages
+
+American English is the default. The footer language selector on every page also
+offers informal Hungarian (Magyar). It updates test instructions, tutorials,
+controls, results, accessibility labels, and page titles without restarting an
+active session. Dates follow the selected locale. Puzzle symbols and saved
+scores stay unchanged.
+
+The preference is stored for one year in the `psy_locale` cookie, scoped to the
+deployment base path with `SameSite=Lax` and `Secure` on HTTPS. Without a valid
+preference cookie, the app uses English regardless of the browser language. If
+cookies are disabled, switching languages still works for the current visit.
+Translations use i18next and react-i18next. The catalogs are split by test and
+shared UI section in `src/locales/en/` and `src/locales/hu/`, with nested keys
+such as `home.title`, `home.description`, and `deductiveReasoning.setup.title`;
+matching keys and interpolation placeholders are checked by the locale tests.
+
 ## GitHub Pages
 
 Pushes to `main` automatically build and deploy the site to
-`https://tibi1220.github.io/psy-practice-lab/`. In the repository's
-**Settings → Pages**,
-set **Source** to **GitHub Actions** before the first deployment.
+`https://tibi1220.github.io/psy-practice-lab/`. In the repository's **Settings →
+Pages**, set **Source** to **GitHub Actions** before the first deployment.
 
 The deployment build uses `/psy-practice-lab/` as its Vite and React Router
 base. Local development continues to use `/`, and the workflow includes a

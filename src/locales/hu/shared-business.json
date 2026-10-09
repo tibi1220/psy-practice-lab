@@ -1,0 +1,28 @@
+{
+  "common": {
+    "business": {
+      "average": "Átlag",
+      "blue": "Kék",
+      "difficulty": "Nehézség",
+      "to": "Eddig",
+      "adaptive": "adaptív",
+      "cross": "kereszt",
+      "down": "lefelé",
+      "easy": "könnyű",
+      "gap": "rés",
+      "hard": "nehéz",
+      "items": "elemek",
+      "now": "most",
+      "number": "szám",
+      "object": "objektum",
+      "red": "piros",
+      "round": "kör",
+      "side": "oldal",
+      "star": "csillag",
+      "up": "felfelé"
+    },
+    "answers": {
+      "no": "Nem"
+    }
+  }
+}

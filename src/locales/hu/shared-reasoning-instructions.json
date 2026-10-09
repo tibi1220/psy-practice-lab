@@ -1,0 +1,9 @@
+{
+  "common": {
+    "instructions": {
+      "reasoning": {
+        "mixedModePresentsABalancedRandomSequenceOfBoth": "A vegyes mód mindkét próbatípust kiegyensúlyozott, véletlenszerű sorrendben mutatja. A szélső LED-eknél a nagy rácsot nyomd meg; a nagy rács LED-jénél mindkét szélső koordinátát."
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "numericalReasoning": {
+    "companies": {
+      "amberRetail": "Amber Retail",
+      "asterDigital": "Aster Digital",
+      "atlasComponents": "Atlas Components",
+      "auroraRenewables": "Aurora Renewables",
+      "bluepeakStorage": "Bluepeak Storage",
+      "brooksideShops": "Brookside Shops",
+      "cedarCommerce": "Cedar Commerce",
+      "cloudHosting": "Felhőtárhely",
+      "cloudInfrastructure": "Felhőinfrastruktúra",
+      "cloudbridgeSoftware": "Cloudbridge Software",
+      "crestPower": "Crest Power",
+      "energy": "Energia",
+      "energyEfficiency": "Energiahatékonyság",
+      "engineering": "Mérnökség",
+      "harborMachinery": "Harbor Machinery",
+      "juniperStores": "Juniper Stores",
+      "lumenAnalytics": "Lumen Analytics",
+      "marketShare": "Piaci részesedés",
+      "marketing": "Marketing",
+      "meadowMarket": "Meadow Market",
+      "meridianIndustries": "Meridian Industries",
+      "northstarEngineering": "Northstar Engineering",
+      "oaklineSystems": "Oakline Systems",
+      "pioneerWorks": "Pioneer Works",
+      "retailAndECommerce": "Kiskereskedelem és e-kereskedelem",
+      "signalSoftware": "Signal Software",
+      "softwareAndDigitalServices": "Szoftver és digitális szolgáltatások",
+      "softwareLicenses": "Szoftverlicencek",
+      "solsticeEnergy": "Solstice Energy",
+      "summitSystems": "Summit Systems",
+      "terraEnergy": "Terra Energy",
+      "vertexCloud": "Vertex Cloud",
+      "willowRetailGroup": "Willow Retail Group"
+    }
+  }
+}

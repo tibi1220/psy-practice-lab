@@ -1,0 +1,44 @@
+{
+  "capacityToAct": {
+    "labels": {
+      "aRedOnTheLeftOrRightMeansClick": "Bal vagy jobb oldali piros ! esetén kattints az adott oldali pedálra.",
+      "clickTheLeftLeverForADeepToneAnd": "Mély hangnál a bal, magas hangnál a jobb karra kattints.",
+      "getReadyTheFirstSignalFollowsAfterThe": "Készülj fel — az első jelzés a szünet után érkezik",
+      "ignoreDistractions": "Hagyd figyelmen kívül a zavaró ingereket",
+      "keepPace": "Tartsd a tempót",
+      "matchColors": "Párosítsd a színeket",
+      "numberOfEvents": "Események száma",
+      "prepare": "Felkészülés",
+      "pullLevers": "Karok húzása",
+      "pushPedals": "Pedálok nyomása",
+      "respondToTheActiveSignalIgnoreTheUpper": "Az aktív jelzésre válaszolj — a felső fényeket hagyd figyelmen kívül",
+      "seeHearDecideAct": "Láss, hallj, dönts, cselekedj.",
+      "useTheWButtonsOrEFZJ": "Használd a W-gombokat vagy az E, F, Z, J, O billentyűket a színes körökhöz.",
+      "yourCompletedCapacitySessionsWillAppearHere": "A befejezett cselekvésikapacitás-tesztek itt jelennek meg.",
+      "closed": "zárt",
+      "events": "esemény ·",
+      "high": "magas",
+      "warning": "figyelmeztetés"
+    },
+    "settings": {
+      "afterATwoSecondPauseColorsWarningsAndTonesFollow": "Két másodperc szünet után a színek, figyelmeztetések és hangok a beállított időközzel következnek.",
+      "configureTheScoredEventsAndTheirMainCycleInterval": "Állítsd be az értékelt eseményeket és időközüket.",
+      "mainEventInterval": "Fő esemény időköze",
+      "msInterval": "ms időköz"
+    },
+    "results": {
+      "capacityHistory": "Kapacitási előzmények",
+      "capacityResults": "Kapacitási eredmények"
+    },
+    "messages": {
+      "eventCurrentindexOfLength": "{{currentIndex}}. esemény / {{length}}",
+      "startingInStartcountdown": "Indítás {{startCountdown}} múlva",
+      "lengthAnswered": "{{length}} megválaszolt"
+    },
+    "instructions": {
+      "respondToColorsWarningSignsAndTonesWhileResisting": "Válaszolj a színekre, figyelmeztető jelzésekre és hangokra, miközben ellenállsz a saját, független ritmusukban megjelenő vizuális zavaró ingereknek.",
+      "thisIsAPracticeToolNotAClinicalAssessment": "Ez gyakorló eszköz, nem klinikai értékelés. A kijelző időzítése, hanghardver és bemeneti elrendezés befolyásolhatja az eredményeket.",
+      "upperLightsUseASeparateRandomCycleAndMay": "A felső fények külön véletlen ciklusban működnek, és átfedhetnek más jelzésekkel. Ne reagálj rájuk."
+    }
+  }
+}

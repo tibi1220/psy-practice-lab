@@ -1,0 +1,55 @@
+{
+  "monotony": {
+    "results": {
+      "accuracy": "% accuracy",
+      "accuracySoFar": "% accuracy so far",
+      "monotonyHistory": "Monotony history",
+      "monotonyResults": "Monotony results",
+      "resultsAndConfigurationsAreSavedOnlyInThisBrowser": "Results and configurations are saved only in this browser.",
+      "rollingSpeedCumulativeAccuracy": "Rolling speed · cumulative accuracy",
+      "totalMistakes": "Total mistakes",
+      "mistakes": "mistakes ·"
+    },
+    "labels": {
+      "bad": "Bad",
+      "badMarkedGood": "Bad marked good",
+      "chooseBetween20And2000TheDefaultIs": "Choose between 20 and 2,000. The default is 500.",
+      "classifyTheTypes": "Classify the types",
+      "good": "Good",
+      "goodMarkedBad": "Good marked bad",
+      "goodTypes": "Good types:",
+      "identifyTheHighlightedCornerOrSide": "Identify the highlighted corner or side.",
+      "inspect": "Inspect",
+      "itemsMin": "Items/min",
+      "learnTheGroups": "Learn the groups",
+      "markBad": "Mark bad",
+      "markGood": "Mark good",
+      "numberOfSquares": "Number of squares",
+      "pressForAShapeAssignedToTheBad": "Press ← for a shape assigned to the bad group.",
+      "pressForAShapeAssignedToTheGood": "Press → for a shape assigned to the good group.",
+      "response": "Response:",
+      "reviewWhichHighlightedShapesAreGoodOrBad": "Review which highlighted shapes are good or bad.",
+      "speed": "Speed",
+      "stayAccurateThroughRepetition": "Stay accurate through repetition.",
+      "tapEachTypeToToggleBetweenGoodAndBad": "Tap each type to toggle between good and bad.",
+      "workingSpeed": "Working speed",
+      "yourCompletedMonotonySessionsWillAppearHere": "Your completed monotony sessions will appear here.",
+      "badDetail": "bad",
+      "goodDetail": "good ·",
+      "itemsMinDetail": "items/min",
+      "squares": "squares ·",
+      "badGood": "← Bad · Good →"
+    },
+    "instructions": {
+      "classifyALongSequenceOfSimilarSquaresPressRight": "Classify a long sequence of similar squares. Press Right for a good type and Left for a bad type, balancing speed with accuracy.",
+      "interactiveWorkingSpeedAndAccuracyGraphWithRoseLinesFor": "Interactive working-speed and accuracy graph with rose lines for good items marked bad and violet lines for bad items marked good",
+      "thisIsAPracticeToolNotAClinicalAssessment": "This is a practice tool, not a clinical assessment. Working speed is affected by the device, input method, and selected classification rules."
+    },
+    "actions": {
+      "generateARandomizedPdfAndCircleEveryGoodSquare": "Generate a randomized PDF and circle every good square by hand."
+    },
+    "tutorial": {
+      "practiceOnPaper": "Practice on paper"
+    }
+  }
+}

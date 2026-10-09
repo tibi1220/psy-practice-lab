@@ -1,0 +1,32 @@
+{
+  "common": {
+    "settings": {
+      "adaptive": "Adaptive",
+      "borderWidth": "Border width",
+      "changeSettings": "Change settings",
+      "easy": "Easy",
+      "hard": "Hard",
+      "height": "Height",
+      "pageCount": "Page count",
+      "paperMonotonyPdf": "Paper monotony PDF",
+      "paperSize": "Paper size",
+      "practiceMode": "Practice mode",
+      "randomizedQuestionsUntimed": "Randomized questions · untimed",
+      "rectangleCount": "Rectangle count",
+      "rectangleWidth": "Rectangle width",
+      "spatialQuestionTimeRemaining": "Spatial question time remaining",
+      "switchDirectionsInMixedMode": "Switch directions in mixed mode",
+      "testLengthMinutes": "Test length (minutes)",
+      "title": "Test settings",
+      "timeRemaining": "Time remaining",
+      "timedUnlimitedQuestions": "Timed · unlimited questions",
+      "towerOfHanoiHeight": "Tower of Hanoi · Height",
+      "rectanglesPerPage": "rectangles per page",
+      "sPerAnswer": "s per answer ·",
+      "sPerDot": "s per dot ·",
+      "sPerSpatialQuestion": "s per spatial question",
+      "timed": "timed",
+      "untimed": "untimed"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "common": {
+    "instructions": {
+      "reasoning": {
+        "mixedModePresentsABalancedRandomSequenceOfBoth": "Mixed mode presents a balanced random sequence of both trial types. Edge LEDs mean press the large grid; a large-grid LED means press both edge coordinates."
+      }
+    }
+  }
+}

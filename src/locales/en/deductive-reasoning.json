@@ -1,0 +1,95 @@
+{
+  "deductiveReasoning": {
+    "labels": {
+      "forced": "(forced)",
+      "trial": "(trial)",
+      "adaptive44ToMonochrome55": "Adaptive · 4×4 to monochrome 5×5",
+      "answer": "Answer",
+      "chooseAShapeBelowToSubmitYourAnswer": "Choose a shape below to submit your answer.",
+      "chooseTheMissingShape": "Choose the missing shape.",
+      "circle": "Circle",
+      "column": "Column",
+      "column3AlreadyContainsACrossStarAndTriangle": "Column 3 already contains a cross, star, and triangle. Only the circle is missing.",
+      "cross": "Cross",
+      "deduction": "Deduction",
+      "eachShapeAppearsExactlyOnceInEachRowAnd": "Each shape appears exactly once in each row and column. There are no box rules.",
+      "easy44": "Easy · 4×4",
+      "everyRowAndColumnContainsEachShapeExactlyOnce": "Every row and column contains each shape exactly once. There are no smaller box rules.",
+      "extraHard55GreyBlackShapes": "Extra hard · 5×5, gray/black shapes",
+      "findTheMissingShape": "Find the missing shape",
+      "focusOnTheTarget": "Focus on the target",
+      "followAFocusedRouteFromTheOriginalCluesTo": "Follow a focused route from the original clues to the missing shape.",
+      "followingTheForcedPlacements": "Following the forced placements",
+      "hard55": "Hard · 5×5",
+      "lookDownTheTargetColumn": "Look down the target column",
+      "makeNotes": "Make notes",
+      "oneExampleBranch": "One example branch",
+      "oneOfEachShape": "One of each shape",
+      "row": "Row",
+      "solutionDisplay": "Solution display",
+      "solveOnlyTheQuestionMarkCellSomeOtherBlanksMay": "Solve only the question-mark cell. Some other blanks may have several possibilities.",
+      "square": "Square",
+      "star": "Star",
+      "theContradiction": "The contradiction",
+      "thisIsAShortestChainOfSingleCellRowAnd": "This is a shortest chain of single-cell row and column deductions.",
+      "triangle": "Triangle",
+      "tryAgainWhichShapeIsMissingFromColumn3": "Try again: which shape is missing from column 3?",
+      "tryAnAnswer": "Try an answer",
+      "cells": "cells",
+      "or": "or",
+      "highlightedCellIsTheCurrentStep": "· highlighted cell is the current step"
+    },
+    "instructions": {
+      "adaptivePracticeAdvancesAfterFourCorrectAnswersInThe": "Adaptive practice advances after four correct answers in the last five, then reaches monochrome rounds after four correct 5×5 answers in the last five. Extra-hard rounds alternate all-gray and all-black shapes.",
+      "anAnswerButtonSubmitsImmediatelyYourSelectedShapeFlashes": "An answer button submits immediately. Your selected shape flashes green for a correct answer or red for an incorrect answer before the next question. Review answers after finishing.",
+      "column1NeedsACrossAndTriangleRow3": "Column 1 needs a cross and triangle. Row 3 already has a triangle, so its first cell must be a cross. That leaves the triangle for the question mark.",
+      "column3AlreadyHasACrossStarAndTriangle": "Column 3 already has a cross, star, and triangle. Only the circle is missing. You do not need to solve every blank.",
+      "column3NeedsAStarAndCircleRow1": "Column 3 needs a star and circle. Row 1 already has a star, so the question mark must be a circle.",
+      "column4NeedsACircleCrossAndSquareRows": "Column 4 needs a circle, cross, and square. Rows 1 and 3 already have squares, so the square goes in row 5. Row 1 already has a cross, leaving the cross for the question mark in row 3.",
+      "duringATestTheAnswerButtonsSubmitImmediatelyTo": "During a test, the answer buttons submit immediately. To make notes, select an empty cell first; then the buttons place a note instead.",
+      "noRepeatedShapeInAnyRowOrColumnTap": "No repeated shape in any row or column. Tap an empty cell to make a note. Notes are optional and are not graded.",
+      "oneValidCompletedGridAddedSymbolsAreSemiTransparentWith": "One valid completed grid. Added symbols are semi-transparent with dashed cell borders; other completions may also be valid.",
+      "row2NeedsASquareAndStarColumn1": "Row 2 needs a square and star. Column 1 already has a square, so row 2, column 2 must be a square. Column 2 now needs a star and triangle. Row 5 already has a triangle, leaving the triangle for the question mark.",
+      "selectABlankThenChooseAShapeToPlace": "Select a blank, then choose a shape to place a note. Clear all marked cells to reset your notes. Return to answering before submitting.",
+      "thisRouteUsesForcedPlacementsFirstThenChecksRemaining": "This route uses forced placements first, then checks remaining target alternatives if needed.",
+      "useRowAndColumnRulesToSolve44And": "Use row and column rules to solve 4×4 and 5×5 shape grids, inspired by the gapChallenge practice tasks."
+    },
+    "messages": {
+      "allFailuresPossiblePlacementBranches": "All {{failures}} possible placement branches",
+      "answerStep": "Answer: {{step}}",
+      "assumeTolowercaseAtTheTargetFailuresLeadsToA": "Assume {{toLowerCase}} at the target. {{failures}} leads to a contradiction. {{failures2}}: {{firstFailure}}.",
+      "checkLocationItsRowAndColumnAlreadyContainItems": "Check {{location}}. Its row and column already contain {{items}}. Only {{toLowerCase}} remains.",
+      "findTheMissingShapeAtRowPuzzleColumnPuzzle2": "Find the missing shape at row {{puzzle}}, column {{puzzle2}}. Start with its row and column. {{guide}} You do not need to complete unrelated blanks.",
+      "noteForRowSelectedcellColumnSelectedcell2": "Note for row {{selectedCell}}, column {{selectedCell2}}.",
+      "placeStepAtRStep2CStep3": "Place {{step}} at R{{step2}}C{{step3}}",
+      "questionQuestionFastSolvingRoute": "Question {{question}} · Fast solving route",
+      "theTargetStillAllowsItemsItems2OnlyTolowercaseHas": "The target still allows {{items}}. {{items2}} Only {{toLowerCase}} has a valid completion. You can leave the other blanks unresolved.",
+      "rowIndexColumnIndex2": "row {{index}}, column {{index2}}",
+      "axisUnitStillNeedsATolowercaseEveryOther": "{{axis}} {{unit}} still needs a {{toLowerCase}}. Every other blank in that {{axis2}} is blocked by that shape in its crossing row or column. Place it at {{location}}.",
+      "itemsThen": "{{items}}; then",
+      "pathLocationHasNoLegalShapeBecauseIts": "{{path}}{{location}} has no legal shape because its row and column exclude every shape"
+    },
+    "results": {
+      "correctTheMissingShapeIsACircle": "Correct! The missing shape is a circle.",
+      "deductiveReasoningHistory": "Deductive reasoning history",
+      "deductiveReasoningResults": "Deductive reasoning results",
+      "findTheMissingShapeUsingTheRowAndColumn": "Find the missing shape using the row and column rules. Demo answers are not saved.",
+      "incorrect": "Incorrect.",
+      "originalCluesWithTheCorrectShapeInTheQuestionMark": "Original clues with the correct shape in the question-mark cell."
+    },
+    "tutorial": {
+      "deductiveReasoningWalkthrough": "Deductive reasoning walkthrough",
+      "demoAnswer": "Demo answer"
+    },
+    "setup": {
+      "title": "Find the missing shape."
+    },
+    "views": {
+      "full": "Full view",
+      "solution": "Solution view"
+    },
+    "actions": {
+      "showFastestSolvingRoute": "Show fastest solving route"
+    }
+  }
+}

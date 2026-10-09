@@ -1,0 +1,17 @@
+{
+  "monotony": {
+    "paper": {
+      "circleThese": "Ezeket Karikázza Be",
+      "canvasRenderingIsUnavailable": "Az ábra megjelenítése nem elérhető.",
+      "circleEveryRectangleMatchingOneOfTheTargetTypes": "Karikázza be a céltípusoknak megfelelő téglalapokat.",
+      "fast": "Gyors",
+      "itemsFirstitemLastitem": "Elemek: {{firstItem}}–{{lastItem}}",
+      "monotonyPaperTest": "Papíralapú monotóniateszt",
+      "noTargetTypesSelected": "Nincs kiválasztott céltípus",
+      "pagePageindexOfPagecount": "{{pageIndex}}. oldal / {{pageCount}}",
+      "mm": "mm",
+      "normal": "normál",
+      "lengthRandomizedPerceptionSymbols": "{{length}} véletlen észlelési szimbólum"
+    }
+  }
+}

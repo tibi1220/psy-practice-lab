@@ -1,9 +1,9 @@
-import { useState } from "react";
-import type { ComponentProps } from "react";
+import { useState } from 'react';
+import type { ComponentProps } from 'react';
 
 type NativeNumberInputProps = Omit<
-  ComponentProps<"input">,
-  "type" | "value" | "defaultValue" | "onChange" | "onBlur"
+  ComponentProps<'input'>,
+  'type' | 'value' | 'defaultValue' | 'onChange' | 'onBlur'
 >;
 
 export function ValidatedNumberInput({
@@ -24,8 +24,7 @@ export function ValidatedNumberInput({
     sourceValue: value,
     draft: String(value),
   });
-  const draft =
-    editor.sourceValue === value ? editor.draft : String(value);
+  const draft = editor.sourceValue === value ? editor.draft : String(value);
 
   const commit = () => {
     const parsed = Number(draft);
@@ -46,17 +45,17 @@ export function ValidatedNumberInput({
   return (
     <input
       {...inputProps}
-      type="number"
+      type='number'
       min={min}
       max={max}
       value={draft}
-      onChange={(event) =>
+      onChange={event =>
         setEditor({ sourceValue: value, draft: event.currentTarget.value })
       }
       onBlur={commit}
-      onKeyDown={(event) => {
+      onKeyDown={event => {
         inputProps.onKeyDown?.(event);
-        if (!event.defaultPrevented && event.key === "Enter") {
+        if (!event.defaultPrevented && event.key === 'Enter') {
           event.currentTarget.blur();
         }
       }}

@@ -1,0 +1,54 @@
+{
+  "digitChallenge": {
+    "results": {
+      "requiredResult": ". Elvárt eredmény:",
+      "buildACorrectEquationFromDistinctDigitsDemoAnswers": "Különböző számjegyekkel állíts össze helyes egyenletet. A gyakorlóválaszokat nem mentjük.",
+      "correctBoth92And81": "Helyes! A 9 − 2 és a 8 − 1 is 7-et ad."
+    },
+    "labels": {
+      "anySolutionUsingDistinctDigitsFrom1To9": "Minden különböző, 1 és 9 közötti számjegyekből álló helyes megoldás elfogadott.",
+      "digitKeypad": "Számbillentyűzet",
+      "eachDigitCanBeUsedOnlyOnceEditA": "Minden számjegy csak egyszer használható. Módosítsa az ismétlődést vagy töröld az egyenletet.",
+      "easyTwoOrThreeDigits": "Könnyű · két vagy három számjegy",
+      "editYourEquation": "Egyenlet szerkesztése",
+      "equation": "Egyenlet",
+      "eraseDigit": "Számjegy törlése",
+      "fillEachBlankWithADigitFrom1To": "Minden üres helyre írj 1–9 közötti számjegyet. Egy számjegy egy egyenletben csak egyszer szerepelhet.",
+      "fillEveryBlankWithADigitFrom1To": "Minden üres helyet tölts ki 1–9 közötti számjeggyel. Minden számjegyet csak egyszer használj.",
+      "fillTheBlanks": "Töltsd ki az üres helyeket",
+      "followTheOperations": "Kövesd a műveleteket",
+      "hardFourDigitsAndMultiplication": "Nehéz · négy számjegy és szorzás",
+      "makeTheEquationWork": "Tedd igazzá az egyenletet.",
+      "multiplyFirst": "Előbb szorozz",
+      "multiplyInsideTheParenthesesFirstThenPerformAdditionOr": "Előbb a zárójelben szorozz, majd végezze el az összeadást vagy kivonást.",
+      "tryAgainTheFirstDigitMinusTheSecondMust": "Próbáld újra: az első számjegyből kivonva a másodikat 7-et kell kapni.",
+      "tryAnEquation": "Egyenlet kipróbálása",
+      "tryEntering9And2Or8And1": "Próbáld beírni a 9-et és 2-t, vagy a 8-at és 1-et.",
+      "typeIntoABlankOrUseTheKeypadErase": "Írj egy üres helyre vagy használd a számbillentyűzetet. Töröljön egy számjegyet vagy mindet a módszer változtatásához.",
+      "useDistinctDigits": "Használj különböző számjegyeket",
+      "workThroughAdditionAndSubtractionFromLeftToRight": "Az összeadást és kivonást balról jobbra végezze.",
+      "yourAnswerEvaluatesTo": "Válaszának értéke:",
+      "validSolutions": "érvényes megoldás",
+      "firstSixShown": "· első hat megjelenítve"
+    },
+    "actions": {
+      "clearAll": "Összes törlése",
+      "submitAnyValidAnswer": "Bármely érvényes válasz beküldése"
+    },
+    "tutorial": {
+      "digitChallengeWalkthrough": "Számjegyfeladat bemutatója"
+    },
+    "messages": {
+      "digitToken": "{{token}}. számjegy",
+      "editingDigitActiveslotTapABlankToChooseAnother": "A(z) {{activeSlot}}. számjegy szerkesztése. Másik hely választásához érints meg egy üres helyet."
+    },
+    "instructions": {
+      "findDistinctDigitsThatMakeAnEquationTruePractice": "Keressen különböző számjegyeket, amelyek igazzá teszik az egyenletet. Gyakorold az összeadást, kivonást és szorzást a digitChallenge ihlette feladatokkal.",
+      "multiplyInsideParenthesesFirstPerformRemainingAdditionAndSubtraction": "Előbb a zárójelben szorozz. A többi összeadást és kivonást balról jobbra végezze el.",
+      "parenthesesShowWhichMultiplicationToDoBeforeAdditionOr": "A zárójel jelzi, mely szorzást kell elvégezni az összeadás vagy kivonás előtt. Több elrendezés is helyes lehet.",
+      "thereCanBeSeveralCorrectAnswersSubmitWhenAll": "Több helyes válasz is lehet. Küldd be, amikor minden üres hely kitöltött; a befejezés után tekintsd át a megoldásokat.",
+      "typeDigitsOrTapTheKeypadSelectABlank": "Írj számjegyeket vagy érintsd meg a számbillentyűzetet. Szerkesztéshez válassz egy üres helyet; az Összes törlése gombbal újrakezdhetsz. Akkor küldd be, ha minden üres hely kitöltött.",
+      "youKnowTheResultChooseDigits1Through9": "Az eredmény adott. Válassz 1–9 közötti számjegyeket az üres helyekre, minden számjegyet legfeljebb egyszer használva."
+    }
+  }
+}

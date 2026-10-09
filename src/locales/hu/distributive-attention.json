@@ -1,0 +1,49 @@
+{
+  "distributiveAttention": {
+    "labels": {
+      "aMainGridLedIdentifiesACellHoldItsRow": "A fő rács LED-je egy cellát jelöl. Tartsd lenyomva egyszerre a megfelelő sor és oszlop körét.",
+      "desktopClickTheIntersectionWithYourMouseOrTrackpad": "Asztali gépen: kattints a metszéspontra az egérrel vagy az érintőpaddal.",
+      "findTheRowAndColumnIntersection": "Keresd meg a sor és oszlop metszéspontját",
+      "holdOneLeftHandRowKeyAndOneRightHandColumn": "Tarts lenyomva egyszerre egy balkezes sorgombot és egy jobbkezes oszlopgombot.",
+      "leftHandRows": "Balkezes sorok:",
+      "mixed": "Vegyes",
+      "mixedDetail": "Vegyes ·",
+      "numberOfTrials": "Próbák száma",
+      "oneHanded": "Egykezes",
+      "oneHandedTrials": "Egykezes próbák",
+      "pressTheMatchingRowAndColumnTogether": "Nyomd meg egyszerre a megfelelő sort és oszlopot",
+      "respondOnce": "Válaszolj egyszer",
+      "rightHandColumns": "Jobbkezes oszlopok:",
+      "trackBothAxesAtOnce": "Kövesd mindkét tengelyt egyszerre.",
+      "twoEdgeLedsIdentifyARowAndColumnTap": "Két szélső LED egy sort és oszlopot jelöl. Érintsd meg vagy kattints a metszéspontjukra.",
+      "twoHanded": "Kétkezes",
+      "twoHandedDesktop": "Kétkezes asztali mód",
+      "twoHandedTouch": "Kétkezes érintés",
+      "twoHandedTrials": "Kétkezes próbák",
+      "yourCompletedDistributiveAttentionSessionsWillAppearHere": "A befejezett elosztottfigyelem-tesztek itt jelennek meg.",
+      "yourFirstCoordinateIsScoredThenTheNextRandom": "Az első koordináta értékelést kap, majd megjelenik a következő véletlen cél.",
+      "of": "/",
+      "trials": "próba",
+      "trial": "· Próba"
+    },
+    "results": {
+      "attentionResults": "Figyelmi eredmények",
+      "distributiveAttentionHistory": "Elosztott figyelem előzményei",
+      "resultsAndModeSettingsAreSavedOnlyInThis": "Az eredmények és módbeállítások csak ebben a böngészőben kerülnek mentésre.",
+      "msAverage": "ms átlag"
+    },
+    "settings": {
+      "chooseTheResponseDirectionAndSessionLength": "Állítsd be a válaszirányt és a gyakorlás hosszát.",
+      "mixedMode": "Vegyes mód",
+      "mode": "Mód"
+    },
+    "messages": {
+      "desktopChordRowsItemsColumnsItems2": "Asztali billentyűkombináció — sorok: {{items}} · oszlopok: {{items2}}"
+    },
+    "instructions": {
+      "locateAnIntersectionFromTwoSignalsOrReverseThe": "Keresd meg a metszéspontot két jelzésből, vagy fordítsa meg a feladatot, és adj két egyidejű választ egy világító cellára.",
+      "oneAndTwoHandedTrialsAppearInABalancedRandom": "Az egy- és kétkezes próbák kiegyensúlyozott, véletlenszerű sorrendben jelennek meg. Minden próbánál kövesd a LED-eket.",
+      "thisIsAPracticeToolNotAClinicalAssessment": "Ez gyakorló eszköz, nem klinikai értékelés. A beviteli mód, az egyidejű billentyűkezelés és a kijelzőméret befolyásolhatja az eredményeket."
+    }
+  }
+}

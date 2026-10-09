@@ -1,0 +1,39 @@
+{
+  "switchReasoning": {
+    "labels": {
+      "adaptiveOneToTwoStages": "Adaptive · one to two stages",
+      "applyFixedCodesFirst": "Apply fixed codes first",
+      "applyTheFixedCodeFirstWhenShownUseThat": "Apply the fixed code first when shown. Use that new order as the input for the next code.",
+      "chainTheStages": "Chain the stages",
+      "chooseACode": "Choose a code.",
+      "easyOneStage": "Easy · one stage",
+      "findTheMatchingCode": "Find the matching code",
+      "findTheMatchingCodeDetail": "Find the matching code.",
+      "hardTwoStages": "Hard · two stages",
+      "numberTheInput": "Number the input",
+      "readPositionsNotDestinations": "Read positions, not destinations",
+      "readTheCode": "Read the code",
+      "readTheFourInputPositionsFromLeftToRight": "Read the four input positions from left to right as 1, 2, 3, and 4.",
+      "tryACode": "Try a code",
+      "tryAgainTheFirstTwoShapesStayInPlace": "Try again: the first two shapes stay in place; the last two swap."
+    },
+    "instructions": {
+      "anAnswerButtonSubmitsImmediatelyAndOpensTheNext": "An answer button submits immediately and opens the next question. Review answers after finishing.",
+      "chooseTheCodeThatChangesTheInputIntoThe": "Choose the code that changes the input into the shown output. During a test, selecting a code submits immediately and opens the next question.",
+      "eachDigitSelectsAPositionFromTheCurrentInput": "Each digit selects a position from the current input. Apply any fixed code first, then choose the code that gives the final output.",
+      "eachDigitTellsYouWhichInputPositionSuppliesThe": "Each digit tells you which input position supplies the next output shape. Code 1-2-4-3 keeps the first two shapes and swaps the last two.",
+      "theFirstDigitChoosesTheShapeForOutputPosition": "The first digit chooses the shape for output position 1, the second chooses position 2, and so on.",
+      "traceShapesThroughNumericalCodesToMatchAnInput": "Trace shapes through numerical codes to match an input sequence to its output, inspired by the switchChallenge practice tasks.",
+      "withTwoStagesTheFirstCodeIsGivenIts": "With two stages, the first code is given. Its output becomes the input for the code you must choose. Positions are counted again from that intermediate sequence."
+    },
+    "results": {
+      "correct1243SwapsTheCrossAndStar": "Correct! 1-2-4-3 swaps the cross and star.",
+      "followTheShapesThroughTheCodesDemoAnswersAre": "Follow the shapes through the codes. Demo answers are not saved.",
+      "switchReasoningHistory": "Switch reasoning history",
+      "switchReasoningResults": "Switch reasoning results"
+    },
+    "tutorial": {
+      "switchReasoningWalkthrough": "Switch reasoning walkthrough"
+    }
+  }
+}

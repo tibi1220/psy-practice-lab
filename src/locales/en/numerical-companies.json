@@ -1,0 +1,39 @@
+{
+  "numericalReasoning": {
+    "companies": {
+      "amberRetail": "Amber Retail",
+      "asterDigital": "Aster Digital",
+      "atlasComponents": "Atlas Components",
+      "auroraRenewables": "Aurora Renewables",
+      "bluepeakStorage": "Bluepeak Storage",
+      "brooksideShops": "Brookside Shops",
+      "cedarCommerce": "Cedar Commerce",
+      "cloudHosting": "Cloud hosting",
+      "cloudInfrastructure": "Cloud infrastructure",
+      "cloudbridgeSoftware": "Cloudbridge Software",
+      "crestPower": "Crest Power",
+      "energy": "Energy",
+      "energyEfficiency": "Energy efficiency",
+      "engineering": "Engineering",
+      "harborMachinery": "Harbor Machinery",
+      "juniperStores": "Juniper Stores",
+      "lumenAnalytics": "Lumen Analytics",
+      "marketShare": "Market share",
+      "marketing": "Marketing",
+      "meadowMarket": "Meadow Market",
+      "meridianIndustries": "Meridian Industries",
+      "northstarEngineering": "Northstar Engineering",
+      "oaklineSystems": "Oakline Systems",
+      "pioneerWorks": "Pioneer Works",
+      "retailAndECommerce": "Retail and e-commerce",
+      "signalSoftware": "Signal Software",
+      "softwareAndDigitalServices": "Software and digital services",
+      "softwareLicenses": "Software licenses",
+      "solsticeEnergy": "Solstice Energy",
+      "summitSystems": "Summit Systems",
+      "terraEnergy": "Terra Energy",
+      "vertexCloud": "Vertex Cloud",
+      "willowRetailGroup": "Willow Retail Group"
+    }
+  }
+}

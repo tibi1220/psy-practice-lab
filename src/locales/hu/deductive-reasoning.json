@@ -1,0 +1,95 @@
+{
+  "deductiveReasoning": {
+    "labels": {
+      "forced": "(kikényszerített)",
+      "trial": "(próba)",
+      "adaptive44ToMonochrome55": "Adaptív · 4×4-től egyszínű 5×5-ig",
+      "answer": "Válasz",
+      "chooseAShapeBelowToSubmitYourAnswer": "A válasz beküldéséhez válassz alul egy alakzatot.",
+      "chooseTheMissingShape": "Válaszd ki a hiányzó alakzatot.",
+      "circle": "Kör",
+      "column": "Oszlop",
+      "column3AlreadyContainsACrossStarAndTriangle": "A 3. oszlopban már van kereszt, csillag és háromszög. Csak a kör hiányzik.",
+      "cross": "Kereszt",
+      "deduction": "Dedukció",
+      "eachShapeAppearsExactlyOnceInEachRowAnd": "Minden alakzat pontosan egyszer szerepel minden sorban és oszlopban. Nincsenek részrácsokra vonatkozó szabályok.",
+      "easy44": "Könnyű · 4×4",
+      "everyRowAndColumnContainsEachShapeExactlyOnce": "Minden sor és oszlop minden alakzatot pontosan egyszer tartalmaz. Nincsenek kisebb részrácsokra vonatkozó szabályok.",
+      "extraHard55GreyBlackShapes": "Extra nehéz · 5×5, szürke/fekete alakzatok",
+      "findTheMissingShape": "Keresd meg a hiányzó alakzatot",
+      "focusOnTheTarget": "Összpontosíts a célra",
+      "followAFocusedRouteFromTheOriginalCluesTo": "Kövesd a legrövidebb utat az eredeti támpontoktól a hiányzó alakzatig.",
+      "followingTheForcedPlacements": "A kényszerű elhelyezések követése",
+      "hard55": "Nehéz · 5×5",
+      "lookDownTheTargetColumn": "Nézd végig a céloszlopot",
+      "makeNotes": "Jegyzetelés",
+      "oneExampleBranch": "Egy lehetséges ág",
+      "oneOfEachShape": "Minden alakzatból egy",
+      "row": "Sor",
+      "solutionDisplay": "Megoldás megjelenítése",
+      "solveOnlyTheQuestionMarkCellSomeOtherBlanksMay": "Csak a kérdőjeles cellát oldd meg. Más üres celláknak több lehetőségük is lehet.",
+      "square": "Négyzet",
+      "star": "Csillag",
+      "theContradiction": "Az ellentmondás",
+      "thisIsAShortestChainOfSingleCellRowAnd": "Ez az egycellás sor- és oszlopkövetkeztetések legrövidebb lánca.",
+      "triangle": "Háromszög",
+      "tryAgainWhichShapeIsMissingFromColumn3": "Próbáld újra: melyik alakzat hiányzik a 3. oszlopból?",
+      "tryAnAnswer": "Válasz kipróbálása",
+      "cells": "cella",
+      "or": "vagy",
+      "highlightedCellIsTheCurrentStep": "· a kiemelt cella az aktuális lépés"
+    },
+    "instructions": {
+      "adaptivePracticeAdvancesAfterFourCorrectAnswersInThe": "Az utolsó öt válaszból négy helyes után nő a nehézség. Négy helyes 5×5-ös válasz után egyszínű körök következnek. Az extra nehéz körökben a szürke és fekete alakzatok váltakoznak.",
+      "anAnswerButtonSubmitsImmediatelyYourSelectedShapeFlashes": "A válaszgomb azonnal beküldi a választ. A kijelölt alakzat helyes válasznál zölden, hibásnál pirosan villan fel, majd következik az új kérdés. A végén áttekintheted a válaszokat.",
+      "column1NeedsACrossAndTriangleRow3": "Az 1. oszlopból kereszt és háromszög hiányzik. A 3. sorban már van háromszög, ezért az első cella kereszt. Így a kérdőjelhez a háromszög marad.",
+      "column3AlreadyHasACrossStarAndTriangle": "A 3. oszlopban kereszt, csillag és háromszög van. Csak a kör hiányzik. Nem kell minden üres cellát kitölteni.",
+      "column3NeedsAStarAndCircleRow1": "A 3. oszlopból csillag és kör hiányzik. Az 1. sorban már van csillag, így a kérdőjel kör.",
+      "column4NeedsACircleCrossAndSquareRows": "A 4. oszlopból kör, kereszt és négyzet hiányzik. Az 1. és 3. sorban már van négyzet, ezért az 5. sorba kerül. Az 1. sorban kereszt is van, így a kereszt a 3. sor kérdőjeléhez kerül.",
+      "duringATestTheAnswerButtonsSubmitImmediatelyTo": "Teszt közben a válaszgombok azonnal beküldik a választ. Jegyzeteléshez előbb válassz ki egy üres cellát; ekkor a gombok jegyzetet helyeznek el.",
+      "noRepeatedShapeInAnyRowOrColumnTap": "Egy sorban vagy oszlopban sem ismétlődhet alakzat. Jegyzeteléshez érints meg egy üres cellát. A jegyzetek opcionálisak és nem kapnak értékelést.",
+      "oneValidCompletedGridAddedSymbolsAreSemiTransparentWith": "Egy érvényes kitöltött rács. A hozzáadott szimbólumok félig átlátszók, a cellaszegélyek szaggatottak; más kitöltések is érvényesek lehetnek.",
+      "row2NeedsASquareAndStarColumn1": "A 2. sorból négyzet és csillag hiányzik. Az 1. oszlopban már van négyzet, ezért a 2. sor 2. oszlopa négyzet. A 2. oszlopból most csillag és háromszög hiányzik. Az 5. sorban már van háromszög, így a kérdőjelhez háromszög kerül.",
+      "selectABlankThenChooseAShapeToPlace": "Válassz ki egy üres cellát, majd egy alakzatot a jegyzethez. Az összes jelölt cella törlésével alaphelyzetbe állíthatod a jegyzeteket. Beküldés előtt térj vissza a válaszadáshoz.",
+      "thisRouteUsesForcedPlacementsFirstThenChecksRemaining": "Ez az útvonal előbb a kényszerű elhelyezéseket használd, majd szükség esetén ellenőrzi a fennmaradó céllehetőségeket.",
+      "useRowAndColumnRulesToSolve44And": "Oldj meg 4×4-es és 5×5-ös alakzatrácsokat sor- és oszlopszabályok alapján, a gapChallenge gyakorló feladatai ihlette módon."
+    },
+    "messages": {
+      "allFailuresPossiblePlacementBranches": "Mind a(z) {{failures}} lehetséges elhelyezési ág",
+      "answerStep": "Válasz: {{step}}",
+      "assumeTolowercaseAtTheTargetFailuresLeadsToA": "Tegyük fel: {{toLowerCase}} a célban. {{failures}} ellentmondáshoz vezet. {{failures2}}: {{firstFailure}}.",
+      "checkLocationItsRowAndColumnAlreadyContainItems": "Ellenőrizd: {{location}}. A sora és oszlopa már tartalmazza: {{items}}. Csak ez marad: {{toLowerCase}}.",
+      "findTheMissingShapeAtRowPuzzleColumnPuzzle2": "Keresd meg a hiányzó alakzatot a(z) {{puzzle}}. sor {{puzzle2}}. oszlopában. Kezdd a sorával és oszlopával. {{guide}} Nem kell kitöltenie a nem kapcsolódó üres helyeket.",
+      "noteForRowSelectedcellColumnSelectedcell2": "Jegyzet a(z) {{selectedCell}}. sor {{selectedCell2}}. oszlopához.",
+      "placeStepAtRStep2CStep3": "{{step}} elhelyezése: S{{step2}}O{{step3}}",
+      "questionQuestionFastSolvingRoute": "{{question}}. kérdés · Gyors megoldási út",
+      "theTargetStillAllowsItemsItems2OnlyTolowercaseHas": "A célban még lehetséges: {{items}}. {{items2}} Csak ennek van érvényes kitöltése: {{toLowerCase}}. A többi üres helyet megoldatlanul hagyhatod.",
+      "rowIndexColumnIndex2": "{{index}}. sor, {{index2}}. oszlop",
+      "axisUnitStillNeedsATolowercaseEveryOther": "A(z) {{axis}} {{unit}} még ezt igényli: {{toLowerCase}}. Az adott {{axis2}} minden más üres helyét kizárja ez az alakzat a keresztező sorban vagy oszlopban. Helyezd ide: {{location}}.",
+      "itemsThen": "{{items}}; majd",
+      "pathLocationHasNoLegalShapeBecauseIts": "A(z) {{path}}{{location}} cellának nincs érvényes alakzata, mert sora és oszlopa minden alakzatot kizár"
+    },
+    "results": {
+      "correctTheMissingShapeIsACircle": "Helyes! A hiányzó alakzat egy kör.",
+      "deductiveReasoningHistory": "Deduktív következtetés előzményei",
+      "deductiveReasoningResults": "Deduktív következtetés eredményei",
+      "findTheMissingShapeUsingTheRowAndColumn": "Keresd meg a hiányzó alakzatot a sor- és oszlopszabályok alapján. A bemutató válaszai nem kerülnek mentésre.",
+      "incorrect": "Hibás.",
+      "originalCluesWithTheCorrectShapeInTheQuestionMark": "Eredeti támpontok a helyes alakzattal a kérdőjeles cellában."
+    },
+    "tutorial": {
+      "deductiveReasoningWalkthrough": "Deduktív következtetés bemutatója",
+      "demoAnswer": "Bemutató válasza"
+    },
+    "setup": {
+      "title": "Keresd meg a hiányzó alakzatot."
+    },
+    "views": {
+      "full": "Teljes nézet",
+      "solution": "Megoldásnézet"
+    },
+    "actions": {
+      "showFastestSolvingRoute": "Leggyorsabb megoldási út megjelenítése"
+    }
+  }
+}

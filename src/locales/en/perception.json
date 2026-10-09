@@ -1,0 +1,46 @@
+{
+  "perception": {
+    "settings": {
+      "chooseAFixedArrangementForEachHandTheTwo": "Choose a fixed arrangement for each hand. The two sides may use different layouts.",
+      "mixedLayoutsLegacy": "Mixed layouts (legacy)",
+      "unknownLayout": "Unknown layout"
+    },
+    "results": {
+      "correctPairs": "Correct pairs",
+      "leftAccuracy": "Left accuracy",
+      "pairAccuracy": "Pair accuracy",
+      "perceptionHistory": "Perception history",
+      "perceptionResults": "Perception results",
+      "resultsAndInputSettingsAreSavedOnlyInThis": "Results and input settings are saved only in this browser.",
+      "rightAccuracy": "Right accuracy"
+    },
+    "labels": {
+      "desktopAlternative": "Desktop alternative",
+      "findBothNumbers": "Find both numbers",
+      "perception": "Perception ·",
+      "pressSimultaneously": "Press simultaneously",
+      "pressTheMatchingLeftAndRightNumbersTogether": "Press the matching left and right numbers together",
+      "readTheOuterLeds": "Read the outer LEDs",
+      "seeTwoSignalsRespondAsOne": "See two signals. Respond as one.",
+      "theIlluminatedLeftAndRightLedsEachIdentifyOne": "The illuminated left and right LEDs each identify one number from 1 to 4.",
+      "touchAndHoldOneButtonOnEachSideThe": "Touch and hold one button on each side. The pair is recorded when both are down.",
+      "touchHoldOneButtonOnEachSideDesktop": "Touch: hold one button on each side · Desktop: left",
+      "useQWERForLeftValues14": "Use Q W E R for left values 1–4 and U I O P for right values 1–4 as a two-key chord.",
+      "yourCompletedPerceptionSessionsWillAppearHere": "Your completed perception sessions will appear here.",
+      "inputPattern": "input pattern",
+      "left": "left",
+      "leftDetail": "left ·",
+      "right": "right",
+      "rightRound": "right · Round",
+      "rightDetail": "· right"
+    },
+    "instructions": {
+      "locateEachValueInItsSideSChosenArrangementBoth": "Locate each value in its side's chosen arrangement. Both layouts stay fixed for the entire session.",
+      "readOneIlluminatedNumberOnEachSideThenCoordinate": "Read one illuminated number on each side, then coordinate both hands to select the matching pair simultaneously.",
+      "thisIsAPracticeToolNotAClinicalAssessment": "This is a practice tool, not a clinical assessment. Touch hardware, keyboard rollover, and display size can affect results."
+    },
+    "messages": {
+      "methodlabelLeftMethodlabel2Right": "{{methodLabel}} left · {{methodLabel2}} right"
+    }
+  }
+}

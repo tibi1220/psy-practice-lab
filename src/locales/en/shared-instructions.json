@@ -1,0 +1,12 @@
+{
+  "common": {
+    "instructions": {
+      "general": {
+        "afterATwoSecondPreparationPauseColorsWarningsAndSounds": "After a two-second preparation pause, colors, warnings, and sounds use the configured main interval while upper distractions appear independently.",
+        "chooseAVerticalHorizontalOr2By2LayoutSeparatelyFor": "Choose a vertical, horizontal, or 2-by-2 layout separately for the left and right. That pair remains fixed throughout the test.",
+        "completeEveryRoundThenReviewTheRawTimesAverage": "Complete every round, then review the raw times, average, and deviation. If enabled, the fastest and slowest trials are excluded from statistics.",
+        "keepClassifyingUntilTheSequenceEndsReviewSpeedAnd": "Keep classifying until the sequence ends. Review speed and cumulative accuracy over time; mistakes are marked by type on the graph."
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "oddOneOut": {
+    "results": {
+      "correctAnswerObject": ". Helyes válasz: objektum",
+      "correctObject5BreaksTheAlternatingFillPattern": "Helyes! Az 5. objektum megtöri a váltakozó kitöltés mintáját.",
+      "findTheGoverningRuleThenIdentifyTheExceptionDemo": "Keresd meg a szabályt, majd azonosítsd a kivételt. A bemutató válaszai nem kerülnek mentésre.",
+      "theCorrectObjectIsHighlighted": "A helyes objektum kiemelve."
+    },
+    "instructions": {
+      "afterSixAnswersAddMovingGapsShapeCountRelationshipsAnd": "Hat válasz után mozgó hézagok, alakzatszámok és forgatási kapcsolatok jelennek meg. Tizenkettő után nagyobb elmozdulások és finomabb különbségek következnek. A nehéz mód kapcsolatokkal indul, a könnyű mód egyszerű tulajdonságokat használ.",
+      "compareOrientationFillStraightOrCurvedEdgesContainmentAnd": "Figyeld az irányt, kitöltést, egyenes és görbe éleket, befoglalást és darabszámokat. A nehezebb szabályok mozgó hézagokat, körök és négyzetek számának különbségét vagy páron belüli forgatást használnak.",
+      "eachSmallShapeMustFitEntirelyInsideItsOuter": "Minden kis alakzatnak teljesen bele kell férnie a külső alakzatba. A kijelölt téglalap átlépi a külső határt.",
+      "findTheObjectThatBreaksASharedRuleAmong": "Keresd meg a kilenc objektum közös szabályát megszegő elemet a scales ix induktív következtetési feladatai alapján.",
+      "readInNumberedOrderLookForASharedProperty": "Haladj a számozott sorrendben. Keressen közös tulajdonságot vagy ismétlődő sorozatot: tájolást, kitöltést, vonalszámot, tartalmazást vagy oldalszámot.",
+      "selectOneObjectInTheRealTestThisSubmits": "Válassz egy objektumot. Az éles tesztben ez azonnal beküldi a választ és a következő kérdésre lép.",
+      "selectingAnObjectSubmitsImmediatelyReviewTheCorrectObject": "Egy objektum kiválasztása azonnal beküldi a választ. A befejezés után tekintsd át a helyes objektumot és a szabályt.",
+      "someRulesConcernRelationshipsAndSequencesRatherThanA": "Egyes szabályok kapcsolatokat és sorozatokat érintenek, nem egyetlen szokatlan alakzatot. Ezeknél az ötvonalas objektumoknál a rés végighalad a vonalakon, az ötödik után újrakezdve. Válaszd ki a kivételt.",
+      "theLineCountsRepeat112PossiblyStarting": "A vonalszámok 1, 1, 2 sorrendben ismétlődnek (a ciklus közepén is indulhatnak). A kijelölt objektum vonalszáma hibás."
+    },
+    "labels": {
+      "chooseTheStarThatBreaksTheAlternatingPattern": "Válaszd ki a váltakozó mintát megszakító csillagot.",
+      "compareAllNineObjects": "Hasonlítsd össze a kilenc objektumot",
+      "continueAndReview": "Folytatás és áttekintés",
+      "easyFillRotationAndShapeProperties": "Könnyű · kitöltés, elforgatás és alakzattulajdonságok",
+      "eightObjectsFitTheRuleSelectTheOneObject": "Nyolc objektum megfelel a szabálynak. Válaszd ki azt az egyet, amelyik nem.",
+      "everyObjectShouldHaveFourSidesTheSelectedObject": "Minden objektumnak négy oldala kellene legyen. A kijelölt objektum egy háromoldalú háromszög.",
+      "filledAndOutlinedStarsAlternateTheSelectedStarBreaks": "A kitöltött és körvonalas csillagok váltakoznak. A kijelölt csillag megtöri ezt a mintát.",
+      "findOneException": "Keressen egy kivételt",
+      "findTheException": "Keresd meg a kivételt",
+      "findTheRuleSpotTheException": "Keresd meg a szabályt. Vegye észre a kivételt.",
+      "hardStrokeSequencesAndShapeRelationships": "Nehéz · vonalsorozatok és alakzatkapcsolatok",
+      "hereFilledAndOutlinedStarsShouldAlternateOnlyOne": "Itt a kitöltött és körvonalas csillagoknak váltakozniuk kell. Csak egy csillag töri meg a mintát.",
+      "inferTheRule": "Következtesd ki a szabályt",
+      "nineObjectsInNumberedOrder": "Kilenc objektum számozott sorrendben",
+      "readInOrder": "Olvasd sorrendben",
+      "relationshipsAndSequences": "Kapcsolatok és sorozatok",
+      "selectTheOneObjectThatDoesNotFitThe": "Válaszd ki a szabálynak nem megfelelő objektumot. Haladj számozott sorrendben.",
+      "shapeProperties": "Alakzattulajdonságok",
+      "subtleRelationships": "Finom összefüggések",
+      "trackTheGapFromOneObjectToTheNext": "Kövesd a rést egyik objektumtól a következőig.",
+      "tryAHarderPattern": "Nehezebb minta kipróbálása",
+      "tryASelection": "Kijelölés kipróbálása",
+      "tryAgainLookForTwoConsecutiveStarsWithThe": "Próbáld újra: keressen két egymást követő csillagot azonos kitöltéssel.",
+      "tryAgainPredictWhichStrokeShouldHaveTheGap": "Próbáld újra: következtesd ki, melyik vonalon kell lennie a résnek az egyes számozott helyeken.",
+      "yourAnswerObject": "A válaszod: objektum",
+      "angular": "szögletes",
+      "clockwise": "óramutató járásával megegyezően",
+      "containment": "tartalmazás",
+      "crossing": "keresztező",
+      "ellipse": "ellipszis",
+      "filled": "kitöltött",
+      "hasItsGapInTheWrongPosition": "rése rossz helyen van",
+      "hasNoGap": "nincs rése",
+      "inside": "belül",
+      "line": "vonal",
+      "lines": "vonal",
+      "noGap": "nincs rés",
+      "oneMoreCircle": "eggyel több kör",
+      "outlined": "körvonalas",
+      "position": "hely",
+      "quadrilateral": "négyszög",
+      "sides": "oldalak",
+      "triangle": "háromszög",
+      "twoMoreCircles": "kettővel több kör"
+    },
+    "messages": {
+      "correctOddexplanation": "Helyes. {{oddExplanation}}",
+      "eachTriangleRotates90DegreesPuzzleObjectPuzzle2Points": "Minden háromszög 90 fokkal fordul {{puzzle}}. A(z) {{puzzle2}}. objektum rossz irányba mutat.",
+      "eightShapesHaveOnlyStraightEdgesRegardlessOfTheir": "Nyolc alakzatnak csak egyenes élei vannak, tájolásuktól, kitöltésüktől és oldalszámuktól függetlenül. A(z) {{puzzle}}. objektum határa görbe.",
+      "ignorePlacementAndCountEachShapeTypeEveryCorrect": "Hagyd figyelmen kívül az elhelyezést, és számold meg az egyes alakzattípusokat. Minden helyes objektumban {{puzzle}} van, mint négyzet. A(z) {{puzzle2}}. objektum {{circles}} kört és {{squares}} négyzetet tartalmaz, megszegve ezt a kapcsolatot.",
+      "numberTheFiveStrokesFromTopToBottomThe": "Számozza meg az öt vonalat fentről lefelé. A rés minden következő objektumban {{step}} {{puzzle}} helyet halad lefelé, az 5. hely után fent újrakezdve. Várt réshelyek: {{items}}. A(z) {{puzzle2}}. objektum {{puzzle3}}.",
+      "selectObjectIndexPuzzle": "{{index}}. objektum kiválasztása: {{puzzle}}",
+      "withinEachObjectTheSmallerTIsRotated90": "Minden objektumban a kisebb T 90°-kal {{puzzle}} fordul a nagyobb T-hez képest. A párok bármilyen irányba nézhetnek. A(z) {{puzzle2}}. objektum megfordítja ezt a kapcsolatot.",
+      "boxWithLinesItem": "doboz: {{lines}} {{item}}",
+      "fiveStrokesItem": "öt vonal, {{item}}",
+      "gapInStrokeItem": "rés a(z) {{item}}. vonalon",
+      "largeTRotatedItemDegreesSmallTRotatedItem2": "nagy T {{item}} fokkal, kis T {{item2}} fokkal elforgatva",
+      "rectangleItemAnOuterShape": "téglalap {{item}} egy külső alakzatot",
+      "trianglePointingItem": "háromszög iránya: {{item}}",
+      "circlesCirclesAndSquaresSquares": "{{circles}} kör és {{squares}} négyzet",
+      "itemStar": "{{item}} csillag",
+      "sidesSidedPolygon": "{{sides}} oldalú sokszög"
+    },
+    "tutorial": {
+      "oddOneOutWalkthrough": "Kakukktojás bemutatója"
+    },
+    "settings": {
+      "useTheNumberedOrderFrom1To9Even": "Kövesd a számozott sorrendet 1-től 9-ig, akkor is, ha kisebb képernyőn több sorba törik az elrendezés.",
+      "counterclockwise": "óramutató járásával ellentétesen"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "numericalReasoning": {
+    "instructions": {
+      "adaptiveStartsWithDirectComparisonsAddsPercentagesAndAverages": "Adaptive starts with direct comparisons, adds percentages and averages after question 12, and combined ratios and growth comparisons after question 24. Unknown statements appear at every level. Hard mode starts with percentages.",
+      "annualReturnOnEquityForTheSampleCompanyAnd": "Annual return on equity for the sample company and five sector peers. Equity amounts and peer profits are not supplied.",
+      "chooseAnAnswerToSeeTheCalculationInThe": "Choose an answer to see the calculation. In the real test, correctness is revealed only in results. Answers stay marked so you can revisit them using Previous, Next, or the question overview.",
+      "chooseAnAnswerThenUsePreviousNextOrThe": "Choose an answer, then use Previous, Next, or the numbered overview. Answers remain editable until you finish or the timer expires. Clear answer removes a selection.",
+      "domesticMarketSharePercentagesCannotEstablishMarketSizesWithoutDomestic": "Domestic market-share percentages cannot establish market sizes without domestic product revenue. Global product revenue does not supply that missing breakdown.",
+      "eachBusinessHasItsOwnProductLinesDepartmentsCosts": "Each business has its own product lines, departments, costs, investment plans, and sector peers. Every start generates fresh five-year data.",
+      "exploreAManufacturingSoftwareRetailOrEnergyBusinessThrough": "Explore a manufacturing, software, retail, or energy business through detailed tables and interactive charts. Fresh figures and statements in every session, with 47 revisitable questions and a 12-minute default.",
+      "globalProductLineRevenueTotalsReconcileToRevenueOperatingProfit": "Global product-line revenue totals reconcile to Revenue. Operating profit = Revenue − Total costs. Net profit = Operating profit − Interest − Tax.",
+      "inspectSixDetailedDataCategoriesSearchByRowName": "Inspect six detailed data categories. Search by row name, switch between tables and charts, and toggle chart series. Monetary figures are in thousands of euros; Outlook figures are approved historical investment budgets. A calculator and scratch paper are allowed.",
+      "peerProfitsAndEquityAmountsAreNotSuppliedReturn": "Peer profits and equity amounts are not supplied. Return on equity alone cannot establish which company earned more profit.",
+      "resultsIncludeEveryStatementYourFinalAnswerTheExpected": "Results include every statement, your final answer, the expected answer, relevant data references, and the calculation. Unanswered questions are shown separately.",
+      "shareOfEachDomesticProductMarketHeldByThis": "Share of each domestic product market held by this company. Income shows global revenue; domestic product revenues and total domestic market sizes are not supplied. These separate market shares cannot be added to calculate overall share.",
+      "switchBetweenIncomeCostsEmployeesMarketShareReturnOn": "Switch between Income, Costs, Employees, Market share, Return on equity, and Outlook. Check the company, year, and unit. Search for rows, switch any table to a chart, and toggle series to compare trends.",
+      "trueIsSupportedByTheSuppliedDataFalseIs": "True is supported by the supplied data; False is contradicted. Choose Cannot say when information is missing. Do not add assumptions about causes, future years, or market sizes.",
+      "trueMeansTheDataEstablishTheStatementFalseMeans": "True means the data establish the statement. False means the data contradict it. Cannot say means necessary information is missing; do not assume a trend continues or mistake an intention for a forecast.",
+      "useOnlyTheInformationSuppliedYouCanMoveBetween": "Use only the information supplied. You can move between questions and revise every answer before finishing."
+    }
+  }
+}

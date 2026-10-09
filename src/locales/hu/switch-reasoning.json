@@ -1,0 +1,39 @@
+{
+  "switchReasoning": {
+    "labels": {
+      "adaptiveOneToTwoStages": "Adaptív · egy vagy két lépés",
+      "applyFixedCodesFirst": "Először a rögzített kódot alkalmazd",
+      "applyTheFixedCodeFirstWhenShownUseThat": "Ha van rögzített kód, először alkalmazd. Az így kapott sorrend lesz a következő kód bemenete.",
+      "chainTheStages": "Kapcsold össze a lépéseket",
+      "chooseACode": "Válassz kódot.",
+      "easyOneStage": "Könnyű · egy szakasz",
+      "findTheMatchingCode": "Keresd meg a megfelelő kódot",
+      "findTheMatchingCodeDetail": "Keresd meg a megfelelő kódot.",
+      "hardTwoStages": "Nehéz · két szakasz",
+      "numberTheInput": "Számozza meg a bemenetet",
+      "readPositionsNotDestinations": "A helyeket olvasd, ne a célhelyeket",
+      "readTheCode": "Olvasd le a kódot",
+      "readTheFourInputPositionsFromLeftToRight": "Olvasd a négy bemeneti helyet balról jobbra 1, 2, 3 és 4-ként.",
+      "tryACode": "Kód kipróbálása",
+      "tryAgainTheFirstTwoShapesStayInPlace": "Próbáld újra: az első két alakzat a helyén marad, az utolsó kettő felcserélődik."
+    },
+    "instructions": {
+      "anAnswerButtonSubmitsImmediatelyAndOpensTheNext": "A válaszgomb azonnal beküldi a választ és továbblép. A válaszokat a teszt végén nézheted át.",
+      "chooseTheCodeThatChangesTheInputIntoThe": "Válaszd a bemenetet a kimenetté alakító kódot. A tesztben a választás azonnal beküldi a választ és továbblép.",
+      "eachDigitSelectsAPositionFromTheCurrentInput": "Minden számjegy egy helyet választ ki az aktuális bemenetből. Előbb alkalmazd a rögzített kódot, majd válaszd ki a végső kimenetet adó kódot.",
+      "eachDigitTellsYouWhichInputPositionSuppliesThe": "Minden számjegy megadja, hogy melyik bemeneti helyről származik a következő kimeneti alakzat. Az 1-2-4-3 kód megtartja az első kettőt és felcseréli az utolsó kettőt.",
+      "theFirstDigitChoosesTheShapeForOutputPosition": "Az első számjegy választja ki az 1. kimeneti hely alakzatát, a második a 2. helyét, és így tovább.",
+      "traceShapesThroughNumericalCodesToMatchAnInput": "Kövesd az alakzatokat számkódokon át a bemenet és kimenet párosításához a switchChallenge gyakorló feladatai alapján.",
+      "withTwoStagesTheFirstCodeIsGivenIts": "Két szakasznál az első kód adott. Kimenete lesz a választandó kód bemenete. A helyeket ettől a köztes sorozattól újra kell számolni."
+    },
+    "results": {
+      "correct1243SwapsTheCrossAndStar": "Helyes! Az 1-2-4-3 felcseréli a keresztet és a csillagot.",
+      "followTheShapesThroughTheCodesDemoAnswersAre": "Kövesd az alakzatokat a kódokon keresztül. A bemutató válaszai nem kerülnek mentésre.",
+      "switchReasoningHistory": "Kódkövetés előzményei",
+      "switchReasoningResults": "Kódkövetés eredményei"
+    },
+    "tutorial": {
+      "switchReasoningWalkthrough": "Kódkövetés bemutatója"
+    }
+  }
+}

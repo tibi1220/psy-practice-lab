@@ -1,0 +1,54 @@
+{
+  "digitChallenge": {
+    "results": {
+      "requiredResult": ". Required result:",
+      "buildACorrectEquationFromDistinctDigitsDemoAnswers": "Build a correct equation from distinct digits. Demo answers are not saved.",
+      "correctBoth92And81": "Correct! Both 9 − 2 and 8 − 1 make 7."
+    },
+    "labels": {
+      "anySolutionUsingDistinctDigitsFrom1To9": "Any solution using distinct digits from 1 to 9 is accepted.",
+      "digitKeypad": "Digit keypad",
+      "eachDigitCanBeUsedOnlyOnceEditA": "Each digit can be used only once. Edit a duplicate or clear the equation.",
+      "easyTwoOrThreeDigits": "Easy · two or three digits",
+      "editYourEquation": "Edit your equation",
+      "equation": "Equation",
+      "eraseDigit": "Erase digit",
+      "fillEachBlankWithADigitFrom1To": "Fill each blank with a digit from 1 to 9. A digit may appear only once per equation.",
+      "fillEveryBlankWithADigitFrom1To": "Fill every blank with a digit from 1 to 9. Use each digit only once.",
+      "fillTheBlanks": "Fill the blanks",
+      "followTheOperations": "Follow the operations",
+      "hardFourDigitsAndMultiplication": "Hard · four digits and multiplication",
+      "makeTheEquationWork": "Make the equation work.",
+      "multiplyFirst": "Multiply first",
+      "multiplyInsideTheParenthesesFirstThenPerformAdditionOr": "Multiply inside the parentheses first, then perform addition or subtraction.",
+      "tryAgainTheFirstDigitMinusTheSecondMust": "Try again: the first digit minus the second must equal 7.",
+      "tryAnEquation": "Try an equation",
+      "tryEntering9And2Or8And1": "Try entering 9 and 2, or 8 and 1.",
+      "typeIntoABlankOrUseTheKeypadErase": "Type into a blank or use the keypad. Erase a digit or clear all to change your approach.",
+      "useDistinctDigits": "Use distinct digits",
+      "workThroughAdditionAndSubtractionFromLeftToRight": "Work through addition and subtraction from left to right.",
+      "yourAnswerEvaluatesTo": "Your answer evaluates to",
+      "validSolutions": "valid solutions",
+      "firstSixShown": "· first six shown"
+    },
+    "actions": {
+      "clearAll": "Clear all",
+      "submitAnyValidAnswer": "Submit any valid answer"
+    },
+    "tutorial": {
+      "digitChallengeWalkthrough": "Digit challenge walkthrough"
+    },
+    "messages": {
+      "digitToken": "Digit {{token}}",
+      "editingDigitActiveslotTapABlankToChooseAnother": "Editing digit {{activeSlot}}. Tap a blank to choose another position."
+    },
+    "instructions": {
+      "findDistinctDigitsThatMakeAnEquationTruePractice": "Find distinct digits that make an equation true. Practice addition, subtraction, and multiplication inspired by digitChallenge.",
+      "multiplyInsideParenthesesFirstPerformRemainingAdditionAndSubtraction": "Multiply inside parentheses first. Perform remaining addition and subtraction from left to right.",
+      "parenthesesShowWhichMultiplicationToDoBeforeAdditionOr": "Parentheses show which multiplication to do before addition or subtraction. More than one arrangement may be correct.",
+      "thereCanBeSeveralCorrectAnswersSubmitWhenAll": "There can be several correct answers. Submit when all blanks are filled; review solutions after finishing.",
+      "typeDigitsOrTapTheKeypadSelectABlank": "Type digits or tap the keypad. Select a blank to edit it; use Clear all to start again. Submit when every blank is filled.",
+      "youKnowTheResultChooseDigits1Through9": "You know the result. Choose digits 1 through 9 for the blanks, using each digit at most once."
+    }
+  }
+}

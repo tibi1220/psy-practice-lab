@@ -1,0 +1,12 @@
+{
+  "common": {
+    "instructions": {
+      "general": {
+        "afterATwoSecondPreparationPauseColorsWarningsAndSounds": "Két másodperc felkészülés után a fő jelzések a beállított időközzel érkeznek. A felső zavaró fények ettől függetlenek.",
+        "chooseAVerticalHorizontalOr2By2LayoutSeparatelyFor": "A bal és jobb oldalnak külön válassz függőleges, vízszintes vagy 2×2-es elrendezést. Ez a teszt során nem változik.",
+        "completeEveryRoundThenReviewTheRawTimesAverage": "Az összes próba után nézd át az időket, átlagot és szórást. Ha bekapcsoltad, a leggyorsabb és leglassabb próbát kihagyjuk a statisztikából.",
+        "keepClassifyingUntilTheSequenceEndsReviewSpeedAnd": "Folytasd a besorolást a sorozat végéig. Tekintsd át a sebességet és az összesített pontosságot az idő függvényében; a grafikon típus szerint jelöli a hibákat."
+      }
+    }
+  }
+}

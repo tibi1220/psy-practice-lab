@@ -1,0 +1,61 @@
+{
+  "workingMemory": {
+    "instructions": {
+      "aDotBrieflyLightsUpRememberItsLocationAnd": "A dot briefly lights up. Remember its location and its place in the sequence. The dot positions stay fixed throughout each task.",
+      "adaptivePracticeIncreasesDifficultyEveryTwoTasksFasterAfter": "Adaptive practice increases difficulty every two tasks, faster after successful recalls. Later rounds reach eight dots, denser spatial grids, subtle differences with matching square counts, and shorter exposure/answer times. Hard mode starts at level 3.",
+      "afterEachDotAnswerAYesNoSpatialQuestionCheck": "After each dot, answer a Yes/No spatial question. Check reflection across a vertical divider, matching under rotation, or line-figure addition/subtraction. Keep the remembered dots in mind.",
+      "afterTheFinalSpatialQuestionSelectAllRememberedDots": "After the final spatial question, select all remembered dots in their original order. Numbers show your selection order. Undo or clear choices before submitting.",
+      "afterTheLastSpatialQuestionSelectAllRememberedDots": "After the last spatial question, select all remembered dots in the order they appeared. Undo or clear selections before submitting.",
+      "answerYesOrNoToSymmetryRotationAndFigure": "Answer Yes or No to symmetry, rotation, and figure addition/subtraction questions while keeping the sequence in mind. Timeouts count as unanswered and continue automatically.",
+      "keepDotLocationsInMindWhileAnsweringSpatialQuestions": "Keep dot locations in mind while answering spatial questions. Practice answers are not saved.",
+      "memoryAndSpatialAnswersAreScoredSeparatelyTheSession": "Memory and spatial answers are scored separately. The session ends at the task limit or time limit; only submitted sequences are included in results.",
+      "noNoQuarterTurnRotationMakesThePatternsIdenticalA": "No. No quarter-turn rotation makes the patterns identical. A reflection alone does not count.",
+      "oneDotLightsUpBrieflyRememberItsPositionAnd": "One dot lights up briefly. Remember its position and its place in the sequence. The same dot field returns for the next flash and for recall.",
+      "rememberASequenceOfHighlightedDotsWhileAnsweringInterleaved": "Remember a sequence of highlighted dots while answering interleaved spatial questions, then recall the dots in order.",
+      "startThePracticeTaskToTryAllPhasesEach": "Start the practice task to try all phases. Each spatial question has 15 seconds in this demo. A timeout counts as unanswered and continues to the next phase."
+    },
+    "labels": {
+      "adaptive3To8Dots": "Adaptive · 3 to 8 dots",
+      "additionCombinesTheLinesFromBothFiguresAnOverlapping": "Addition combines the lines from both figures; an overlapping line appears once.",
+      "answerBetweenDots": "Answer between dots",
+      "easy3Dots": "Easy · 3 dots",
+      "hard5To8Dots": "Hard · 5 to 8 dots",
+      "initialDotExposureSeconds": "Initial dot exposure (seconds)",
+      "initialTimePerSpatialQuestionSeconds": "Initial time per spatial question (seconds)",
+      "medium4Dots": "Medium · 4 dots",
+      "noAtLeastOneSquareDiffersFromTheReflection": "No. At least one square differs from the reflection across the vertical divider.",
+      "numberOfTasks": "Number of tasks",
+      "orderedDotRecall": "Ordered dot recall:",
+      "processAnotherTask": "Process another task",
+      "recallInOrder": "Recall in order",
+      "recallTheOrder": "Recall the order",
+      "rememberAHighlightedDot": "Remember a highlighted dot",
+      "rememberWhileYouReason": "Remember while you reason.",
+      "reviewBothSkills": "Review both skills",
+      "sessionTimeRemaining": "Session time remaining",
+      "subtractionRemovesTheSecondFigureSLinesFromTheFirst": "Subtraction removes the second figure's lines from the first figure.",
+      "timedSession": "Timed session",
+      "tryACompleteTask": "Try a complete task",
+      "untimedSession": "Untimed session",
+      "watchEachDot": "Watch each dot",
+      "workingMemoryGridchallenge": "Working memory · gridChallenge",
+      "yesAQuarterTurnRotation090180Or270": "Yes. A quarter-turn rotation (0°, 90°, 180°, or 270°) makes the patterns identical.",
+      "yesTheRightPatternIsTheLeftPatternReflected": "Yes. The right pattern is the left pattern reflected across the vertical divider.",
+      "sequencesRecalledPerfectly": "sequences recalled perfectly"
+    },
+    "tutorial": {
+      "beginPracticeTask": "Begin practice task",
+      "tryDemoAgain": "Try demo again",
+      "workingMemoryWalkthrough": "Working memory walkthrough"
+    },
+    "results": {
+      "theResultMatches": "The result matches.",
+      "theShownResultHasAMissingOrExtraLine": "The shown result has a missing or extra line.",
+      "workingMemoryHistory": "Working memory history",
+      "workingMemoryResults": "Working memory results"
+    },
+    "messages": {
+      "answerOperationResult": "{{answer}}. {{operation}} {{result}}"
+    }
+  }
+}

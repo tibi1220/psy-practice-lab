@@ -1,0 +1,17 @@
+{
+  "monotony": {
+    "paper": {
+      "circleThese": "CIRCLE THESE",
+      "canvasRenderingIsUnavailable": "Canvas rendering is unavailable.",
+      "circleEveryRectangleMatchingOneOfTheTargetTypes": "Circle every rectangle matching one of the target types.",
+      "fast": "FAST",
+      "itemsFirstitemLastitem": "Items {{firstItem}}-{{lastItem}}",
+      "monotonyPaperTest": "Monotony paper test",
+      "noTargetTypesSelected": "No target types selected",
+      "pagePageindexOfPagecount": "Page {{pageIndex}} of {{pageCount}}",
+      "mm": "mm",
+      "normal": "normal",
+      "lengthRandomizedPerceptionSymbols": "{{length}} randomized perception symbols"
+    }
+  }
+}

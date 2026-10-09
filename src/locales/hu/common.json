@@ -1,0 +1,22 @@
+{
+  "common": {
+    "language": {
+      "english": "Angol",
+      "hungarian": "Magyar",
+      "label": "Nyelv"
+    },
+    "instructions": {
+      "title": "Útmutató"
+    },
+    "status": {
+      "loadingTest": "Teszt betöltése…"
+    },
+    "labels": {
+      "question": "Kérdés",
+      "round": "Kör"
+    },
+    "answers": {
+      "yes": "Igen"
+    }
+  }
+}

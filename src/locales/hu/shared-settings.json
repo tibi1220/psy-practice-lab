@@ -1,0 +1,32 @@
+{
+  "common": {
+    "settings": {
+      "adaptive": "Adaptív",
+      "borderWidth": "Szegélyvastagság",
+      "changeSettings": "Beállítások módosítása",
+      "easy": "Könnyű",
+      "hard": "Nehéz",
+      "height": "Magasság",
+      "pageCount": "Oldalszám",
+      "paperMonotonyPdf": "Papíralapú monotónia-PDF",
+      "paperSize": "Papírméret",
+      "practiceMode": "Gyakorló mód",
+      "randomizedQuestionsUntimed": "Véletlen kérdések · időkorlát nélkül",
+      "rectangleCount": "Téglalapok száma",
+      "rectangleWidth": "Téglalap szélessége",
+      "spatialQuestionTimeRemaining": "Térbeli kérdés hátralévő ideje",
+      "switchDirectionsInMixedMode": "Irányváltás vegyes módban",
+      "testLengthMinutes": "Teszt hossza (perc)",
+      "title": "Tesztbeállítások",
+      "timeRemaining": "Hátralévő idő",
+      "timedUnlimitedQuestions": "Időzített · korlátlan kérdések",
+      "towerOfHanoiHeight": "Hanoi tornyai · Magasság",
+      "rectanglesPerPage": "téglalap oldalanként",
+      "sPerAnswer": "mp válaszonként ·",
+      "sPerDot": "mp pontonként ·",
+      "sPerSpatialQuestion": "mp térbeli kérdésenként",
+      "timed": "időzített",
+      "untimed": "időkorlát nélkül"
+    }
+  }
+}

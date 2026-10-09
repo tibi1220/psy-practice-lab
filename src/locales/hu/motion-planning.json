@@ -1,0 +1,77 @@
+{
+  "motionPlanning": {
+    "labels": {
+      "column": ", oszlop",
+      "amberBlock": "Borostyánsárga blokk",
+      "blueBlock": "Kék blokk",
+      "easyMovableBarriers": "Könnyű · mozgatható akadályok",
+      "expert": "Szakértői",
+      "greenBlock": "Zöld blokk",
+      "intermediate": "Középszint",
+      "introductory": "Bevezető",
+      "leaveTheRemainingPiecesInPlace": "Hagyd a többi elemet a helyén.",
+      "moveLimitReachedSkipThisPuzzleToContinue": "Elérted a lépéskorlátot. A folytatáshoz hagyd ki ezt a feladatot.",
+      "moveOnePiece": "Mozgass egy elemet",
+      "openARoute": "Nyiss útvonalat",
+      "planBeforeMoving": "Tervezz mozgatás előtt",
+      "purpleBlock": "Lila blokk",
+      "redBall": "Piros labda",
+      "respectTheObstacles": "Vegye figyelembe az akadályokat",
+      "reviewYourPlanning": "Tervezés áttekintése",
+      "shortestPlanningSolution": "Legrövidebb tervezési megoldás",
+      "solutionUnavailable": "Megoldás nem érhető el",
+      "solveAndContinue": "Megoldás és folytatás",
+      "solved": "Megoldott",
+      "solvedIn": "Megoldás ennyi lépésből:",
+      "targetRow": "Cél: sor",
+      "theBallHasReachedTheTarget": "A labda elérte a célt.",
+      "tryThePuzzle": "Feladat kipróbálása",
+      "unavailable": "Nem elérhető",
+      "moves": "lépés!",
+      "movesThisIsYourFinalPosition": "lépés. Ez a végső helyzete.",
+      "theBall": "a labda",
+      "theBlockSTopLeftCorner": "a blokk bal felső sarka"
+    },
+    "actions": {
+      "clearAPathPlanEachMove": "Nyisd meg az utat. Tervezz meg minden lépést.",
+      "nextPuzzle": "Következő feladat",
+      "skipPuzzle": "Feladat kihagyása",
+      "skipped": "Kihagyva",
+      "viewShortestSolution": "Legrövidebb megoldás megtekintése"
+    },
+    "tutorial": {
+      "complexPlanningWalkthrough": "Összetett tervezés bemutató",
+      "showDemoFeedback": "Bemutató visszajelzésének megjelenítése"
+    },
+    "instructions": {
+      "dragAPieceOrSelectItAndTapA": "Húzz egy elemet, vagy jelöld ki és érints meg egy kiemelt célhelyet. A helyzetek a bal felső sarokra vonatkoznak. Egy elhelyezés egy lépésnek számít; az ütközésmentes útvonal kanyarodhat.",
+      "dragAPieceToAHighlightedDestinationOrSelect": "Húzz egy elemet egy kiemelt célhelyre, vagy jelöld ki és érints meg egy kiemelt cellát. Billentyűzettel fókuszálj az elemre és nyomj Entert, majd fókuszálj a célhelyre és nyomj Entert. Érd el a célt két lépésből. A nehezebb feladatokban a rögzített szürke akadályok nem mozgathatók.",
+      "identifyTheBallSBlackTargetAndDecideWhichBlocks": "Azonosítsd a labda fekete célját, és döntsd el, mely blokkokat kell elmozdítani. A cél kezdetben egy blokk alatt is lehet.",
+      "inThisExampleMovingTheTallGreenBlockAway": "Ebben a példában a magas zöld blokk elmozdítása megnyitja a labda útját. A lila blokk maradhat. Minden elem célhelyét tervezze meg a mozgatás előtt.",
+      "keepPracticingOrContinueToTheTestTheGreen": "Gyakorolj tovább, vagy folytasd a teszttel. A zöld blokk a 3. sor 3. oszlopába mozgatható, szabaddá téve a labda útját.",
+      "laterRoundsProgressFromIntroductoryToIntermediateRound3": "A későbbi körök a bevezetőtől a középszintig (3. kör), a nehézig (5. kör), majd a szakértői szintig (8. kör) haladnak. A nehéz mód összetett elrendezéssel indul, és szakértői szintre lép; a könnyű mód bevezető marad.",
+      "moveTheRedBallToTheBlackTargetColored": "Vigye a piros labdát a fekete célra. A színes blokkok bármely irányban mozoghatnak, de nem forgathatók. A rögzített szürke akadályok helyben maradnak. Egy elem elhelyezése egy lépés, akkor is, ha az útvonala kanyarodik.",
+      "moveTheRedBallToTheTargetWhileMaking": "Vigye a piros labdát a célra, miközben helyet csinál a blokkok körül. A bemutató lépései nem befolyásolják az eredményeket.",
+      "piecesCannotOverlapRotateOrLeaveTheGridBolted": "Az elemek nem fedhetik egymást, nem forgathatók, és nem hagyhatják el a rácsot. A rögzített szürke akadályok helyben maradnak. A számozott színes blokkok mind a négy irányban mozgathatók.",
+      "reachTheTargetThenChooseNextPuzzleSkipIf": "Érd el a célt, majd válaszd a Következő feladat gombot. Ha elakadtál, hagyd ki. Oldj meg minél több feladatot az alapértelmezett hat percben. Csak a beküldött vagy kihagyott feladatok kerülnek mentésre.",
+      "rearrangeColoredBlocksAndMoveTheRedBallTo": "Rendezze át a színes blokkokat, és vigye a piros labdát a fekete célra a lehető legkevesebb lépéssel. Gyakorlás a motionChallenge alapján.",
+      "resultsRecordSolveRateTimeAndMovesWithA": "Az eredmények rögzítik a megoldási arányt, időt és lépéseket, minden elrendezéshez a legrövidebb megoldás felugró ablakával. A későbbi körök szűkebb tereket és hosszabb függőségeket adnak: középszint két, nehéz négy, szakértői hét feladat után. A szakértői feladatokhoz 9–11 optimális lépés kell.",
+      "theBlackRingMarksTheTargetIncludingWhenA": "A fekete gyűrű jelöli a célt, akkor is, ha egy blokk takarja. A számozott színes blokkok mozgathatók; a rögzített szürke akadályok nem. Ez a gyakorló mozgatási szabályok szerinti legrövidebb megoldás.",
+      "theRedBallMustReachTheBlackCircleThink": "A piros labdának el kell érnie a fekete kört. Gondold át, mely blokkok akadályozzák, és hová férnek el. A színes blokkok szabadon mozoghatnak, de nem forgathatók.",
+      "workBackwardsFromTheTargetAndOpenSpaceFor": "Tervezz visszafelé a céltól, és nyiss helyet a labdának. Minden lépés egy elemet helyez el szabad útvonalon; a kiemelt útvonal kanyarodhat."
+    },
+    "results": {
+      "hard611OptimalMoves": "Nehéz · 6–11 optimális lépés",
+      "optimalNumberOfSteps": "Optimális lépésszám:",
+      "optimalSolution": "Optimális megoldás!",
+      "thisSavedLayoutExceedsTheSolutionSearchLimit": "Ez a mentett elrendezés meghaladja a megoldáskeresés korlátját."
+    },
+    "messages": {
+      "moveIndexName": "{{index}}. lépés: {{name}}",
+      "placeMoveAtRowMove2ColumnMove3FollowThe": "Helyezd ezt: {{move}}, a(z) {{move2}}. sor {{move3}}. oszlopába. Kövesd a pontozott utat a foglalt cellák körül.{{index}}",
+      "planLengthMoves": "Tervezz {{length}} lépést",
+      "lengthMovesOptimalStepsOptimalmotionsolution": "{{length}} lépés · Optimális lépésszám: {{optimalMotionSolution}}",
+      "responseExtraMoves": "{{response}} többletlépés"
+    }
+  }
+}

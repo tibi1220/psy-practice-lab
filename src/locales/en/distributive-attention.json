@@ -1,0 +1,49 @@
+{
+  "distributiveAttention": {
+    "labels": {
+      "aMainGridLedIdentifiesACellHoldItsRow": "A main-grid LED identifies a cell. Hold its row and column circles simultaneously.",
+      "desktopClickTheIntersectionWithYourMouseOrTrackpad": "Desktop: click the intersection with your mouse or trackpad.",
+      "findTheRowAndColumnIntersection": "Find the row and column intersection",
+      "holdOneLeftHandRowKeyAndOneRightHandColumn": "Hold one left-hand row key and one right-hand column key as a chord.",
+      "leftHandRows": "Left-hand rows:",
+      "mixed": "Mixed",
+      "mixedDetail": "Mixed ·",
+      "numberOfTrials": "Number of trials",
+      "oneHanded": "One-handed",
+      "oneHandedTrials": "One-handed trials",
+      "pressTheMatchingRowAndColumnTogether": "Press the matching row and column together",
+      "respondOnce": "Respond once",
+      "rightHandColumns": "Right-hand columns:",
+      "trackBothAxesAtOnce": "Track both axes at once.",
+      "twoEdgeLedsIdentifyARowAndColumnTap": "Two edge LEDs identify a row and column. Tap or click their intersection.",
+      "twoHanded": "Two-handed",
+      "twoHandedDesktop": "Two-handed desktop",
+      "twoHandedTouch": "Two-handed touch",
+      "twoHandedTrials": "Two-handed trials",
+      "yourCompletedDistributiveAttentionSessionsWillAppearHere": "Your completed distributive-attention sessions will appear here.",
+      "yourFirstCoordinateIsScoredThenTheNextRandom": "Your first coordinate is scored, then the next random target appears.",
+      "of": "of",
+      "trials": "trials",
+      "trial": "· Trial"
+    },
+    "results": {
+      "attentionResults": "Attention results",
+      "distributiveAttentionHistory": "Distributive-attention history",
+      "resultsAndModeSettingsAreSavedOnlyInThis": "Results and mode settings are saved only in this browser.",
+      "msAverage": "ms average"
+    },
+    "settings": {
+      "chooseTheResponseDirectionAndSessionLength": "Choose the response direction and session length.",
+      "mixedMode": "Mixed mode",
+      "mode": "Mode"
+    },
+    "messages": {
+      "desktopChordRowsItemsColumnsItems2": "Desktop chord — rows: {{items}} · columns: {{items2}}"
+    },
+    "instructions": {
+      "locateAnIntersectionFromTwoSignalsOrReverseThe": "Locate an intersection from two signals, or reverse the task and coordinate two simultaneous responses to one illuminated cell.",
+      "oneAndTwoHandedTrialsAppearInABalancedRandom": "One- and two-handed trials appear in a balanced random order. Follow the LEDs on every trial.",
+      "thisIsAPracticeToolNotAClinicalAssessment": "This is a practice tool, not a clinical assessment. Input method, keyboard rollover, and display size can affect results."
+    }
+  }
+}

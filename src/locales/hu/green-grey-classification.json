@@ -1,0 +1,76 @@
+{
+  "greenGreyClassification": {
+    "instructions": {
+      "allFourClassificationsMustBeCorrectToScoreThe": "A kérdés akkor helyes, ha mind a négy besorolás helyes. A teszt után minden rácsot és a szabályt is megtekintheted.",
+      "checkNumberRangesEvenAndOddCountsTopAnd": "Figyeld a számtartományokat, a páros és páratlan értékeket, a felső és alsó cellákat, a sarkokat, az ismétlődő betűket és számokat, az összegeket és a betűk helyét. Más cellák elterelhetik a figyelmét.",
+      "chooseGreenOrGreyForEachUnlabeledGridYou": "Minden címke nélküli rácsnál válassz zöldet vagy szürkét. Beküldés előtt módosíthatod vagy törölheted a besorolásokat.",
+      "chooseGreenOrGreyForEveryGridChangeYour": "Minden rácsnál válassz zöldet vagy szürkét. Beküldés előtt módosíthatsz és törölhetsz. A kérdés akkor helyes, ha mind a négy besorolás helyes.",
+      "compareSixDiamondGridsFromTheGreenAndGrey": "Hasonlítsd össze a zöld és szürke csoport hat rombuszrácsát, majd a rejtett szabály szerint sorolj be négy új rácsot.",
+      "everyNumberInAGreenGridIsInThe": "A zöld rácsban minden szám 1–4 közötti. A szürke rácsban minden szám 5–9 közötti.",
+      "greenGridsContainAnOddNumberOfLettersGrey": "A zöld rácsok páratlan, a szürke rácsok páros számú betűt tartalmaznak. Számold meg a betűket, figyelmen kívül hagyva típusukat és helyüket.",
+      "greenGridsContainAtLeastFiveCopiesOfOne": "A zöld rácsokban egy betű legalább ötször szerepel. A szürke rácsokban egyetlen betű sem szerepel legalább ötször. Hagyd figyelmen kívül a számokat és a helyzeteket.",
+      "greenGridsContainAtLeastFourZsGreyGrids": "A zöld rácsok legalább négy Z-t tartalmaznak. A szürke rácsokban négynél kevesebb Z van. A helyük nem számít.",
+      "greenGridsContainAtLeastThree7sGreyGrids": "A zöld rácsok legalább három 7-est tartalmaznak. A szürke rácsokban háromnál kevesebb 7-es van. A helyük nem számít.",
+      "greenGridsContainOnlyNumbersLessThan514": "A zöld rácsok csak 5-nél kisebb (1–4), a szürke rácsok csak 5-nél nagyobb (6–9) számokat tartalmaznak. Egyik csoportban sincs 5.",
+      "hereCompareTheSumsOfTheTopThreeAnd": "Itt hasonlítsd össze a felső három és az alsó három cella összegét. Hagyd figyelmen kívül a középső három cellát. Más szabályok a teljes összeget, számtartományokat, azonos sarkokat, betűszámot vagy ismétlődő karaktereket, például a 7-et és Z-t használják.",
+      "inGreenGridsTheBottomThreeCellsHaveA": "A zöld rácsokban az alsó három cella összege nagyobb a felső hároménál. A szürke rácsokban a felső három összege nagyobb. A középső három cella csak elterelés.",
+      "inGreenGridsTheRightmostThreeCellsHaveA": "A zöld rácsokban a jobb szélső három cella összege nagyobb a bal szélső hároménál. A szürke rácsokban a bal szélső három összege nagyobb. A középső három cella csak elterelés.",
+      "inGreenGridsTheSumOfAllNumbersIs": "A zöld rácsokban az összes szám összege 10 alatti. A szürke rácsokban 10 feletti. Hagyd figyelmen kívül a betűket; egyik rács összege sem pontosan 10.",
+      "inGreenGridsTheTopThreeNumbersAreIn": "A zöld rácsokban a felső három szám 1–5 közötti, az alsó három 6–9 közötti. A szürke rácsokban a tartományok fordítottak. A középső három cella csak elterelés.",
+      "inGreenGridsTheTopmostNumberIsSmallerThan": "A zöld rácsokban a legfelső szám kisebb a legalsónál. A szürke rácsokban a legfelső nagyobb. A többi cella csak elterelés.",
+      "inGreyGridsAllFourCornerValuesTopRight": "A szürke rácsokban mind a négy sarok (felső, jobb, alsó és bal) értéke azonos. A zöld rácsokban nem mind azonosak. A többi cella csak elterelés.",
+      "inferARuleFromSixLabeledExamplesThenClassify": "Következtesd ki a szabályt hat felcímkézett példából, majd sorolj be négy új rácsot. A bemutató válaszai nem kerülnek mentésre.",
+      "threeExamplesAreGreenAndThreeAreGreyIn": "Három zöld és három szürke példa látható vegyes sorrendben. Ugyanaz a rejtett szabály választja el a két csoportot. A rombuszrácsokban a karakterek állók maradnak.",
+      "threeGreenAndThreeGreyExamplesAppearInMixed": "Három zöld és három szürke példa jelenik meg vegyes sorrendben. Keresd meg a csoportokat elválasztó szabályt."
+    },
+    "labels": {
+      "classifyAllFour": "Sorold be mind a négyet",
+      "classifyAllFourGrids": "Sorold be mind a négy rácsot",
+      "classifyFourGrids": "Négy rács besorolása",
+      "compareBothGroups": "Hasonlítsd össze a csoportokat",
+      "compareTheTopAndBottomThreeCells": "Hasonlítsd össze a felső és alsó három cellát.",
+      "discoverTheRule": "Fedezd fel a szabályt",
+      "discoverTheRuleClassifyTheGrids": "Fedezd fel a szabályt. Sorold be a rácsokat.",
+      "discoverWhatSeparatesTheGreenAndGreyGroups": "Fedezd fel, mi különbözteti meg a zöld és szürke csoportot",
+      "easyRangesComparisonsAndRepetitions": "Könnyű · tartományok, összehasonlítások és ismétlődések",
+      "fourGridsToClassify": "Négy besorolandó rács",
+      "greenGridsContainOnlyEvenNumbersGreyGridsContain": "A zöld rácsok csak páros, a szürke rácsok csak páratlan számokat tartalmaznak.",
+      "grey": "Szürke",
+      "hardSumsCornersAndLetterPatterns": "Nehéz · összegek, sarkok és betűminták",
+      "lookForRelationships": "Keressen összefüggéseket",
+      "sixLabeledExamples": "Hat felcímkézett példa",
+      "studySixExamples": "Tanulmányozz hat példát",
+      "tryAgainGreenHasTheLargerSumAtThe": "Próbáld újra: zöldnél az alsó összeg nagyobb, szürkénél a felső.",
+      "youChose": "Ezt választottad:",
+      "bottom": "alsó",
+      "center": "közép",
+      "lowerLeft": "bal alsó",
+      "lowerRight": "jobb alsó",
+      "occurrences": "előfordulások",
+      "of4ClassifiedYouCanChangeAnyChoiceBefore": "/ 4 besorolva. Beküldés előtt bármelyik választ módosíthatod.",
+      "rule": "szabály",
+      "upperLeft": "bal felső",
+      "upperRight": "jobb felső"
+    },
+    "messages": {
+      "classifyGridNames": "{{names}}. rács besorolása",
+      "diamondGridRowsBeforeRotationItemsItems2Items3": "Rombuszrács, sorok forgatás előtt: {{items}}; {{items2}}; {{items3}}",
+      "exampleIndexGroup": "{{index}}. példa: {{group}}",
+      "greenGridsContainExactlyThreeTargetSGreyGrids": "A zöld rácsok pontosan három {{target}} karaktert tartalmaznak. A szürke rácsok pontosan egyet. A helyük nem számít.",
+      "greenGridsHaveLettersInTheItemsCellsAnd": "A zöld rácsokban a(z) {{items}} cellákban betűk, máshol számok vannak. A szürke rácsokban ezekben a cellákban számok, máshol három betű található.",
+      "gridNames": "{{names}}. rács",
+      "gridNamesGroup": "{{names}}. rács: {{group}}",
+      "inGreenGridsThePositionnamesAndPositionnames2CellsMatch": "A zöld rácsokban a(z) {{positionNames}} és {{positionNames2}} cellák egyeznek. A szürke rácsokban eltérnek. A többi cella csak elterelés."
+    },
+    "actions": {
+      "clearClassifications": "Besorolások törlése"
+    },
+    "results": {
+      "correctAllFourClassificationsMatchTheRule": "Helyes! Mind a négy besorolás megfelel a szabálynak.",
+      "correct": "Helyes:"
+    },
+    "tutorial": {
+      "greenGreyClassificationWalkthrough": "Zöld/szürke besorolás bemutatója"
+    }
+  }
+}

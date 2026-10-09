@@ -1,0 +1,22 @@
+{
+  "common": {
+    "language": {
+      "english": "English",
+      "hungarian": "Hungarian",
+      "label": "Language"
+    },
+    "instructions": {
+      "title": "Instructions"
+    },
+    "status": {
+      "loadingTest": "Loading test…"
+    },
+    "labels": {
+      "question": "Question",
+      "round": "Round"
+    },
+    "answers": {
+      "yes": "Yes"
+    }
+  }
+}

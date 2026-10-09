@@ -1,0 +1,76 @@
+{
+  "numericalReasoning": {
+    "results": {
+      "accuracyOnAnsweredQuestions": "% accuracy on answered questions ·",
+      "correct": "Correct.",
+      "numericalReasoningHistory": "Numerical reasoning history",
+      "numericalReasoningResults": "Numerical reasoning results",
+      "useTheCorrectTabAndUnit": "Use the correct tab and unit"
+    },
+    "labels": {
+      "annualFigures": ", annual figures",
+      "allSeriesAreHiddenSelectASeriesToDisplay": "All series are hidden. Select a series to display it.",
+      "cannotSayTheOutlookProvidesNoNumericalForecast": "Cannot say: the Outlook provides no numerical forecast.",
+      "companyData": "Company data",
+      "companyScenario": "Company scenario",
+      "crossTabCalculations": "Cross-tab calculations",
+      "dataCategories": "Data categories",
+      "directComparisons": "Direct comparisons",
+      "easyDirectComparisons": "Easy · direct comparisons",
+      "end": "End",
+      "fictionalCompany": "Fictional company ·",
+      "filledButtonsAreAnsweredAnOutlineMarksYourCurrent": "Filled buttons are answered. An outline marks your current question.",
+      "financialYear": "Financial year",
+      "findARow": "Find a row",
+      "findTheRelevantData": "Find the relevant data",
+      "hardPercentagesAndCrossTabCalculations": "Hard · percentages and cross-tab calculations",
+      "managementIntendsToExpandNextYearNoNumericalForecast": "Management intends to expand next year. No numerical forecast is available.",
+      "moveFreelyAndRevise": "Move freely and revise",
+      "noMatchingRowsClearTheSearchToSeeThe": "No matching rows. Clear the search to see the full dataset.",
+      "notAnsweredYet": "Not answered yet.",
+      "percentagesAndTrends": "Percentages and trends",
+      "questionNavigation": "Question navigation",
+      "questionOverview": "Question overview",
+      "questionOverviewDetail": "Question overview ·",
+      "randomCompanyAnyOfFourSectors": "Random company · any of four sectors",
+      "revenueWillRiseNextYear": "Revenue will rise next year.",
+      "reviewTheCalculations": "Review the calculations",
+      "rowName": "Row name…",
+      "separateFalseFromUnknown": "Separate false from unknown",
+      "timed": "Timed",
+      "toggleSeriesToCompareTrendsUseTheTableFor": "Toggle series to compare trends. Use the table for exact figures.",
+      "trueFalseOrCannotSay": "True, False, or Cannot say",
+      "tryAStatement": "Try a statement",
+      "tryAgain": "Try again.",
+      "unanswered": "Unanswered",
+      "untimed": "Untimed",
+      "answered": "answered",
+      "answeredDetail": "answered ·",
+      "questions": "questions",
+      "rows": "rows ·",
+      "step": "step",
+      "unansweredDetail": "unanswered",
+      "unansweredDetail2": "unanswered ·"
+    },
+    "actions": {
+      "clearAnswer": "Clear answer",
+      "next": "Next",
+      "previous": "Previous",
+      "showAllRows": "Show all rows",
+      "showChart": "Show chart",
+      "showDataTable": "Show data table"
+    },
+    "setup": {
+      "title": "Find the facts behind the figures."
+    },
+    "tutorial": {
+      "numericalReasoningWalkthrough": "Numerical reasoning walkthrough"
+    }
+  },
+  "common": {
+    "answers": {
+      "false": "False",
+      "true": "True"
+    }
+  }
+}

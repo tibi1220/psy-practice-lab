@@ -1,0 +1,60 @@
+{
+  "dividedAttention": {
+    "results": {
+      "averageSignalReaction": "Átlagos jelzésreakció",
+      "dividedAttentionHistory": "Megosztott figyelem előzményei",
+      "dividedAttentionResults": "Megosztott figyelem eredményei",
+      "drivingAndSignalResultsAreSavedOnlyInThis": "A vezetési és jelzési eredmények csak ebben a böngészőben kerülnek mentésre.",
+      "missedSignals": "Kihagyott jelzések:",
+      "signalAverage": "Jelzési átlag"
+    },
+    "instructions": {
+      "difficultyChangesCarSpeedAndTrafficDensityTheTraffic": "A nehézség módosítja az autó sebességét és a forgalom sűrűségét. A forgalom generálása mindig hagy elkerülhető útvonalat.",
+      "steerThroughAThreeLaneHighwayWhileMonitoringTwoTraffic": "Vezess egy háromsávos autópályán, miközben két közlekedési lámpát figyel. Kezdés előtt állítsd be az időtartamot, jelzésszámot és forgalmi nehézséget.",
+      "thisIsAPracticeToolNotAClinicalAssessment": "Ez gyakorló eszköz, nem klinikai értékelés. A vezetési nehézség és bemeneti időzítés eszközönként eltérhet."
+    },
+    "labels": {
+      "drive": "Vezetés",
+      "driveAndMonitor": "Vezess és figyelj.",
+      "driving": "Vezetés",
+      "leftSignal": "Bal jelzés",
+      "monitorBothTrafficLightsWhileSteering": "Kormányzás közben figyeld mindkét közlekedési lámpát.",
+      "numberOfSignals": "Jelzések száma",
+      "respondDownToLeftSignal": "Lefelé válasz a bal jelzésre",
+      "respondUpToRightSignal": "Felfelé válasz a jobb jelzésre",
+      "rightSignal": "Jobb jelzés",
+      "signal": "Jelzés",
+      "signals": "Jelzések",
+      "steer": "Kormányzás",
+      "steerLeft": "Kormányzás balra",
+      "steerRight": "Kormányzás jobbra",
+      "threeLaneHighwayDrivingArea": "Háromsávos autópálya vezetési területe",
+      "touchControlsAppearOnTabletsAndPhonesTheLights": "Az érintéses vezérlők tableten és telefonon jelennek meg. A fények pirosra váltanak",
+      "upTo": "Legfeljebb",
+      "useAndToChangeLanesAndAvoid": "Használd a ← és → gombokat a sávváltáshoz és az autók elkerüléséhez.",
+      "whenTheLeftLightTurnsRedPress": "Ha a bal lámpa pirosra vált, nyomd meg a ↓ gombot.",
+      "whenTheRightLightTurnsRedPress": "Ha a jobb lámpa pirosra vált, nyomd meg a ↑ gombot.",
+      "wrongSignalKeys": "Hibás jelzési billentyűk:",
+      "yourCompletedDividedAttentionSessionsWillAppearHere": "A befejezett megosztottfigyelem-tesztek itt jelennek meg.",
+      "avoided": "elkerült",
+      "carsAvoided": "elkerült autó",
+      "collisions": "ütközés",
+      "collisionsDetail": "ütközés ·",
+      "min": "perc",
+      "minDetail": "perc ·",
+      "minutes": "perc",
+      "signalsDetail": "jelzés ·",
+      "timesInTotal": "alkalommal összesen."
+    },
+    "settings": {
+      "passingCarDifficulty": "Elhaladó autók nehézsége",
+      "setTheSessionLengthSignalsAndPassingTraffic": "Állítsd be a munkamenet hosszát, a jelzéseket és az elhaladó forgalmat.",
+      "testLength": "Teszt hossza",
+      "atThisLength": "ezen a hosszon"
+    },
+    "messages": {
+      "reactiontimeMs": "{{reactionTime}} ms",
+      "sideTrafficLightIsActive": "A(z) {{side}} közlekedési lámpa {{active}}"
+    }
+  }
+}

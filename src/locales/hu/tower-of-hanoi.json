@@ -1,0 +1,45 @@
+{
+  "towerOfHanoi": {
+    "results": {
+      "averageSpeed": "Átlagos sebesség",
+      "hanoiHistory": "Hanoi előzményei",
+      "hanoiResults": "Hanoi eredményei",
+      "movesSpeedAndSettingsAreSavedOnlyInThis": "A lépések, sebesség és beállítások csak ebben a böngészőben kerülnek mentésre.",
+      "optimal": "Optimális"
+    },
+    "labels": {
+      "chooseADisk": "Válassz korongot",
+      "chooseHowManyDisksTheTowerContains": "Válaszd ki a torony korongjainak számát.",
+      "chooseItsDestination": "Válassz célhelyet",
+      "completeTheTower": "Fejezd be a tornyot",
+      "cumulativeMovesPerMinuteHoverOrTouchTheGraph": "Összesített lépésszám percenként. Az egyes lépések részleteihez vigye a mutatót a grafikonra vagy érintsd meg azt.",
+      "dragATopDiskOrTapOneToSelect": "Húzz egy felső korongot, vagy érintsd meg a kijelöléshez",
+      "dragTheTopDiskOfAPegOrTap": "Húzza egy rúd legfelső korongját, vagy érintsd meg a kijelöléshez.",
+      "dropTheDiskOrTapThePegWhereIt": "Ejtsd le a korongot, vagy érintsd meg a célrudat.",
+      "efficiency": "Hatékonyság",
+      "extraMoves": "Többletlépések",
+      "moveEveryDiskToTheRightPegInAs": "Vigyen át minden korongot a jobb rúdra a lehető legkevesebb lépéssel.",
+      "moveSpeed": "Lépési sebesség",
+      "moveTheEntireTowerToTheRightPegA": "Vigye át az egész tornyot a jobb rúdra. Nagyobb korong soha nem kerülhet kisebbre.",
+      "neverPlaceALargerDiskOnTopOfA": "Soha ne helyezz nagyobb korongot kisebbre.",
+      "performanceOverTime": "Teljesítmény az idő függvényében",
+      "planAheadMoveWithPurpose": "Tervezz előre. Mozgass céltudatosan.",
+      "steps": "Lépések",
+      "towerComplete": "Torony kész",
+      "yourCompletedHanoiSessionsWillAppearHere": "A befejezett Hanoi-feladatok itt jelennek meg."
+    },
+    "settings": {
+      "duration": "Időtartam",
+      "followTheSizeRule": "Kövesd a méretszabályt",
+      "towerHeight": "Toronymagasság"
+    },
+    "messages": {
+      "sourceSelectedSelectedpegPegChooseADestination": "Forrás kiválasztva: {{selectedPeg}} rúd — válassz célhelyet",
+      "averagespeedMovesMin": "{{averageSpeed}} lépés/perc"
+    },
+    "instructions": {
+      "thisIsAPracticeToolNotAClinicalAssessment": "Ez gyakorló eszköz, nem klinikai értékelés. A beviteli mód és a feladat ismerete befolyásolhatja az eredményeket.",
+      "transferTheFullTowerFromTheLeftPegTo": "Vigye át az egész tornyot a bal rúdról a jobbra, betartva a méretszabályt. A teszt rögzít minden lépést és a tempót."
+    }
+  }
+}

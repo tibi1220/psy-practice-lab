@@ -1,28 +1,33 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { DividedAttentionDemo } from "../components/TestDemos";
-import { carGeometry } from "../components/CarDisplay";
+import {
+  LocalizedDate,
+  Localized,
+  useTextTranslation,
+} from '../components/Localization';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { DividedAttentionDemo } from '../components/TestDemos';
+import { carGeometry } from '../components/CarDisplay';
 import {
   InstructionList,
   TestPageShell,
   TestPanel,
   TestSetupLayout,
-} from "../components/TestPage";
-import { TrafficLightDisplay } from "../components/TrafficLightDisplay";
-import { ValidatedNumberInput } from "../components/ValidatedNumberInput";
-import { createLocalId } from "../lib/create-local-id";
-import { useTestRoute } from "../hooks/useTestRoute";
+} from '../components/TestPage';
+import { TrafficLightDisplay } from '../components/TrafficLightDisplay';
+import { ValidatedNumberInput } from '../components/ValidatedNumberInput';
+import { createLocalId } from '../lib/create-local-id';
+import { useTestRoute } from '../hooks/useTestRoute';
 
 const DEFAULT_DURATION_MINUTES = 2;
 const DEFAULT_SIGNAL_COUNT = 5;
 const MIN_DURATION_MINUTES = 1;
 const MAX_DURATION_MINUTES = 10;
 const MAX_SIGNAL_COUNT = 30;
-const STORAGE_KEY = "psy-divided-attention-sessions";
+const STORAGE_KEY = 'psy-divided-attention-sessions';
 
-type Phase = "setup" | "running" | "complete";
-type SignalSide = "left" | "right";
-type SignalDirection = "up" | "down";
-type Difficulty = "easy" | "medium" | "hard";
+type Phase = 'setup' | 'running' | 'complete';
+type SignalSide = 'left' | 'right';
+type SignalDirection = 'up' | 'down';
+type Difficulty = 'easy' | 'medium' | 'hard';
 
 type ScheduledSignal = {
   id: number;
@@ -64,7 +69,7 @@ type OpponentCar = {
   color: string;
 };
 
-const opponentColors = ["#fb7185", "#fbbf24", "#a78bfa", "#60a5fa", "#f97316"];
+const opponentColors = ['#fb7185', '#fbbf24', '#a78bfa', '#60a5fa', '#f97316'];
 
 const difficultySettings: Record<
   Difficulty,
@@ -96,11 +101,11 @@ const difficultySettings: Record<
 };
 
 function expectedDirection(side: SignalSide): SignalDirection {
-  return side === "left" ? "down" : "up";
+  return side === 'left' ? 'down' : 'up';
 }
 
 function averageReactionTime(results: SignalResult[]) {
-  const completed = results.flatMap((result) =>
+  const completed = results.flatMap(result =>
     result.reactionTime === null ? [] : [result.reactionTime],
   );
 
@@ -138,7 +143,7 @@ function createSignalSchedule(
       edgeBuffer +
       slotDuration * (index + 0.5) +
       (Math.random() - 0.5) * slotDuration * 0.35,
-    side: Math.random() < 0.5 ? "left" : "right",
+    side: Math.random() < 0.5 ? 'left' : 'right',
   }));
 }
 
@@ -147,19 +152,19 @@ function chooseSafeSpawnLane(opponents: OpponentCar[]) {
 
   for (const lane of shuffledLanes) {
     const hasSafeSpacing = opponents.every(
-      (opponent) => opponent.lane !== lane || opponent.y > 0.28,
+      opponent => opponent.lane !== lane || opponent.y > 0.28,
     );
     if (!hasSafeSpacing) continue;
 
     const carsWithCandidate = [
       ...opponents,
-      { id: -1, lane, y: -0.12, speed: 0, color: "" },
+      { id: -1, lane, y: -0.12, speed: 0, color: '' },
     ];
-    const createsRoadblock = carsWithCandidate.some((anchor) => {
+    const createsRoadblock = carsWithCandidate.some(anchor => {
       const nearbyLanes = new Set(
         carsWithCandidate
-          .filter((car) => Math.abs(car.y - anchor.y) < 0.24)
-          .map((car) => car.lane),
+          .filter(car => Math.abs(car.y - anchor.y) < 0.24)
+          .map(car => car.lane),
       );
       return nearbyLanes.size === 3;
     });
@@ -173,27 +178,27 @@ function chooseSafeSpawnLane(opponents: OpponentCar[]) {
 function formatRemaining(milliseconds: number) {
   const seconds = Math.max(0, Math.ceil(milliseconds / 1000));
   const minutes = Math.floor(seconds / 60);
-  return `${minutes}:${String(seconds % 60).padStart(2, "0")}`;
+  return `${minutes}:${String(seconds % 60).padStart(2, '0')}`;
 }
 
 function isStoredSession(value: unknown): value is DividedAttentionSession {
-  if (!value || typeof value !== "object") return false;
+  if (!value || typeof value !== 'object') return false;
 
   const session = value as Partial<DividedAttentionSession>;
   return (
-    typeof session.id === "string" &&
-    typeof session.completedAt === "string" &&
-    typeof session.collisions === "number" &&
-    typeof session.avoidedCars === "number" &&
-    typeof session.wrongSignalResponses === "number" &&
+    typeof session.id === 'string' &&
+    typeof session.completedAt === 'string' &&
+    typeof session.collisions === 'number' &&
+    typeof session.avoidedCars === 'number' &&
+    typeof session.wrongSignalResponses === 'number' &&
     Array.isArray(session.signalResults) &&
     session.signalResults.length > 0 &&
     (session.settings === undefined ||
-      (typeof session.settings.durationMinutes === "number" &&
-        typeof session.settings.signalCount === "number" &&
-        (session.settings.difficulty === "easy" ||
-          session.settings.difficulty === "medium" ||
-          session.settings.difficulty === "hard")))
+      (typeof session.settings.durationMinutes === 'number' &&
+        typeof session.settings.signalCount === 'number' &&
+        (session.settings.difficulty === 'easy' ||
+          session.settings.difficulty === 'medium' ||
+          session.settings.difficulty === 'hard')))
   );
 }
 
@@ -238,7 +243,7 @@ function drawCar(
   const y = centerY - height / 2;
 
   context.save();
-  context.shadowColor = isPlayer ? "rgba(34, 211, 238, 0.65)" : "transparent";
+  context.shadowColor = isPlayer ? 'rgba(34, 211, 238, 0.65)' : 'transparent';
   context.shadowBlur = isPlayer ? 18 : 0;
   context.fillStyle = color;
   roundedRectangle(
@@ -252,7 +257,7 @@ function drawCar(
   context.fill();
   context.restore();
 
-  context.fillStyle = isPlayer ? "#164e63" : "rgba(15, 23, 42, 0.78)";
+  context.fillStyle = isPlayer ? '#164e63' : 'rgba(15, 23, 42, 0.78)';
   roundedRectangle(
     context,
     x + width * carGeometry.windowX,
@@ -263,7 +268,7 @@ function drawCar(
   );
   context.fill();
 
-  context.fillStyle = "rgba(255,255,255,0.72)";
+  context.fillStyle = 'rgba(255,255,255,0.72)';
   context.fillRect(
     x + width * 0.12,
     y + height * 0.08,
@@ -277,7 +282,7 @@ function drawCar(
     3,
   );
 
-  context.fillStyle = "#0f172a";
+  context.fillStyle = '#0f172a';
   context.fillRect(x - 3, y + height * 0.2, 4, height * 0.2);
   context.fillRect(x + width - 1, y + height * 0.2, 4, height * 0.2);
   context.fillRect(x - 3, y + height * 0.65, 4, height * 0.2);
@@ -285,27 +290,32 @@ function drawCar(
 }
 
 function TrafficLight({ side, active }: { side: SignalSide; active: boolean }) {
+  const t = useTextTranslation();
+
   const direction = expectedDirection(side);
   const edgePosition =
-    side === "left"
+    side === 'left'
       ? {
-          left: "calc((100% - min(76%, 700px)) / 2)",
-          transform: "translateX(calc(-100% - 0.35rem))",
+          left: 'calc((100% - min(76%, 700px)) / 2)',
+          transform: 'translateX(calc(-100% - 0.35rem))',
         }
       : {
-          right: "calc((100% - min(76%, 700px)) / 2)",
-          transform: "translateX(calc(100% + 0.35rem))",
+          right: 'calc((100% - min(76%, 700px)) / 2)',
+          transform: 'translateX(calc(100% + 0.35rem))',
         };
 
   return (
     <div
-      className="pointer-events-none absolute top-[18%] z-10 flex flex-col items-center gap-2"
+      className='pointer-events-none absolute top-[18%] z-10 flex flex-col items-center gap-2'
       style={edgePosition}
-      aria-label={`${side} traffic light is ${active ? "red" : "green"}`}
+      aria-label={t('dividedAttention.messages.sideTrafficLightIsActive', {
+        side: side,
+        active: active ? 'red' : 'green',
+      })}
     >
       <TrafficLightDisplay active={active} />
-      <p className="rounded-full bg-slate-950/90 px-3 py-1.5 font-mono text-base font-black uppercase text-white shadow-lg">
-        {direction === "down" ? "↓" : "↑"}
+      <p className='rounded-full bg-slate-950/90 px-3 py-1.5 font-mono text-base font-black uppercase text-white shadow-lg'>
+        <Localized>{direction === 'down' ? '↓' : '↑'}</Localized>
       </p>
     </div>
   );
@@ -314,110 +324,137 @@ function TrafficLight({ side, active }: { side: SignalSide; active: boolean }) {
 function SessionHistory({ sessions }: { sessions: DividedAttentionSession[] }) {
   if (sessions.length === 0) {
     return (
-      <div className="rounded-3xl border border-dashed border-white/15 px-6 py-10 text-center">
-        <p className="font-medium text-slate-300">
-          Your completed divided-attention sessions will appear here.
+      <div className='rounded-3xl border border-dashed border-white/15 px-6 py-10 text-center'>
+        <p className='font-medium text-slate-300'>
+          <Localized id='dividedAttention.labels.yourCompletedDividedAttentionSessionsWillAppearHere' />
         </p>
-        <p className="mt-2 text-sm text-slate-500">
-          Driving and signal results are saved only in this browser.
+        <p className='mt-2 text-sm text-slate-500'>
+          <Localized id='dividedAttention.results.drivingAndSignalResultsAreSavedOnlyInThis' />
         </p>
       </div>
     );
   }
 
   return (
-    <div className="space-y-3">
-      {sessions.map((session, sessionIndex) => (
-        <details
-          key={session.id}
-          open={sessionIndex === 0}
-          className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] open:bg-white/[0.06]"
-        >
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 marker:hidden">
-            <div>
-              <p className="font-semibold text-white">
-                {new Intl.DateTimeFormat(undefined, {
-                  dateStyle: "medium",
-                  timeStyle: "short",
-                }).format(new Date(session.completedAt))}
-              </p>
-              <p className="mt-1 text-sm text-slate-400">
-                {session.collisions} collisions · {session.avoidedCars} avoided
-              </p>
-              <p className="mt-1 text-xs capitalize text-slate-500">
-                {Math.round(session.durationMs / 60_000)} min ·{" "}
-                {session.signalResults.length} signals ·{" "}
-                {session.settings?.difficulty ?? "medium"}
-              </p>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="text-right">
-                <p className="font-mono text-xl font-semibold text-emerald-300">
-                  {session.averageReactionTime === null
-                    ? "—"
-                    : `${session.averageReactionTime} ms`}
+    <div className='space-y-3'>
+      <Localized>
+        {sessions.map((session, sessionIndex) => (
+          <details
+            key={session.id}
+            open={sessionIndex === 0}
+            className='group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] open:bg-white/[0.06]'
+          >
+            <summary className='flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 marker:hidden'>
+              <div>
+                <p className='font-semibold text-white'>
+                  <LocalizedDate value={session.completedAt} />
                 </p>
-                <p className="text-xs uppercase tracking-wider text-slate-500">
-                  Signal average
+                <p className='mt-1 text-sm text-slate-400'>
+                  <Localized>{session.collisions}</Localized>{' '}
+                  <Localized id='dividedAttention.labels.collisionsDetail' />{' '}
+                  <Localized>{session.avoidedCars}</Localized>{' '}
+                  <Localized id='dividedAttention.labels.avoided' />
+                </p>
+                <p className='mt-1 text-xs capitalize text-slate-500'>
+                  <Localized>
+                    {Math.round(session.durationMs / 60_000)}
+                  </Localized>{' '}
+                  <Localized id='dividedAttention.labels.minDetail' />
+                  <Localized> </Localized>
+                  <Localized>{session.signalResults.length}</Localized>{' '}
+                  <Localized id='dividedAttention.labels.signalsDetail' />
+                  <Localized> </Localized>
+                  <Localized>
+                    {session.settings?.difficulty ?? 'medium'}
+                  </Localized>
                 </p>
               </div>
-              <span
-                aria-hidden="true"
-                className="text-xl text-slate-500 transition-transform group-open:rotate-45"
-              >
-                +
-              </span>
-            </div>
-          </summary>
-          <div className="border-t border-white/10 px-5 py-4">
-            <div className="mb-4 flex flex-wrap gap-2 text-xs text-slate-400">
-              <span className="rounded-full bg-slate-950/60 px-3 py-1.5">
-                Wrong signal keys: {session.wrongSignalResponses}
-              </span>
-              <span className="rounded-full bg-slate-950/60 px-3 py-1.5">
-                Missed signals:{" "}
-                {
-                  session.signalResults.filter(
-                    (result) => result.reactionTime === null,
-                  ).length
-                }
-              </span>
-            </div>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
-              {session.signalResults.map((result, index) => (
-                <div
-                  key={`${session.id}-${index}`}
-                  className="rounded-xl bg-slate-950/60 p-3"
-                >
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                    Signal {index + 1}
+              <div className='flex items-center gap-4'>
+                <div className='text-right'>
+                  <p className='font-mono text-xl font-semibold text-emerald-300'>
+                    <Localized>
+                      {session.averageReactionTime === null
+                        ? '—'
+                        : `${session.averageReactionTime} ms`}
+                    </Localized>
                   </p>
-                  <p className="mt-2 text-sm font-semibold capitalize text-slate-200">
-                    {result.side} ·{" "}
-                    {result.expectedDirection === "down" ? "↓" : "↑"}
-                  </p>
-                  <p className="mt-1 font-mono text-sm text-emerald-300">
-                    {result.reactionTime === null
-                      ? "Missed"
-                      : `${result.reactionTime} ms`}
+                  <p className='text-xs uppercase tracking-wider text-slate-500'>
+                    <Localized id='dividedAttention.results.signalAverage' />
                   </p>
                 </div>
-              ))}
+                <span
+                  aria-hidden='true'
+                  className='text-xl text-slate-500 transition-transform group-open:rotate-45'
+                >
+                  <Localized>{'+'}</Localized>
+                </span>
+              </div>
+            </summary>
+            <div className='border-t border-white/10 px-5 py-4'>
+              <div className='mb-4 flex flex-wrap gap-2 text-xs text-slate-400'>
+                <span className='rounded-full bg-slate-950/60 px-3 py-1.5'>
+                  <Localized id='dividedAttention.labels.wrongSignalKeys' />{' '}
+                  <Localized>{session.wrongSignalResponses}</Localized>
+                </span>
+                <span className='rounded-full bg-slate-950/60 px-3 py-1.5'>
+                  <Localized id='dividedAttention.results.missedSignals' />
+                  <Localized> </Localized>
+                  <Localized>
+                    {
+                      session.signalResults.filter(
+                        result => result.reactionTime === null,
+                      ).length
+                    }
+                  </Localized>
+                </span>
+              </div>
+              <div className='grid grid-cols-2 gap-2 sm:grid-cols-5'>
+                <Localized>
+                  {session.signalResults.map((result, index) => (
+                    <div
+                      key={`${session.id}-${index}`}
+                      className='rounded-xl bg-slate-950/60 p-3'
+                    >
+                      <p className='text-xs font-semibold uppercase tracking-wider text-slate-500'>
+                        <Localized id='dividedAttention.labels.signal' />{' '}
+                        <Localized>{index + 1}</Localized>
+                      </p>
+                      <p className='mt-2 text-sm font-semibold capitalize text-slate-200'>
+                        <Localized>{result.side}</Localized>
+                        <Localized>{' ·'}</Localized>
+                        <Localized> </Localized>
+                        <Localized>
+                          {result.expectedDirection === 'down' ? '↓' : '↑'}
+                        </Localized>
+                      </p>
+                      <p className='mt-1 font-mono text-sm text-emerald-300'>
+                        <Localized>
+                          {result.reactionTime === null
+                            ? 'Missed'
+                            : `${result.reactionTime} ms`}
+                        </Localized>
+                      </p>
+                    </div>
+                  ))}
+                </Localized>
+              </div>
             </div>
-          </div>
-        </details>
-      ))}
+          </details>
+        ))}
+      </Localized>
     </div>
   );
 }
 
 export default function DividedAttentionPage() {
-  const [phase, setPhase] = useState<Phase>("setup");
+  const t = useTextTranslation();
+
+  const [phase, setPhase] = useState<Phase>('setup');
   const [durationMinutes, setDurationMinutes] = useState(
     DEFAULT_DURATION_MINUTES,
   );
   const [signalCount, setSignalCount] = useState(DEFAULT_SIGNAL_COUNT);
-  const [difficulty, setDifficulty] = useState<Difficulty>("medium");
+  const [difficulty, setDifficulty] = useState<Difficulty>('medium');
   const durationMs = durationMinutes * 60_000;
   const maximumSignalCount = maximumSignalsForDuration(
     durationMinutes,
@@ -459,20 +496,20 @@ export default function DividedAttentionPage() {
     activeSignalRef.current = null;
     setActiveSignal(null);
     setLastSession(null);
-    setPhase("setup");
+    setPhase('setup');
   }, []);
   const { beginTestRoute, completeTestRoute, returnToSetupRoute } =
     useTestRoute({
-      basePath: "/divided-attention",
+      basePath: '/divided-attention',
       view:
-        phase === "setup" ? "setup" : phase === "complete" ? "result" : "test",
+        phase === 'setup' ? 'setup' : phase === 'complete' ? 'result' : 'test',
       onReturnToSetup: returnToSetup,
     });
 
   useEffect(() => {
     const hydrationTimer = window.setTimeout(() => {
       try {
-        const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "[]");
+        const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
         if (Array.isArray(stored)) {
           setHistory(stored.filter(isStoredSession));
         }
@@ -528,17 +565,17 @@ export default function DividedAttentionPage() {
     setRemainingMs(0);
     setActiveSignal(null);
     setLastSession(session);
-    setHistory((currentHistory) => {
+    setHistory(currentHistory => {
       const updatedHistory = [session, ...currentHistory].slice(0, 100);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedHistory));
       return updatedHistory;
     });
-    setPhase("complete");
+    setPhase('complete');
     completeTestRoute();
   }, [completeTestRoute, difficulty, durationMinutes, durationMs, signalCount]);
 
   const startGame = useCallback(() => {
-    beginTestRoute(phase === "complete");
+    beginTestRoute(phase === 'complete');
     const now = performance.now();
 
     startTimeRef.current = now;
@@ -565,7 +602,7 @@ export default function DividedAttentionPage() {
     setSignalsCompleted(0);
     setActiveSignal(null);
     setLastSession(null);
-    setPhase("running");
+    setPhase('running');
   }, [beginTestRoute, durationMs, phase, signalCount]);
 
   const steer = useCallback((direction: -1 | 1) => {
@@ -600,35 +637,35 @@ export default function DividedAttentionPage() {
   }, []);
 
   useEffect(() => {
-    if (phase !== "running") return;
+    if (phase !== 'running') return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (
-        event.key === "ArrowLeft" ||
-        event.key === "ArrowRight" ||
-        event.key === "ArrowUp" ||
-        event.key === "ArrowDown"
+        event.key === 'ArrowLeft' ||
+        event.key === 'ArrowRight' ||
+        event.key === 'ArrowUp' ||
+        event.key === 'ArrowDown'
       ) {
         event.preventDefault();
       }
       if (event.repeat) return;
 
-      if (event.key === "ArrowLeft") steer(-1);
-      if (event.key === "ArrowRight") steer(1);
-      if (event.key === "ArrowUp") respondToSignal("up");
-      if (event.key === "ArrowDown") respondToSignal("down");
+      if (event.key === 'ArrowLeft') steer(-1);
+      if (event.key === 'ArrowRight') steer(1);
+      if (event.key === 'ArrowUp') respondToSignal('up');
+      if (event.key === 'ArrowDown') respondToSignal('down');
     };
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [phase, respondToSignal, steer]);
 
   useEffect(() => {
-    if (phase !== "running") return;
+    if (phase !== 'running') return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const context = canvas.getContext("2d");
+    const context = canvas.getContext('2d');
     if (!context) return;
     const traffic = difficultySettings[difficulty];
 
@@ -749,7 +786,7 @@ export default function DividedAttentionPage() {
       opponentsRef.current = remainingCars;
 
       context.clearRect(0, 0, width, height);
-      context.fillStyle = "#052e2b";
+      context.fillStyle = '#052e2b';
       context.fillRect(0, 0, width, height);
 
       const roadGradient = context.createLinearGradient(
@@ -758,18 +795,18 @@ export default function DividedAttentionPage() {
         roadLeft + roadWidth,
         0,
       );
-      roadGradient.addColorStop(0, "#1e293b");
-      roadGradient.addColorStop(0.5, "#334155");
-      roadGradient.addColorStop(1, "#1e293b");
+      roadGradient.addColorStop(0, '#1e293b');
+      roadGradient.addColorStop(0.5, '#334155');
+      roadGradient.addColorStop(1, '#1e293b');
       context.fillStyle = roadGradient;
       context.fillRect(roadLeft, 0, roadWidth, height);
 
-      context.fillStyle = "#f8fafc";
+      context.fillStyle = '#f8fafc';
       context.fillRect(roadLeft + 3, 0, 3, height);
       context.fillRect(roadLeft + roadWidth - 6, 0, 3, height);
 
       const dashOffset = (elapsed * 0.24) % 84;
-      context.fillStyle = "rgba(255,255,255,0.72)";
+      context.fillStyle = 'rgba(255,255,255,0.72)';
       for (let lane = 1; lane < 3; lane += 1) {
         const x = roadLeft + laneWidth * lane - 2;
         for (let y = dashOffset - 84; y < height + 84; y += 84) {
@@ -794,12 +831,12 @@ export default function DividedAttentionPage() {
         playerCenterY,
         carWidth,
         carHeight,
-        "#22d3ee",
+        '#22d3ee',
         true,
       );
 
       if (now - lastCollisionAtRef.current < 260) {
-        context.fillStyle = "rgba(244,63,94,0.25)";
+        context.fillStyle = 'rgba(244,63,94,0.25)';
         context.fillRect(0, 0, width, height);
       }
 
@@ -816,104 +853,114 @@ export default function DividedAttentionPage() {
     };
   }, [difficulty, durationMs, finishGame, phase]);
 
-  if (phase === "running") {
+  if (phase === 'running') {
     return (
-      <main className="relative h-dvh overflow-hidden bg-slate-950 text-white">
+      <main className='relative h-dvh overflow-hidden bg-slate-950 text-white'>
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 h-full w-full"
-          aria-label="Three-lane highway driving area"
+          className='absolute inset-0 h-full w-full'
+          aria-label={t('dividedAttention.labels.threeLaneHighwayDrivingArea')}
         />
 
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex items-start justify-between bg-gradient-to-b from-slate-950/90 to-transparent px-3 pb-10 pt-3 sm:px-6 sm:pt-5">
+        <div className='pointer-events-none absolute inset-x-0 top-0 z-20 flex items-start justify-between bg-gradient-to-b from-slate-950/90 to-transparent px-3 pb-10 pt-3 sm:px-6 sm:pt-5'>
           <div>
-            <p className="font-mono text-2xl font-black tabular-nums sm:text-3xl">
-              {formatRemaining(remainingMs)}
+            <p className='font-mono text-2xl font-black tabular-nums sm:text-3xl'>
+              <Localized>{formatRemaining(remainingMs)}</Localized>
             </p>
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-              Time remaining
+            <p className='text-xs font-semibold uppercase tracking-wider text-slate-400'>
+              <Localized id='common.settings.timeRemaining' />
             </p>
           </div>
-          <div className="flex gap-3 text-right sm:gap-7">
+          <div className='flex gap-3 text-right sm:gap-7'>
             <div>
-              <p className="font-mono text-xl font-bold text-rose-300">
-                {collisions}
+              <p className='font-mono text-xl font-bold text-rose-300'>
+                <Localized>{collisions}</Localized>
               </p>
-              <p className="text-[10px] uppercase tracking-wider text-slate-400">
-                Collisions
+              <p className='text-[10px] uppercase tracking-wider text-slate-400'>
+                <Localized id='common.labels.collisions' />
               </p>
             </div>
             <div>
-              <p className="font-mono text-xl font-bold text-cyan-300">
-                {avoidedCars}
+              <p className='font-mono text-xl font-bold text-cyan-300'>
+                <Localized>{avoidedCars}</Localized>
               </p>
-              <p className="text-[10px] uppercase tracking-wider text-slate-400">
-                Avoided
+              <p className='text-[10px] uppercase tracking-wider text-slate-400'>
+                <Localized id='common.labels.avoided' />
               </p>
             </div>
             <div>
-              <p className="font-mono text-xl font-bold text-emerald-300">
-                {signalsCompleted}/{signalCount}
+              <p className='font-mono text-xl font-bold text-emerald-300'>
+                <Localized>{signalsCompleted}</Localized>
+                <Localized>{'/'}</Localized>
+                <Localized>{signalCount}</Localized>
               </p>
-              <p className="text-[10px] uppercase tracking-wider text-slate-400">
-                Signals
+              <p className='text-[10px] uppercase tracking-wider text-slate-400'>
+                <Localized id='dividedAttention.labels.signals' />
               </p>
             </div>
           </div>
         </div>
 
-        <TrafficLight side="left" active={activeSignal?.side === "left"} />
-        <TrafficLight side="right" active={activeSignal?.side === "right"} />
+        <TrafficLight
+          side='left'
+          active={activeSignal?.side === 'left'}
+        />
+        <TrafficLight
+          side='right'
+          active={activeSignal?.side === 'right'}
+        />
 
-        <div className="absolute inset-x-0 bottom-0 z-20 flex items-end justify-between bg-gradient-to-t from-slate-950/95 via-slate-950/65 to-transparent px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-12 sm:px-6 sm:pb-5">
+        <div className='absolute inset-x-0 bottom-0 z-20 flex items-end justify-between bg-gradient-to-t from-slate-950/95 via-slate-950/65 to-transparent px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-12 sm:px-6 sm:pb-5'>
           <div>
-            <p className="mb-2 text-center text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-              Steer
+            <p className='mb-2 text-center text-[10px] font-semibold uppercase tracking-wider text-slate-400'>
+              <Localized id='dividedAttention.labels.steer' />
             </p>
-            <div className="flex gap-2">
+            <div className='flex gap-2'>
               <button
-                type="button"
-                aria-label="Steer left"
+                type='button'
+                aria-label={t('dividedAttention.labels.steerLeft')}
                 onPointerDown={() => steer(-1)}
-                className="h-12 w-14 rounded-2xl border border-white/15 bg-slate-900/90 text-2xl font-black shadow-xl backdrop-blur active:bg-cyan-300 active:text-slate-950 sm:h-14 sm:w-16"
-                style={{ touchAction: "manipulation" }}
+                className='h-12 w-14 rounded-2xl border border-white/15 bg-slate-900/90 text-2xl font-black shadow-xl backdrop-blur active:bg-cyan-300 active:text-slate-950 sm:h-14 sm:w-16'
+                style={{ touchAction: 'manipulation' }}
               >
-                ←
+                <Localized>{'←'}</Localized>
               </button>
               <button
-                type="button"
-                aria-label="Steer right"
+                type='button'
+                aria-label={t('dividedAttention.labels.steerRight')}
                 onPointerDown={() => steer(1)}
-                className="h-12 w-14 rounded-2xl border border-white/15 bg-slate-900/90 text-2xl font-black shadow-xl backdrop-blur active:bg-cyan-300 active:text-slate-950 sm:h-14 sm:w-16"
-                style={{ touchAction: "manipulation" }}
+                className='h-12 w-14 rounded-2xl border border-white/15 bg-slate-900/90 text-2xl font-black shadow-xl backdrop-blur active:bg-cyan-300 active:text-slate-950 sm:h-14 sm:w-16'
+                style={{ touchAction: 'manipulation' }}
               >
-                →
+                <Localized>{'→'}</Localized>
               </button>
             </div>
           </div>
 
           <div>
-            <p className="mb-2 text-center text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-              Signals
+            <p className='mb-2 text-center text-[10px] font-semibold uppercase tracking-wider text-slate-400'>
+              <Localized id='dividedAttention.labels.signals' />
             </p>
-            <div className="flex gap-2">
+            <div className='flex gap-2'>
               <button
-                type="button"
-                aria-label="Respond down to left signal"
-                onPointerDown={() => respondToSignal("down")}
-                className="h-12 w-14 rounded-2xl border border-white/15 bg-slate-900/90 text-2xl font-black shadow-xl backdrop-blur active:bg-violet-300 active:text-slate-950 sm:h-14 sm:w-16"
-                style={{ touchAction: "manipulation" }}
+                type='button'
+                aria-label={t(
+                  'dividedAttention.labels.respondDownToLeftSignal',
+                )}
+                onPointerDown={() => respondToSignal('down')}
+                className='h-12 w-14 rounded-2xl border border-white/15 bg-slate-900/90 text-2xl font-black shadow-xl backdrop-blur active:bg-violet-300 active:text-slate-950 sm:h-14 sm:w-16'
+                style={{ touchAction: 'manipulation' }}
               >
-                ↓
+                <Localized>{'↓'}</Localized>
               </button>
               <button
-                type="button"
-                aria-label="Respond up to right signal"
-                onPointerDown={() => respondToSignal("up")}
-                className="h-12 w-14 rounded-2xl border border-white/15 bg-slate-900/90 text-2xl font-black shadow-xl backdrop-blur active:bg-violet-300 active:text-slate-950 sm:h-14 sm:w-16"
-                style={{ touchAction: "manipulation" }}
+                type='button'
+                aria-label={t('dividedAttention.labels.respondUpToRightSignal')}
+                onPointerDown={() => respondToSignal('up')}
+                className='h-12 w-14 rounded-2xl border border-white/15 bg-slate-900/90 text-2xl font-black shadow-xl backdrop-blur active:bg-violet-300 active:text-slate-950 sm:h-14 sm:w-16'
+                style={{ touchAction: 'manipulation' }}
               >
-                ↑
+                <Localized>{'↑'}</Localized>
               </button>
             </div>
           </div>
@@ -923,272 +970,319 @@ export default function DividedAttentionPage() {
   }
 
   return (
-    <TestPageShell accent="emerald">
-      {phase === "setup" ? (
-        <TestSetupLayout
-          accent="emerald"
-          eyebrow="Divided attention"
-          title="Drive and monitor."
-          description={
-            <p>
-              Steer through a three-lane highway while monitoring two traffic
-              lights. Configure the duration, signal count, and traffic
-              difficulty before you begin.
-            </p>
-          }
-          actions={
-            <>
-              <button
-                type="button"
-                onClick={startGame}
-                className="min-h-14 rounded-full bg-emerald-300 px-8 font-bold text-slate-950 transition hover:bg-emerald-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-300"
-              >
-                Start test
-              </button>
-              <DividedAttentionDemo />
-            </>
-          }
-        >
-          <div className="space-y-4">
-            <TestPanel
-              title="Test settings"
-              description="Set the session length, signals, and passing traffic."
-            >
-              <div className="grid gap-3 sm:grid-cols-2">
-                <label className="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
-                  <span className="flex items-center justify-between text-sm font-semibold text-slate-200">
-                    Test length
-                    <span className="font-mono text-emerald-300">
-                      {durationMinutes} min
-                    </span>
-                  </span>
-                  <input
-                    type="range"
-                    min={MIN_DURATION_MINUTES}
-                    max={MAX_DURATION_MINUTES}
-                    value={durationMinutes}
-                    onChange={(event) => {
-                      const nextDuration = Number(event.target.value);
-                      setDurationMinutes(nextDuration);
-                      setSignalCount((current) =>
-                        Math.min(
-                          current,
-                          maximumSignalsForDuration(nextDuration, difficulty),
-                        ),
-                      );
-                    }}
-                    className="mt-4 w-full accent-emerald-300"
-                  />
-                  <span className="mt-2 block text-xs text-slate-500">
-                    {MIN_DURATION_MINUTES}–{MAX_DURATION_MINUTES} minutes
-                  </span>
-                </label>
-
-                <label className="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
-                  <span className="flex items-center justify-between text-sm font-semibold text-slate-200">
-                    Number of signals
-                    <span className="font-mono text-emerald-300">
-                      {signalCount}
-                    </span>
-                  </span>
-                  <ValidatedNumberInput
-                    min={1}
-                    max={maximumSignalCount}
-                    value={signalCount}
-                    normalize={Math.round}
-                    onValueChange={setSignalCount}
-                    className="mt-3 min-h-12 w-full rounded-xl border border-white/10 bg-slate-950 px-4 font-mono text-white outline-none focus:border-emerald-300"
-                  />
-                  <span className="mt-2 block text-xs text-slate-500">
-                    Up to {maximumSignalCount} at this length
-                  </span>
-                </label>
-              </div>
-
-              <fieldset className="mt-4 rounded-2xl border border-white/10 bg-white/[0.05] p-4">
-                <legend className="px-1 text-sm font-semibold text-slate-200">
-                  Passing-car difficulty
-                </legend>
-                <div className="mt-2 grid grid-cols-3 gap-2">
-                  {(["easy", "medium", "hard"] as Difficulty[]).map(
-                    (option) => (
-                      <button
-                        key={option}
-                        type="button"
-                        aria-pressed={difficulty === option}
-                        onClick={() => {
-                          setDifficulty(option);
-                          setSignalCount((current) =>
-                            Math.min(
-                              current,
-                              maximumSignalsForDuration(
-                                durationMinutes,
-                                option,
-                              ),
-                            ),
-                          );
-                        }}
-                        className={`min-h-11 rounded-xl border px-3 text-sm font-bold capitalize transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
-                          difficulty === option
-                            ? "border-emerald-300 bg-emerald-300 text-slate-950"
-                            : "border-white/10 bg-slate-950 text-slate-300 hover:bg-slate-900"
-                        }`}
-                      >
-                        <span className="block">{option}</span>
-                        <span className="mt-0.5 block font-mono text-[10px] opacity-65">
-                          {difficultySettings[option].signalTimeoutMs} ms
-                        </span>
-                      </button>
-                    ),
-                  )}
-                </div>
-                <p className="mt-3 text-xs leading-5 text-slate-500">
-                  Difficulty changes car speed and traffic density. The traffic
-                  generator always leaves an avoidable route.
-                </p>
-              </fieldset>
-            </TestPanel>
-
-            <TestPanel title="Instructions">
-              <InstructionList
-                accent="emerald"
-                items={[
-                  {
-                    title: "Drive",
-                    description: "Use ← and → to change lanes and avoid cars.",
-                  },
-                  {
-                    title: "Watch",
-                    description: "Monitor both traffic lights while steering.",
-                  },
-                  {
-                    title: "Left signal",
-                    description: "When the left light turns red, press ↓.",
-                  },
-                  {
-                    title: "Right signal",
-                    description: "When the right light turns red, press ↑.",
-                  },
-                ]}
-              />
-              <p className="mt-5 text-xs leading-5 text-slate-500">
-                Touch controls appear on tablets and phones. The lights turn red{" "}
-                {signalCount} times in total.
+    <TestPageShell accent='emerald'>
+      <Localized>
+        {phase === 'setup' ? (
+          <TestSetupLayout
+            accent='emerald'
+            eyebrow='Divided attention'
+            title={t('dividedAttention.labels.driveAndMonitor')}
+            description={
+              <p>
+                <Localized id='dividedAttention.instructions.steerThroughAThreeLaneHighwayWhileMonitoringTwoTraffic' />
               </p>
-            </TestPanel>
-          </div>
-        </TestSetupLayout>
-      ) : (
-        <section className="py-8 sm:py-14">
-          <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
-            <div>
-              <p className="font-mono text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">
-                Session complete
-              </p>
-              <h1 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">
-                Divided-attention results
-              </h1>
-            </div>
-            <div className="flex flex-wrap gap-3 self-start sm:self-auto">
-              <button
-                type="button"
-                onClick={returnToSetupRoute}
-                className="min-h-12 rounded-full border border-white/15 px-6 font-bold text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-300"
+            }
+            actions={
+              <>
+                <button
+                  type='button'
+                  onClick={startGame}
+                  className='min-h-14 rounded-full bg-emerald-300 px-8 font-bold text-slate-950 transition hover:bg-emerald-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-300'
+                >
+                  <Localized id='common.actions.startTest' />
+                </button>
+                <DividedAttentionDemo />
+              </>
+            }
+          >
+            <div className='space-y-4'>
+              <TestPanel
+                title={t('common.settings.title')}
+                description='Set the session length, signals, and passing traffic.'
               >
-                Change settings
-              </button>
-              <button
-                type="button"
-                onClick={startGame}
-                className="min-h-12 rounded-full bg-emerald-300 px-6 font-bold text-slate-950 transition hover:bg-emerald-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-300"
-              >
-                Repeat test
-              </button>
-            </div>
-          </div>
-
-          {lastSession && (
-            <>
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-3xl border border-emerald-300/20 bg-emerald-300/10 p-6 sm:col-span-2">
-                  <p className="text-sm font-semibold uppercase tracking-wider text-emerald-200/70">
-                    Average signal reaction
-                  </p>
-                  <p className="mt-3 font-mono text-5xl font-black text-emerald-300 sm:text-7xl">
-                    {lastSession.averageReactionTime ?? "—"}
-                    {lastSession.averageReactionTime !== null && (
-                      <span className="ml-2 text-2xl text-emerald-200/60">
-                        ms
+                <div className='grid gap-3 sm:grid-cols-2'>
+                  <label className='rounded-2xl border border-white/10 bg-white/[0.05] p-4'>
+                    <span className='flex items-center justify-between text-sm font-semibold text-slate-200'>
+                      <Localized id='dividedAttention.settings.testLength' />
+                      <span className='font-mono text-emerald-300'>
+                        <Localized>{durationMinutes}</Localized>{' '}
+                        <Localized id='dividedAttention.labels.min' />
                       </span>
-                    )}
-                  </p>
-                </div>
-                <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6">
-                  <p className="text-sm font-semibold uppercase tracking-wider text-slate-500">
-                    Driving
-                  </p>
-                  <p className="mt-4 font-mono text-3xl font-bold text-white">
-                    {lastSession.collisions}
-                  </p>
-                  <p className="text-sm text-slate-500">collisions</p>
-                  <p className="mt-3 font-mono text-lg text-emerald-300">
-                    {lastSession.avoidedCars} cars avoided
-                  </p>
-                  <p className="mt-3 text-xs capitalize leading-5 text-slate-500">
-                    {lastSession.settings?.durationMinutes ??
-                      Math.round(lastSession.durationMs / 60_000)}{" "}
-                    min · {lastSession.signalResults.length} signals ·{" "}
-                    {lastSession.settings?.difficulty ?? "medium"}
-                  </p>
-                </div>
-              </div>
+                    </span>
+                    <input
+                      type='range'
+                      min={MIN_DURATION_MINUTES}
+                      max={MAX_DURATION_MINUTES}
+                      value={durationMinutes}
+                      onChange={event => {
+                        const nextDuration = Number(event.target.value);
+                        setDurationMinutes(nextDuration);
+                        setSignalCount(current =>
+                          Math.min(
+                            current,
+                            maximumSignalsForDuration(nextDuration, difficulty),
+                          ),
+                        );
+                      }}
+                      className='mt-4 w-full accent-emerald-300'
+                    />
+                    <span className='mt-2 block text-xs text-slate-500'>
+                      <Localized>{MIN_DURATION_MINUTES}</Localized>
+                      <Localized>{'–'}</Localized>
+                      <Localized>{MAX_DURATION_MINUTES}</Localized>{' '}
+                      <Localized id='dividedAttention.labels.minutes' />
+                    </span>
+                  </label>
 
-              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-5">
-                {lastSession.signalResults.map((result, index) => (
-                  <div
-                    key={index}
-                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
-                  >
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      Signal {index + 1}
-                    </p>
-                    <p className="mt-2 text-sm font-semibold capitalize text-slate-300">
-                      {result.side} ·{" "}
-                      {result.expectedDirection === "down" ? "↓" : "↑"}
-                    </p>
-                    <p className="mt-2 font-mono text-lg font-bold text-emerald-300">
-                      {result.reactionTime === null
-                        ? "Missed"
-                        : `${result.reactionTime} ms`}
-                    </p>
+                  <label className='rounded-2xl border border-white/10 bg-white/[0.05] p-4'>
+                    <span className='flex items-center justify-between text-sm font-semibold text-slate-200'>
+                      <Localized id='dividedAttention.labels.numberOfSignals' />
+                      <span className='font-mono text-emerald-300'>
+                        <Localized>{signalCount}</Localized>
+                      </span>
+                    </span>
+                    <ValidatedNumberInput
+                      min={1}
+                      max={maximumSignalCount}
+                      value={signalCount}
+                      normalize={Math.round}
+                      onValueChange={setSignalCount}
+                      className='mt-3 min-h-12 w-full rounded-xl border border-white/10 bg-slate-950 px-4 font-mono text-white outline-none focus:border-emerald-300'
+                    />
+                    <span className='mt-2 block text-xs text-slate-500'>
+                      <Localized id='dividedAttention.labels.upTo' />{' '}
+                      <Localized>{maximumSignalCount}</Localized>{' '}
+                      <Localized id='dividedAttention.settings.atThisLength' />
+                    </span>
+                  </label>
+                </div>
+
+                <fieldset className='mt-4 rounded-2xl border border-white/10 bg-white/[0.05] p-4'>
+                  <legend className='px-1 text-sm font-semibold text-slate-200'>
+                    <Localized id='dividedAttention.settings.passingCarDifficulty' />
+                  </legend>
+                  <div className='mt-2 grid grid-cols-3 gap-2'>
+                    <Localized>
+                      {(['easy', 'medium', 'hard'] as Difficulty[]).map(
+                        option => (
+                          <button
+                            key={option}
+                            type='button'
+                            aria-pressed={difficulty === option}
+                            onClick={() => {
+                              setDifficulty(option);
+                              setSignalCount(current =>
+                                Math.min(
+                                  current,
+                                  maximumSignalsForDuration(
+                                    durationMinutes,
+                                    option,
+                                  ),
+                                ),
+                              );
+                            }}
+                            className={`min-h-11 rounded-xl border px-3 text-sm font-bold capitalize transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
+                              difficulty === option
+                                ? 'border-emerald-300 bg-emerald-300 text-slate-950'
+                                : 'border-white/10 bg-slate-950 text-slate-300 hover:bg-slate-900'
+                            }`}
+                          >
+                            <span className='block'>
+                              <Localized>{option}</Localized>
+                            </span>
+                            <span className='mt-0.5 block font-mono text-[10px] opacity-65'>
+                              <Localized>
+                                {difficultySettings[option].signalTimeoutMs}
+                              </Localized>
+                              <Localized>{' ms'}</Localized>
+                            </span>
+                          </button>
+                        ),
+                      )}
+                    </Localized>
                   </div>
-                ))}
-              </div>
-            </>
-          )}
-        </section>
-      )}
+                  <p className='mt-3 text-xs leading-5 text-slate-500'>
+                    <Localized id='dividedAttention.instructions.difficultyChangesCarSpeedAndTrafficDensityTheTraffic' />
+                  </p>
+                </fieldset>
+              </TestPanel>
 
-      <section className="border-t border-white/10 py-12 sm:py-16">
-        <div className="mb-7 flex items-end justify-between gap-6">
+              <TestPanel title={t('common.instructions.title')}>
+                <InstructionList
+                  accent='emerald'
+                  items={[
+                    {
+                      title: 'Drive',
+                      description:
+                        'Use ← and → to change lanes and avoid cars.',
+                    },
+                    {
+                      title: 'Watch',
+                      description:
+                        'Monitor both traffic lights while steering.',
+                    },
+                    {
+                      title: 'Left signal',
+                      description: 'When the left light turns red, press ↓.',
+                    },
+                    {
+                      title: 'Right signal',
+                      description: 'When the right light turns red, press ↑.',
+                    },
+                  ]}
+                />
+                <p className='mt-5 text-xs leading-5 text-slate-500'>
+                  <Localized id='dividedAttention.labels.touchControlsAppearOnTabletsAndPhonesTheLights' />
+                  <Localized> </Localized>
+                  <Localized>{signalCount}</Localized>{' '}
+                  <Localized id='dividedAttention.labels.timesInTotal' />
+                </p>
+              </TestPanel>
+            </div>
+          </TestSetupLayout>
+        ) : (
+          <section className='py-8 sm:py-14'>
+            <div className='flex flex-col justify-between gap-8 sm:flex-row sm:items-end'>
+              <div>
+                <p className='font-mono text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300'>
+                  <Localized id='common.results.sessionComplete' />
+                </p>
+                <h1 className='mt-4 text-4xl font-black tracking-tight sm:text-6xl'>
+                  <Localized id='dividedAttention.results.dividedAttentionResults' />
+                </h1>
+              </div>
+              <div className='flex flex-wrap gap-3 self-start sm:self-auto'>
+                <button
+                  type='button'
+                  onClick={returnToSetupRoute}
+                  className='min-h-12 rounded-full border border-white/15 px-6 font-bold text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-300'
+                >
+                  <Localized id='common.settings.changeSettings' />
+                </button>
+                <button
+                  type='button'
+                  onClick={startGame}
+                  className='min-h-12 rounded-full bg-emerald-300 px-6 font-bold text-slate-950 transition hover:bg-emerald-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-300'
+                >
+                  <Localized id='common.actions.repeatTest' />
+                </button>
+              </div>
+            </div>
+
+            <Localized>
+              {lastSession && (
+                <>
+                  <div className='mt-10 grid gap-4 sm:grid-cols-3'>
+                    <div className='rounded-3xl border border-emerald-300/20 bg-emerald-300/10 p-6 sm:col-span-2'>
+                      <p className='text-sm font-semibold uppercase tracking-wider text-emerald-200/70'>
+                        <Localized id='dividedAttention.results.averageSignalReaction' />
+                      </p>
+                      <p className='mt-3 font-mono text-5xl font-black text-emerald-300 sm:text-7xl'>
+                        <Localized>
+                          {lastSession.averageReactionTime ?? '—'}
+                        </Localized>
+                        <Localized>
+                          {lastSession.averageReactionTime !== null && (
+                            <span className='ml-2 text-2xl text-emerald-200/60'>
+                              <Localized>{'ms'}</Localized>
+                            </span>
+                          )}
+                        </Localized>
+                      </p>
+                    </div>
+                    <div className='rounded-3xl border border-white/10 bg-white/[0.05] p-6'>
+                      <p className='text-sm font-semibold uppercase tracking-wider text-slate-500'>
+                        <Localized id='dividedAttention.labels.driving' />
+                      </p>
+                      <p className='mt-4 font-mono text-3xl font-bold text-white'>
+                        <Localized>{lastSession.collisions}</Localized>
+                      </p>
+                      <p className='text-sm text-slate-500'>
+                        <Localized id='dividedAttention.labels.collisions' />
+                      </p>
+                      <p className='mt-3 font-mono text-lg text-emerald-300'>
+                        <Localized>{lastSession.avoidedCars}</Localized>{' '}
+                        <Localized id='dividedAttention.labels.carsAvoided' />
+                      </p>
+                      <p className='mt-3 text-xs capitalize leading-5 text-slate-500'>
+                        <Localized>
+                          {lastSession.settings?.durationMinutes ??
+                            Math.round(lastSession.durationMs / 60_000)}{' '}
+                        </Localized>
+                        <Localized id='dividedAttention.labels.minDetail' />{' '}
+                        <Localized>
+                          {lastSession.signalResults.length}
+                        </Localized>{' '}
+                        <Localized id='dividedAttention.labels.signalsDetail' />
+                        <Localized> </Localized>
+                        <Localized>
+                          {lastSession.settings?.difficulty ?? 'medium'}
+                        </Localized>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className='mt-4 grid grid-cols-2 gap-3 sm:grid-cols-5'>
+                    <Localized>
+                      {lastSession.signalResults.map((result, index) => (
+                        <div
+                          key={index}
+                          className='rounded-2xl border border-white/10 bg-white/[0.04] p-4'
+                        >
+                          <p className='text-xs font-semibold uppercase tracking-wider text-slate-500'>
+                            <Localized id='dividedAttention.labels.signal' />{' '}
+                            <Localized>{index + 1}</Localized>
+                          </p>
+                          <p className='mt-2 text-sm font-semibold capitalize text-slate-300'>
+                            <Localized>{result.side}</Localized>
+                            <Localized>{' ·'}</Localized>
+                            <Localized> </Localized>
+                            <Localized>
+                              {result.expectedDirection === 'down' ? '↓' : '↑'}
+                            </Localized>
+                          </p>
+                          <p className='mt-2 font-mono text-lg font-bold text-emerald-300'>
+                            <Localized>
+                              {result.reactionTime === null
+                                ? 'Missed'
+                                : `${result.reactionTime} ms`}
+                            </Localized>
+                          </p>
+                        </div>
+                      ))}
+                    </Localized>
+                  </div>
+                </>
+              )}
+            </Localized>
+          </section>
+        )}
+      </Localized>
+
+      <section className='border-t border-white/10 py-12 sm:py-16'>
+        <div className='mb-7 flex items-end justify-between gap-6'>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Saved on this device
+            <p className='text-sm font-semibold uppercase tracking-[0.2em] text-slate-500'>
+              <Localized id='common.results.savedOnThisDevice' />
             </p>
-            <h2 className="mt-2 text-2xl font-bold">
-              Divided-attention history
+            <h2 className='mt-2 text-2xl font-bold'>
+              <Localized id='dividedAttention.results.dividedAttentionHistory' />
             </h2>
           </div>
-          {history.length > 0 && (
-            <p className="font-mono text-sm text-slate-500">
-              {history.length} {history.length === 1 ? "session" : "sessions"}
-            </p>
-          )}
+          <Localized>
+            {history.length > 0 && (
+              <p className='font-mono text-sm text-slate-500'>
+                <Localized>{history.length}</Localized>{' '}
+                <Localized>
+                  {history.length === 1 ? 'session' : 'sessions'}
+                </Localized>
+              </p>
+            )}
+          </Localized>
         </div>
         <SessionHistory sessions={history} />
-        <p className="mt-8 max-w-2xl text-sm leading-6 text-slate-600">
-          This is a practice tool, not a clinical assessment. Driving difficulty
-          and input timing can vary between devices.
+        <p className='mt-8 max-w-2xl text-sm leading-6 text-slate-600'>
+          <Localized id='dividedAttention.instructions.thisIsAPracticeToolNotAClinicalAssessment' />
         </p>
       </section>
     </TestPageShell>

@@ -1,0 +1,11 @@
+{
+  "common": {
+    "help": {
+      "onlyTheTestSheetWillBeIncludedIn": ". A letöltött PDF csak a tesztlapot tartalmazza.",
+      "aNewRoundBeginsWithAShortReadyPhase": "Minden forduló rövid felkészülési szakasszal indul. Figyeld a teljes rácsot.",
+      "dragAPieceOrSelectItAndTapA": "Húzz egy elemet, vagy jelöld ki és érints meg egy kiemelt célhelyet.",
+      "inTwoHandedModeOneLedInTheLargeGrid": "Kétkezes módban a nagy rács egyik LED-je világít. Keresd meg a sorát és oszlopát a kisebb rácsokon.",
+      "practiceTheWatchRememberSelectAndSubmitRhythmBefore": "Gyakorold a megfigyelés, megjegyzés, kiválasztás és beküldés ritmusát az éles körök előtt."
+    }
+  }
+}

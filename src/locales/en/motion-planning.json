@@ -1,0 +1,77 @@
+{
+  "motionPlanning": {
+    "labels": {
+      "column": ", column",
+      "amberBlock": "Amber block",
+      "blueBlock": "Blue block",
+      "easyMovableBarriers": "Easy · movable barriers",
+      "expert": "Expert",
+      "greenBlock": "Green block",
+      "intermediate": "Intermediate",
+      "introductory": "Introductory",
+      "leaveTheRemainingPiecesInPlace": "Leave the remaining pieces in place.",
+      "moveLimitReachedSkipThisPuzzleToContinue": "Move limit reached. Skip this puzzle to continue.",
+      "moveOnePiece": "Move one piece",
+      "openARoute": "Open a route",
+      "planBeforeMoving": "Plan before moving",
+      "purpleBlock": "Purple block",
+      "redBall": "Red ball",
+      "respectTheObstacles": "Respect the obstacles",
+      "reviewYourPlanning": "Review your planning",
+      "shortestPlanningSolution": "Shortest planning solution",
+      "solutionUnavailable": "Solution unavailable",
+      "solveAndContinue": "Solve and continue",
+      "solved": "Solved",
+      "solvedIn": "Solved in",
+      "targetRow": "Target: row",
+      "theBallHasReachedTheTarget": "The ball has reached the target.",
+      "tryThePuzzle": "Try the puzzle",
+      "unavailable": "Unavailable",
+      "moves": "moves!",
+      "movesThisIsYourFinalPosition": "moves. This is your final position.",
+      "theBall": "the ball",
+      "theBlockSTopLeftCorner": "the block's top-left corner"
+    },
+    "actions": {
+      "clearAPathPlanEachMove": "Clear a path. Plan each move.",
+      "nextPuzzle": "Next puzzle",
+      "skipPuzzle": "Skip puzzle",
+      "skipped": "Skipped",
+      "viewShortestSolution": "View shortest solution"
+    },
+    "tutorial": {
+      "complexPlanningWalkthrough": "Complex planning walkthrough",
+      "showDemoFeedback": "Show demo feedback"
+    },
+    "instructions": {
+      "dragAPieceOrSelectItAndTapA": "Drag a piece or select it and tap a highlighted destination. Positions refer to its top-left corner. A placement counts as one move; its collision-free path can turn.",
+      "dragAPieceToAHighlightedDestinationOrSelect": "Drag a piece to a highlighted destination, or select it and tap a highlighted cell. With a keyboard, focus a piece and press Enter, then focus a destination and press Enter. Reach the target in two moves. In harder tasks, bolted gray obstacles cannot move.",
+      "identifyTheBallSBlackTargetAndDecideWhichBlocks": "Identify the ball's black target and decide which blocks must move. A target can start underneath a block.",
+      "inThisExampleMovingTheTallGreenBlockAway": "In this example, moving the tall green block away opens a path for the ball. The purple block can stay where it is. Plan the destination of every piece before moving.",
+      "keepPracticingOrContinueToTheTestTheGreen": "Keep practicing, or continue to the test. The green block can move to row 3, column 3, freeing a path for the ball.",
+      "laterRoundsProgressFromIntroductoryToIntermediateRound3": "Later rounds progress from introductory to intermediate (round 3), hard (round 5), and expert (round 8). Hard mode starts with complex layouts and progresses to expert; easy mode stays introductory.",
+      "moveTheRedBallToTheBlackTargetColored": "Move the red ball to the black target. Colored blocks move in any direction but cannot rotate. Bolted gray obstacles stay fixed. A placement of one piece counts as one move, even if its path turns.",
+      "moveTheRedBallToTheTargetWhileMaking": "Move the red ball to the target while making space around blocks. Demo moves do not affect your results.",
+      "piecesCannotOverlapRotateOrLeaveTheGridBolted": "Pieces cannot overlap, rotate, or leave the grid. Bolted gray obstacles remain fixed. Numbered colored blocks can move in all four directions.",
+      "reachTheTargetThenChooseNextPuzzleSkipIf": "Reach the target, then choose Next puzzle. Skip if stuck. Solve as many puzzles as possible in the six-minute default session. Only submitted or skipped puzzles are saved.",
+      "rearrangeColoredBlocksAndMoveTheRedBallTo": "Rearrange colored blocks and move the red ball to the black target in as few moves as possible. Practice inspired by motionChallenge.",
+      "resultsRecordSolveRateTimeAndMovesWithA": "Results record solve rate, time, and moves, with a shortest-solution popup for each layout. Later rounds add tighter spaces and longer dependencies: intermediate after two puzzles, hard after four, and expert after seven. Expert puzzles need 9–11 optimal moves.",
+      "theBlackRingMarksTheTargetIncludingWhenA": "The black ring marks the target, including when a block covers it. Numbered colored blocks can move; bolted gray obstacles cannot. This is a shortest solution under the practice move rules.",
+      "theRedBallMustReachTheBlackCircleThink": "The red ball must reach the black circle. Think about which blocks stop it, and where those blocks can fit. Colored blocks move freely without rotating.",
+      "workBackwardsFromTheTargetAndOpenSpaceFor": "Work backwards from the target and open space for the ball. Each step places one piece along a clear path; highlighted paths can turn."
+    },
+    "results": {
+      "hard611OptimalMoves": "Hard · 6–11 optimal moves",
+      "optimalNumberOfSteps": "Optimal number of steps:",
+      "optimalSolution": "Optimal solution!",
+      "thisSavedLayoutExceedsTheSolutionSearchLimit": "This saved layout exceeds the solution search limit."
+    },
+    "messages": {
+      "moveIndexName": "Move {{index}}: {{name}}",
+      "placeMoveAtRowMove2ColumnMove3FollowThe": "Place {{move}} at row {{move2}}, column {{move3}}. Follow the dotted path around occupied cells.{{index}}",
+      "planLengthMoves": "Plan {{length}} moves",
+      "lengthMovesOptimalStepsOptimalmotionsolution": "{{length}} moves · Optimal steps: {{optimalMotionSolution}}",
+      "responseExtraMoves": "{{response}} extra moves"
+    }
+  }
+}

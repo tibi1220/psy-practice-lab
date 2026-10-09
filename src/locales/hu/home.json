@@ -1,0 +1,81 @@
+{
+  "home": {
+    "badges": {
+      "numericalReasoning": "12 perc · 47 kérdés",
+      "concentration": "2 perc · adaptív",
+      "capacityToAct": "40 az alapértelmezés",
+      "monotony": "500 az alapértelmezés",
+      "motionPlanning": "6 perc · adaptív",
+      "workingMemory": "9 perc · 9 feladat",
+      "configurable": "Beállítható",
+      "timedAdaptive": "Időzített adaptív",
+      "towerOfHanoi": "7-es magasság",
+      "perception": "Három elrendezés",
+      "distributiveAttention": "Három mód"
+    },
+    "cards": {
+      "capacityToAct": {
+        "description": "Hangold össze a szín-, pedál- és hangjelzésekre adott válaszokat, miközben figyelmen kívül hagyod a vizuális zavaró ingereket."
+      },
+      "gridClassification": {
+        "description": "Fedezd fel a két példarács szabályát, majd válaszd ki a két megfelelő jelöltet."
+      },
+      "deductiveReasoning": {
+        "description": "Keresd meg a hiányzó alakzatot 4×4-es és 5×5-ös rácsokban a sor- és oszlopszabályok alapján."
+      },
+      "oddOneOut": {
+        "description": "Következtesd ki kilenc objektum közös szabályát, és azonosítsd a szabályt megszegő elemet."
+      },
+      "reactionTime": {
+        "description": "Mérd meg, milyen gyorsan válaszolsz egy vizuális jelzésre egy testreszabható próbasorozatban."
+      },
+      "towerOfHanoi": {
+        "description": "Tervezz meg és hajts végre szabályos korongsorozatot, miközben követed a lépéseket és a sebességet."
+      },
+      "dividedAttention": {
+        "description": "Vezess beállítható forgalomban, miközben a bal és jobb jelzések változására reagálsz."
+      },
+      "switchReasoning": {
+        "description": "Kövesd az alakzatsorozatokat egy vagy két számkódon át a megfelelő kimenethez."
+      },
+      "monotony": {
+        "description": "Sorold be a hasonló jelek hosszú sorozatát; figyeld a sebességet és a hibákat."
+      },
+      "digitChallenge": {
+        "description": "Töltsd ki a számtani egyenleteket különböző, 1–9 közötti számjegyekkel a megadott eredmény eléréséhez."
+      },
+      "distributiveAttention": {
+        "description": "Hangold össze a sorokat és oszlopokat a metszéspont kiválasztásával vagy kétkezes válaszadással."
+      },
+      "numericalReasoning": {
+        "description": "Fedezz fel négy mintavállalatot részletes táblázatokkal és interaktív grafikonokkal. Értékeld az állításokat igazként, hamisként vagy nem eldönthetőként, és térj vissza a válaszaihoz."
+      },
+      "greenGreyClassification": {
+        "description": "Következtesd ki a hat felcímkézett rombuszrácsot elkülönítő szabályt, majd sorolj be négy új rácsot zöldnek vagy szürkének."
+      },
+      "concentration": {
+        "description": "Sorold be gyorsan az E-szerű szimbólumokat alakjuk és pontszámuk alapján az A/D gombokkal vagy érintéssel."
+      },
+      "motionPlanning": {
+        "description": "Rendezze át a mozgatható blokkokat a rögzített akadályok körül, és vezesd a piros labdát a célhoz a lehető legkevesebb lépéssel."
+      },
+      "workingMemory": {
+        "description": "Jegyezd meg a kiemelt pontokat sorrendben, miközben szimmetria-, forgatási és vonalábra-kérdéseket old meg."
+      },
+      "shortTermMemory": {
+        "description": "Jegyezd meg, mely cellák villantak fel a beállítható rácsban és körszámmal."
+      },
+      "perception": {
+        "description": "Használj egymástól független bal és jobb elrendezést egy összehangolt kétkezes válaszhoz."
+      }
+    },
+    "tests": {
+      "available": "elérhető",
+      "title": "Válassz tesztet",
+      "label": "Teszt"
+    },
+    "description": "Célzott gyakorlatok a gyakori kognitív feladatokhoz. Az eredményeid ebben a böngészőben maradnak, és később is megtekinthetők.",
+    "title": "Figyelj, reagálj, emlékezz, alkalmazkodj.",
+    "disclaimer": "Ezek a gyakorlatok gyakorlásra és önmegfigyelésre szolgálnak, nem klinikai értékelésre."
+  }
+}

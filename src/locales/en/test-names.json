@@ -1,0 +1,83 @@
+{
+  "tests": {
+    "concentration": {
+      "pageTitle": "Ability to Concentrate · PSY Practice Lab",
+      "name": "Ability to concentrate"
+    },
+    "capacityToAct": {
+      "pageTitle": "Capacity to Act · PSY Practice Lab",
+      "name": "Capacity to act",
+      "tutorialTitle": "Capacity-to-act walkthrough"
+    },
+    "motionPlanning": {
+      "pageTitle": "Complex Planning · PSY Practice Lab",
+      "name": "Complex planning"
+    },
+    "deductiveReasoning": {
+      "pageTitle": "Deductive Reasoning · PSY Practice Lab",
+      "name": "Deductive reasoning"
+    },
+    "digitChallenge": {
+      "pageTitle": "Digit Challenge · PSY Practice Lab",
+      "name": "Digit challenge"
+    },
+    "distributiveAttention": {
+      "pageTitle": "Distributive Attention · PSY Practice Lab",
+      "name": "Distributive attention",
+      "tutorialTitle": "Distributive-attention walkthrough"
+    },
+    "dividedAttention": {
+      "pageTitle": "Divided Attention · PSY Practice Lab",
+      "name": "Divided attention",
+      "tutorialTitle": "Divided-attention walkthrough"
+    },
+    "gridClassification": {
+      "pageTitle": "Grid Classification · PSY Practice Lab",
+      "name": "Grid classification"
+    },
+    "shortTermMemory": {
+      "tutorialTitle": "Memory test walkthrough",
+      "pageTitle": "Short-Term Memory · PSY Practice Lab",
+      "name": "Short-term memory"
+    },
+    "monotony": {
+      "tutorialTitle": "Monotony test walkthrough",
+      "pageTitle": "Performance Under Monotony · PSY Practice Lab",
+      "name": "Performance under monotony"
+    },
+    "numericalReasoning": {
+      "pageTitle": "Numerical Reasoning · PSY Practice Lab",
+      "name": "Numerical reasoning"
+    },
+    "oddOneOut": {
+      "pageTitle": "Odd One Out · PSY Practice Lab",
+      "name": "Odd one out"
+    },
+    "perception": {
+      "name": "Perception",
+      "tutorialTitle": "Perception walkthrough",
+      "pageTitle": "Perception · PSY Practice Lab"
+    },
+    "reactionTime": {
+      "pageTitle": "Reaction Time · PSY Practice Lab",
+      "name": "Reaction time",
+      "tutorialTitle": "Reaction time walkthrough"
+    },
+    "solution": {
+      "tutorialTitle": "Solution walkthrough"
+    },
+    "switchReasoning": {
+      "pageTitle": "Switch Reasoning · PSY Practice Lab",
+      "name": "Switch reasoning"
+    },
+    "towerOfHanoi": {
+      "name": "Tower of Hanoi",
+      "tutorialTitle": "Tower of Hanoi walkthrough",
+      "pageTitle": "Tower of Hanoi · PSY Practice Lab"
+    },
+    "workingMemory": {
+      "pageTitle": "Working Memory · PSY Practice Lab",
+      "name": "Working memory"
+    }
+  }
+}

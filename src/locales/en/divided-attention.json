@@ -1,0 +1,60 @@
+{
+  "dividedAttention": {
+    "results": {
+      "averageSignalReaction": "Average signal reaction",
+      "dividedAttentionHistory": "Divided-attention history",
+      "dividedAttentionResults": "Divided-attention results",
+      "drivingAndSignalResultsAreSavedOnlyInThis": "Driving and signal results are saved only in this browser.",
+      "missedSignals": "Missed signals:",
+      "signalAverage": "Signal average"
+    },
+    "instructions": {
+      "difficultyChangesCarSpeedAndTrafficDensityTheTraffic": "Difficulty changes car speed and traffic density. The traffic generator always leaves an avoidable route.",
+      "steerThroughAThreeLaneHighwayWhileMonitoringTwoTraffic": "Steer through a three-lane highway while monitoring two traffic lights. Configure the duration, signal count, and traffic difficulty before you begin.",
+      "thisIsAPracticeToolNotAClinicalAssessment": "This is a practice tool, not a clinical assessment. Driving difficulty and input timing can vary between devices."
+    },
+    "labels": {
+      "drive": "Drive",
+      "driveAndMonitor": "Drive and monitor.",
+      "driving": "Driving",
+      "leftSignal": "Left signal",
+      "monitorBothTrafficLightsWhileSteering": "Monitor both traffic lights while steering.",
+      "numberOfSignals": "Number of signals",
+      "respondDownToLeftSignal": "Respond down to left signal",
+      "respondUpToRightSignal": "Respond up to right signal",
+      "rightSignal": "Right signal",
+      "signal": "Signal",
+      "signals": "Signals",
+      "steer": "Steer",
+      "steerLeft": "Steer left",
+      "steerRight": "Steer right",
+      "threeLaneHighwayDrivingArea": "Three-lane highway driving area",
+      "touchControlsAppearOnTabletsAndPhonesTheLights": "Touch controls appear on tablets and phones. The lights turn red",
+      "upTo": "Up to",
+      "useAndToChangeLanesAndAvoid": "Use ← and → to change lanes and avoid cars.",
+      "whenTheLeftLightTurnsRedPress": "When the left light turns red, press ↓.",
+      "whenTheRightLightTurnsRedPress": "When the right light turns red, press ↑.",
+      "wrongSignalKeys": "Wrong signal keys:",
+      "yourCompletedDividedAttentionSessionsWillAppearHere": "Your completed divided-attention sessions will appear here.",
+      "avoided": "avoided",
+      "carsAvoided": "cars avoided",
+      "collisions": "collisions",
+      "collisionsDetail": "collisions ·",
+      "min": "min",
+      "minDetail": "min ·",
+      "minutes": "minutes",
+      "signalsDetail": "signals ·",
+      "timesInTotal": "times in total."
+    },
+    "settings": {
+      "passingCarDifficulty": "Passing-car difficulty",
+      "setTheSessionLengthSignalsAndPassingTraffic": "Set the session length, signals, and passing traffic.",
+      "testLength": "Test length",
+      "atThisLength": "at this length"
+    },
+    "messages": {
+      "reactiontimeMs": "{{reactionTime}} ms",
+      "sideTrafficLightIsActive": "{{side}} traffic light is {{active}}"
+    }
+  }
+}

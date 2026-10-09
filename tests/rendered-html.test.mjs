@@ -1,52 +1,88 @@
-import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
-import test from "node:test";
+import assert from 'node:assert/strict';
+import { readFile, readdir } from 'node:fs/promises';
+import test from 'node:test';
+import { format } from 'prettier';
 
-const readProjectFile = (path) =>
-  readFile(new URL(`../${path}`, import.meta.url), "utf8");
+const englishMessages = {};
+function collectMessages(section, prefix = '') {
+  for (const [name, value] of Object.entries(section)) {
+    const key = prefix ? `${prefix}.${name}` : name;
+    if (typeof value === 'string') englishMessages[key] = value;
+    else collectMessages(value, key);
+  }
+}
+for (const file of await readdir(
+  new URL('../src/locales/en/', import.meta.url),
+)) {
+  collectMessages(
+    JSON.parse(
+      await readFile(
+        new URL(`../src/locales/en/${file}`, import.meta.url),
+        'utf8',
+      ),
+    ),
+  );
+}
 
-test("build emits the Vite application shell", async () => {
-  const html = await readProjectFile("dist/index.html");
+const readProjectFile = async path => {
+  let source = await readFile(new URL(`../${path}`, import.meta.url), 'utf8');
+  if (!/\.(tsx?|mjs)$/.test(path)) return source;
+  // Resolve localization keys before checks that assert the visible English labels.
+  source = source.replace(
+    /(['"])([a-zA-Z]+\.[^'"\n]+)\1/g,
+    (original, _, key) =>
+      englishMessages[key] ? JSON.stringify(englishMessages[key]) : original,
+  );
+  // Normalize source presentation so these structural checks ignore formatting preferences.
+  return format(source, {
+    parser: path.endsWith('.mjs') ? 'babel' : 'typescript',
+    singleQuote: false,
+    jsxSingleQuote: false,
+    arrowParens: 'always',
+    singleAttributePerLine: false,
+  });
+};
+
+test('build emits the Vite application shell', async () => {
+  const html = await readProjectFile('dist/index.html');
 
   assert.match(html, /<title>PSY Practice Lab<\/title>/i);
   assert.match(html, /<div id="root"><\/div>/i);
   assert.match(html, /src="\/assets\/[^"]+[.]js"/i);
 });
 
-test("React Router exposes every cognitive test", async () => {
-  const app = await readProjectFile("src/App.tsx");
+test('React Router exposes every cognitive test', async () => {
+  const app = await readProjectFile('src/App.tsx');
 
   for (const route of [
-    "/reaction-time/\\*",
-    "/short-term-memory/\\*",
-    "/divided-attention/\\*",
-    "/monotony/\\*",
-    "/capacity-to-act/\\*",
-    "/tower-of-hanoi/\\*",
-    "/distributive-attention/\\*",
-    "/perception/\\*",
-    "/deductive-reasoning/\\*",
-    "/switch-reasoning/\\*",
-    "/digit-challenge/\\*",
-    "/odd-one-out/\\*",
-    "/grid-classification/\\*",
-    "/green-grey-classification/\\*",
-    "/concentration/\\*",
-    "/numerical-reasoning/\\*",
-    "/motion-planning/\\*",
-    "/working-memory/\\*",
+    '/reaction-time/\\*',
+    '/short-term-memory/\\*',
+    '/divided-attention/\\*',
+    '/monotony/\\*',
+    '/capacity-to-act/\\*',
+    '/tower-of-hanoi/\\*',
+    '/distributive-attention/\\*',
+    '/perception/\\*',
+    '/deductive-reasoning/\\*',
+    '/switch-reasoning/\\*',
+    '/digit-challenge/\\*',
+    '/odd-one-out/\\*',
+    '/grid-classification/\\*',
+    '/green-grey-classification/\\*',
+    '/concentration/\\*',
+    '/numerical-reasoning/\\*',
+    '/motion-planning/\\*',
+    '/working-memory/\\*',
   ]) {
     assert.match(app, new RegExp(`path="${route}"`));
   }
 });
 
-test("GitHub Pages deployment uses the repository base path and SPA fallback", async () => {
-  const vite = await readProjectFile("vite.config.ts");
-  const main = await readProjectFile("src/main.tsx");
-  const html = await readProjectFile("index.html");
-  const workflow = await readProjectFile(
-    ".github/workflows/deploy-pages.yml",
-  );
+test('GitHub Pages deployment uses the repository base path and SPA fallback', async () => {
+  const vite = await readProjectFile('vite.config.ts');
+  const main = await readProjectFile('src/main.tsx');
+  const html = await readProjectFile('index.html');
+  const workflow = await readProjectFile('.github/workflows/deploy-pages.yml');
 
   assert.match(vite, /process\.env\.VITE_BASE_PATH \?\? "\/"/);
   assert.match(main, /import\.meta\.env\.BASE_URL/);
@@ -60,23 +96,23 @@ test("GitHub Pages deployment uses the repository base path and SPA fallback", a
   assert.match(workflow, /cp dist\/index\.html dist\/404\.html/);
 });
 
-test("the test pages retain their core controls and explanations", async () => {
+test('the test pages retain their core controls and explanations', async () => {
   const pages = await Promise.all(
     [
-      "HomePage.tsx",
-      "ReactionTimePage.tsx",
-      "ShortTermMemoryPage.tsx",
-      "DividedAttentionPage.tsx",
-      "MonotonyPage.tsx",
-      "CapacityToActPage.tsx",
-      "TowerOfHanoiPage.tsx",
-      "DistributiveAttentionPage.tsx",
-      "PerceptionPage.tsx",
-      "DeductiveReasoningPage.tsx",
-      "SwitchReasoningPage.tsx",
-    ].map((page) => readProjectFile(`src/pages/${page}`)),
+      'HomePage.tsx',
+      'ReactionTimePage.tsx',
+      'ShortTermMemoryPage.tsx',
+      'DividedAttentionPage.tsx',
+      'MonotonyPage.tsx',
+      'CapacityToActPage.tsx',
+      'TowerOfHanoiPage.tsx',
+      'DistributiveAttentionPage.tsx',
+      'PerceptionPage.tsx',
+      'DeductiveReasoningPage.tsx',
+      'SwitchReasoningPage.tsx',
+    ].map(page => readProjectFile(`src/pages/${page}`)),
   );
-  const source = pages.join("\n");
+  const source = pages.join('\n');
 
   assert.match(source, /Focus, react, remember, adapt\./);
   assert.match(source, /How fast can you respond\?/);
@@ -95,9 +131,9 @@ test("the test pages retain their core controls and explanations", async () => {
   assert.match(source, /See two signals\. Respond as one\./);
 });
 
-test("every test has a guided Radix dialog walkthrough", async () => {
-  const demos = await readProjectFile("src/components/TestDemos.tsx");
-  const modal = await readProjectFile("src/components/GuidedDemoModal.tsx");
+test('every test has a guided Radix dialog walkthrough', async () => {
+  const demos = await readProjectFile('src/components/TestDemos.tsx');
+  const modal = await readProjectFile('src/components/GuidedDemoModal.tsx');
 
   assert.match(modal, /@radix-ui\/react-dialog/);
   assert.match(modal, /fixed inset-0 z-50 grid place-items-center/);
@@ -112,16 +148,16 @@ test("every test has a guided Radix dialog walkthrough", async () => {
   assert.match(demos, /Perception walkthrough/);
 });
 
-test("tests and demos share the extracted visual primitives", async () => {
-  const demos = await readProjectFile("src/components/TestDemos.tsx");
-  const memory = await readProjectFile("src/pages/ShortTermMemoryPage.tsx");
-  const monotony = await readProjectFile("src/pages/MonotonyPage.tsx");
-  const divided = await readProjectFile("src/pages/DividedAttentionPage.tsx");
-  const hanoi = await readProjectFile("src/pages/TowerOfHanoiPage.tsx");
+test('tests and demos share the extracted visual primitives', async () => {
+  const demos = await readProjectFile('src/components/TestDemos.tsx');
+  const memory = await readProjectFile('src/pages/ShortTermMemoryPage.tsx');
+  const monotony = await readProjectFile('src/pages/MonotonyPage.tsx');
+  const divided = await readProjectFile('src/pages/DividedAttentionPage.tsx');
+  const hanoi = await readProjectFile('src/pages/TowerOfHanoiPage.tsx');
   const distributive = await readProjectFile(
-    "src/pages/DistributiveAttentionPage.tsx",
+    'src/pages/DistributiveAttentionPage.tsx',
   );
-  const perception = await readProjectFile("src/pages/PerceptionPage.tsx");
+  const perception = await readProjectFile('src/pages/PerceptionPage.tsx');
 
   assert.match(demos, /from "\.\/MemoryCell"/);
   assert.match(memory, /from "\.\.\/components\/MemoryCell"/);
@@ -138,46 +174,46 @@ test("tests and demos share the extracted visual primitives", async () => {
   assert.match(perception, /from "\.\.\/components\/PerceptionControls"/);
 });
 
-test("every setup separates settings from instructions", async () => {
+test('every setup separates settings from instructions', async () => {
   const pages = await Promise.all(
     [
-      "ReactionTimePage.tsx",
-      "ShortTermMemoryPage.tsx",
-      "DividedAttentionPage.tsx",
-      "MonotonyPage.tsx",
-      "CapacityToActPage.tsx",
-      "TowerOfHanoiPage.tsx",
-      "DistributiveAttentionPage.tsx",
-      "PerceptionPage.tsx",
-      "DeductiveReasoningPage.tsx",
-      "SwitchReasoningPage.tsx",
-    ].map((page) => readProjectFile(`src/pages/${page}`)),
+      'ReactionTimePage.tsx',
+      'ShortTermMemoryPage.tsx',
+      'DividedAttentionPage.tsx',
+      'MonotonyPage.tsx',
+      'CapacityToActPage.tsx',
+      'TowerOfHanoiPage.tsx',
+      'DistributiveAttentionPage.tsx',
+      'PerceptionPage.tsx',
+      'DeductiveReasoningPage.tsx',
+      'SwitchReasoningPage.tsx',
+    ].map(page => readProjectFile(`src/pages/${page}`)),
   );
 
   for (const page of pages) {
-    assert.match(page, /title="Test settings"/);
-    assert.match(page, /title="Instructions"/);
+    assert.match(page, /title=\{t\("Test settings"\)\}/);
+    assert.match(page, /title=\{t\("Instructions"\)\}/);
     assert.match(page, /<InstructionList/);
   }
 });
 
-test("number settings validate only after editing is complete", async () => {
+test('number settings validate only after editing is complete', async () => {
   const input = await readProjectFile(
-    "src/components/ValidatedNumberInput.tsx",
+    'src/components/ValidatedNumberInput.tsx',
   );
   const pages = await Promise.all(
     [
-      "ReactionTimePage.tsx",
-      "ShortTermMemoryPage.tsx",
-      "DividedAttentionPage.tsx",
-      "MonotonyPage.tsx",
-      "CapacityToActPage.tsx",
-      "TowerOfHanoiPage.tsx",
-      "DistributiveAttentionPage.tsx",
-      "PerceptionPage.tsx",
-      "DeductiveReasoningPage.tsx",
-      "SwitchReasoningPage.tsx",
-    ].map((page) => readProjectFile(`src/pages/${page}`)),
+      'ReactionTimePage.tsx',
+      'ShortTermMemoryPage.tsx',
+      'DividedAttentionPage.tsx',
+      'MonotonyPage.tsx',
+      'CapacityToActPage.tsx',
+      'TowerOfHanoiPage.tsx',
+      'DistributiveAttentionPage.tsx',
+      'PerceptionPage.tsx',
+      'DeductiveReasoningPage.tsx',
+      'SwitchReasoningPage.tsx',
+    ].map(page => readProjectFile(`src/pages/${page}`)),
   );
 
   assert.match(input, /value=\{draft\}/);
@@ -191,20 +227,20 @@ test("number settings validate only after editing is complete", async () => {
   }
 });
 
-test("every test navigates between setup, test, and result routes", async () => {
+test('every test navigates between setup, test, and result routes', async () => {
   const pages = await Promise.all(
     [
-      "ReactionTimePage.tsx",
-      "ShortTermMemoryPage.tsx",
-      "DividedAttentionPage.tsx",
-      "MonotonyPage.tsx",
-      "CapacityToActPage.tsx",
-      "TowerOfHanoiPage.tsx",
-      "DistributiveAttentionPage.tsx",
-      "PerceptionPage.tsx",
-      "DeductiveReasoningPage.tsx",
-      "SwitchReasoningPage.tsx",
-    ].map((page) => readProjectFile(`src/pages/${page}`)),
+      'ReactionTimePage.tsx',
+      'ShortTermMemoryPage.tsx',
+      'DividedAttentionPage.tsx',
+      'MonotonyPage.tsx',
+      'CapacityToActPage.tsx',
+      'TowerOfHanoiPage.tsx',
+      'DistributiveAttentionPage.tsx',
+      'PerceptionPage.tsx',
+      'DeductiveReasoningPage.tsx',
+      'SwitchReasoningPage.tsx',
+    ].map(page => readProjectFile(`src/pages/${page}`)),
   );
 
   for (const page of pages) {
@@ -214,7 +250,7 @@ test("every test navigates between setup, test, and result routes", async () => 
     assert.match(page, /returnToSetupRoute/);
   }
 
-  const routeHook = await readProjectFile("src/hooks/useTestRoute.ts");
+  const routeHook = await readProjectFile('src/hooks/useTestRoute.ts');
   assert.match(routeHook, /`\$\{basePath\}\/test`/);
   assert.match(routeHook, /`\$\{basePath\}\/result`/);
   assert.match(routeHook, /navigate\(resultPath, \{ replace: true \}\)/);
@@ -223,10 +259,10 @@ test("every test navigates between setup, test, and result routes", async () => 
   assert.match(routeHook, /routeView === pendingViewRef\.current/);
 });
 
-test("tower of hanoi supports both input modes and graphs move speed", async () => {
-  const page = await readProjectFile("src/pages/TowerOfHanoiPage.tsx");
-  const board = await readProjectFile("src/components/HanoiBoard.tsx");
-  const graph = await readProjectFile("src/components/HanoiSpeedGraph.tsx");
+test('tower of hanoi supports both input modes and graphs move speed', async () => {
+  const page = await readProjectFile('src/pages/TowerOfHanoiPage.tsx');
+  const board = await readProjectFile('src/components/HanoiBoard.tsx');
+  const graph = await readProjectFile('src/components/HanoiSpeedGraph.tsx');
 
   assert.match(page, /DEFAULT_HEIGHT = 7/);
   assert.match(page, /2 \*\* height - 1/);
@@ -241,14 +277,12 @@ test("tower of hanoi supports both input modes and graphs move speed", async () 
   assert.match(graph, /Moves\/min/);
 });
 
-test("distributive attention supports fixed and mixed response directions", async () => {
-  const page = await readProjectFile(
-    "src/pages/DistributiveAttentionPage.tsx",
-  );
+test('distributive attention supports fixed and mixed response directions', async () => {
+  const page = await readProjectFile('src/pages/DistributiveAttentionPage.tsx');
   const board = await readProjectFile(
-    "src/components/DistributiveAttentionBoard.tsx",
+    'src/components/DistributiveAttentionBoard.tsx',
   );
-  const demos = await readProjectFile("src/components/TestDemos.tsx");
+  const demos = await readProjectFile('src/components/TestDemos.tsx');
 
   assert.match(page, /"one-handed"/);
   assert.match(page, /"two-handed"/);
@@ -267,19 +301,19 @@ test("distributive attention supports fixed and mixed response directions", asyn
   assert.match(board, /grid-rows-9/);
   assert.match(board, /Array\.from\(\{ length: 64 \}/);
   assert.match(board, /rounded-full/);
-  for (const code of ["KeyQ", "KeyF", "KeyU", "Semicolon"]) {
+  for (const code of ['KeyQ', 'KeyF', 'KeyU', 'Semicolon']) {
     assert.match(board, new RegExp(`"${code}"`));
   }
   assert.match(demos, /Switch directions in mixed mode/);
 });
 
-test("capacity-to-act uses the requested defaults and mixed response mappings", async () => {
-  const page = await readProjectFile("src/pages/CapacityToActPage.tsx");
-  const controls = await readProjectFile("src/components/CapacityControls.tsx");
+test('capacity-to-act uses the requested defaults and mixed response mappings', async () => {
+  const page = await readProjectFile('src/pages/CapacityToActPage.tsx');
+  const controls = await readProjectFile('src/components/CapacityControls.tsx');
 
   assert.match(page, /DEFAULT_TRIAL_COUNT = 40/);
   assert.match(page, /DEFAULT_INTERVAL_MS = 1_500/);
-  for (const key of ["e", "f", "z", "j", "o"]) {
+  for (const key of ['e', 'f', 'z', 'j', 'o']) {
     assert.match(controls, new RegExp(`key: "${key}"`));
   }
   assert.match(controls, /grid-cols-5 grid-rows-2/);
@@ -305,10 +339,10 @@ test("capacity-to-act uses the requested defaults and mixed response mappings", 
   assert.doesNotMatch(page, /setInterval\(/);
 });
 
-test("perception uses mirrored layouts and simultaneous two-side input", async () => {
-  const page = await readProjectFile("src/pages/PerceptionPage.tsx");
+test('perception uses mirrored layouts and simultaneous two-side input', async () => {
+  const page = await readProjectFile('src/pages/PerceptionPage.tsx');
   const controls = await readProjectFile(
-    "src/components/PerceptionControls.tsx",
+    'src/components/PerceptionControls.tsx',
   );
 
   assert.match(page, /DEFAULT_ROUND_COUNT = 32/);
@@ -316,7 +350,10 @@ test("perception uses mirrored layouts and simultaneous two-side input", async (
   assert.match(page, /psy-perception-sessions/);
   assert.match(page, /leftInputMethod, setLeftInputMethod/);
   assert.match(page, /rightInputMethod, setRightInputMethod/);
-  assert.match(page, /settings: \{ leftInputMethod, rightInputMethod, roundCount \}/);
+  assert.match(
+    page,
+    /settings: \{ leftInputMethod, rightInputMethod, roundCount \}/,
+  );
   assert.match(page, /leftMethod=\{leftInputMethod\}/);
   assert.match(page, /rightMethod=\{rightInputMethod\}/);
   assert.match(page, /left !== null && right !== null/);
@@ -333,28 +370,26 @@ test("perception uses mirrored layouts and simultaneous two-side input", async (
   assert.match(controls, /leftMethod\?: PerceptionInputMethod/);
   assert.match(controls, /rightMethod\?: PerceptionInputMethod/);
   assert.match(controls, /onPointerDown/);
-  for (const code of ["KeyQ", "KeyR", "KeyU", "KeyP"]) {
+  for (const code of ['KeyQ', 'KeyR', 'KeyU', 'KeyP']) {
     assert.match(controls, new RegExp(`"${code}"`));
   }
 });
 
-test("monotony can generate an unmarked randomized paper test", async () => {
-  const page = await readProjectFile("src/pages/MonotonyPage.tsx");
+test('monotony can generate an unmarked randomized paper test', async () => {
+  const page = await readProjectFile('src/pages/MonotonyPage.tsx');
   const printDialog = await readProjectFile(
-    "src/components/MonotonyPrintDialog.tsx",
+    'src/components/MonotonyPrintDialog.tsx',
   );
-  const stimulus = await readProjectFile(
-    "src/components/MonotonyStimulus.tsx",
-  );
-  const pdf = await readProjectFile("src/lib/create-monotony-pdf.ts");
-  const packageJson = await readProjectFile("package.json");
+  const stimulus = await readProjectFile('src/components/MonotonyStimulus.tsx');
+  const pdf = await readProjectFile('src/lib/create-monotony-pdf.ts');
+  const packageJson = await readProjectFile('package.json');
 
   assert.match(page, /<MonotonyPrintDialog/);
   assert.match(page, /itemCount=\{itemCount\}/);
   assert.match(page, /goodTypeIds=\{goodTypeIds\}/);
   assert.match(stimulus, /createMonotonySequence/);
   assert.match(stimulus, /printable[\s\S]*?\? "bg-black shadow-none"/);
-  for (const paper of ["A3", "A4", "A5", "US Letter"]) {
+  for (const paper of ['A3', 'A4', 'A5', 'US Letter']) {
     assert.match(printDialog, new RegExp(`label: "${paper}"`));
   }
   assert.match(printDialog, /DEFAULT_RECTANGLE_WIDTH_MM = 14/);
@@ -398,8 +433,8 @@ test("monotony can generate an unmarked randomized paper test", async () => {
   assert.match(pdf, /document\.save\(`monotony-pattern-/);
 });
 
-test("divided-attention signal timeouts follow difficulty", async () => {
-  const divided = await readProjectFile("src/pages/DividedAttentionPage.tsx");
+test('divided-attention signal timeouts follow difficulty', async () => {
+  const divided = await readProjectFile('src/pages/DividedAttentionPage.tsx');
 
   assert.match(divided, /easy:[\s\S]*?signalTimeoutMs: 2_500/);
   assert.match(divided, /medium:[\s\S]*?signalTimeoutMs: 1_800/);

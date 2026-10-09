@@ -1,0 +1,65 @@
+{
+  "concentration": {
+    "instructions": {
+      "anEIsCorrectOnlyWhenExactlyThreeDots": "An E is correct only when exactly three dots appear next to it. Count dots above, below, and on both sides; their arrangement does not matter.",
+      "chooseCorrectOnlyForAnUprightCompleteEWith": "Choose Correct only for an upright, complete E with exactly three dots. Every other combination is Incorrect.",
+      "classifyTheSymbolQuicklyWhileCheckingBothConditionsThis": "Classify the symbol quickly while checking both conditions. This practice trial does not affect saved results.",
+      "dotsCanAppearAboveBelowOrBesideTheSymbol": "Dots can appear above, below, or beside the symbol. A matching E with two, four, or five dots is Incorrect.",
+      "laterRoundsIntroduceCloserSymbolLookalikesAndScatteredDot": "Later rounds introduce closer symbol lookalikes and scattered dot positions after 15 and 30 answers. The rule stays the same. Hard mode starts with closer distractors; easy mode keeps clear differences.",
+      "onlyAnUprightCompleteEMatchesA9F": "Only an upright, complete E matches. A 9, F, mirrored or rotated E, or a symbol with an extra or missing stroke does not match.",
+      "pressAForIncorrectAndDForCorrectOr": "Press A for Incorrect and D for Correct, or tap the buttons. Each answer immediately displays a new object. Holding a key does not answer multiple objects.",
+      "quicklyDecideWhetherEachObjectIsAnUprightE": "Quickly decide whether each object is an upright E with exactly three dots. A two-minute concentration exercise inspired by scales e3+.",
+      "theTutorialIncludesA30SecondPracticeTrialWithFeedback": "The tutorial includes a 30-second practice trial with feedback. The test defaults to two minutes; only submitted answers are scored and saved.",
+      "useAForIncorrectAndDForCorrectOr": "Use A for Incorrect and D for Correct, or tap the buttons. A held key submits once. Feedback is shown in practice; the real test advances immediately and saves a review at the end."
+    },
+    "labels": {
+      "checkBothConditions": "Check both conditions",
+      "checkBothTheSymbolAndAllTheDotsAnswering": "Check both the symbol and all the dots. Answering advances immediately.",
+      "checkTheShape": "Check the shape",
+      "eLikeSymbolWithABrokenVerticalStroke": "E-like symbol with a broken vertical stroke",
+      "eLikeSymbolWithAClosedUpperSection": "E-like symbol with a closed upper section",
+      "easyClearSymbolDifferences": "Easy · clear symbol differences",
+      "goodAnswer": "Good answer.",
+      "hardCloseLookalikesAndScatteredDots": "Hard · close lookalikes and scattered dots",
+      "input": "INPUT",
+      "isThisAnUprightEWithExactlyThreeDots": "Is this an upright E with exactly three dots?",
+      "respondQuicklyAndAccurately": "Respond quickly and accurately",
+      "select": "SELECT",
+      "subtleDifferences": "Subtle differences",
+      "thatAnswerWasWrong": "That answer was wrong.",
+      "try30Seconds": "Try 30 seconds",
+      "angular9": "angular 9",
+      "backwardsE": "backwards E",
+      "s": "s ·",
+      "square": "square",
+      "theSymbolIsAnUprightE": "the symbol is an upright E",
+      "theSymbolIsNotAnUprightCompleteE": "the symbol is not an upright, complete E"
+    },
+    "settings": {
+      "checkTheShapeCountTheDots": "Check the shape. Count the dots.",
+      "countAllSurroundingDots": "Count all surrounding dots",
+      "countEveryDot": "Count every dot"
+    },
+    "actions": {
+      "clearDifferences": "Clear differences",
+      "closeLookalikes": "Close lookalikes"
+    },
+    "tutorial": {
+      "concentrationWalkthrough": "Concentration walkthrough",
+      "practiceComplete": "Practice complete:",
+      "practiceTimeRemaining": "Practice time remaining",
+      "practiceThenTest": "Practice, then test",
+      "repeat30SecondPractice": "Repeat 30-second practice",
+      "start30SecondPractice": "Start 30-second practice"
+    },
+    "results": {
+      "correctAnUprightEAndThreeDots": "Correct: an upright E and three dots.",
+      "incorrectThreeDotsButTheSymbolIsA9": "Incorrect: three dots, but the symbol is a 9.",
+      "correctNothingHasBeenSaved": "correct. Nothing has been saved."
+    },
+    "messages": {
+      "concentrationanswerSymbolAndItHasCountDotsBoth": "{{concentrationAnswer}}: {{symbol}}, and it has {{count}} dots. Both conditions must hold: an upright E and exactly three dots. Dots can appear above, below, or beside the symbol.",
+      "namesRotatedRotationDegreesWithLengthDots": "{{names}}, rotated {{rotation}} degrees, with {{length}} dots"
+    }
+  }
+}

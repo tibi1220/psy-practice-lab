@@ -1,0 +1,43 @@
+{
+  "shortTermMemory": {
+    "labels": {
+      "22To88": "2×2-től 8×8-ig",
+      "cellsFlashedPerRound": "Felvillanó cellák fordulónként",
+      "continue": "Folytatás",
+      "flashed": "Felvillant:",
+      "keepYourAttentionOnTheWholeGrid": "Figyelj az egész rácsra.",
+      "memorizeEveryDisplayThatFlashes": "Jegyezz meg minden felvillanó képet.",
+      "pressNextRoundWhenYourSelectionIsComplete": "Ha kész a kijelölés, nyomd meg a Következő kör gombot.",
+      "remember": "Emlékezet",
+      "rememberThePattern": "Jegyezd meg a mintát",
+      "rememberThePatternDetail": "Jegyezd meg a mintát.",
+      "rememberTheseCells": "Jegyezd meg ezeket a cellákat",
+      "select": "Kiválasztás",
+      "selected": "Kiválasztva:",
+      "tapEveryCellYouRememberTapAgainToUndo": "Érints meg minden megjegyzett cellát; újabb érintéssel visszavonhatod.",
+      "yourCompletedMemorySessionsWillAppearHere": "A befejezett memóriatesztek itt jelennek meg.",
+      "ms": "ms ·"
+    },
+    "settings": {
+      "configureTheGridFlashAndSessionLength": "Állítsd be a rácsot, a felvillanást és a gyakorlás hosszát.",
+      "flashDuration": "Felvillanás időtartama",
+      "gridSize": "Rácsméret"
+    },
+    "results": {
+      "memoryHistory": "Memória előzményei",
+      "memoryResults": "Memória eredményei",
+      "overallAccuracy": "Összesített pontosság",
+      "savedSettings": "Mentett beállítások"
+    },
+    "actions": {
+      "nextRound": "Következő kör"
+    },
+    "messages": {
+      "selectAnyNumberOfCellsLengthSelected": "Válassz tetszőleges számú cellát ({{length}} kiválasztva)"
+    },
+    "instructions": {
+      "thisIsAPracticeToolNotAClinicalAssessment": "Ez gyakorló eszköz, nem klinikai értékelés. A teljesítmény függhet a figyelemtől, kijelző-időzítéstől és az eszköz jellemzőitől.",
+      "watchTheSevenSegmentGridRememberWhichCellsFlashThen": "Figyeld a hétszegmenses rácsot, jegyezd meg a felvillanó cellákat, majd állítsd össze újra a mintát a választott számú körön keresztül."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "perception": {
+    "settings": {
+      "chooseAFixedArrangementForEachHandTheTwo": "Kézenként válassz rögzített elrendezést. A két oldal eltérő lehet.",
+      "mixedLayoutsLegacy": "Vegyes elrendezések (korábbi)",
+      "unknownLayout": "Ismeretlen elrendezés"
+    },
+    "results": {
+      "correctPairs": "Helyes párok",
+      "leftAccuracy": "Bal pontosság",
+      "pairAccuracy": "Párpontosság",
+      "perceptionHistory": "Észlelés előzményei",
+      "perceptionResults": "Észlelés eredményei",
+      "resultsAndInputSettingsAreSavedOnlyInThis": "Az eredmények és bemeneti beállítások csak ebben a böngészőben kerülnek mentésre.",
+      "rightAccuracy": "Jobb pontosság"
+    },
+    "labels": {
+      "desktopAlternative": "Asztali alternatíva",
+      "findBothNumbers": "Keresd meg mindkét számot",
+      "perception": "Észlelés ·",
+      "pressSimultaneously": "Nyomd meg egyszerre",
+      "pressTheMatchingLeftAndRightNumbersTogether": "Nyomd meg egyszerre a megfelelő bal és jobb számot",
+      "readTheOuterLeds": "Olvasd le a külső LED-eket",
+      "seeTwoSignalsRespondAsOne": "Két jelzés. Egy összehangolt válasz.",
+      "theIlluminatedLeftAndRightLedsEachIdentifyOne": "A világító bal és jobb LED egy-egy 1–4 közötti számot jelöl.",
+      "touchAndHoldOneButtonOnEachSideThe": "Érints meg és tarts lenyomva egy gombot mindkét oldalon. A pár akkor kerül rögzítésre, ha mindkettő lenyomott.",
+      "touchHoldOneButtonOnEachSideDesktop": "Érintés: tarts egy gombot mindkét oldalon · Asztali gép: bal",
+      "useQWERForLeftValues14": "Használd a Q W E R gombokat a bal oldali 1–4 értékekhez, az U I O P gombokat a jobb oldaliakhoz, egyszerre két billentyűvel.",
+      "yourCompletedPerceptionSessionsWillAppearHere": "A befejezett észlelési tesztek itt jelennek meg.",
+      "inputPattern": "bemeneti minta",
+      "left": "bal",
+      "leftDetail": "bal ·",
+      "right": "jobb",
+      "rightRound": "jobb · Kör",
+      "rightDetail": "· jobb"
+    },
+    "instructions": {
+      "locateEachValueInItsSideSChosenArrangementBoth": "Keresd meg az értéket a saját oldalának kiválasztott elrendezésében. Mindkét elrendezés állandó marad a munkamenet során.",
+      "readOneIlluminatedNumberOnEachSideThenCoordinate": "Olvass le egy világító számot mindkét oldalon, majd összehangoltan, egyszerre válaszd ki a megfelelő párt.",
+      "thisIsAPracticeToolNotAClinicalAssessment": "Ez gyakorló eszköz, nem klinikai értékelés. Az érintőhardver, az egyidejű billentyűkezelés és a kijelzőméret befolyásolhatja az eredményeket."
+    },
+    "messages": {
+      "methodlabelLeftMethodlabel2Right": "{{methodLabel}} bal · {{methodLabel2}} jobb"
+    }
+  }
+}

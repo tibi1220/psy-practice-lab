@@ -1,0 +1,55 @@
+{
+  "monotony": {
+    "results": {
+      "accuracy": "% pontosság",
+      "accuracySoFar": "% eddigi pontosság",
+      "monotonyHistory": "Monotóniateszt előzményei",
+      "monotonyResults": "Monotóniateszt eredményei",
+      "resultsAndConfigurationsAreSavedOnlyInThisBrowser": "Az eredmények és konfigurációk csak ebben a böngészőben kerülnek mentésre.",
+      "rollingSpeedCumulativeAccuracy": "Gördülő sebesség · összesített pontosság",
+      "totalMistakes": "Összes hiba",
+      "mistakes": "hiba ·"
+    },
+    "labels": {
+      "bad": "Rossz",
+      "badMarkedGood": "Rossz elem jónak jelölve",
+      "chooseBetween20And2000TheDefaultIs": "20 és 2000 közötti értéket válassz. Az alapérték 500.",
+      "classifyTheTypes": "Sorold be a típusokat",
+      "good": "Jó",
+      "goodMarkedBad": "Jó rossznak jelölve",
+      "goodTypes": "Jó típusok:",
+      "identifyTheHighlightedCornerOrSide": "Azonosítsd a kiemelt sarkot vagy oldalt.",
+      "inspect": "Vizsgálat",
+      "itemsMin": "Elem/perc",
+      "learnTheGroups": "Ismerd meg a csoportokat",
+      "markBad": "Rossz jelölése",
+      "markGood": "Jó jelölése",
+      "numberOfSquares": "Négyzetek száma",
+      "pressForAShapeAssignedToTheBad": "Nyomd meg a ← gombot a rossz csoporthoz rendelt alakzatnál.",
+      "pressForAShapeAssignedToTheGood": "Nyomd meg a → gombot a jó csoporthoz rendelt alakzatnál.",
+      "response": "Válasz:",
+      "reviewWhichHighlightedShapesAreGoodOrBad": "Tekintsd át, mely kiemelt alakzatok jók és rosszak.",
+      "speed": "Sebesség",
+      "stayAccurateThroughRepetition": "Maradj pontos az ismétlések során.",
+      "tapEachTypeToToggleBetweenGoodAndBad": "Érintsd meg az egyes típusokat a jó és rossz közötti váltáshoz.",
+      "workingSpeed": "Munkasebesség",
+      "yourCompletedMonotonySessionsWillAppearHere": "A befejezett monotóniatesztek itt jelennek meg.",
+      "badDetail": "rossz",
+      "goodDetail": "jó ·",
+      "itemsMinDetail": "elem/perc",
+      "squares": "négyzet ·",
+      "badGood": "← Rossz · Jó →"
+    },
+    "instructions": {
+      "classifyALongSequenceOfSimilarSquaresPressRight": "Sorold be a hasonló négyzeteket. Jó típusnál Jobbra, rossznál Balra billentyűt nyomj. Törekedj a gyors és pontos válaszokra.",
+      "interactiveWorkingSpeedAndAccuracyGraphWithRoseLinesFor": "Interaktív sebesség- és pontossággrafikon: rózsaszín vonalak jelzik a rossznak jelölt jó elemeket, lila vonalak a jónak jelölt rossz elemeket",
+      "thisIsAPracticeToolNotAClinicalAssessment": "Ez gyakorló eszköz, nem klinikai értékelés. A sebességet az eszköz, beviteli mód és a választott besorolási szabályok befolyásolják."
+    },
+    "actions": {
+      "generateARandomizedPdfAndCircleEveryGoodSquare": "Generálj véletlenszerű PDF-et, és kézzel karikázza be az összes jó négyzetet."
+    },
+    "tutorial": {
+      "practiceOnPaper": "Gyakorlás papíron"
+    }
+  }
+}

@@ -1,35 +1,40 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  LocalizedDate,
+  Localized,
+  useTextTranslation,
+} from '../components/Localization';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   columnKeyCodes,
   columnKeyLabels,
   DistributiveAttentionBoard,
   rowKeyCodes,
   rowKeyLabels,
-} from "../components/DistributiveAttentionBoard";
+} from '../components/DistributiveAttentionBoard';
 import type {
   DistributiveAxis,
   DistributiveMode,
   GridCoordinate,
-} from "../components/DistributiveAttentionBoard";
-import { DistributiveAttentionDemo } from "../components/TestDemos";
-import { ValidatedNumberInput } from "../components/ValidatedNumberInput";
+} from '../components/DistributiveAttentionBoard';
+import { DistributiveAttentionDemo } from '../components/TestDemos';
+import { ValidatedNumberInput } from '../components/ValidatedNumberInput';
 import {
   InstructionList,
   TestPageShell,
   TestPanel,
   TestSetupLayout,
-} from "../components/TestPage";
-import { useTestRoute } from "../hooks/useTestRoute";
-import { createLocalId } from "../lib/create-local-id";
+} from '../components/TestPage';
+import { useTestRoute } from '../hooks/useTestRoute';
+import { createLocalId } from '../lib/create-local-id';
 
-const STORAGE_KEY = "psy-distributive-attention-sessions";
+const STORAGE_KEY = 'psy-distributive-attention-sessions';
 const DEFAULT_TRIAL_COUNT = 32;
 const MIN_TRIAL_COUNT = 8;
 const MAX_TRIAL_COUNT = 128;
 const FEEDBACK_DURATION_MS = 350;
 
-type Phase = "setup" | "running" | "complete";
-type SessionMode = DistributiveMode | "mixed";
+type Phase = 'setup' | 'running' | 'complete';
+type SessionMode = DistributiveMode | 'mixed';
 type AttentionStimulus = GridCoordinate & { mode: DistributiveMode };
 
 type AttentionTrial = AttentionStimulus & {
@@ -75,12 +80,12 @@ function createSequence(trialCount: number, mode: SessionMode) {
   }
 
   const trialModes: DistributiveMode[] =
-    mode === "mixed"
+    mode === 'mixed'
       ? shuffle(
           Array.from({ length: trialCount }, (_, index) =>
             index < Math.ceil(trialCount / 2)
-              ? ("one-handed" as const)
-              : ("two-handed" as const),
+              ? ('one-handed' as const)
+              : ('two-handed' as const),
           ),
         )
       : Array.from({ length: trialCount }, () => mode);
@@ -92,7 +97,7 @@ function createSequence(trialCount: number, mode: SessionMode) {
 }
 
 function summarizeTrials(trials: AttentionTrial[]) {
-  const correct = trials.filter((trial) => trial.correct).length;
+  const correct = trials.filter(trial => trial.correct).length;
   return {
     accuracy: Math.round((correct / trials.length) * 1_000) / 10,
     averageReactionTime: Math.round(
@@ -106,117 +111,131 @@ function summarizeModeTrials(
   trials: AttentionTrial[],
   trialMode: DistributiveMode,
 ) {
-  const matchingTrials = trials.filter((trial) => trial.mode === trialMode);
+  const matchingTrials = trials.filter(trial => trial.mode === trialMode);
   return matchingTrials.length > 0 ? summarizeTrials(matchingTrials) : null;
 }
 
 function modeLabel(mode: SessionMode) {
-  if (mode === "one-handed") return "One-handed";
-  if (mode === "two-handed") return "Two-handed";
-  return "Mixed";
+  if (mode === 'one-handed') return 'One-handed';
+  if (mode === 'two-handed') return 'Two-handed';
+  return 'Mixed';
 }
 
 function isStoredSession(value: unknown): value is AttentionSession {
-  if (!value || typeof value !== "object") return false;
+  if (!value || typeof value !== 'object') return false;
   const session = value as Partial<AttentionSession>;
   return (
-    typeof session.id === "string" &&
-    typeof session.completedAt === "string" &&
-    typeof session.accuracy === "number" &&
-    typeof session.averageReactionTime === "number" &&
+    typeof session.id === 'string' &&
+    typeof session.completedAt === 'string' &&
+    typeof session.accuracy === 'number' &&
+    typeof session.averageReactionTime === 'number' &&
     Array.isArray(session.trials) &&
     session.trials.length > 0 &&
     !!session.settings &&
-    (session.settings.mode === "one-handed" ||
-      session.settings.mode === "two-handed" ||
-      session.settings.mode === "mixed") &&
-    typeof session.settings.trialCount === "number"
+    (session.settings.mode === 'one-handed' ||
+      session.settings.mode === 'two-handed' ||
+      session.settings.mode === 'mixed') &&
+    typeof session.settings.trialCount === 'number'
   );
 }
 
 function AttentionHistory({ sessions }: { sessions: AttentionSession[] }) {
   if (sessions.length === 0) {
     return (
-      <div className="rounded-3xl border border-dashed border-white/15 px-6 py-10 text-center">
-        <p className="font-medium text-slate-300">
-          Your completed distributive-attention sessions will appear here.
+      <div className='rounded-3xl border border-dashed border-white/15 px-6 py-10 text-center'>
+        <p className='font-medium text-slate-300'>
+          <Localized id='distributiveAttention.labels.yourCompletedDistributiveAttentionSessionsWillAppearHere' />
         </p>
-        <p className="mt-2 text-sm text-slate-500">
-          Results and mode settings are saved only in this browser.
+        <p className='mt-2 text-sm text-slate-500'>
+          <Localized id='distributiveAttention.results.resultsAndModeSettingsAreSavedOnlyInThis' />
         </p>
       </div>
     );
   }
 
   return (
-    <div className="space-y-3">
-      {sessions.map((session, sessionIndex) => (
-        <details
-          key={session.id}
-          open={sessionIndex === 0}
-          className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] open:bg-white/[0.06]"
-        >
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 marker:hidden">
-            <div>
-              <p className="font-semibold text-white">
-                {new Intl.DateTimeFormat(undefined, {
-                  dateStyle: "medium",
-                  timeStyle: "short",
-                }).format(new Date(session.completedAt))}
-              </p>
-              <p className="mt-1 text-sm text-slate-400">
-                {modeLabel(session.settings.mode)} ·{" "}
-                {session.settings.trialCount} trials
-              </p>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="text-right">
-                <p className="font-mono text-xl font-semibold text-rose-300">
-                  {session.accuracy}%
+    <div className='space-y-3'>
+      <Localized>
+        {sessions.map((session, sessionIndex) => (
+          <details
+            key={session.id}
+            open={sessionIndex === 0}
+            className='group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] open:bg-white/[0.06]'
+          >
+            <summary className='flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 marker:hidden'>
+              <div>
+                <p className='font-semibold text-white'>
+                  <LocalizedDate value={session.completedAt} />
                 </p>
-                <p className="text-xs uppercase tracking-wider text-slate-500">
-                  Accuracy
+                <p className='mt-1 text-sm text-slate-400'>
+                  <Localized>{modeLabel(session.settings.mode)}</Localized>
+                  <Localized>{' ·'}</Localized>
+                  <Localized> </Localized>
+                  <Localized>{session.settings.trialCount}</Localized>{' '}
+                  <Localized id='distributiveAttention.labels.trials' />
                 </p>
               </div>
-              <span
-                aria-hidden="true"
-                className="text-xl text-slate-500 transition-transform group-open:rotate-45"
-              >
-                +
-              </span>
-            </div>
-          </summary>
-          <div className="grid gap-3 border-t border-white/10 px-5 py-4 sm:grid-cols-3">
-            {[
-              [
-                "Correct",
-                String(session.trials.filter((trial) => trial.correct).length),
-              ],
-              [
-                "Incorrect",
-                String(session.trials.filter((trial) => !trial.correct).length),
-              ],
-              ["Average response", `${session.averageReactionTime} ms`],
-            ].map(([label, value]) => (
-              <div key={label} className="rounded-xl bg-slate-950/60 p-4">
-                <p className="text-xs uppercase tracking-wider text-slate-500">
-                  {label}
-                </p>
-                <p className="mt-2 font-mono text-lg font-bold text-white">
-                  {value}
-                </p>
+              <div className='flex items-center gap-4'>
+                <div className='text-right'>
+                  <p className='font-mono text-xl font-semibold text-rose-300'>
+                    <Localized>{session.accuracy}</Localized>
+                    <Localized>{'%'}</Localized>
+                  </p>
+                  <p className='text-xs uppercase tracking-wider text-slate-500'>
+                    <Localized id='common.results.accuracy' />
+                  </p>
+                </div>
+                <span
+                  aria-hidden='true'
+                  className='text-xl text-slate-500 transition-transform group-open:rotate-45'
+                >
+                  <Localized>{'+'}</Localized>
+                </span>
               </div>
-            ))}
-          </div>
-        </details>
-      ))}
+            </summary>
+            <div className='grid gap-3 border-t border-white/10 px-5 py-4 sm:grid-cols-3'>
+              <Localized>
+                {[
+                  [
+                    'Correct',
+                    String(
+                      session.trials.filter(trial => trial.correct).length,
+                    ),
+                  ],
+                  [
+                    'Incorrect',
+                    String(
+                      session.trials.filter(trial => !trial.correct).length,
+                    ),
+                  ],
+                  ['Average response', `${session.averageReactionTime} ms`],
+                ].map(([label, value]) => (
+                  <div
+                    key={label}
+                    className='rounded-xl bg-slate-950/60 p-4'
+                  >
+                    <p className='text-xs uppercase tracking-wider text-slate-500'>
+                      <Localized>{label}</Localized>
+                    </p>
+                    <p className='mt-2 font-mono text-lg font-bold text-white'>
+                      <Localized>{value}</Localized>
+                    </p>
+                  </div>
+                ))}
+              </Localized>
+            </div>
+          </details>
+        ))}
+      </Localized>
     </div>
   );
 }
 
 export default function DistributiveAttentionPage() {
-  const [phase, setPhase] = useState<Phase>("setup");
-  const [mode, setMode] = useState<SessionMode>("one-handed");
+  const t = useTextTranslation();
+
+  const [phase, setPhase] = useState<Phase>('setup');
+  const [mode, setMode] = useState<SessionMode>('one-handed');
   const [trialCount, setTrialCount] = useState(DEFAULT_TRIAL_COUNT);
   const [sequence, setSequence] = useState<AttentionStimulus[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -237,7 +256,8 @@ export default function DistributiveAttentionPage() {
   const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const currentTarget = sequence[currentIndex] ?? null;
   const activeMode: DistributiveMode =
-    currentTarget?.mode ?? (mode === "two-handed" ? "two-handed" : "one-handed");
+    currentTarget?.mode ??
+    (mode === 'two-handed' ? 'two-handed' : 'one-handed');
 
   const clearPressedInputs = useCallback(() => {
     pressedRowRef.current = null;
@@ -257,21 +277,21 @@ export default function DistributiveAttentionPage() {
     setTrials([]);
     setResponse(null);
     setLastSession(null);
-    setPhase("setup");
+    setPhase('setup');
   }, [clearPressedInputs]);
 
   const { beginTestRoute, completeTestRoute, returnToSetupRoute } =
     useTestRoute({
-      basePath: "/distributive-attention",
+      basePath: '/distributive-attention',
       view:
-        phase === "setup" ? "setup" : phase === "complete" ? "result" : "test",
+        phase === 'setup' ? 'setup' : phase === 'complete' ? 'result' : 'test',
       onReturnToSetup: returnToSetup,
     });
 
   useEffect(() => {
     const hydrationTimer = window.setTimeout(() => {
       try {
-        const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "[]");
+        const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
         if (Array.isArray(stored)) setHistory(stored.filter(isStoredSession));
       } catch {
         localStorage.removeItem(STORAGE_KEY);
@@ -289,13 +309,13 @@ export default function DistributiveAttentionPage() {
   );
 
   useEffect(() => {
-    if (phase !== "running") return;
+    if (phase !== 'running') return;
     shownAtRef.current = performance.now();
     inputLockedRef.current = false;
   }, [currentIndex, phase]);
 
   const startSession = useCallback(() => {
-    beginTestRoute(phase === "complete");
+    beginTestRoute(phase === 'complete');
     clearPressedInputs();
     setSequence(createSequence(trialCount, mode));
     setCurrentIndex(0);
@@ -304,7 +324,7 @@ export default function DistributiveAttentionPage() {
     setLastSession(null);
     inputLockedRef.current = false;
     shownAtRef.current = performance.now();
-    setPhase("running");
+    setPhase('running');
   }, [beginTestRoute, clearPressedInputs, mode, phase, trialCount]);
 
   const finishSession = useCallback(
@@ -319,13 +339,13 @@ export default function DistributiveAttentionPage() {
       };
 
       setLastSession(session);
-      setHistory((currentHistory) => {
+      setHistory(currentHistory => {
         const updatedHistory = [session, ...currentHistory].slice(0, 100);
         localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedHistory));
         return updatedHistory;
       });
       clearPressedInputs();
-      setPhase("complete");
+      setPhase('complete');
       completeTestRoute();
     },
     [clearPressedInputs, completeTestRoute, mode, trialCount],
@@ -333,7 +353,7 @@ export default function DistributiveAttentionPage() {
 
   const respond = useCallback(
     (responseRow: number, responseColumn: number) => {
-      if (phase !== "running" || inputLockedRef.current) return;
+      if (phase !== 'running' || inputLockedRef.current) return;
       const target = sequence[currentIndex];
       if (!target) return;
 
@@ -360,7 +380,7 @@ export default function DistributiveAttentionPage() {
         if (currentIndex + 1 >= sequence.length) {
           finishSession(completedTrials);
         } else {
-          setCurrentIndex((current) => current + 1);
+          setCurrentIndex(current => current + 1);
         }
       }, FEEDBACK_DURATION_MS);
     },
@@ -369,7 +389,7 @@ export default function DistributiveAttentionPage() {
 
   const tryTwoHandedResponse = useCallback(
     (row: number | null, column: number | null) => {
-      if (activeMode === "two-handed" && row !== null && column !== null) {
+      if (activeMode === 'two-handed' && row !== null && column !== null) {
         respond(row, column);
       }
     },
@@ -378,8 +398,8 @@ export default function DistributiveAttentionPage() {
 
   const pressAxis = useCallback(
     (axis: DistributiveAxis, index: number) => {
-      if (phase !== "running" || activeMode !== "two-handed") return;
-      if (axis === "row") {
+      if (phase !== 'running' || activeMode !== 'two-handed') return;
+      if (axis === 'row') {
         pressedRowRef.current = index;
         setPressedRow(index);
         tryTwoHandedResponse(index, pressedColumnRef.current);
@@ -393,11 +413,11 @@ export default function DistributiveAttentionPage() {
   );
 
   const releaseAxis = useCallback((axis: DistributiveAxis, index: number) => {
-    if (axis === "row" && pressedRowRef.current === index) {
+    if (axis === 'row' && pressedRowRef.current === index) {
       pressedRowRef.current = null;
       setPressedRow(null);
     }
-    if (axis === "column" && pressedColumnRef.current === index) {
+    if (axis === 'column' && pressedColumnRef.current === index) {
       pressedColumnRef.current = null;
       setPressedColumn(null);
     }
@@ -406,7 +426,7 @@ export default function DistributiveAttentionPage() {
   const handleAxisPointerDown = useCallback(
     (axis: DistributiveAxis, index: number, pointerId: number) => {
       const pointerMap =
-        axis === "row" ? rowPointersRef.current : columnPointersRef.current;
+        axis === 'row' ? rowPointersRef.current : columnPointersRef.current;
       pointerMap.set(pointerId, index);
       pressAxis(axis, index);
     },
@@ -416,7 +436,7 @@ export default function DistributiveAttentionPage() {
   const handleAxisPointerUp = useCallback(
     (axis: DistributiveAxis, pointerId: number) => {
       const pointerMap =
-        axis === "row" ? rowPointersRef.current : columnPointersRef.current;
+        axis === 'row' ? rowPointersRef.current : columnPointersRef.current;
       const index = pointerMap.get(pointerId);
       pointerMap.delete(pointerId);
       if (index !== undefined) releaseAxis(axis, index);
@@ -425,7 +445,7 @@ export default function DistributiveAttentionPage() {
   );
 
   useEffect(() => {
-    if (phase !== "running" || activeMode !== "two-handed") return;
+    if (phase !== 'running' || activeMode !== 'two-handed') return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.repeat) return;
@@ -437,10 +457,10 @@ export default function DistributiveAttentionPage() {
       );
       if (row >= 0) {
         event.preventDefault();
-        pressAxis("row", row);
+        pressAxis('row', row);
       } else if (column >= 0) {
         event.preventDefault();
-        pressAxis("column", column);
+        pressAxis('column', column);
       }
     };
 
@@ -451,45 +471,55 @@ export default function DistributiveAttentionPage() {
       const column = columnKeyCodes.indexOf(
         event.code as (typeof columnKeyCodes)[number],
       );
-      if (row >= 0) releaseAxis("row", row);
-      if (column >= 0) releaseAxis("column", column);
+      if (row >= 0) releaseAxis('row', row);
+      if (column >= 0) releaseAxis('column', column);
     };
 
-    window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("keyup", handleKeyUp);
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-      window.removeEventListener("keyup", handleKeyUp);
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
     };
   }, [activeMode, phase, pressAxis, releaseAxis]);
 
-  if (phase === "running") {
+  if (phase === 'running') {
     return (
-      <main className="flex h-dvh flex-col overflow-hidden bg-slate-950 px-2 py-2 text-white sm:px-6 sm:py-4">
-        <header className="flex shrink-0 items-center justify-between gap-4">
+      <main className='flex h-dvh flex-col overflow-hidden bg-slate-950 px-2 py-2 text-white sm:px-6 sm:py-4'>
+        <header className='flex shrink-0 items-center justify-between gap-4'>
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-rose-300 sm:text-sm">
-              {mode === "mixed" ? "Mixed · " : ""}
-              {modeLabel(activeMode)} · Trial {currentIndex + 1} of{" "}
-              {sequence.length}
+            <p className='font-mono text-xs font-semibold uppercase tracking-[0.2em] text-rose-300 sm:text-sm'>
+              <Localized>{mode === 'mixed' ? 'Mixed · ' : ''}</Localized>
+              <Localized>{modeLabel(activeMode)}</Localized>{' '}
+              <Localized id='distributiveAttention.labels.trial' />{' '}
+              <Localized>{currentIndex + 1}</Localized>{' '}
+              <Localized id='distributiveAttention.labels.of' />
+              <Localized> </Localized>
+              <Localized>{sequence.length}</Localized>
             </p>
-            <p className="mt-1 text-[11px] text-slate-400 sm:text-xs">
-              {activeMode === "one-handed"
-                ? "Find the row and column intersection"
-                : "Press the matching row and column together"}
+            <p className='mt-1 text-[11px] text-slate-400 sm:text-xs'>
+              <Localized>
+                {activeMode === 'one-handed'
+                  ? 'Find the row and column intersection'
+                  : 'Press the matching row and column together'}
+              </Localized>
             </p>
           </div>
-          <div className="text-right">
-            <p className="font-mono text-xl font-black text-white">
-              {trials.filter((trial) => trial.correct).length}/{trials.length}
+          <div className='text-right'>
+            <p className='font-mono text-xl font-black text-white'>
+              <Localized>
+                {trials.filter(trial => trial.correct).length}
+              </Localized>
+              <Localized>{'/'}</Localized>
+              <Localized>{trials.length}</Localized>
             </p>
-            <p className="text-[9px] uppercase tracking-wider text-slate-500">
-              Correct
+            <p className='text-[9px] uppercase tracking-wider text-slate-500'>
+              <Localized id='common.feedback.correct' />
             </p>
           </div>
         </header>
 
-        <section className="flex min-h-0 flex-1 items-center justify-center py-2">
+        <section className='flex min-h-0 flex-1 items-center justify-center py-2'>
           <DistributiveAttentionBoard
             mode={activeMode}
             target={currentTarget}
@@ -503,10 +533,12 @@ export default function DistributiveAttentionPage() {
           />
         </section>
 
-        <footer className="shrink-0 pb-[max(0rem,env(safe-area-inset-bottom))] text-center text-[10px] leading-4 text-slate-500 sm:text-xs">
-          {activeMode === "one-handed"
-            ? "Desktop: click the intersection with your mouse or trackpad."
-            : `Desktop chord — rows: ${rowKeyLabels.join(" ")} · columns: ${columnKeyLabels.join(" ")}`}
+        <footer className='shrink-0 pb-[max(0rem,env(safe-area-inset-bottom))] text-center text-[10px] leading-4 text-slate-500 sm:text-xs'>
+          <Localized>
+            {activeMode === 'one-handed'
+              ? 'Desktop: click the intersection with your mouse or trackpad.'
+              : `Desktop chord — rows: ${rowKeyLabels.join(' ')} · columns: ${columnKeyLabels.join(' ')}`}
+          </Localized>
         </footer>
       </main>
     );
@@ -514,258 +546,288 @@ export default function DistributiveAttentionPage() {
 
   const summary = lastSession ? summarizeTrials(lastSession.trials) : null;
   const oneHandedSummary = lastSession
-    ? summarizeModeTrials(lastSession.trials, "one-handed")
+    ? summarizeModeTrials(lastSession.trials, 'one-handed')
     : null;
   const twoHandedSummary = lastSession
-    ? summarizeModeTrials(lastSession.trials, "two-handed")
+    ? summarizeModeTrials(lastSession.trials, 'two-handed')
     : null;
 
   return (
-    <TestPageShell accent="rose">
-      {phase === "setup" ? (
-        <TestSetupLayout
-          accent="rose"
-          eyebrow="Distributive attention"
-          title="Track both axes at once."
-          description={
-            <p>
-              Locate an intersection from two signals, or reverse the task and
-              coordinate two simultaneous responses to one illuminated cell.
-            </p>
-          }
-          actions={
-            <>
-              <button
-                type="button"
-                onClick={startSession}
-                className="min-h-14 rounded-full bg-rose-300 px-8 font-bold text-slate-950 transition hover:bg-rose-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose-300"
-              >
-                Start test
-              </button>
-              <DistributiveAttentionDemo />
-            </>
-          }
-        >
-          <div className="space-y-4">
-            <TestPanel
-              title="Test settings"
-              description="Choose the response direction and session length."
-            >
-              <div className="space-y-6">
-                <fieldset>
-                  <legend className="text-sm font-semibold text-slate-300">
-                    Mode
-                  </legend>
-                  <div className="mt-3 grid grid-cols-3 gap-2 rounded-2xl bg-slate-950 p-1.5">
-                    {(["one-handed", "two-handed", "mixed"] as const).map((option) => (
-                      <button
-                        key={option}
-                        type="button"
-                        aria-pressed={mode === option}
-                        onClick={() => setMode(option)}
-                        className={`min-h-12 rounded-xl px-4 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-rose-300 ${
-                          mode === option
-                            ? "bg-rose-300 text-slate-950"
-                            : "text-slate-400 hover:bg-white/5 hover:text-white"
-                        }`}
-                      >
-                        {modeLabel(option)}
-                      </button>
-                    ))}
-                  </div>
-                </fieldset>
-
-                <label className="block">
-                  <span className="flex items-center justify-between text-sm font-semibold text-slate-300">
-                    Number of trials
-                    <span className="font-mono text-rose-300">
-                      {trialCount}
-                    </span>
-                  </span>
-                  <ValidatedNumberInput
-                    min={MIN_TRIAL_COUNT}
-                    max={MAX_TRIAL_COUNT}
-                    value={trialCount}
-                    normalize={Math.round}
-                    onValueChange={setTrialCount}
-                    className="mt-3 min-h-12 w-full rounded-xl border border-white/10 bg-slate-950 px-4 font-mono text-white outline-none focus:border-rose-300"
-                  />
-                  <span className="mt-2 block text-xs text-slate-500">
-                    Default: {DEFAULT_TRIAL_COUNT}
-                  </span>
-                </label>
-              </div>
-            </TestPanel>
-
-            <TestPanel title="Instructions">
-              <InstructionList
-                accent="rose"
-                items={[
-                  {
-                    title: "One-handed",
-                    description:
-                      "Two edge LEDs identify a row and column. Tap or click their intersection.",
-                  },
-                  {
-                    title: "Two-handed touch",
-                    description:
-                      "A main-grid LED identifies a cell. Hold its row and column circles simultaneously.",
-                  },
-                  {
-                    title: "Two-handed desktop",
-                    description:
-                      "Hold one left-hand row key and one right-hand column key as a chord.",
-                  },
-                  {
-                    title: "Mixed mode",
-                    description:
-                      "One- and two-handed trials appear in a balanced random order. Follow the LEDs on every trial.",
-                  },
-                  {
-                    title: "Respond once",
-                    description:
-                      "Your first coordinate is scored, then the next random target appears.",
-                  },
-                ]}
-              />
-              <div className="mt-4 rounded-2xl border border-rose-300/15 bg-rose-300/5 p-4 text-xs leading-6 text-slate-400">
-                <p>
-                  <span className="font-semibold text-slate-200">
-                    Left-hand rows:
-                  </span>{" "}
-                  {rowKeyLabels.join(" · ")}
-                </p>
-                <p>
-                  <span className="font-semibold text-slate-200">
-                    Right-hand columns:
-                  </span>{" "}
-                  {columnKeyLabels.join(" · ")}
-                </p>
-              </div>
-            </TestPanel>
-          </div>
-        </TestSetupLayout>
-      ) : (
-        <section className="py-8 sm:py-14">
-          <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
-            <div>
-              <p className="font-mono text-sm font-semibold uppercase tracking-[0.3em] text-rose-300">
-                Session complete
+    <TestPageShell accent='rose'>
+      <Localized>
+        {phase === 'setup' ? (
+          <TestSetupLayout
+            accent='rose'
+            eyebrow='Distributive attention'
+            title={t('distributiveAttention.labels.trackBothAxesAtOnce')}
+            description={
+              <p>
+                <Localized id='distributiveAttention.instructions.locateAnIntersectionFromTwoSignalsOrReverseThe' />
               </p>
-              <h1 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">
-                Attention results
-              </h1>
-            </div>
-            <div className="flex flex-wrap gap-3 self-start sm:self-auto">
-              <button
-                type="button"
-                onClick={returnToSetupRoute}
-                className="min-h-12 rounded-full border border-white/15 px-6 font-bold text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose-300"
+            }
+            actions={
+              <>
+                <button
+                  type='button'
+                  onClick={startSession}
+                  className='min-h-14 rounded-full bg-rose-300 px-8 font-bold text-slate-950 transition hover:bg-rose-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose-300'
+                >
+                  <Localized id='common.actions.startTest' />
+                </button>
+                <DistributiveAttentionDemo />
+              </>
+            }
+          >
+            <div className='space-y-4'>
+              <TestPanel
+                title={t('common.settings.title')}
+                description='Choose the response direction and session length.'
               >
-                Change settings
-              </button>
-              <button
-                type="button"
-                onClick={startSession}
-                className="min-h-12 rounded-full bg-rose-300 px-6 font-bold text-slate-950 transition hover:bg-rose-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose-300"
-              >
-                Repeat test
-              </button>
-            </div>
-          </div>
+                <div className='space-y-6'>
+                  <fieldset>
+                    <legend className='text-sm font-semibold text-slate-300'>
+                      <Localized id='distributiveAttention.settings.mode' />
+                    </legend>
+                    <div className='mt-3 grid grid-cols-3 gap-2 rounded-2xl bg-slate-950 p-1.5'>
+                      <Localized>
+                        {(['one-handed', 'two-handed', 'mixed'] as const).map(
+                          option => (
+                            <button
+                              key={option}
+                              type='button'
+                              aria-pressed={mode === option}
+                              onClick={() => setMode(option)}
+                              className={`min-h-12 rounded-xl px-4 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-rose-300 ${
+                                mode === option
+                                  ? 'bg-rose-300 text-slate-950'
+                                  : 'text-slate-400 hover:bg-white/5 hover:text-white'
+                              }`}
+                            >
+                              <Localized>{modeLabel(option)}</Localized>
+                            </button>
+                          ),
+                        )}
+                      </Localized>
+                    </div>
+                  </fieldset>
 
-          {lastSession && summary && (
-            <>
-              <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {[
-                  ["Accuracy", `${summary.accuracy}%`, "text-rose-300"],
-                  [
-                    "Average response",
-                    `${summary.averageReactionTime} ms`,
-                    "text-cyan-300",
-                  ],
-                  [
-                    "Correct",
-                    String(
-                      lastSession.trials.filter((trial) => trial.correct).length,
-                    ),
-                    "text-emerald-300",
-                  ],
-                  [
-                    "Incorrect",
-                    String(
-                      lastSession.trials.filter((trial) => !trial.correct).length,
-                    ),
-                    "text-amber-300",
-                  ],
-                ].map(([label, value, color]) => (
-                  <div
-                    key={label}
-                    className="rounded-3xl border border-white/10 bg-white/[0.05] p-6"
-                  >
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      {label}
-                    </p>
-                    <p className={`mt-3 font-mono text-3xl font-black ${color}`}>
-                      {value}
-                    </p>
-                  </div>
-                ))}
+                  <label className='block'>
+                    <span className='flex items-center justify-between text-sm font-semibold text-slate-300'>
+                      <Localized id='distributiveAttention.labels.numberOfTrials' />
+                      <span className='font-mono text-rose-300'>
+                        <Localized>{trialCount}</Localized>
+                      </span>
+                    </span>
+                    <ValidatedNumberInput
+                      min={MIN_TRIAL_COUNT}
+                      max={MAX_TRIAL_COUNT}
+                      value={trialCount}
+                      normalize={Math.round}
+                      onValueChange={setTrialCount}
+                      className='mt-3 min-h-12 w-full rounded-xl border border-white/10 bg-slate-950 px-4 font-mono text-white outline-none focus:border-rose-300'
+                    />
+                    <span className='mt-2 block text-xs text-slate-500'>
+                      <Localized id='common.labels.default' />{' '}
+                      <Localized>{DEFAULT_TRIAL_COUNT}</Localized>
+                    </span>
+                  </label>
+                </div>
+              </TestPanel>
+
+              <TestPanel title={t('common.instructions.title')}>
+                <InstructionList
+                  accent='rose'
+                  items={[
+                    {
+                      title: 'One-handed',
+                      description:
+                        'Two edge LEDs identify a row and column. Tap or click their intersection.',
+                    },
+                    {
+                      title: 'Two-handed touch',
+                      description:
+                        'A main-grid LED identifies a cell. Hold its row and column circles simultaneously.',
+                    },
+                    {
+                      title: 'Two-handed desktop',
+                      description:
+                        'Hold one left-hand row key and one right-hand column key as a chord.',
+                    },
+                    {
+                      title: 'Mixed mode',
+                      description:
+                        'One- and two-handed trials appear in a balanced random order. Follow the LEDs on every trial.',
+                    },
+                    {
+                      title: 'Respond once',
+                      description:
+                        'Your first coordinate is scored, then the next random target appears.',
+                    },
+                  ]}
+                />
+                <div className='mt-4 rounded-2xl border border-rose-300/15 bg-rose-300/5 p-4 text-xs leading-6 text-slate-400'>
+                  <p>
+                    <span className='font-semibold text-slate-200'>
+                      <Localized id='distributiveAttention.labels.leftHandRows' />
+                    </span>
+                    <Localized> </Localized>
+                    <Localized>{rowKeyLabels.join(' · ')}</Localized>
+                  </p>
+                  <p>
+                    <span className='font-semibold text-slate-200'>
+                      <Localized id='distributiveAttention.labels.rightHandColumns' />
+                    </span>
+                    <Localized> </Localized>
+                    <Localized>{columnKeyLabels.join(' · ')}</Localized>
+                  </p>
+                </div>
+              </TestPanel>
+            </div>
+          </TestSetupLayout>
+        ) : (
+          <section className='py-8 sm:py-14'>
+            <div className='flex flex-col justify-between gap-8 sm:flex-row sm:items-end'>
+              <div>
+                <p className='font-mono text-sm font-semibold uppercase tracking-[0.3em] text-rose-300'>
+                  <Localized id='common.results.sessionComplete' />
+                </p>
+                <h1 className='mt-4 text-4xl font-black tracking-tight sm:text-6xl'>
+                  <Localized id='distributiveAttention.results.attentionResults' />
+                </h1>
               </div>
+              <div className='flex flex-wrap gap-3 self-start sm:self-auto'>
+                <button
+                  type='button'
+                  onClick={returnToSetupRoute}
+                  className='min-h-12 rounded-full border border-white/15 px-6 font-bold text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose-300'
+                >
+                  <Localized id='common.settings.changeSettings' />
+                </button>
+                <button
+                  type='button'
+                  onClick={startSession}
+                  className='min-h-12 rounded-full bg-rose-300 px-6 font-bold text-slate-950 transition hover:bg-rose-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose-300'
+                >
+                  <Localized id='common.actions.repeatTest' />
+                </button>
+              </div>
+            </div>
 
-              {lastSession.settings.mode === "mixed" &&
-                oneHandedSummary &&
-                twoHandedSummary && (
-                  <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-3xl border border-rose-300/15 bg-rose-300/5 p-6">
-                      <p className="font-semibold text-white">
-                        One-handed trials
-                      </p>
-                      <p className="mt-3 font-mono text-2xl font-black text-rose-300">
-                        {oneHandedSummary.accuracy}%
-                      </p>
-                      <p className="mt-1 text-sm text-slate-400">
-                        {oneHandedSummary.averageReactionTime} ms average
-                      </p>
-                    </div>
-                    <div className="rounded-3xl border border-rose-300/15 bg-rose-300/5 p-6">
-                      <p className="font-semibold text-white">
-                        Two-handed trials
-                      </p>
-                      <p className="mt-3 font-mono text-2xl font-black text-rose-300">
-                        {twoHandedSummary.accuracy}%
-                      </p>
-                      <p className="mt-1 text-sm text-slate-400">
-                        {twoHandedSummary.averageReactionTime} ms average
-                      </p>
-                    </div>
+            <Localized>
+              {lastSession && summary && (
+                <>
+                  <div className='mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
+                    <Localized>
+                      {[
+                        ['Accuracy', `${summary.accuracy}%`, 'text-rose-300'],
+                        [
+                          'Average response',
+                          `${summary.averageReactionTime} ms`,
+                          'text-cyan-300',
+                        ],
+                        [
+                          'Correct',
+                          String(
+                            lastSession.trials.filter(trial => trial.correct)
+                              .length,
+                          ),
+                          'text-emerald-300',
+                        ],
+                        [
+                          'Incorrect',
+                          String(
+                            lastSession.trials.filter(trial => !trial.correct)
+                              .length,
+                          ),
+                          'text-amber-300',
+                        ],
+                      ].map(([label, value, color]) => (
+                        <div
+                          key={label}
+                          className='rounded-3xl border border-white/10 bg-white/[0.05] p-6'
+                        >
+                          <p className='text-xs font-semibold uppercase tracking-wider text-slate-500'>
+                            <Localized>{label}</Localized>
+                          </p>
+                          <p
+                            className={`mt-3 font-mono text-3xl font-black ${color}`}
+                          >
+                            <Localized>{value}</Localized>
+                          </p>
+                        </div>
+                      ))}
+                    </Localized>
                   </div>
-                )}
-            </>
-          )}
-        </section>
-      )}
 
-      <section className="border-t border-white/10 py-12 sm:py-16">
-        <div className="mb-7 flex items-end justify-between gap-6">
+                  <Localized>
+                    {lastSession.settings.mode === 'mixed' &&
+                      oneHandedSummary &&
+                      twoHandedSummary && (
+                        <div className='mt-4 grid gap-4 sm:grid-cols-2'>
+                          <div className='rounded-3xl border border-rose-300/15 bg-rose-300/5 p-6'>
+                            <p className='font-semibold text-white'>
+                              <Localized id='distributiveAttention.labels.oneHandedTrials' />
+                            </p>
+                            <p className='mt-3 font-mono text-2xl font-black text-rose-300'>
+                              <Localized>{oneHandedSummary.accuracy}</Localized>
+                              <Localized>{'%'}</Localized>
+                            </p>
+                            <p className='mt-1 text-sm text-slate-400'>
+                              <Localized>
+                                {oneHandedSummary.averageReactionTime}
+                              </Localized>{' '}
+                              <Localized id='distributiveAttention.results.msAverage' />
+                            </p>
+                          </div>
+                          <div className='rounded-3xl border border-rose-300/15 bg-rose-300/5 p-6'>
+                            <p className='font-semibold text-white'>
+                              <Localized id='distributiveAttention.labels.twoHandedTrials' />
+                            </p>
+                            <p className='mt-3 font-mono text-2xl font-black text-rose-300'>
+                              <Localized>{twoHandedSummary.accuracy}</Localized>
+                              <Localized>{'%'}</Localized>
+                            </p>
+                            <p className='mt-1 text-sm text-slate-400'>
+                              <Localized>
+                                {twoHandedSummary.averageReactionTime}
+                              </Localized>{' '}
+                              <Localized id='distributiveAttention.results.msAverage' />
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                  </Localized>
+                </>
+              )}
+            </Localized>
+          </section>
+        )}
+      </Localized>
+
+      <section className='border-t border-white/10 py-12 sm:py-16'>
+        <div className='mb-7 flex items-end justify-between gap-6'>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Saved on this device
+            <p className='text-sm font-semibold uppercase tracking-[0.2em] text-slate-500'>
+              <Localized id='common.results.savedOnThisDevice' />
             </p>
-            <h2 className="mt-2 text-2xl font-bold">
-              Distributive-attention history
+            <h2 className='mt-2 text-2xl font-bold'>
+              <Localized id='distributiveAttention.results.distributiveAttentionHistory' />
             </h2>
           </div>
-          {history.length > 0 && (
-            <p className="font-mono text-sm text-slate-500">
-              {history.length} {history.length === 1 ? "session" : "sessions"}
-            </p>
-          )}
+          <Localized>
+            {history.length > 0 && (
+              <p className='font-mono text-sm text-slate-500'>
+                <Localized>{history.length}</Localized>{' '}
+                <Localized>
+                  {history.length === 1 ? 'session' : 'sessions'}
+                </Localized>
+              </p>
+            )}
+          </Localized>
         </div>
         <AttentionHistory sessions={history} />
-        <p className="mt-8 max-w-2xl text-sm leading-6 text-slate-600">
-          This is a practice tool, not a clinical assessment. Input method,
-          keyboard rollover, and display size can affect results.
+        <p className='mt-8 max-w-2xl text-sm leading-6 text-slate-600'>
+          <Localized id='distributiveAttention.instructions.thisIsAPracticeToolNotAClinicalAssessment' />
         </p>
       </section>
     </TestPageShell>

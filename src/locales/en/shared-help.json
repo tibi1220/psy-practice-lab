@@ -1,0 +1,11 @@
+{
+  "common": {
+    "help": {
+      "onlyTheTestSheetWillBeIncludedIn": ". Only the test sheet will be included in the downloaded PDF.",
+      "aNewRoundBeginsWithAShortReadyPhase": "A new round begins with a short ready phase. Keep your attention on the whole grid.",
+      "dragAPieceOrSelectItAndTapA": "Drag a piece, or select it and tap a highlighted destination.",
+      "inTwoHandedModeOneLedInTheLargeGrid": "In two-handed mode, one LED in the large grid illuminates. Find its row and column on the smaller grids.",
+      "practiceTheWatchRememberSelectAndSubmitRhythmBefore": "Practice the watch, remember, select, and submit rhythm before the real rounds begin."
+    }
+  }
+}

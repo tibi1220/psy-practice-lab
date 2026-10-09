@@ -1,0 +1,47 @@
+{
+  "reactionTime": {
+    "results": {
+      "averageReaction": "Átlagos reakció",
+      "ignoreOneFastestAndOneSlowestResultInStatistics": "Egy leggyorsabb és egy leglassabb eredmény kihagyása a statisztikából.",
+      "resultsAreSavedOnlyInThisBrowser": "Az eredmények csak ebben a böngészőben kerülnek mentésre.",
+      "sessionHistory": "Munkamenet előzményei",
+      "yourResults": "Az eredményeidd",
+      "resultsFastestAndSlowestExcluded": "eredmény; a leggyorsabb és leglassabb kihagyva."
+    },
+    "labels": {
+      "basedOn": "Alapja:",
+      "configureThisSessionBeforeStarting": "Indítás előtt állítsd be a gyakorlást.",
+      "donTPressYet": "Még ne nyomd meg.",
+      "excludeExtremes": "Szélsőségek kizárása",
+      "excluded": "Kizárva",
+      "greenAppearsAfterARandomDelay": "A zöld véletlenszerű késleltetés után jelenik meg.",
+      "howFastCanYouRespond": "Milyen gyorsan tudsz válaszolni?",
+      "pressReady": "Nyomd meg a Kész gombot",
+      "react": "Reakció",
+      "recorded": "Rögzítve",
+      "review": "Áttekintés",
+      "standardDeviation": "Szórás",
+      "tapOrPressAnyKeyboardKey": "Érintsd meg vagy nyomj meg bármilyen billentyűt.",
+      "tapTheScreenOrPressAnyKey": "Érintsd meg a képernyőt vagy nyomj meg egy billentyűt",
+      "theScreenTurnsRed": "A képernyő pirosra vált.",
+      "tooSoon": "Túl korán",
+      "trial": "Próba",
+      "wait": "Várakozás",
+      "yourCompletedSessionsWillAppearHere": "A befejezett munkamenetek itt jelennek meg.",
+      "rounds": "kör",
+      "trials": "próba · σ",
+      "waiting": "várakozás",
+      "extremesExcluded": "· szélsőségek kihagyva"
+    },
+    "instructions": {
+      "chooseHowManyReactionTimeTrialsToCompleteWaitThrough": "Állítsd be a reakcióidő-próbák számát. Várj a piros képernyő alatt, és zöldre váltáskor azonnal érints vagy nyomj billentyűt.",
+      "thisIsAPracticeToolNotAClinicalAssessment": "Ez gyakorló eszköz, nem klinikai értékelés. Az eredmények függhetnek az eszköztől, böngészőtől, figyelemtől és beviteli módtól."
+    },
+    "messages": {
+      "exploreAllTrialcountResultsAndYourHistory": "Tekintsd át mind a(z) {{trialCount}} eredményt és az előzményeket."
+    },
+    "settings": {
+      "thisAttemptWonTCount": "Ez a próbálkozás nem számít."
+    }
+  }
+}

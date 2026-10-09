@@ -1,0 +1,43 @@
+{
+  "shortTermMemory": {
+    "labels": {
+      "22To88": "2×2 to 8×8",
+      "cellsFlashedPerRound": "Cells flashed per round",
+      "continue": "Continue",
+      "flashed": "Flashed:",
+      "keepYourAttentionOnTheWholeGrid": "Keep your attention on the whole grid.",
+      "memorizeEveryDisplayThatFlashes": "Memorize every display that flashes.",
+      "pressNextRoundWhenYourSelectionIsComplete": "Press Next round when your selection is complete.",
+      "remember": "Remember",
+      "rememberThePattern": "Remember the pattern",
+      "rememberThePatternDetail": "Remember the pattern.",
+      "rememberTheseCells": "Remember these cells",
+      "select": "Select",
+      "selected": "Selected:",
+      "tapEveryCellYouRememberTapAgainToUndo": "Tap every cell you remember; tap again to undo.",
+      "yourCompletedMemorySessionsWillAppearHere": "Your completed memory sessions will appear here.",
+      "ms": "ms ·"
+    },
+    "settings": {
+      "configureTheGridFlashAndSessionLength": "Configure the grid, flash, and session length.",
+      "flashDuration": "Flash duration",
+      "gridSize": "Grid size"
+    },
+    "results": {
+      "memoryHistory": "Memory history",
+      "memoryResults": "Memory results",
+      "overallAccuracy": "Overall accuracy",
+      "savedSettings": "Saved settings"
+    },
+    "actions": {
+      "nextRound": "Next round"
+    },
+    "messages": {
+      "selectAnyNumberOfCellsLengthSelected": "Select any number of cells ({{length}} selected)"
+    },
+    "instructions": {
+      "thisIsAPracticeToolNotAClinicalAssessment": "This is a practice tool, not a clinical assessment. Performance can vary with attention, display timing, and device characteristics.",
+      "watchTheSevenSegmentGridRememberWhichCellsFlashThen": "Watch the seven-segment grid, remember which cells flash, then reconstruct the pattern across as many rounds as you choose."
+    }
+  }
+}

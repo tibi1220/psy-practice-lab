@@ -1,0 +1,54 @@
+{
+  "gridClassification": {
+    "instructions": {
+      "bothExampleGridsFollowTheSameRuleCheckWhere": "Mindkét példarács ugyanazt a szabályt követi. Figyeld az ismétlődő alakzatokat, a megegyező pozíciókat és az előfordulások számát.",
+      "discoverTheCommonRuleInTwoExamplesThenSelect": "Fedezd fel a két példa közös szabályát, majd válassz két megfelelő rácsot. A bemutató válaszai nem kerülnek mentésre.",
+      "exactlySevenOfTheNineCellsContainTheSame": "A kilenc cellából pontosan hét tartalmazza ugyanazt az alakzatot. A helyzet és az alakzat típusa változhat.",
+      "findTheRuleSharedByTheTwoExampleGrids": "Keresd meg a két példarács közös szabályát. Az alakzat típusa a szabálytól függően lehet állandó vagy változó.",
+      "hereTheSameShapeFillsTheSecondAndThird": "Itt ugyanaz az alakzat tölti ki a második és harmadik oszlopot. Pontosan két jelölt rács követi ezt a mintát.",
+      "inferTheRuleFromTwo33ExampleGridsThen": "Következtesd ki a szabályt két 3×3-as példarácsból, majd válaszd ki a két megfelelő rácsot. Gyakorlás a scales clx induktív logikai következtetése alapján.",
+      "submitYourPairToContinueBothSelectionsMustBe": "A folytatáshoz küldd be a párt. Mindkét kijelölésnek helyesnek kell lennie. A befejezés után tekintsd át a szabályt.",
+      "tapAGridToSelectOrDeselectItSubmit": "Érints meg egy rácsot a kijelöléshez vagy annak visszavonásához. Akkor küldd be, ha pontosan kettő van kijelölve. A teljes válasz csak akkor helyes, ha mindkettő megfelelő.",
+      "theFourCellsAtTheTopRightAndBottomRightContain": "A jobb felső és jobb alsó négy cella ugyanazt az ismétlődő alakzatot tartalmazza. Az alakzat rácsonként eltérhet.",
+      "theSameShapeOccupiesEveryCellInTheSecond": "A második és harmadik oszlop minden cellájában ugyanaz az alakzat szerepel, ahogy mindkét példában.",
+      "thereAreAlwaysTwoMatchingGridsTapASelected": "Mindig két megfelelő rács van. A kijelölés visszavonásához érintsd meg újra a rácsot, vagy töröld az egész kijelölést."
+    },
+    "labels": {
+      "bothExamplesFollowTheSameRule": "Mindkét példa ugyanazt a szabályt követi",
+      "candidateGrids": "Választhatszó rácsok",
+      "compareTheCandidates": "Hasonlítsd össze a válaszokat",
+      "compareTheExamples": "Hasonlítsd össze a példákat",
+      "discoverTheSharedRule": "Fedezd fel a közös szabályt.",
+      "easyRowsAndColumns": "Könnyű · sorok és oszlopok",
+      "example": "Példa",
+      "lookAtTheSecondAndThirdColumns": "Nézd a második és harmadik oszlopot.",
+      "oneRepeatedShapeFillsTheTopTwoRowsThe": "Egy ismétlődő alakzat tölti ki a felső két sort. Az alakzat rácsonként eltérhet.",
+      "selectExactlyTwo": "Válassz pontosan kettőt",
+      "selectExactlyTwoGrids": "Válassz pontosan két rácsot.",
+      "selectTwoGrids": "Válassz két rácsot",
+      "studyBothExamples": "Tanulmányozza mindkét példát",
+      "theSameShapeAppearsInAllFourCornersMatching": "Mind a négy sarokban ugyanaz az alakzat szerepel, mindkét példának megfelelően.",
+      "tryAgainTheSameShapeMustFillAllSix": "Próbáld újra: ugyanaz az alakzat kell mind a hat cellába a 2. és 3. oszlopban.",
+      "twoGridsAreSelectedDeselectOneBeforeChoosingAnother": "Két rács van kijelölve. Új választás előtt vond vissza az egyik kijelölést.",
+      "whichTwoGridsFollowThatRule": "Melyik két rács követi ezt a szabályt?",
+      "and": "és",
+      "corners": "sarkok",
+      "selected": "kiválasztva)"
+    },
+    "settings": {
+      "checkPositionsRepeatedShapesAndCountsAgainstTheExamples": "Hasonlítsd össze a helyeket, ismétlődéseket és darabszámokat a példákkal.",
+      "hardCornersPositionsAndCounts": "Nehéz · sarkok, helyzetek és darabszámok"
+    },
+    "results": {
+      "correctBothGridsMatchTheExamplesColumnPattern": "Helyes! Mindkét rács követi a példák oszlopmintáját."
+    },
+    "messages": {
+      "exampleIndex": "{{index}}. példa",
+      "gridLetters": "{{letters}}. rács",
+      "rowIndexColumnIndex2Shape": "{{index}}. sor, {{index2}}. oszlop: {{shape}}"
+    },
+    "tutorial": {
+      "gridClassificationWalkthrough": "Rácsbesorolás bemutatója"
+    }
+  }
+}
