@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { DeductiveBoard, ShapeChoices } from "../components/DeductiveBoard";
+import { DeductiveRedoModal } from "../components/DeductiveRedoModal";
 import { GuidedDemoModal } from "../components/GuidedDemoModal";
 import { InstructionList, TestPageShell, TestPanel, TestSetupLayout } from "../components/TestPage";
 import { ValidatedNumberInput } from "../components/ValidatedNumberInput";
@@ -66,7 +67,7 @@ function AnswerReview({ answers }: { answers: Answer[] }) {
       <summary className="cursor-pointer font-semibold">Question {index + 1} · {answer.selected === answer.puzzle.answer ? "Correct" : "Incorrect"} · {answer.seconds.toFixed(1)} s</summary>
       <p className="my-4 text-sm text-slate-300">Your answer: {SHAPE_NAMES[answer.selected]}. Correct answer: {SHAPE_NAMES[answer.puzzle.answer]}.</p>
       <PuzzleSolution puzzle={answer.puzzle} />
-      <div className="mt-4 flex justify-center"><SolvingWalkthrough puzzle={answer.puzzle} question={index + 1} /></div>
+      <div className="mt-4 flex flex-wrap justify-center gap-3"><DeductiveRedoModal puzzle={answer.puzzle} question={index + 1} /><SolvingWalkthrough puzzle={answer.puzzle} question={index + 1} /></div>
       {answer.puzzle.rationale && <p className="mt-4 text-sm leading-6 text-slate-400">{answer.puzzle.rationale}</p>}
     </details>)}
   </div>;

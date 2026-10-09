@@ -65,6 +65,9 @@ four correct 5×5 answers in the last five. Clues, notes, answer choices, and
 saved solution reviews share the round's palette.
 Every deductive result also offers a tutorial-style solving popup that walks
 through a focused chain of row/column deductions to the target cell.
+Results also let users redo the same task in an untimed modal with notes and
+instant answer feedback. Retries start from the original clues and do not
+modify saved scores.
 
 Each test uses `/test` while a session is active and `/result` after it
 finishes. For example: `/reaction-time/test` and `/reaction-time/result`.
