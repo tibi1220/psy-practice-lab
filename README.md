@@ -51,6 +51,7 @@ The production target is Safari 16, matching older iPadOS/WebKit versions.
 - `/odd-one-out` — identify the rule-breaking object among nine shapes (scales ix)
 - `/grid-classification` — infer a rule from two 3×3 examples and select two matching grids (scales clx)
 - `/green-grey-classification` — infer a rule from six labelled diamond grids and classify four candidates as green or grey
+- `/motion-planning` — rearrange movable blocks around fixed obstacles and guide the ball to its target (motionChallenge)
 - `/working-memory` — remember ordered dot positions while answering interleaved symmetry, rotation, and line-figure questions (gridChallenge)
 
 These four reasoning exercises default to timed adaptive practice and also
@@ -78,6 +79,15 @@ exposure and spatial-question time limits, and review recall and spatial scores
 separately. The session stops at the time or task limit; unfinished sequences
 are excluded. Practice timing and difficulty progression are configurable app
 behaviour inspired by the demonstration, not a reproduction of provider scoring.
+
+Complex planning defaults to six-minute adaptive practice, with untimed puzzle
+counts also available. Fifteen solvable base layouts vary through reflections
+and rotations. Rounds 3, 5, and 8 introduce intermediate, hard, and expert tasks;
+expert layouts require 9–11 optimal moves with tightly packed blocks and fixed
+obstacles. Dragging and keyboard/tap placement share collision-checked movement.
+Each placement of one piece counts as one move, including turns. Results state
+the optimal step count beside the user's move count and show a shortest-solution
+popup. Practice movement and scoring follow the app rules in the tutorial.
 
 Each test uses `/test` while a session is active and `/result` after it
 finishes. For example: `/reaction-time/test` and `/reaction-time/result`.

@@ -31,6 +31,7 @@ test("React Router exposes every cognitive test", async () => {
     "/odd-one-out/\\*",
     "/grid-classification/\\*",
     "/green-grey-classification/\\*",
+    "/motion-planning/\\*",
     "/working-memory/\\*",
   ]) {
     assert.match(app, new RegExp(`path="${route}"`));

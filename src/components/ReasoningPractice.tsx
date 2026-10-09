@@ -18,9 +18,14 @@ export type PracticeConfig<P,R> = {
   title: string;
   headline: string;
   description: string;
+  defaultMinutes?: number;
   difficultyLabels: [string, string];
   instructions: { title: string; description: string }[];
   createPuzzle: (advanced: boolean) => P;
+  createProgressivePuzzle?: (context: { completed: number; level: Level }) => P;
+  difficultyName?: (puzzle: P) => string;
+  reviewSummary?: (puzzle: P, response: R) => string;
+  adaptiveDescription?: string;
   isPuzzle: (value: unknown) => value is P;
   isResponse: (puzzle: P, response: unknown) => response is R;
   isCorrect: (puzzle: P, response: R) => boolean;
@@ -58,7 +63,7 @@ export default function ReasoningPractice<P,R>({ config }: { config: PracticeCon
   const [view, setView] = useState<"setup" | "test" | "result">("setup");
   const [mode, setMode] = useState<Mode>("timed");
   const [level, setLevel] = useState<Level>("adaptive");
-  const [minutes, setMinutes] = useState(6);
+  const [minutes, setMinutes] = useState(config.defaultMinutes ?? 6);
   const [roundCount, setRoundCount] = useState(20);
   const [puzzle, setPuzzle] = useState<P | null>(null);
   const [advanced, setAdvanced] = useState(false);
@@ -103,7 +108,7 @@ export default function ReasoningPractice<P,R>({ config }: { config: PracticeCon
     const recent = completed.slice(-5);
     const nextAdvanced = level === "hard" || (level === "adaptive" && recent.filter(answer => answer.correct).length >= 4);
     setAdvanced(nextAdvanced);
-    setPuzzle(config.createPuzzle(nextAdvanced));
+    setPuzzle(config.createProgressivePuzzle ? config.createProgressivePuzzle({ completed: completed.length, level }) : config.createPuzzle(nextAdvanced));
   };
   const start = () => {
     makeQuestion([]);
@@ -124,7 +129,7 @@ export default function ReasoningPractice<P,R>({ config }: { config: PracticeCon
   };
   const review = (trials: Trial<P,R>[]) => <div className="mt-6 grid items-start gap-4 lg:grid-cols-2">
     {trials.map((trial, index) => <details key={index} className="min-w-0 rounded-2xl border border-white/10 bg-white/5 p-5">
-      <summary className="cursor-pointer font-semibold">Question {index + 1} · {trial.correct ? "Correct" : "Incorrect"} · {trial.seconds.toFixed(1)} s</summary>
+      <summary className="cursor-pointer font-semibold">Question {index + 1} · {trial.correct ? "Correct" : "Incorrect"} · {trial.seconds.toFixed(1)} s{config.reviewSummary && ` · ${config.reviewSummary(trial.puzzle, trial.response)}`}</summary>
       <div className="mt-5">{config.renderReview(trial.puzzle, trial.response)}</div>
     </details>)}
   </div>;
@@ -132,7 +137,7 @@ export default function ReasoningPractice<P,R>({ config }: { config: PracticeCon
   if (view === "test" && puzzle !== null) return <main className="min-h-dvh bg-slate-950 px-4 py-6 text-white">
     <div className="mx-auto max-w-4xl">
       <header className="mb-6 flex items-start justify-between gap-4">
-        <div><p className="font-mono text-sm text-emerald-300">Question {answers.length + 1}{mode === "rounds" ? ` of ${roundCount}` : ""} · {advanced ? "Hard" : "Easy"}</p><h1 className="mt-2 text-2xl font-bold">{config.title}</h1></div>
+        <div><p className="font-mono text-sm text-emerald-300">Question {answers.length + 1}{mode === "rounds" ? ` of ${roundCount}` : ""} · {config.difficultyName?.(puzzle) ?? (advanced ? "Hard" : "Easy")}</p><h1 className="mt-2 text-2xl font-bold">{config.title}</h1></div>
         {mode === "timed" && <p role="timer" aria-label="Time remaining" className="font-mono text-2xl">{Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2,"0")}</p>}
       </header>
       <Question key={answers.length} puzzle={puzzle} submit={submit} />
@@ -147,7 +152,7 @@ export default function ReasoningPractice<P,R>({ config }: { config: PracticeCon
         <TestPanel title="Test settings">
           <label className="block text-sm font-semibold">Practice mode<select className={field} value={mode} onChange={event => setMode(event.target.value as Mode)}><option value="timed">Timed · unlimited questions</option><option value="rounds">Randomized questions · untimed</option></select></label>
           <label className="mt-5 block text-sm font-semibold">Difficulty<select className={field} value={level} onChange={event => setLevel(event.target.value as Level)}><option value="adaptive">Adaptive</option><option value="easy">{config.difficultyLabels[0]}</option><option value="hard">{config.difficultyLabels[1]}</option></select></label>
-          <p className="mt-2 text-xs leading-5 text-slate-500">Adaptive practice starts easy and increases difficulty after four correct answers in the last five.</p>
+          <p className="mt-2 text-xs leading-5 text-slate-500">{config.adaptiveDescription ?? "Adaptive practice starts easy and increases difficulty after four correct answers in the last five."}</p>
           {mode === "timed" ? <label className="mt-5 block text-sm font-semibold">Test length (minutes)<ValidatedNumberInput value={minutes} min={1} max={30} normalize={Math.round} onValueChange={setMinutes} className={field} /></label> : <label className="mt-5 block text-sm font-semibold">Number of questions<ValidatedNumberInput value={roundCount} min={1} max={100} normalize={Math.round} onValueChange={setRoundCount} className={field} /></label>}
         </TestPanel>
         <TestPanel title="Instructions"><InstructionList accent="emerald" items={config.instructions} /></TestPanel>
