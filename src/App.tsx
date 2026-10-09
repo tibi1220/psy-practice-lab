@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import CapacityToActPage from "./pages/CapacityToActPage";
+import DeductiveReasoningPage from "./pages/DeductiveReasoningPage";
 import DividedAttentionPage from "./pages/DividedAttentionPage";
 import DistributiveAttentionPage from "./pages/DistributiveAttentionPage";
 import HomePage from "./pages/HomePage";
@@ -20,6 +21,7 @@ const pageTitles: Record<string, string> = {
   "/tower-of-hanoi": "Tower of Hanoi · PSY Practice Lab",
   "/distributive-attention": "Distributive Attention · PSY Practice Lab",
   "/perception": "Perception · PSY Practice Lab",
+  "/deductive-reasoning": "Deductive Reasoning · PSY Practice Lab",
 };
 
 export default function App() {
@@ -44,6 +46,7 @@ export default function App() {
         element={<DistributiveAttentionPage />}
       />
       <Route path="/perception/*" element={<PerceptionPage />} />
+      <Route path="/deductive-reasoning/*" element={<DeductiveReasoningPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

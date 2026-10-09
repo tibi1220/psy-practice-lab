@@ -81,6 +81,15 @@ const tests = [
     glow: "bg-cyan-300/10",
     status: "Three layouts",
   },
+  {
+    number: "09",
+    title: "Deductive reasoning",
+    description: "Find the missing shape in 4×4 and 5×5 grids using row and column rules.",
+    href: "/deductive-reasoning",
+    accent: "text-emerald-300",
+    glow: "bg-emerald-300/10",
+    status: "Three modes",
+  },
 ];
 
 export default function Home() {

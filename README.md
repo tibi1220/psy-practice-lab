@@ -45,6 +45,7 @@ The production target is Safari 16, matching older iPadOS/WebKit versions.
 - `/tower-of-hanoi` — configurable planning puzzle with move-speed graph
 - `/distributive-attention` — one-handed, two-handed, and mixed row/column coordination test
 - `/perception` — simultaneous two-signal test with independent fixed left and right layouts
+- `/deductive-reasoning` — shape-grid reasoning with five PDF examples, randomized questions, timed practice, optional notes, and answer review
 
 Each test uses `/test` while a session is active and `/result` after it
 finishes. For example: `/reaction-time/test` and `/reaction-time/result`.

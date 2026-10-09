@@ -25,6 +25,7 @@ test("React Router exposes every cognitive test", async () => {
     "/tower-of-hanoi/\\*",
     "/distributive-attention/\\*",
     "/perception/\\*",
+    "/deductive-reasoning/\\*",
   ]) {
     assert.match(app, new RegExp(`path="${route}"`));
   }
@@ -62,6 +63,7 @@ test("the test pages retain their core controls and explanations", async () => {
       "TowerOfHanoiPage.tsx",
       "DistributiveAttentionPage.tsx",
       "PerceptionPage.tsx",
+      "DeductiveReasoningPage.tsx",
     ].map((page) => readProjectFile(`src/pages/${page}`)),
   );
   const source = pages.join("\n");
@@ -137,6 +139,7 @@ test("every setup separates settings from instructions", async () => {
       "TowerOfHanoiPage.tsx",
       "DistributiveAttentionPage.tsx",
       "PerceptionPage.tsx",
+      "DeductiveReasoningPage.tsx",
     ].map((page) => readProjectFile(`src/pages/${page}`)),
   );
 
@@ -161,6 +164,7 @@ test("number settings validate only after editing is complete", async () => {
       "TowerOfHanoiPage.tsx",
       "DistributiveAttentionPage.tsx",
       "PerceptionPage.tsx",
+      "DeductiveReasoningPage.tsx",
     ].map((page) => readProjectFile(`src/pages/${page}`)),
   );
 
@@ -186,6 +190,7 @@ test("every test navigates between setup, test, and result routes", async () => 
       "TowerOfHanoiPage.tsx",
       "DistributiveAttentionPage.tsx",
       "PerceptionPage.tsx",
+      "DeductiveReasoningPage.tsx",
     ].map((page) => readProjectFile(`src/pages/${page}`)),
   );
 
