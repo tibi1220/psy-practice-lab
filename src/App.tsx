@@ -18,6 +18,7 @@ const GreenGreyClassificationPage = lazy(() => import("./pages/GreenGreyClassifi
 const ConcentrationPage = lazy(() => import("./pages/ConcentrationPage"));
 const MotionPlanningPage = lazy(() => import("./pages/MotionPlanningPage"));
 const WorkingMemoryPage = lazy(() => import("./pages/WorkingMemoryPage"));
+const NumericalReasoningPage = lazy(() => import("./pages/NumericalReasoningPage"));
 
 const pageTitles: Record<string, string> = {
   "/": "PSY Practice Lab",
@@ -38,6 +39,7 @@ const pageTitles: Record<string, string> = {
   "/concentration": "Ability to Concentrate · PSY Practice Lab",
   "/motion-planning": "Complex Planning · PSY Practice Lab",
   "/working-memory": "Working Memory · PSY Practice Lab",
+  "/numerical-reasoning": "Numerical Reasoning · PSY Practice Lab",
 };
 
 export default function App() {
@@ -72,6 +74,7 @@ export default function App() {
       <Route path="/concentration/*" element={<ConcentrationPage />} />
       <Route path="/motion-planning/*" element={<MotionPlanningPage />} />
       <Route path="/working-memory/*" element={<WorkingMemoryPage />} />
+      <Route path="/numerical-reasoning/*" element={<NumericalReasoningPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
     </Suspense>

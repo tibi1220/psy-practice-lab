@@ -135,6 +135,11 @@ const tests = [
     description: "Quickly classify E-like symbols by their shape and dot count, using A/D keys or touch controls.",
     href: "/concentration", accent: "text-emerald-300", glow: "bg-emerald-300/10", status: "2 minutes · adaptive",
   },
+  {
+    number: "18", title: "Numerical reasoning",
+    description: "Explore four sample businesses through detailed tables and interactive charts. Evaluate statements as True, False, or Cannot say, and revisit your answers.",
+    href: "/numerical-reasoning", accent: "text-emerald-300", glow: "bg-emerald-300/10", status: "12 minutes · 47 questions",
+  },
 ];
 
 export default function Home() {

@@ -52,6 +52,7 @@ The production target is Safari 16, matching older iPadOS/WebKit versions.
 - `/grid-classification` — infer a rule from two 3×3 examples and select two matching grids (scales clx)
 - `/green-grey-classification` — infer a rule from six labelled diamond grids and classify four candidates as green or grey
 - `/concentration` — classify upright E symbols with exactly three dots (scales e3+)
+- `/numerical-reasoning` — evaluate financial statements as True, False, or Cannot say for four fictional companies in manufacturing, software, retail, and renewable energy. Each fresh session has 45 metrics over five years, including sector-specific revenue, costs, staffing, domestic market shares, peers, and historical investment budgets. Search table rows, switch any tab to a chart, and toggle series. Defaults to 47 revisitable questions in 12 minutes, with later combined ratios and growth comparisons, worked results, and compatible saved history (scales numerical).
 - `/motion-planning` — rearrange movable blocks around fixed obstacles and guide the ball to its target (motionChallenge)
 - `/working-memory` — remember ordered dot positions while answering interleaved symmetry, rotation, and line-figure questions (gridChallenge)
 
