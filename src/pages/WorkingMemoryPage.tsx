@@ -1,3 +1,4 @@
+import { TestViewport } from '../components/TestViewport';
 import {
   LocalizedDate,
   Localized,
@@ -394,7 +395,7 @@ export default function WorkingMemoryPage() {
   );
   if (view === 'test' && task)
     return (
-      <main className='min-h-dvh bg-slate-950 px-4 py-6 text-white'>
+      <TestViewport>
         <div className='mx-auto max-w-4xl'>
           <header className='mb-6 flex items-start justify-between gap-4'>
             <div>
@@ -458,7 +459,7 @@ export default function WorkingMemoryPage() {
             </button>
           </footer>
         </div>
-      </main>
+      </TestViewport>
     );
   return (
     <TestPageShell accent='emerald'>

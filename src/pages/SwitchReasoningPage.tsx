@@ -1,3 +1,4 @@
+import { TestViewport } from '../components/TestViewport';
 import {
   LocalizedDate,
   Localized,
@@ -328,7 +329,7 @@ export default function SwitchReasoningPage() {
 
   if (view === 'test')
     return (
-      <main className='min-h-dvh bg-slate-950 px-4 py-6 text-white'>
+      <TestViewport>
         <div className='mx-auto max-w-2xl'>
           <header className='mb-6 flex items-center justify-between gap-4'>
             <div>
@@ -383,7 +384,7 @@ export default function SwitchReasoningPage() {
             </button>
           </div>
         </div>
-      </main>
+      </TestViewport>
     );
 
   return (

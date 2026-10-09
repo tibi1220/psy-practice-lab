@@ -1,3 +1,4 @@
+import { TestViewport } from '../components/TestViewport';
 import {
   LocalizedDate,
   Localized,
@@ -783,7 +784,7 @@ export default function NumericalReasoningPage() {
   };
   if (view === 'test' && data)
     return (
-      <main className='min-h-dvh bg-slate-950 px-4 py-6 text-white'>
+      <TestViewport>
         <div className='mx-auto max-w-5xl'>
           <header className='mb-6 flex justify-between gap-4'>
             <div>
@@ -943,7 +944,7 @@ export default function NumericalReasoningPage() {
             </button>
           </footer>
         </div>
-      </main>
+      </TestViewport>
     );
   return (
     <TestPageShell accent='emerald'>

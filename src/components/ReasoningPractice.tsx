@@ -1,3 +1,4 @@
+import { TestViewport } from './TestViewport';
 import { LocalizedDate, Localized, useTextTranslation } from './Localization';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ComponentType, ReactNode } from 'react';
@@ -291,7 +292,7 @@ export default function ReasoningPractice<P, R>({
 
   if (view === 'test' && puzzle !== null)
     return (
-      <main className='min-h-dvh bg-slate-950 px-4 py-6 text-white'>
+      <TestViewport>
         <div className='mx-auto max-w-4xl'>
           <header className='mb-6 flex items-start justify-between gap-4'>
             <div>
@@ -350,7 +351,7 @@ export default function ReasoningPractice<P, R>({
             </button>
           </footer>
         </div>
-      </main>
+      </TestViewport>
     );
 
   return (

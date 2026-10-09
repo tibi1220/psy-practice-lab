@@ -1,6 +1,7 @@
 import { useCallback, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { I18nextProvider, useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import type { TFunction } from 'i18next';
 import i18n from '../i18n';
 import { localeCookie } from '../lib/locale';
@@ -112,6 +113,7 @@ export function Localized({
 }
 export function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
+  const { pathname } = useLocation();
   const locale = i18n.resolvedLanguage === 'hu' ? 'hu' : 'en';
   const changeLocale = (next: Locale) => {
     void i18n.changeLanguage(next);
@@ -125,6 +127,7 @@ export function LanguageSwitcher() {
       /* Switching remains usable when cookies are disabled. */
     }
   };
+  if (/\/test\/?$/.test(pathname)) return null;
   return (
     <footer
       className='locale-footer border-t border-white/10 bg-slate-950 px-5 py-2 text-white'
