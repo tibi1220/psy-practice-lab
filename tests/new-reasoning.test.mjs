@@ -161,6 +161,26 @@ test("odd-one-out encodes rotation, 1-1-2 lines, containment, alternating fill a
   }
 });
 
+test("video-inspired odd-one-out rules require relationships rather than counting a single feature", () => {
+  for (const difficulty of [1, 2]) {
+    const gaps = odd.createOddPuzzle(true, () => 0.2, "broken-line", difficulty);
+    assert.equal(gaps.step, difficulty === 2 ? 3 : 1);
+    assert.deepEqual(gaps.objects.filter((_, i) => i !== gaps.answer).map(item => item.gap), gaps.objects.flatMap((_, i) => i === gaps.answer ? [] : [(gaps.start + gaps.step * i) % 5]));
+    assert.equal(gaps.objects[gaps.answer].gap, difficulty === 1 ? -1 : ((gaps.start + gaps.step * gaps.answer) % 5 + 1) % 5);
+    const counts = odd.createOddPuzzle(true, seededRandom(3929), "symbol-count", difficulty);
+    assert.ok(new Set(counts.objects.map(item => item.squares)).size > 1);
+    assert.ok(counts.objects.every((item, i) => (item.circles - item.squares === (difficulty === 2 ? 2 : 1)) === (i !== counts.answer)));
+    const pairs = odd.createOddPuzzle(true, seededRandom(3748), "rotation-pairs", difficulty);
+    assert.ok(pairs.objects.every((item, i) => ((item.innerRotation - item.rotation + 4) % 4 === pairs.step) === (i !== pairs.answer)));
+    assert.ok(odd.isOddPuzzle(gaps) && odd.isOddPuzzle(counts) && odd.isOddPuzzle(pairs));
+    const damaged = structuredClone(counts); delete damaged.objects[0].circles;
+    assert.equal(odd.isOddPuzzle(damaged), false);
+  }
+  assert.deepEqual([0, 5, 6, 11, 12, 30].map(i => odd.oddDifficulty(i, "adaptive")), [0, 0, 1, 1, 2, 2]);
+  assert.equal(odd.oddDifficulty(0, "hard"), 1);
+  assert.equal(odd.oddDifficulty(30, "easy"), 0);
+});
+
 test("classification generates two matching examples and exactly two correct candidates", () => {
   const random = seededRandom(45371);
   for (const rule of classification.GRID_RULES) {

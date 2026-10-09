@@ -48,7 +48,7 @@ The production target is Safari 16, matching older iPadOS/WebKit versions.
 - `/deductive-reasoning` — shape-grid reasoning with randomized questions, timed adaptive practice by default, optional notes, and answer review
 - `/switch-reasoning` — shape-sequence code reasoning with one- and two-stage randomized questions, timed adaptive practice by default, and answer review
 - `/digit-challenge` — complete arithmetic equations with distinct digits from 1 to 9; accepts all valid solutions
-- `/odd-one-out` — identify the rule-breaking object among nine shapes (scales ix)
+- `/odd-one-out` — identify the rule-breaking object among nine shapes, including moving stroke gaps, circle/square count relationships, straight versus curved edges, and paired rotations; five-minute default with progressively harder patterns and two interactive tutorial examples (scales ix)
 - `/grid-classification` — infer a rule from two 3×3 examples and select two matching grids (scales clx)
 - `/green-grey-classification` — infer a rule from six labelled diamond grids and classify four candidates as green or grey
 - `/concentration` — classify upright E symbols with exactly three dots (scales e3+)
