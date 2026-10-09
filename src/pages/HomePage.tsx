@@ -88,7 +88,7 @@ const tests = [
     href: "/deductive-reasoning",
     accent: "text-emerald-300",
     glow: "bg-emerald-300/10",
-    status: "Three modes",
+    status: "Timed adaptive",
   },
   {
     number: "10",
@@ -98,7 +98,27 @@ const tests = [
     href: "/switch-reasoning",
     accent: "text-cyan-300",
     glow: "bg-cyan-300/10",
-    status: "Three modes",
+    status: "Timed adaptive",
+  },
+  {
+    number: "11", title: "Digit challenge",
+    description: "Fill arithmetic equations with distinct digits from 1 to 9 to reach the given result.",
+    href: "/digit-challenge", accent: "text-emerald-300", glow: "bg-emerald-300/10", status: "Timed adaptive",
+  },
+  {
+    number: "12", title: "Odd one out",
+    description: "Infer the rule shared by nine objects and identify the one that breaks it.",
+    href: "/odd-one-out", accent: "text-violet-300", glow: "bg-violet-300/10", status: "Timed adaptive",
+  },
+  {
+    number: "13", title: "Grid classification",
+    description: "Discover a rule in two example grids, then choose the two candidates that follow it.",
+    href: "/grid-classification", accent: "text-cyan-300", glow: "bg-cyan-300/10", status: "Timed adaptive",
+  },
+  {
+    number: "14", title: "Inductive Reasoning — Green/Grey Classification",
+    description: "Infer the rule separating six labelled diamond grids, then classify four new grids as green or grey.",
+    href: "/green-grey-classification", accent: "text-emerald-300", glow: "bg-emerald-300/10", status: "Timed adaptive",
   },
 ];
 
